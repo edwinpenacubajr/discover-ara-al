@@ -1425,18 +1425,18 @@ loading="lazy">
 </div>
 
 ```html
-<!-- ==============================
-     MODERN FOOTER
-================================ -->
+<!-- =========================================
+     DISCOVER ARA-AL MODERN FOOTER
+========================================= -->
 
-<footer class="modern-footer">
+<footer class="araal-footer">
 
-    <div class="footer-container">
+    <div class="araal-footer-container">
 
         <!-- BRAND -->
-        <div class="footer-brand">
+        <div class="araal-footer-brand">
 
-            <div class="footer-logo">
+            <div class="araal-footer-logo">
                 Discover <span>Ara-al</span>
             </div>
 
@@ -1449,295 +1449,342 @@ loading="lazy">
         </div>
 
 
+        <!-- FOOTER LINKS -->
+        <div class="araal-footer-links">
+
+            <div class="araal-footer-column">
+
+                <h4>Explore</h4>
+
+                <a href="#about">About Ara-al</a>
+                <a href="#attractions">Attractions</a>
+                <a href="#food">Food</a>
+                <a href="#events">Events</a>
+
+            </div>
+
+
+            <div class="araal-footer-column">
+
+                <h4>Discover</h4>
+
+                <a href="#business">Businesses</a>
+                <a href="#stay">Places to Stay</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#map">Map</a>
+
+            </div>
+
+        </div>
+
+
         <!-- DIVIDER -->
-        <div class="footer-divider-line"></div>
+        <div class="araal-footer-line"></div>
 
 
-        <!-- FOOTER BOTTOM -->
-        <div class="footer-bottom">
+        <!-- COPYRIGHT -->
+        <div class="araal-footer-bottom">
 
-            <div class="footer-copyright">
+            <p>
                 © 2026
                 <strong>Discover Ara-al</strong>
-                <span>•</span>
+
+                <span class="araal-footer-dot">•</span>
+
                 Website created by
-                <strong class="creator-name">
+                <strong class="araal-footer-creator">
                     Edwin Penacuba Jr.
                 </strong>
-            </div>
+            </p>
 
-            <div class="footer-location">
-                <span class="location-icon">📍</span>
-                La Carlota City, Negros Occidental
-            </div>
+            <p class="araal-footer-location">
+                📍 La Carlota City, Negros Occidental
+            </p>
 
         </div>
 
     </div>
 
 </footer>
-```
 
-**Then put this CSS inside your existing `<style>` section:**
 
-```css
+<style>
+
 /* =========================================
-   MODERN DISCOVER ARA-AL FOOTER
+   DISCOVER ARA-AL FOOTER
 ========================================= */
 
-.modern-footer {
-    background:
-        linear-gradient(
-            135deg,
-            #102018 0%,
-            #162a20 50%,
-            #0e1b15 100%
-        );
+.araal-footer {
+    background: linear-gradient(
+        135deg,
+        #102018 0%,
+        #162a20 50%,
+        #0e1b15 100%
+    );
 
     color: #dce7df;
-    padding: 70px 20px 28px;
+
+    padding: 65px 20px 28px;
+
     position: relative;
+
     overflow: hidden;
 }
 
 
-/* SUBTLE BACKGROUND EFFECT */
+/* BACKGROUND DECORATION */
 
-.modern-footer::before {
+.araal-footer::before {
     content: "";
+
     position: absolute;
+
     width: 350px;
     height: 350px;
-    background: rgba(167, 200, 138, 0.06);
+
+    background: rgba(167, 200, 138, 0.05);
+
     border-radius: 50%;
+
     top: -180px;
     right: -100px;
+
+    pointer-events: none;
 }
 
 
 /* CONTAINER */
 
-.footer-container {
+.araal-footer-container {
     max-width: 1100px;
+
     margin: 0 auto;
+
     position: relative;
+
     z-index: 1;
 }
 
 
-/* BRAND */
+/* =========================================
+   BRAND
+========================================= */
 
-.footer-brand {
-    text-align: center;
+.araal-footer-brand {
     max-width: 650px;
-    margin: 0 auto;
 }
 
 
-/* LOGO */
+.araal-footer-logo {
+    font-size: 30px;
 
-.footer-logo {
-    font-size: 32px;
     font-weight: 800;
-    letter-spacing: -1px;
+
+    letter-spacing: -0.5px;
+
     color: #ffffff;
 }
 
-.footer-logo span {
+
+.araal-footer-logo span {
     color: #a7c88a;
 }
 
 
-/* DESCRIPTION */
-
-.footer-brand p {
-    margin: 14px auto 0;
+.araal-footer-brand p {
     max-width: 600px;
 
+    margin: 12px 0 0;
+
     font-size: 14px;
-    line-height: 1.8;
+
+    line-height: 1.7;
 
     color: #aebbb3;
 }
 
 
-/* DIVIDER */
+/* =========================================
+   FOOTER LINKS
+========================================= */
 
-.footer-divider-line {
-    width: 100%;
-    height: 1px;
-
-    background: rgba(255, 255, 255, 0.10);
-
-    margin: 45px 0 25px;
-}
-
-
-/* BOTTOM */
-
-.footer-bottom {
+.araal-footer-links {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 100px;
+
+    margin-top: 40px;
 }
 
 
-/* COPYRIGHT */
+.araal-footer-column {
+    display: flex;
 
-.footer-copyright {
-    font-size: 13px;
-    color: #8f9d95;
-    line-height: 1.7;
+    flex-direction: column;
+
+    gap: 11px;
 }
 
-.footer-copyright strong {
+
+.araal-footer-column h4 {
+    margin: 0 0 5px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
     color: #ffffff;
 }
 
-.footer-copyright span {
-    color: #a7c88a;
-    margin: 0 7px;
-}
 
+.araal-footer-column a {
+    color: #9eaaa3;
 
-/* CREATOR */
-
-.creator-name {
-    color: #a7c88a !important;
-    transition: 0.3s ease;
-}
-
-.creator-name:hover {
-    color: #ffffff !important;
-}
-
-
-/* LOCATION */
-
-.footer-location {
-    display: flex;
-    align-items: center;
-    gap: 7px;
+    text-decoration: none;
 
     font-size: 13px;
-    color: #9eaaa3;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.location-icon {
-    font-size: 14px;
+
+.araal-footer-column a:hover {
+    color: #a7c88a;
+
+    transform: translateX(4px);
 }
 
 
 /* =========================================
-   MOBILE RESPONSIVE
+   DIVIDER
+========================================= */
+
+.araal-footer-line {
+    width: 100%;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    margin: 40px 0 22px;
+}
+
+
+/* =========================================
+   FOOTER BOTTOM
+========================================= */
+
+.araal-footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+.araal-footer-bottom p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: #89968f;
+}
+
+
+.araal-footer-bottom strong {
+    color: #ffffff;
+}
+
+
+.araal-footer-dot {
+    color: #a7c88a;
+
+    margin: 0 7px;
+}
+
+
+.araal-footer-creator {
+    color: #a7c88a !important;
+}
+
+
+.araal-footer-location {
+    color: #9eaaa3 !important;
+}
+
+
+/* =========================================
+   TABLET / MOBILE
 ========================================= */
 
 @media (max-width: 700px) {
 
-    .modern-footer {
-        padding: 55px 20px 25px;
+    .araal-footer {
+        padding: 50px 20px 25px;
     }
 
-    .footer-logo {
-        font-size: 27px;
+
+    .araal-footer-logo {
+        font-size: 26px;
     }
 
-    .footer-brand p {
+
+    .araal-footer-brand p {
         font-size: 13px;
-        line-height: 1.7;
     }
 
-    .footer-divider-line {
-        margin: 35px 0 22px;
+
+    .araal-footer-links {
+        gap: 55px;
+
+        margin-top: 35px;
     }
 
-    .footer-bottom {
+
+    .araal-footer-bottom {
         flex-direction: column;
-        text-align: center;
-    }
 
-    .footer-copyright {
-        font-size: 12px;
-    }
-
-    .footer-location {
-        justify-content: center;
-        font-size: 12px;
+        align-items: flex-start;
     }
 
 }
-```
-
-### What the finished footer will look like
-
-**Discover Ara-al**
-*Discover the natural beauty, culture, and local experiences of Barangay Ara-al, La Carlota City, Negros Occidental.*
-
-────────────────────────────
-
-© 2026 **Discover Ara-al** • Website created by **Edwin Penacuba Jr.**
-
-📍 La Carlota City, Negros Occidental
-
-This version is **fully responsive**, so it will automatically adjust for phones, tablets, and desktop screens.
 
 
-<!-- =======================================================
-     BACK TO TOP
-======================================================= -->
+/* =========================================
+   SMALL PHONES
+========================================= */
 
-<button id="topBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-↑
-</button>
+@media (max-width: 450px) {
+
+    .araal-footer-links {
+        gap: 40px;
+    }
 
 
-<!-- =======================================================
-     JAVASCRIPT
-======================================================= -->
+    .araal-footer-column a {
+        font-size: 12px;
+    }
 
-<script>
 
-function toggleMenu() {
+    .araal-footer-bottom p {
+        font-size: 11px;
+    }
 
-    const nav = document.getElementById("navLinks");
 
-    nav.classList.toggle("active");
+    .araal-footer-location {
+        margin-top: 5px;
+    }
 
 }
 
-
-const topBtn = document.getElementById("topBtn");
-
-window.addEventListener("scroll", function() {
-
-    if (window.scrollY > 500) {
-
-        topBtn.style.display = "block";
-
-    } else {
-
-        topBtn.style.display = "none";
-
-    }
-
-});
-
-
-document.querySelectorAll(".nav-links a").forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        document.getElementById("navLinks").classList.remove("active");
-
-    });
-
-});
-
-</script>
-
-</body>
-</html>
+</style>
 ```
