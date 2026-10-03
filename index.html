@@ -1445,43 +1445,144 @@ La Carlota City, Negros Occidental.
 </div>
 
 <!-- ABOUT THE CREATOR -->
-<section class="creator-section" id="creator">
-    <div class="creator-container">
-        <div class="creator-content">
-            <span class="creator-label">ABOUT THE CREATOR</span>
-            <h2>Created by <span>Edwin Penacuba Jr.</span></h2>
+```html
+<!-- MODERN FOOTER -->
+<footer class="modern-footer">
+    <div class="footer-inner">
 
-            <p>
-                This website was created by <strong>Edwin Penacuba Jr.</strong>
-                as a personal project to showcase the beauty, attractions,
-                culture, and community of Barangay Ara-al, La Carlota City,
-                Negros Occidental.
-            </p>
-
-            <p>
-                The goal is to help promote Ara-al as a destination while
-                providing visitors with useful information about its
-                natural attractions, local businesses, food, events, and
-                places to explore.
-            </p>
-
-            <div class="creator-credit">
-                <span>Website Creator</span>
-                <strong>Edwin Penacuba Jr.</strong>
-            </div>
+        <div class="footer-brand">
+            <div class="footer-logo">Discover <span>Ara-al</span></div>
+            <p>Discover the beauty of La Carlota City's highlands.</p>
         </div>
-    </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-    <p>
-        © 2026 Discover Ara-al. All Rights Reserved.
-    </p>
-    <p>
-        Created by <strong>Edwin Penacuba Jr.</strong>
-    </p>
+        <div class="footer-line"></div>
+
+        <div class="footer-bottom">
+            <p>
+                © 2026 <strong>Discover Ara-al</strong>
+                <span class="footer-divider">•</span>
+                Website created by
+                <a href="#" class="creator-link">Edwin Penacuba Jr.</a>
+            </p>
+
+            <p class="footer-location">
+                La Carlota City, Negros Occidental
+            </p>
+        </div>
+
+    </div>
 </footer>
+```
+
+Add this CSS inside your existing `<style>` section:
+
+```css
+/* ==============================
+   MODERN FOOTER
+================================ */
+
+.modern-footer {
+    background: #16251d;
+    color: #dce5de;
+    padding: 55px 20px 25px;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-brand {
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+}
+
+.footer-logo span {
+    color: #a7c88a;
+}
+
+.footer-brand p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aebbb2;
+}
+
+.footer-line {
+    height: 1px;
+    background: rgba(255,255,255,0.12);
+    margin: 35px 0 22px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #9eaaa2;
+}
+
+.footer-bottom strong {
+    color: #ffffff;
+}
+
+.footer-divider {
+    margin: 0 8px;
+    color: #a7c88a;
+}
+
+.creator-link {
+    color: #a7c88a;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.creator-link:hover {
+    color: #ffffff;
+}
+
+.footer-location {
+    text-align: right;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .modern-footer {
+        padding: 45px 20px 25px;
+    }
+
+    .footer-logo {
+        font-size: 26px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-location {
+        text-align: center;
+    }
+
+    .footer-divider {
+        display: inline-block;
+    }
+}
+```
 
 
 <!-- =======================================================
