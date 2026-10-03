@@ -1,1 +1,1515 @@
-# discover-ara-al
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Discover Ara-al, La Carlota City, Negros Occidental — a mountain community surrounded by waterfalls, nature trails, and the foothills of Mount Kanlaon.">
+
+<title>Discover Ara-al | La Carlota City</title>
+
+<style>
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9f6;
+    color: #1d2b24;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --green-dark: #123c2c;
+    --green: #1d6046;
+    --green-light: #e7f1eb;
+    --gold: #d5a84b;
+    --white: #ffffff;
+    --gray: #66736c;
+    --dark: #14221c;
+    --light: #f7f9f6;
+    --border: #dfe7e2;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(18, 60, 44, 0.94);
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.logo {
+    color: white;
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: .5px;
+}
+
+.logo span {
+    color: #d5a84b;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    font-size: .9rem;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background:
+        linear-gradient(
+            rgba(8, 37, 26, .62),
+            rgba(8, 37, 26, .75)
+        ),
+        url("images/hero.jpg") center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 130px 25px 80px;
+    color: white;
+}
+
+.hero-small {
+    color: #e7c76d;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: .95;
+    max-width: 800px;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 1.15rem;
+    color: #edf4ef;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: #172018;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--green-dark);
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+section {
+    padding: 90px 25px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-label {
+    color: var(--green);
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--dark);
+    margin-bottom: 18px;
+}
+
+.section-description {
+    max-width: 700px;
+    color: var(--gray);
+    margin-bottom: 45px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.about-image {
+    min-height: 450px;
+    border-radius: 18px;
+    background:
+        linear-gradient(rgba(18,60,44,.1), rgba(18,60,44,.1)),
+        url("images/about.jpg") center/cover;
+}
+
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 18px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.stat {
+    background: var(--green-light);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 1.6rem;
+    color: var(--green-dark);
+}
+
+.stat span {
+    font-size: .85rem;
+    color: var(--gray);
+}
+
+/* =========================================================
+   ATTRACTIONS
+========================================================= */
+
+.attractions {
+    background: #eef4ef;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.09);
+}
+
+.card-image {
+    height: 210px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-content {
+    padding: 23px;
+}
+
+.card-content h3 {
+    color: var(--green-dark);
+    margin-bottom: 8px;
+}
+
+.card-content p {
+    color: var(--gray);
+    font-size: .92rem;
+}
+
+/* =========================================================
+   ATTRACTION IMAGES
+========================================================= */
+
+.img-1 {
+    background-image: url("images/guintubdan.jpg");
+}
+
+.img-2 {
+    background-image: url("images/busay-dalupya.jpg");
+}
+
+.img-3 {
+    background-image: url("images/ambon-falls.jpg");
+}
+
+.img-4 {
+    background-image: url("images/labi-labi.jpg");
+}
+
+.img-5 {
+    background-image: url("images/buslugan.jpg");
+}
+
+.img-6 {
+    background-image: url("images/busay-abaga.jpg");
+}
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.experience-box {
+    padding: 35px;
+    background: var(--green-dark);
+    color: white;
+    border-radius: 18px;
+}
+
+.experience-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.experience-box p {
+    color: #d8e6df;
+}
+
+/* =========================================================
+   FOOD
+========================================================= */
+
+.food-section {
+    background: white;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.food-item {
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.food-item h3 {
+    color: var(--green-dark);
+    margin-bottom: 8px;
+}
+
+.food-item p {
+    color: var(--gray);
+}
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.events {
+    background: #eef4ef;
+}
+
+.event-list {
+    display: grid;
+    gap: 15px;
+}
+
+.event {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+}
+
+.event-date {
+    font-weight: bold;
+    color: var(--green);
+}
+
+.event h3 {
+    color: var(--dark);
+}
+
+.event p {
+    color: var(--gray);
+}
+
+/* =========================================================
+   BUSINESS
+========================================================= */
+
+.business-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.business {
+    padding: 25px;
+    background: #f8faf8;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+}
+
+.business h3 {
+    color: var(--green-dark);
+    margin-bottom: 8px;
+}
+
+.business p {
+    color: var(--gray);
+}
+
+/* =========================================================
+   STAY
+========================================================= */
+
+.stay {
+    background: var(--green-dark);
+    color: white;
+}
+
+.stay .section-title {
+    color: white;
+}
+
+.stay .section-description {
+    color: #d7e5de;
+}
+
+.stay-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stay-card {
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.stay-card h3 {
+    margin-bottom: 8px;
+}
+
+.stay-card p {
+    color: #d7e5de;
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.gallery-item {
+    height: 220px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-item:nth-child(1) {
+    background-image: url("images/gallery1.jpg");
+}
+
+.gallery-item:nth-child(2) {
+    background-image: url("images/gallery2.jpg");
+}
+
+.gallery-item:nth-child(3) {
+    background-image: url("images/gallery3.jpg");
+}
+
+.gallery-item:nth-child(4) {
+    background-image: url("images/gallery4.jpg");
+}
+
+.gallery-item:nth-child(5) {
+    background-image: url("images/gallery5.jpg");
+}
+
+.gallery-item:nth-child(6) {
+    background-image: url("images/gallery6.jpg");
+}
+
+.gallery-item:nth-child(7) {
+    background-image: url("images/gallery7.jpg");
+}
+
+.gallery-item:nth-child(8) {
+    background-image: url("images/gallery8.jpg");
+}
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.map-section {
+    background: #eef4ef;
+}
+
+.map-box {
+    width: 100%;
+    height: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #0c281e;
+    color: white;
+    padding: 50px 25px 25px;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+footer h3 {
+    margin-bottom: 12px;
+}
+
+footer p,
+footer li {
+    color: #b9cbc2;
+    font-size: .9rem;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin-bottom: 8px;
+}
+
+.copyright {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    color: #91a79c;
+    font-size: .8rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--green-dark);
+        display: none;
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .about-grid,
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards,
+    .food-grid,
+    .business-grid,
+    .stay-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .cards,
+    .food-grid,
+    .business-grid,
+    .stay-grid,
+    .stats,
+    .gallery-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+    .event {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+#topBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #172018;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    z-index: 999;
+}
+</style>
+</head>
+
+<body>
+
+<!-- =======================================================
+     NAVIGATION
+======================================================= -->
+
+<header>
+
+<nav class="navbar">
+
+<a href="#home" class="logo">
+Discover <span>Ara-al</span>
+</a>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#attractions">Explore</a></li>
+<li><a href="#food">Food</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#business">Businesses</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#map">Map</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-small">
+La Carlota City • Negros Occidental
+</div>
+
+<h1>
+Discover<br>
+Ara-al
+</h1>
+
+<p>
+A mountain community nestled in the foothills of Mount Kanlaon,
+where waterfalls, cool mountain air, lush forests and local culture
+come together.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#attractions" class="btn btn-primary">
+Explore Ara-al
+</a>
+
+<a href="#about" class="btn btn-outline">
+Learn More
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     ABOUT
+======================================================= -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+<div class="about-image"></div>
+
+<div class="about-text">
+
+<div class="section-label">
+About Ara-al
+</div>
+
+<h2 class="section-title">
+A community among the mountains
+</h2>
+
+<p>
+Barangay Ara-al is the largest barangay in La Carlota City,
+Negros Occidental, covering approximately
+<strong>1,920.59 hectares</strong>.
+</p>
+
+<p>
+Located toward the foothills and slopes near Mount Kanlaon,
+Ara-al is known for its cool mountain environment, natural
+waterfalls, agricultural communities and eco-tourism destinations.
+</p>
+
+<p>
+One of its most recognized areas is Sitio Guintubdan, a popular
+mountain destination and a major jump-off area for visitors
+exploring the surrounding natural attractions.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<strong>1,920.59</strong>
+<span>Hectares</span>
+</div>
+
+<div class="stat">
+<strong>600+</strong>
+<span>Feet Above Sea Level</span>
+</div>
+
+<div class="stat">
+<strong>Mount</strong>
+<span>Kanlaon Foothills</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     ATTRACTIONS
+======================================================= -->
+
+<section class="attractions" id="attractions">
+
+<div class="container">
+
+<div class="section-label">
+Explore
+</div>
+
+<h2 class="section-title">
+Natural attractions
+</h2>
+
+<p class="section-description">
+From mountain resorts to waterfalls and forest trails,
+Ara-al offers visitors a chance to experience the natural
+beauty of the Mount Kanlaon area.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-image img-1"></div>
+<div class="card-content">
+<h3>Guintubdan Nature's Park</h3>
+<p>
+A mountain destination in Sitio Guintubdan known for its
+cool climate, natural streams and scenic surroundings.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-image img-2"></div>
+<div class="card-content">
+<h3>Busay Dalupya Falls</h3>
+<p>
+A natural waterfall destination surrounded by the
+lush mountain environment of Ara-al.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-image img-3"></div>
+<div class="card-content">
+<h3>Ambon Falls</h3>
+<p>
+A refreshing waterfall attraction located within the
+natural landscape of the area.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-image img-4"></div>
+<div class="card-content">
+<h3>Labi-Labi Falls</h3>
+<p>
+A nature destination offering visitors another
+waterfall experience within Ara-al.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-image img-5"></div>
+<div class="card-content">
+<h3>Buslugan Falls</h3>
+<p>
+A mountain waterfall surrounded by the greenery
+and natural environment of the barangay.
+</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-image img-6"></div>
+<div class="card-content">
+<h3>Busay Abaga</h3>
+<p>
+A local natural attraction featuring flowing water
+and a peaceful mountain setting.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     OTHER DESTINATIONS
+======================================================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+More to Explore
+</div>
+
+<h2 class="section-title">
+More places around Ara-al
+</h2>
+
+<div class="experience-grid">
+
+<div class="experience-box">
+
+<h3>Mount Kanlaon Trails</h3>
+
+<p>
+Ara-al is situated near the foothills of Mount Kanlaon
+and serves as an access point to mountain and nature
+experiences in the surrounding area.
+</p>
+
+</div>
+
+<div class="experience-box">
+
+<h3>Mt. Kanla-on Natural Park</h3>
+
+<p>
+A protected natural environment associated with one of
+the most prominent mountain landscapes in Negros Island.
+</p>
+
+</div>
+
+<div class="experience-box">
+
+<h3>Ezzy Falls</h3>
+
+<p>
+Another waterfall destination that visitors can discover
+while exploring the natural attractions around Ara-al.
+</p>
+
+</div>
+
+<div class="experience-box">
+
+<h3>Twin Falls</h3>
+
+<p>
+A scenic natural attraction featuring two cascading
+waterfalls surrounded by mountain greenery.
+</p>
+
+</div>
+
+<div class="experience-box">
+
+<h3>Guintubdan Mountain Resort</h3>
+
+<p>
+A well-known mountain destination in Sitio Guintubdan
+offering visitors a cool environment and access to
+natural attractions.
+</p>
+
+</div>
+
+<div class="experience-box">
+
+<h3>Rafael Salas Park & Nature Center</h3>
+
+<p>
+A nature-oriented destination and recognizable landmark
+associated with the Mount Kanlaon area.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOD
+======================================================= -->
+
+<section class="food-section" id="food">
+
+<div class="container">
+
+<div class="section-label">
+Taste Ara-al
+</div>
+
+<h2 class="section-title">
+Local food & flavors
+</h2>
+
+<p class="section-description">
+Discover local dishes, agricultural products and food
+experiences from Ara-al and the surrounding communities
+of La Carlota City.
+</p>
+
+<div class="food-grid">
+
+<div class="food-item">
+<h3>Local Cuisine</h3>
+<p>
+Add popular home-cooked dishes and traditional food
+commonly prepared by local families.
+</p>
+</div>
+
+<div class="food-item">
+<h3>Fresh Mountain Produce</h3>
+<p>
+Highlight fruits, vegetables and agricultural products
+grown by upland communities.
+</p>
+</div>
+
+<div class="food-item">
+<h3>Local Delicacies</h3>
+<p>
+Feature locally made snacks, desserts and specialty
+products from La Carlota and nearby communities.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     EVENTS
+======================================================= -->
+
+<section class="events" id="events">
+
+<div class="container">
+
+<div class="section-label">
+Culture & Community
+</div>
+
+<h2 class="section-title">
+Festivals & events
+</h2>
+
+<p class="section-description">
+Community celebrations are an important part of local
+culture. Add confirmed dates and event information here
+as they become available.
+</p>
+
+<div class="event-list">
+
+<div class="event">
+
+<div class="event-date">
+ANNUAL
+</div>
+
+<div>
+<h3>Local Barangay Celebrations</h3>
+<p>
+Community activities, celebrations and gatherings
+organized throughout the year.
+</p>
+</div>
+
+</div>
+
+<div class="event">
+
+<div class="event-date">
+LOCAL
+</div>
+
+<div>
+<h3>La Carlota City Events</h3>
+<p>
+Explore celebrations and cultural activities held
+throughout La Carlota City.
+</p>
+</div>
+
+</div>
+
+<div class="event">
+
+<div class="event-date">
+FESTIVAL
+</div>
+
+<div>
+<h3>Local Cultural Events</h3>
+<p>
+Add confirmed festivals, schedules and cultural
+activities here.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     BUSINESS DIRECTORY
+======================================================= -->
+
+<section id="business">
+
+<div class="container">
+
+<div class="section-label">
+Local Directory
+</div>
+
+<h2 class="section-title">
+Local businesses
+</h2>
+
+<p class="section-description">
+Support local businesses by discovering shops, restaurants,
+homestays, guides and other services in the community.
+</p>
+
+<div class="business-grid">
+
+<div class="business">
+<h3>Restaurants & Food</h3>
+<p>
+Add local restaurants, eateries, cafés and food stalls.
+</p>
+</div>
+
+<div class="business">
+<h3>Tourism & Guides</h3>
+<p>
+Add local tour guides, trekking services and tourism
+operators.
+</p>
+</div>
+
+<div class="business">
+<h3>Local Products</h3>
+<p>
+Feature farmers, producers and local product sellers.
+</p>
+</div>
+
+<div class="business">
+<h3>Transportation</h3>
+<p>
+Add local transportation services and useful travel
+information.
+</p>
+</div>
+
+<div class="business">
+<h3>Small Businesses</h3>
+<p>
+Give local entrepreneurs a place to showcase their
+businesses.
+</p>
+</div>
+
+<div class="business">
+<h3>Other Services</h3>
+<p>
+Add useful community services and establishments.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     PLACES TO STAY
+======================================================= -->
+
+<section class="stay" id="stay">
+
+<div class="container">
+
+<div class="section-label">
+Stay
+</div>
+
+<h2 class="section-title">
+Places to stay
+</h2>
+
+<p class="section-description">
+Add verified accommodation options for visitors who want
+to stay longer and explore the mountains.
+</p>
+
+<div class="stay-grid">
+
+<div class="stay-card">
+
+<h3>Guintubdan Mountain Resort</h3>
+
+<p>
+Mountain accommodation and nature destination in
+Sitio Guintubdan.
+</p>
+
+</div>
+
+<div class="stay-card">
+
+<h3>Local Homestays</h3>
+
+<p>
+Feature available homestays operated by local families.
+</p>
+
+</div>
+
+<div class="stay-card">
+
+<h3>Other Accommodations</h3>
+
+<p>
+Add nearby hotels, resorts and guesthouses as verified.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     GALLERY
+======================================================= -->
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-label">
+See Ara-al
+</div>
+
+<h2 class="section-title">
+Photo gallery
+</h2>
+
+<p class="section-description">
+Replace these placeholders with your own photographs
+of Ara-al, its waterfalls, mountains and community.
+</p>
+
+<div class="gallery-grid">
+
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+<div class="gallery-item"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     MAP
+======================================================= -->
+
+<section class="map-section" id="map">
+
+<div class="container">
+
+<div class="section-label">
+Location
+</div>
+
+<h2 class="section-title">
+Find Ara-al
+</h2>
+
+<p class="section-description">
+Ara-al is located in La Carlota City, Negros Occidental,
+within the foothills of Mount Kanlaon.
+</p>
+
+<div class="map-box">
+
+<iframe
+src="https://www.google.com/maps?q=Barangay+Ara-al,+La+Carlota+City,+Negros+Occidental&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+     FOOTER
+======================================================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h3>Discover Ara-al</h3>
+
+<p>
+A community tourism project showcasing the natural
+beauty, culture and local experiences of Barangay Ara-al,
+La Carlota City, Negros Occidental.
+</p>
+
+</div>
+
+<div>
+
+<h3>Explore</h3>
+
+<ul>
+<li><a href="#about">About Ara-al</a></li>
+<li><a href="#attractions">Attractions</a></li>
+<li><a href="#food">Food</a></li>
+<li><a href="#events">Events</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h3>Discover</h3>
+
+<ul>
+<li><a href="#business">Businesses</a></li>
+<li><a href="#stay">Places to Stay</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#map">Map</a></li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 Discover Ara-al • La Carlota City, Negros Occidental
+
+</div>
+
+</footer>
+
+
+<!-- =======================================================
+     BACK TO TOP
+======================================================= -->
+
+<button id="topBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+↑
+</button>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
+
+function toggleMenu() {
+
+    const nav = document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 500) {
+
+        topBtn.style.display = "block";
+
+    } else {
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("navLinks").classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
+```
+
