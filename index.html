@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
@@ -9,7 +12,9 @@ content="Discover Ara-al, La Carlota City, Negros Occidental — a mountain comm
 
 <title>Discover Ara-al | La Carlota City</title>
 
+
 <style>
+
 /* =========================================================
    RESET
 ========================================================= */
@@ -41,6 +46,7 @@ a {
     color: inherit;
 }
 
+
 /* =========================================================
    VARIABLES
 ========================================================= */
@@ -57,6 +63,7 @@ a {
     --border: #dfe7e2;
 }
 
+
 /* =========================================================
    NAVIGATION
 ========================================================= */
@@ -64,6 +71,7 @@ a {
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1000;
     background: rgba(18, 60, 44, 0.94);
@@ -74,9 +82,11 @@ header {
     max-width: 1200px;
     margin: auto;
     height: 75px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 25px;
 }
 
@@ -114,15 +124,19 @@ header {
     cursor: pointer;
 }
 
+
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero {
     min-height: 100vh;
+
     display: flex;
     align-items: center;
+
     position: relative;
+
     background:
         linear-gradient(
             rgba(8, 37, 26, .62),
@@ -135,7 +149,9 @@ header {
     max-width: 1200px;
     width: 100%;
     margin: auto;
+
     padding: 130px 25px 80px;
+
     color: white;
 }
 
@@ -194,6 +210,7 @@ header {
     color: var(--green-dark);
 }
 
+
 /* =========================================================
    GENERAL SECTIONS
 ========================================================= */
@@ -228,6 +245,7 @@ section {
     margin-bottom: 45px;
 }
 
+
 /* =========================================================
    ABOUT
 ========================================================= */
@@ -241,9 +259,14 @@ section {
 
 .about-image {
     min-height: 450px;
+
     border-radius: 18px;
+
     background:
-        linear-gradient(rgba(18,60,44,.1), rgba(18,60,44,.1)),
+        linear-gradient(
+            rgba(18,60,44,.1),
+            rgba(18,60,44,.1)
+        ),
         url("images/about.jpg") center/cover;
 }
 
@@ -276,6 +299,7 @@ section {
     color: var(--gray);
 }
 
+
 /* =========================================================
    ATTRACTIONS
 ========================================================= */
@@ -294,17 +318,22 @@ section {
     background: white;
     border-radius: 16px;
     overflow: hidden;
+
     border: 1px solid var(--border);
+
     transition: .3s;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.09);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.09);
 }
 
 .card-image {
     height: 210px;
+
     background-size: cover;
     background-position: center;
 }
@@ -322,6 +351,7 @@ section {
     color: var(--gray);
     font-size: .92rem;
 }
+
 
 /* =========================================================
    ATTRACTION IMAGES
@@ -351,6 +381,7 @@ section {
     background-image: url("images/busay-abaga.jpg");
 }
 
+
 /* =========================================================
    EXPERIENCE
 ========================================================= */
@@ -363,8 +394,10 @@ section {
 
 .experience-box {
     padding: 35px;
+
     background: var(--green-dark);
     color: white;
+
     border-radius: 18px;
 }
 
@@ -376,6 +409,7 @@ section {
 .experience-box p {
     color: #d8e6df;
 }
+
 
 /* =========================================================
    FOOD
@@ -393,7 +427,9 @@ section {
 
 .food-item {
     border: 1px solid var(--border);
+
     padding: 25px;
+
     border-radius: 15px;
 }
 
@@ -405,6 +441,7 @@ section {
 .food-item p {
     color: var(--gray);
 }
+
 
 /* =========================================================
    EVENTS
@@ -422,10 +459,15 @@ section {
 .event {
     display: grid;
     grid-template-columns: 100px 1fr;
+
     align-items: center;
+
     background: white;
+
     border-radius: 14px;
+
     padding: 20px;
+
     border: 1px solid var(--border);
 }
 
@@ -442,6 +484,7 @@ section {
     color: var(--gray);
 }
 
+
 /* =========================================================
    BUSINESS
 ========================================================= */
@@ -454,8 +497,11 @@ section {
 
 .business {
     padding: 25px;
+
     background: #f8faf8;
+
     border: 1px solid var(--border);
+
     border-radius: 15px;
 }
 
@@ -467,6 +513,7 @@ section {
 .business p {
     color: var(--gray);
 }
+
 
 /* =========================================================
    STAY
@@ -493,8 +540,11 @@ section {
 
 .stay-card {
     background: rgba(255,255,255,.08);
+
     border: 1px solid rgba(255,255,255,.15);
+
     padding: 25px;
+
     border-radius: 15px;
 }
 
@@ -505,6 +555,7 @@ section {
 .stay-card p {
     color: #d7e5de;
 }
+
 
 /* =========================================================
    GALLERY
@@ -518,7 +569,9 @@ section {
 
 .gallery-item {
     height: 220px;
+
     border-radius: 12px;
+
     background-size: cover;
     background-position: center;
 }
@@ -555,6 +608,7 @@ section {
     background-image: url("images/gallery8.jpg");
 }
 
+
 /* =========================================================
    MAP
 ========================================================= */
@@ -566,8 +620,11 @@ section {
 .map-box {
     width: 100%;
     height: 420px;
+
     border-radius: 18px;
+
     overflow: hidden;
+
     border: 1px solid var(--border);
 }
 
@@ -577,65 +634,255 @@ section {
     border: 0;
 }
 
+
 /* =========================================================
-   FOOTER
+   MODERN FOOTER
 ========================================================= */
 
-footer {
-    background: #0c281e;
-    color: white;
-    padding: 50px 25px 25px;
+.araal-footer {
+    background:
+        linear-gradient(
+            135deg,
+            #102018 0%,
+            #162a20 50%,
+            #0e1b15 100%
+        );
+
+    color: #dce7df;
+
+    padding: 65px 20px 28px;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
-.footer-grid {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
+
+/* FOOTER DECORATION */
+
+.araal-footer::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: rgba(167, 200, 138, 0.05);
+
+    border-radius: 50%;
+
+    top: -180px;
+    right: -100px;
+
+    pointer-events: none;
 }
 
-footer h3 {
-    margin-bottom: 12px;
+
+/* FOOTER CONTAINER */
+
+.araal-footer-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    z-index: 1;
 }
 
-footer p,
-footer li {
-    color: #b9cbc2;
-    font-size: .9rem;
+
+/* FOOTER BRAND */
+
+.araal-footer-brand {
+    max-width: 650px;
 }
 
-footer ul {
-    list-style: none;
+.araal-footer-logo {
+    font-size: 30px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+    color: #ffffff;
 }
 
-footer li {
-    margin-bottom: 8px;
+.araal-footer-logo span {
+    color: #a7c88a;
 }
 
-.copyright {
-    max-width: 1200px;
-    margin: 40px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,.1);
-    color: #91a79c;
-    font-size: .8rem;
+.araal-footer-brand p {
+    max-width: 600px;
+
+    margin: 12px 0 0;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #aebbb3;
 }
+
+
+/* FOOTER LINKS */
+
+.araal-footer-links {
+    display: flex;
+
+    gap: 100px;
+
+    margin-top: 40px;
+}
+
+.araal-footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.araal-footer-column h4 {
+    margin: 0 0 5px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.araal-footer-column a {
+    color: #9eaaa3;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.araal-footer-column a:hover {
+    color: #a7c88a;
+
+    transform: translateX(4px);
+}
+
+
+/* FOOTER DIVIDER */
+
+.araal-footer-line {
+    width: 100%;
+
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    margin: 40px 0 22px;
+}
+
+
+/* FOOTER BOTTOM */
+
+.araal-footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.araal-footer-bottom p {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    color: #89968f;
+}
+
+.araal-footer-bottom strong {
+    color: #ffffff;
+}
+
+.araal-footer-dot {
+    color: #a7c88a;
+
+    margin: 0 7px;
+}
+
+.araal-footer-creator {
+    color: #a7c88a !important;
+}
+
+.araal-footer-location {
+    color: #9eaaa3 !important;
+}
+
 
 /* =========================================================
-   RESPONSIVE
+   BACK TO TOP
+========================================================= */
+
+#topBtn {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+
+    color: #172018;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 999;
+}
+
+#topBtn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
 
     .nav-links {
         position: absolute;
+
         top: 75px;
         left: 0;
+
         width: 100%;
+
         background: var(--green-dark);
+
         display: none;
+
         flex-direction: column;
+
         padding: 25px;
     }
 
@@ -663,10 +910,15 @@ footer li {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
+    .araal-footer-links {
+        gap: 70px;
     }
 }
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -684,8 +936,7 @@ footer li {
     .business-grid,
     .stay-grid,
     .stats,
-    .gallery-grid,
-    .footer-grid {
+    .gallery-grid {
         grid-template-columns: 1fr;
     }
 
@@ -695,34 +946,66 @@ footer li {
 
     .event {
         grid-template-columns: 1fr;
+
         gap: 8px;
     }
 
+    .araal-footer {
+        padding: 50px 20px 25px;
+    }
+
+    .araal-footer-logo {
+        font-size: 26px;
+    }
+
+    .araal-footer-brand p {
+        font-size: 13px;
+    }
+
+    .araal-footer-links {
+        gap: 55px;
+
+        margin-top: 35px;
+    }
+
+    .araal-footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
 }
+
 
 /* =========================================================
-   BACK TO TOP
+   RESPONSIVE - SMALL PHONES
 ========================================================= */
 
-#topBtn {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 50%;
-    background: var(--gold);
-    color: #172018;
-    font-size: 18px;
-    cursor: pointer;
-    display: none;
-    z-index: 999;
+@media (max-width: 450px) {
+
+    .araal-footer-links {
+        gap: 40px;
+    }
+
+    .araal-footer-column a {
+        font-size: 12px;
+    }
+
+    .araal-footer-bottom p {
+        font-size: 11px;
+    }
+
+    .araal-footer-location {
+        margin-top: 5px;
+    }
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- =======================================================
      NAVIGATION
@@ -736,17 +1019,29 @@ footer li {
 Discover <span>Ara-al</span>
 </a>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div
+    class="menu-btn"
+    onclick="toggleMenu()"
+    aria-label="Open navigation menu">
+    ☰
+</div>
 
 <ul class="nav-links" id="navLinks">
 
 <li><a href="#home">Home</a></li>
+
 <li><a href="#about">About</a></li>
+
 <li><a href="#attractions">Explore</a></li>
+
 <li><a href="#food">Food</a></li>
+
 <li><a href="#events">Events</a></li>
+
 <li><a href="#business">Businesses</a></li>
+
 <li><a href="#gallery">Gallery</a></li>
+
 <li><a href="#map">Map</a></li>
 
 </ul>
@@ -839,18 +1134,27 @@ exploring the surrounding natural attractions.
 <div class="stats">
 
 <div class="stat">
+
 <strong>1,920.59</strong>
+
 <span>Hectares</span>
+
 </div>
 
 <div class="stat">
+
 <strong>600+</strong>
+
 <span>Feet Above Sea Level</span>
+
 </div>
 
 <div class="stat">
+
 <strong>Mount</strong>
+
 <span>Kanlaon Foothills</span>
+
 </div>
 
 </div>
@@ -868,7 +1172,9 @@ exploring the surrounding natural attractions.
      ATTRACTIONS
 ======================================================= -->
 
-<section class="attractions" id="attractions">
+<section
+    class="attractions"
+    id="attractions">
 
 <div class="container">
 
@@ -888,71 +1194,126 @@ beauty of the Mount Kanlaon area.
 
 <div class="cards">
 
+
 <div class="card">
+
 <div class="card-image img-1"></div>
+
 <div class="card-content">
-<h3>Guintubdan Nature's Park</h3>
+
+<h3>
+Guintubdan Nature's Park
+</h3>
+
 <p>
 A mountain destination in Sitio Guintubdan known for its
 cool climate, natural streams and scenic surroundings.
 </p>
-</div>
+
 </div>
 
+</div>
+
+
 <div class="card">
+
 <div class="card-image img-2"></div>
+
 <div class="card-content">
-<h3>Busay Dalupya Falls</h3>
+
+<h3>
+Busay Dalupya Falls
+</h3>
+
 <p>
 A natural waterfall destination surrounded by the
 lush mountain environment of Ara-al.
 </p>
-</div>
+
 </div>
 
+</div>
+
+
 <div class="card">
+
 <div class="card-image img-3"></div>
+
 <div class="card-content">
-<h3>Ambon Falls</h3>
+
+<h3>
+Ambon Falls
+</h3>
+
 <p>
 A refreshing waterfall attraction located within the
 natural landscape of the area.
 </p>
-</div>
+
 </div>
 
+</div>
+
+
 <div class="card">
+
 <div class="card-image img-4"></div>
+
 <div class="card-content">
-<h3>Labi-Labi Falls</h3>
+
+<h3>
+Labi-Labi Falls
+</h3>
+
 <p>
 A nature destination offering visitors another
 waterfall experience within Ara-al.
 </p>
-</div>
+
 </div>
 
+</div>
+
+
 <div class="card">
+
 <div class="card-image img-5"></div>
+
 <div class="card-content">
-<h3>Buslugan Falls</h3>
+
+<h3>
+Buslugan Falls
+</h3>
+
 <p>
 A mountain waterfall surrounded by the greenery
 and natural environment of the barangay.
 </p>
-</div>
+
 </div>
 
+</div>
+
+
 <div class="card">
+
 <div class="card-image img-6"></div>
+
 <div class="card-content">
-<h3>Busay Abaga</h3>
+
+<h3>
+Busay Abaga
+</h3>
+
 <p>
 A local natural attraction featuring flowing water
 and a peaceful mountain setting.
 </p>
+
 </div>
+
 </div>
+
 
 </div>
 
@@ -979,9 +1340,12 @@ More places around Ara-al
 
 <div class="experience-grid">
 
+
 <div class="experience-box">
 
-<h3>Mount Kanlaon Trails</h3>
+<h3>
+Mount Kanlaon Trails
+</h3>
 
 <p>
 Ara-al is situated near the foothills of Mount Kanlaon
@@ -991,9 +1355,12 @@ experiences in the surrounding area.
 
 </div>
 
+
 <div class="experience-box">
 
-<h3>Mt. Kanla-on Natural Park</h3>
+<h3>
+Mt. Kanla-on Natural Park
+</h3>
 
 <p>
 A protected natural environment associated with one of
@@ -1002,9 +1369,12 @@ the most prominent mountain landscapes in Negros Island.
 
 </div>
 
+
 <div class="experience-box">
 
-<h3>Ezzy Falls</h3>
+<h3>
+Ezzy Falls
+</h3>
 
 <p>
 Another waterfall destination that visitors can discover
@@ -1013,9 +1383,12 @@ while exploring the natural attractions around Ara-al.
 
 </div>
 
+
 <div class="experience-box">
 
-<h3>Twin Falls</h3>
+<h3>
+Twin Falls
+</h3>
 
 <p>
 A scenic natural attraction featuring two cascading
@@ -1024,9 +1397,12 @@ waterfalls surrounded by mountain greenery.
 
 </div>
 
+
 <div class="experience-box">
 
-<h3>Guintubdan Mountain Resort</h3>
+<h3>
+Guintubdan Mountain Resort
+</h3>
 
 <p>
 A well-known mountain destination in Sitio Guintubdan
@@ -1036,9 +1412,12 @@ natural attractions.
 
 </div>
 
+
 <div class="experience-box">
 
-<h3>Rafael Salas Park & Nature Center</h3>
+<h3>
+Rafael Salas Park & Nature Center
+</h3>
 
 <p>
 A nature-oriented destination and recognizable landmark
@@ -1046,6 +1425,7 @@ associated with the Mount Kanlaon area.
 </p>
 
 </div>
+
 
 </div>
 
@@ -1058,7 +1438,9 @@ associated with the Mount Kanlaon area.
      FOOD
 ======================================================= -->
 
-<section class="food-section" id="food">
+<section
+    class="food-section"
+    id="food">
 
 <div class="container">
 
@@ -1078,29 +1460,48 @@ of La Carlota City.
 
 <div class="food-grid">
 
+
 <div class="food-item">
-<h3>Local Cuisine</h3>
+
+<h3>
+Local Cuisine
+</h3>
+
 <p>
 Add popular home-cooked dishes and traditional food
 commonly prepared by local families.
 </p>
+
 </div>
 
+
 <div class="food-item">
-<h3>Fresh Mountain Produce</h3>
+
+<h3>
+Fresh Mountain Produce
+</h3>
+
 <p>
 Highlight fruits, vegetables and agricultural products
 grown by upland communities.
 </p>
+
 </div>
 
+
 <div class="food-item">
-<h3>Local Delicacies</h3>
+
+<h3>
+Local Delicacies
+</h3>
+
 <p>
 Feature locally made snacks, desserts and specialty
 products from La Carlota and nearby communities.
 </p>
+
 </div>
+
 
 </div>
 
@@ -1113,7 +1514,9 @@ products from La Carlota and nearby communities.
      EVENTS
 ======================================================= -->
 
-<section class="events" id="events">
+<section
+    class="events"
+    id="events">
 
 <div class="container">
 
@@ -1133,6 +1536,7 @@ as they become available.
 
 <div class="event-list">
 
+
 <div class="event">
 
 <div class="event-date">
@@ -1140,14 +1544,20 @@ ANNUAL
 </div>
 
 <div>
-<h3>Local Barangay Celebrations</h3>
+
+<h3>
+Local Barangay Celebrations
+</h3>
+
 <p>
 Community activities, celebrations and gatherings
 organized throughout the year.
 </p>
+
 </div>
 
 </div>
+
 
 <div class="event">
 
@@ -1156,14 +1566,20 @@ LOCAL
 </div>
 
 <div>
-<h3>La Carlota City Events</h3>
+
+<h3>
+La Carlota City Events
+</h3>
+
 <p>
 Explore celebrations and cultural activities held
 throughout La Carlota City.
 </p>
+
 </div>
 
 </div>
+
 
 <div class="event">
 
@@ -1172,14 +1588,20 @@ FESTIVAL
 </div>
 
 <div>
-<h3>Local Cultural Events</h3>
+
+<h3>
+Local Cultural Events
+</h3>
+
 <p>
 Add confirmed festivals, schedules and cultural
 activities here.
 </p>
+
 </div>
 
 </div>
+
 
 </div>
 
@@ -1211,50 +1633,87 @@ homestays, guides and other services in the community.
 
 <div class="business-grid">
 
+
 <div class="business">
-<h3>Restaurants & Food</h3>
+
+<h3>
+Restaurants & Food
+</h3>
+
 <p>
 Add local restaurants, eateries, cafés and food stalls.
 </p>
+
 </div>
 
+
 <div class="business">
-<h3>Tourism & Guides</h3>
+
+<h3>
+Tourism & Guides
+</h3>
+
 <p>
 Add local tour guides, trekking services and tourism
 operators.
 </p>
+
 </div>
 
+
 <div class="business">
-<h3>Local Products</h3>
+
+<h3>
+Local Products
+</h3>
+
 <p>
 Feature farmers, producers and local product sellers.
 </p>
+
 </div>
 
+
 <div class="business">
-<h3>Transportation</h3>
+
+<h3>
+Transportation
+</h3>
+
 <p>
 Add local transportation services and useful travel
 information.
 </p>
+
 </div>
 
+
 <div class="business">
-<h3>Small Businesses</h3>
+
+<h3>
+Small Businesses
+</h3>
+
 <p>
 Give local entrepreneurs a place to showcase their
 businesses.
 </p>
+
 </div>
 
+
 <div class="business">
-<h3>Other Services</h3>
+
+<h3>
+Other Services
+</h3>
+
 <p>
 Add useful community services and establishments.
 </p>
+
 </div>
+
 
 </div>
 
@@ -1267,7 +1726,9 @@ Add useful community services and establishments.
      PLACES TO STAY
 ======================================================= -->
 
-<section class="stay" id="stay">
+<section
+    class="stay"
+    id="stay">
 
 <div class="container">
 
@@ -1286,9 +1747,12 @@ to stay longer and explore the mountains.
 
 <div class="stay-grid">
 
+
 <div class="stay-card">
 
-<h3>Guintubdan Mountain Resort</h3>
+<h3>
+Guintubdan Mountain Resort
+</h3>
 
 <p>
 Mountain accommodation and nature destination in
@@ -1297,9 +1761,12 @@ Sitio Guintubdan.
 
 </div>
 
+
 <div class="stay-card">
 
-<h3>Local Homestays</h3>
+<h3>
+Local Homestays
+</h3>
 
 <p>
 Feature available homestays operated by local families.
@@ -1307,15 +1774,19 @@ Feature available homestays operated by local families.
 
 </div>
 
+
 <div class="stay-card">
 
-<h3>Other Accommodations</h3>
+<h3>
+Other Accommodations
+</h3>
 
 <p>
 Add nearby hotels, resorts and guesthouses as verified.
 </p>
 
 </div>
+
 
 </div>
 
@@ -1348,12 +1819,19 @@ of Ara-al, its waterfalls, mountains and community.
 <div class="gallery-grid">
 
 <div class="gallery-item"></div>
+
 <div class="gallery-item"></div>
+
 <div class="gallery-item"></div>
+
 <div class="gallery-item"></div>
+
 <div class="gallery-item"></div>
+
 <div class="gallery-item"></div>
+
 <div class="gallery-item"></div>
+
 <div class="gallery-item"></div>
 
 </div>
@@ -1367,7 +1845,9 @@ of Ara-al, its waterfalls, mountains and community.
      MAP
 ======================================================= -->
 
-<section class="map-section" id="map">
+<section
+    class="map-section"
+    id="map">
 
 <div class="container">
 
@@ -1387,8 +1867,9 @@ within the foothills of Mount Kanlaon.
 <div class="map-box">
 
 <iframe
-src="https://www.google.com/maps?q=Barangay+Ara-al,+La+Carlota+City,+Negros+Occidental&output=embed"
-loading="lazy">
+    src="https://www.google.com/maps?q=Barangay+Ara-al,+La+Carlota+City,+Negros+Occidental&output=embed"
+    loading="lazy"
+    title="Map of Barangay Ara-al">
 </iframe>
 
 </div>
@@ -1398,393 +1879,231 @@ loading="lazy">
 </section>
 
 
-<div>
-
-<h3>Explore</h3>
-
-<ul>
-<li><a href="#about">About Ara-al</a></li>
-<li><a href="#attractions">Attractions</a></li>
-<li><a href="#food">Food</a></li>
-<li><a href="#events">Events</a></li>
-</ul>
-
-</div>
-
-<div>
-
-<h3>Discover</h3>
-
-<ul>
-<li><a href="#business">Businesses</a></li>
-<li><a href="#stay">Places to Stay</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#map">Map</a></li>
-</ul>
-
-</div>
-
-```html
-<!-- =========================================
-     DISCOVER ARA-AL MODERN FOOTER
-========================================= -->
+<!-- =======================================================
+     MODERN FOOTER
+======================================================= -->
 
 <footer class="araal-footer">
 
-    <div class="araal-footer-container">
-
-        <!-- BRAND -->
-        <div class="araal-footer-brand">
-
-            <div class="araal-footer-logo">
-                Discover <span>Ara-al</span>
-            </div>
-
-            <p>
-                Discover the natural beauty, culture,
-                and local experiences of Barangay Ara-al,
-                La Carlota City, Negros Occidental.
-            </p>
-
-        </div>
+<div class="araal-footer-container">
 
 
-        <!-- FOOTER LINKS -->
-        <div class="araal-footer-links">
+<!-- BRAND -->
 
-            <div class="araal-footer-column">
+<div class="araal-footer-brand">
 
-                <h4>Explore</h4>
+<div class="araal-footer-logo">
 
-                <a href="#about">About Ara-al</a>
-                <a href="#attractions">Attractions</a>
-                <a href="#food">Food</a>
-                <a href="#events">Events</a>
+Discover <span>Ara-al</span>
 
-            </div>
+</div>
 
+<p>
+Discover the natural beauty, culture,
+and local experiences of Barangay Ara-al,
+La Carlota City, Negros Occidental.
+</p>
 
-            <div class="araal-footer-column">
-
-                <h4>Discover</h4>
-
-                <a href="#business">Businesses</a>
-                <a href="#stay">Places to Stay</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#map">Map</a>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <!-- DIVIDER -->
-        <div class="araal-footer-line"></div>
+<!-- FOOTER LINKS -->
+
+<div class="araal-footer-links">
 
 
-        <!-- COPYRIGHT -->
-        <div class="araal-footer-bottom">
+<div class="araal-footer-column">
 
-            <p>
-                © 2026
-                <strong>Discover Ara-al</strong>
+<h4>
+Explore
+</h4>
 
-                <span class="araal-footer-dot">•</span>
+<a href="#about">
+About Ara-al
+</a>
 
-                Website created by
-                <strong class="araal-footer-creator">
-                    Edwin Penacuba Jr.
-                </strong>
-            </p>
+<a href="#attractions">
+Attractions
+</a>
 
-            <p class="araal-footer-location">
-                📍 La Carlota City, Negros Occidental
-            </p>
+<a href="#food">
+Food
+</a>
 
-        </div>
+<a href="#events">
+Events
+</a>
 
-    </div>
+</div>
+
+
+<div class="araal-footer-column">
+
+<h4>
+Discover
+</h4>
+
+<a href="#business">
+Businesses
+</a>
+
+<a href="#stay">
+Places to Stay
+</a>
+
+<a href="#gallery">
+Gallery
+</a>
+
+<a href="#map">
+Map
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- DIVIDER -->
+
+<div class="araal-footer-line"></div>
+
+
+<!-- COPYRIGHT -->
+
+<div class="araal-footer-bottom">
+
+<p>
+
+© 2026
+
+<strong>
+Discover Ara-al
+</strong>
+
+<span class="araal-footer-dot">
+•
+</span>
+
+Website created by
+
+<strong class="araal-footer-creator">
+Edwin Penacuba Jr.
+</strong>
+
+</p>
+
+
+<p class="araal-footer-location">
+
+📍 La Carlota City, Negros Occidental
+
+</p>
+
+</div>
+
+
+</div>
 
 </footer>
 
 
-<style>
+<!-- =======================================================
+     BACK TO TOP BUTTON
+======================================================= -->
 
-/* =========================================
-   DISCOVER ARA-AL FOOTER
-========================================= */
+<button
+    id="topBtn"
+    onclick="scrollToTop()"
+    aria-label="Back to top">
 
-.araal-footer {
-    background: linear-gradient(
-        135deg,
-        #102018 0%,
-        #162a20 50%,
-        #0e1b15 100%
-    );
+↑
 
-    color: #dce7df;
+</button>
 
-    padding: 65px 20px 28px;
 
-    position: relative;
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
 
-    overflow: hidden;
+<script>
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function toggleMenu() {
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+    navLinks.classList.toggle("active");
+
 }
 
 
-/* BACKGROUND DECORATION */
+/* =========================================================
+   CLOSE MOBILE MENU AFTER CLICKING A LINK
+========================================================= */
 
-.araal-footer::before {
-    content: "";
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(function(link) {
 
-    position: absolute;
+        link.addEventListener("click", function() {
 
-    width: 350px;
-    height: 350px;
+            document
+                .getElementById("navLinks")
+                .classList.remove("active");
 
-    background: rgba(167, 200, 138, 0.05);
+        });
 
-    border-radius: 50%;
+    });
 
-    top: -180px;
-    right: -100px;
 
-    pointer-events: none;
-}
+/* =========================================================
+   BACK TO TOP BUTTON
+========================================================= */
 
+const topBtn =
+    document.getElementById("topBtn");
 
-/* CONTAINER */
 
-.araal-footer-container {
-    max-width: 1100px;
+window.addEventListener("scroll", function() {
 
-    margin: 0 auto;
+    if (window.scrollY > 400) {
 
-    position: relative;
+        topBtn.style.display = "block";
 
-    z-index: 1;
-}
+    } else {
 
+        topBtn.style.display = "none";
 
-/* =========================================
-   BRAND
-========================================= */
-
-.araal-footer-brand {
-    max-width: 650px;
-}
-
-
-.araal-footer-logo {
-    font-size: 30px;
-
-    font-weight: 800;
-
-    letter-spacing: -0.5px;
-
-    color: #ffffff;
-}
-
-
-.araal-footer-logo span {
-    color: #a7c88a;
-}
-
-
-.araal-footer-brand p {
-    max-width: 600px;
-
-    margin: 12px 0 0;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    color: #aebbb3;
-}
-
-
-/* =========================================
-   FOOTER LINKS
-========================================= */
-
-.araal-footer-links {
-    display: flex;
-
-    gap: 100px;
-
-    margin-top: 40px;
-}
-
-
-.araal-footer-column {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 11px;
-}
-
-
-.araal-footer-column h4 {
-    margin: 0 0 5px;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    color: #ffffff;
-}
-
-
-.araal-footer-column a {
-    color: #9eaaa3;
-
-    text-decoration: none;
-
-    font-size: 13px;
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-
-.araal-footer-column a:hover {
-    color: #a7c88a;
-
-    transform: translateX(4px);
-}
-
-
-/* =========================================
-   DIVIDER
-========================================= */
-
-.araal-footer-line {
-    width: 100%;
-
-    height: 1px;
-
-    background: rgba(255, 255, 255, 0.10);
-
-    margin: 40px 0 22px;
-}
-
-
-/* =========================================
-   FOOTER BOTTOM
-========================================= */
-
-.araal-footer-bottom {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
-}
-
-
-.araal-footer-bottom p {
-    margin: 0;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-
-    color: #89968f;
-}
-
-
-.araal-footer-bottom strong {
-    color: #ffffff;
-}
-
-
-.araal-footer-dot {
-    color: #a7c88a;
-
-    margin: 0 7px;
-}
-
-
-.araal-footer-creator {
-    color: #a7c88a !important;
-}
-
-
-.araal-footer-location {
-    color: #9eaaa3 !important;
-}
-
-
-/* =========================================
-   TABLET / MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-    .araal-footer {
-        padding: 50px 20px 25px;
     }
 
-
-    .araal-footer-logo {
-        font-size: 26px;
-    }
+});
 
 
-    .araal-footer-brand p {
-        font-size: 13px;
-    }
+/* =========================================================
+   SCROLL TO TOP
+========================================================= */
 
+function scrollToTop() {
 
-    .araal-footer-links {
-        gap: 55px;
+    window.scrollTo({
 
-        margin-top: 35px;
-    }
+        top: 0,
 
+        behavior: "smooth"
 
-    .araal-footer-bottom {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
+    });
 
 }
 
-
-/* =========================================
-   SMALL PHONES
-========================================= */
-
-@media (max-width: 450px) {
-
-    .araal-footer-links {
-        gap: 40px;
-    }
+</script>
 
 
-    .araal-footer-column a {
-        font-size: 12px;
-    }
+</body>
 
-
-    .araal-footer-bottom p {
-        font-size: 11px;
-    }
-
-
-    .araal-footer-location {
-        margin-top: 5px;
-    }
-
-}
-
-</style>
-```
+</html>
