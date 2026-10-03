@@ -1424,56 +1424,122 @@ loading="lazy">
 
 </div>
 
-<!-- MODERN FOOTER -->
+```html
+<!-- ==============================
+     MODERN FOOTER
+================================ -->
+
 <footer class="modern-footer">
 
-        <div class="footer-line"></div>
+    <div class="footer-container">
 
-<h3>Discover Ara-al</h3>
+        <!-- BRAND -->
+        <div class="footer-brand">
 
-<p>
-A community tourism project showcasing the natural
-beauty, culture and local experiences of Barangay Ara-al,
-La Carlota City, Negros Occidental.
-</p>
-   
-        <div class="footer-bottom">
+            <div class="footer-logo">
+                Discover <span>Ara-al</span>
+            </div>
+
             <p>
-                © 2026 <strong>Discover Ara-al</strong>
-                <span class="footer-divider">•</span>
-                Website created by
-                <a href="#" class="creator-link">Edwin Penacuba Jr.</a>
+                Discover the natural beauty, culture,
+                and local experiences of Barangay Ara-al,
+                La Carlota City, Negros Occidental.
             </p>
 
-            <p class="footer-location">
+        </div>
+
+
+        <!-- DIVIDER -->
+        <div class="footer-divider-line"></div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <div class="footer-copyright">
+                © 2026
+                <strong>Discover Ara-al</strong>
+                <span>•</span>
+                Website created by
+                <strong class="creator-name">
+                    Edwin Penacuba Jr.
+                </strong>
+            </div>
+
+            <div class="footer-location">
+                <span class="location-icon">📍</span>
                 La Carlota City, Negros Occidental
-            </p>
+            </div>
+
         </div>
 
     </div>
+
 </footer>
+```
 
+**Then put this CSS inside your existing `<style>` section:**
 
-<style>
+```css
+/* =========================================
+   MODERN DISCOVER ARA-AL FOOTER
+========================================= */
+
 .modern-footer {
-    background: #16251d;
-    color: #dce5de;
-    padding: 55px 20px 25px;
+    background:
+        linear-gradient(
+            135deg,
+            #102018 0%,
+            #162a20 50%,
+            #0e1b15 100%
+        );
+
+    color: #dce7df;
+    padding: 70px 20px 28px;
+    position: relative;
+    overflow: hidden;
 }
 
-.footer-inner {
-    max-width: 1100px;
-    margin: auto;
+
+/* SUBTLE BACKGROUND EFFECT */
+
+.modern-footer::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba(167, 200, 138, 0.06);
+    border-radius: 50%;
+    top: -180px;
+    right: -100px;
 }
+
+
+/* CONTAINER */
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* BRAND */
 
 .footer-brand {
     text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
 }
 
+
+/* LOGO */
+
 .footer-logo {
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 800;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
     color: #ffffff;
 }
 
@@ -1481,66 +1547,111 @@ La Carlota City, Negros Occidental.
     color: #a7c88a;
 }
 
+
+/* DESCRIPTION */
+
 .footer-brand p {
-    margin-top: 10px;
+    margin: 14px auto 0;
+    max-width: 600px;
+
     font-size: 14px;
-    color: #aebbb2;
+    line-height: 1.8;
+
+    color: #aebbb3;
 }
 
-.footer-line {
+
+/* DIVIDER */
+
+.footer-divider-line {
+    width: 100%;
     height: 1px;
-    background: rgba(255,255,255,0.12);
-    margin: 35px 0 22px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    margin: 45px 0 25px;
 }
+
+
+/* BOTTOM */
 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     gap: 20px;
     flex-wrap: wrap;
 }
 
-.footer-bottom p {
-    margin: 0;
+
+/* COPYRIGHT */
+
+.footer-copyright {
     font-size: 13px;
-    color: #9eaaa2;
+    color: #8f9d95;
+    line-height: 1.7;
 }
 
-.footer-bottom strong {
+.footer-copyright strong {
     color: #ffffff;
 }
 
-.footer-divider {
-    margin: 0 8px;
+.footer-copyright span {
     color: #a7c88a;
+    margin: 0 7px;
 }
 
-.creator-link {
-    color: #a7c88a;
-    text-decoration: none;
-    font-weight: 600;
+
+/* CREATOR */
+
+.creator-name {
+    color: #a7c88a !important;
     transition: 0.3s ease;
 }
 
-.creator-link:hover {
-    color: #ffffff;
+.creator-name:hover {
+    color: #ffffff !important;
 }
+
+
+/* LOCATION */
 
 .footer-location {
-    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 13px;
+    color: #9eaaa3;
 }
 
-/* MOBILE */
+.location-icon {
+    font-size: 14px;
+}
 
-@media (max-width: 600px) {
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
 
     .modern-footer {
-        padding: 45px 20px 25px;
+        padding: 55px 20px 25px;
     }
 
     .footer-logo {
-        font-size: 26px;
+        font-size: 27px;
+    }
+
+    .footer-brand p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .footer-divider-line {
+        margin: 35px 0 22px;
     }
 
     .footer-bottom {
@@ -1548,14 +1659,31 @@ La Carlota City, Negros Occidental.
         text-align: center;
     }
 
-    .footer-location {
-        text-align: center;
+    .footer-copyright {
+        font-size: 12px;
     }
 
-    .footer-divider {
-        display: inline-block;
+    .footer-location {
+        justify-content: center;
+        font-size: 12px;
     }
+
 }
+```
+
+### What the finished footer will look like
+
+**Discover Ara-al**
+*Discover the natural beauty, culture, and local experiences of Barangay Ara-al, La Carlota City, Negros Occidental.*
+
+────────────────────────────
+
+© 2026 **Discover Ara-al** • Website created by **Edwin Penacuba Jr.**
+
+📍 La Carlota City, Negros Occidental
+
+This version is **fully responsive**, so it will automatically adjust for phones, tablets, and desktop screens.
+
 
 <!-- =======================================================
      BACK TO TOP
