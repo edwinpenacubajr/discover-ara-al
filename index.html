@@ -74,20 +74,20 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(18, 60, 44, 0.94);
+
+    background: rgba(18, 60, 44, 0.96);
     backdrop-filter: blur(10px);
 }
 
 .navbar {
     max-width: 1200px;
-    margin: auto;
     height: 75px;
+    margin: auto;
+    padding: 0 25px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 25px;
 }
 
 .logo {
@@ -98,12 +98,13 @@ header {
 }
 
 .logo span {
-    color: #d5a84b;
+    color: var(--gold);
 }
 
 .nav-links {
     display: flex;
-    gap: 25px;
+    align-items: center;
+    gap: 24px;
     list-style: none;
 }
 
@@ -124,40 +125,88 @@ header {
     cursor: pointer;
 }
 
+
+/* THEME BUTTON */
+
+.theme-toggle-item {
+    display: flex;
+    align-items: center;
+    margin-left: 3px;
+}
+
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.28);
+    border-radius: 10px;
+
+    color: white;
+    font-size: 18px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.theme-toggle:hover {
+    background: rgba(255,255,255,.18);
+    transform: translateY(-1px);
+}
+
+#themeIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 /* =========================================================
-   DIRECTORY LIST
+   GENERAL
 ========================================================= */
 
-.directory-list {
-    margin-top: 15px;
+section {
+    padding: 90px 25px;
+    scroll-margin-top: 74px;
 }
 
-.directory-item {
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(11, 81, 56, 0.15);
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.directory-item:first-child {
-    padding-top: 0;
+.section-label {
+    color: var(--green);
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
-.directory-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+.section-title {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    color: var(--dark);
+    margin-bottom: 18px;
 }
 
-.directory-item strong {
-    display: block;
-    color: #0b5138;
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 5px;
+.section-description {
+    max-width: 750px;
+    color: var(--gray);
+    margin-bottom: 45px;
 }
 
-.directory-item p {
-    margin: 0;
-    line-height: 1.6;
-}
+
 /* =========================================================
    HERO
 ========================================================= */
@@ -168,19 +217,17 @@ header {
     display: flex;
     align-items: center;
 
-    position: relative;
-
     background:
         linear-gradient(
-            rgba(8, 37, 26, .62),
-            rgba(8, 37, 26, .75)
+            rgba(8,37,26,.62),
+            rgba(8,37,26,.76)
         ),
         url("guintubdan.jpg") center/cover no-repeat;
 }
 
 .hero-content {
-    max-width: 1200px;
     width: 100%;
+    max-width: 1200px;
     margin: auto;
 
     padding: 130px 25px 80px;
@@ -197,7 +244,7 @@ header {
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 7vw, 6rem);
+    font-size: clamp(3.5rem, 7vw, 6rem);
     line-height: .95;
     max-width: 800px;
     margin-bottom: 25px;
@@ -245,41 +292,6 @@ header {
 
 
 /* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-section {
-    padding: 90px 25px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.section-label {
-    color: var(--green);
-    font-size: .8rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.section-title {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    color: var(--dark);
-    margin-bottom: 18px;
-}
-
-.section-description {
-    max-width: 700px;
-    color: var(--gray);
-    margin-bottom: 45px;
-}
-
-
-/* =========================================================
    ABOUT
 ========================================================= */
 
@@ -292,15 +304,14 @@ section {
 
 .about-image {
     min-height: 450px;
-
     border-radius: 18px;
 
     background:
         linear-gradient(
-            rgba(18,60,44,.1),
-            rgba(18,60,44,.1)
+            rgba(18,60,44,.10),
+            rgba(18,60,44,.10)
         ),
-        url("about.jpg") center/cover;
+        url("guintubdan.jpg") center/cover;
 }
 
 .about-text p {
@@ -310,7 +321,7 @@ section {
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 15px;
     margin-top: 30px;
 }
@@ -323,13 +334,13 @@ section {
 
 .stat strong {
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: var(--green-dark);
 }
 
 .stat span {
-    font-size: .85rem;
     color: var(--gray);
+    font-size: .85rem;
 }
 
 
@@ -343,30 +354,25 @@ section {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 22px;
 }
 
 .card {
     background: white;
+    border: 1px solid var(--border);
     border-radius: 16px;
     overflow: hidden;
-
-    border: 1px solid var(--border);
-
     transition: .3s;
 }
 
 .card:hover {
     transform: translateY(-6px);
-
-    box-shadow:
-        0 15px 35px rgba(0,0,0,.09);
+    box-shadow: 0 15px 35px rgba(0,0,0,.09);
 }
 
 .card-image {
-    height: 210px;
-
+    height: 220px;
     background-size: cover;
     background-position: center;
 }
@@ -385,63 +391,12 @@ section {
     font-size: .92rem;
 }
 
-
-/* =========================================================
-   ATTRACTION IMAGES
-========================================================= */
-
-.img-1 {
-    background-image: url("guintubdan.jpg");
-}
-
-.img-2 {
-    background-image: url("busay-dalupya.jpg");
-}
-
-.img-3 {
-    background-image: url("ambon-falls.jpg");
-}
-
-.img-4 {
-    background-image: url("labi-labi.jpg");
-}
-
-.img-5 {
-    background-image: url("twin-falls.jpg");
-}
-
-.img-6 {
-    background-image: url("busay-abaga.jpg");
-}
-
-
-/* =========================================================
-   EXPERIENCE
-========================================================= */
-
-.experience-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.experience-box {
-    padding: 35px;
-
-    background: var(--green-dark);
-    color: white;
-
-    border-radius: 18px;
-}
-
-.experience-box h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
-}
-
-.experience-box p {
-    color: #d8e6df;
-}
+.img-1 { background-image: url("guintubdan.jpg"); }
+.img-2 { background-image: url("busay-dalupya.jpg"); }
+.img-3 { background-image: url("ambon-falls.jpg"); }
+.img-4 { background-image: url("labi-labi.jpg"); }
+.img-5 { background-image: url("twin-falls.jpg"); }
+.img-6 { background-image: url("busay-abaga.jpg"); }
 
 
 /* =========================================================
@@ -454,15 +409,14 @@ section {
 
 .food-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
 .food-item {
+    background: white;
     border: 1px solid var(--border);
-
     padding: 25px;
-
     border-radius: 15px;
 }
 
@@ -485,76 +439,327 @@ section {
 }
 
 .event-list {
-    display: grid;
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.event {
+.event-card {
     display: grid;
-    grid-template-columns: 100px 1fr;
-
-    align-items: center;
+    grid-template-columns: 320px 1fr;
 
     background: white;
 
-    border-radius: 14px;
-
-    padding: 20px;
-
     border: 1px solid var(--border);
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition: .3s;
 }
 
-.event-date {
-    font-weight: bold;
-    color: var(--green);
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(0,0,0,.08);
 }
 
-.event h3 {
-    color: var(--dark);
+.event-image {
+    min-height: 240px;
 }
 
-.event p {
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-tag {
+    color: #b98225;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.event-content h3 {
+    color: var(--green-dark);
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.event-content p {
     color: var(--gray);
 }
 
 
 /* =========================================================
-   BUSINESS
+   KANLAON STORY
+========================================================= */
+
+.kanlaon-story {
+    background: #f7f9f6;
+}
+
+.kanlaon-hero {
+    position: relative;
+
+    height: 550px;
+    margin-top: 35px;
+
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.kanlaon-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform .6s ease;
+}
+
+.kanlaon-hero:hover img {
+    transform: scale(1.03);
+}
+
+.kanlaon-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(5,30,22,.92),
+            rgba(5,30,22,.10)
+        );
+}
+
+.kanlaon-caption {
+    position: absolute;
+    left: 45px;
+    right: 45px;
+    bottom: 45px;
+
+    max-width: 700px;
+
+    z-index: 2;
+    color: white;
+}
+
+.kanlaon-caption span,
+.story-year,
+.ashfall-caption span {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.kanlaon-caption h3 {
+    color: white;
+    font-size: 38px;
+    margin: 8px 0 10px;
+}
+
+.kanlaon-caption p {
+    color: #edf4ef;
+}
+
+.kanlaon-story-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 22px;
+
+    margin-top: 35px;
+}
+
+.kanlaon-story-text {
+    background: white;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    padding: 28px;
+
+    transition: .3s;
+}
+
+.kanlaon-story-text:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.07);
+}
+
+.kanlaon-story-text h3 {
+    color: var(--green-dark);
+    margin: 8px 0 10px;
+}
+
+.kanlaon-story-text p {
+    color: var(--gray);
+}
+
+.ashfall-photo {
+    position: relative;
+
+    height: 500px;
+    margin-top: 35px;
+
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.ashfall-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ashfall-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(5,30,22,.90),
+            rgba(5,30,22,.05)
+        );
+}
+
+.ashfall-caption {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+
+    max-width: 650px;
+
+    z-index: 2;
+}
+
+.ashfall-caption h3 {
+    color: white;
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.ashfall-caption p {
+    color: #edf4ef;
+}
+
+.kanlaon-message {
+    margin-top: 35px;
+
+    padding: 40px;
+
+    background: var(--green-dark);
+    border-radius: 20px;
+}
+
+.kanlaon-message h3 {
+    color: white;
+    font-size: 28px;
+    margin: 8px 0 12px;
+}
+
+.kanlaon-message p {
+    color: #dce9e3;
+    max-width: 850px;
+}
+
+
+/* =========================================================
+   BUSINESS DIRECTORY
 ========================================================= */
 
 .business-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    column-count: 3;
+    column-gap: 16px;
+
+    margin-top: 30px;
 }
 
 .business {
-    padding: 25px;
+    display: inline-block;
 
-    background: #f8faf8;
+    width: 100%;
+
+    margin: 0 0 16px;
+
+    padding: 20px;
+
+    background: white;
 
     border: 1px solid var(--border);
+    border-radius: 14px;
 
-    border-radius: 15px;
+    break-inside: avoid;
 }
 
 .business h3 {
     color: var(--green-dark);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .business p {
     color: var(--gray);
 }
 
+.directory-list {
+    margin-top: 15px;
+}
+
+.directory-item {
+    padding: 14px 0;
+
+    border-bottom:
+        1px solid rgba(11,81,56,.15);
+}
+
+.directory-item:first-child {
+    padding-top: 0;
+}
+
+.directory-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.directory-item strong {
+    display: block;
+
+    color: #0b5138;
+
+    font-size: 16px;
+
+    margin-bottom: 5px;
+}
+
+.directory-item p {
+    margin: 0;
+}
+
 
 /* =========================================================
-   STAY
+   PLACES TO STAY
 ========================================================= */
 
 .stay {
     background: var(--green-dark);
-    color: white;
+}
+
+.stay .section-label {
+    color: #d5a84b;
 }
 
 .stay .section-title {
@@ -562,31 +767,31 @@ section {
 }
 
 .stay .section-description {
-    color: #d7e5de;
+    color: #d8e6df;
 }
 
 .stay-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
 
 .stay-card {
+    padding: 28px;
+
     background: rgba(255,255,255,.08);
 
     border: 1px solid rgba(255,255,255,.15);
-
-    padding: 25px;
-
     border-radius: 15px;
 }
 
 .stay-card h3 {
-    margin-bottom: 8px;
+    color: white;
+    margin-bottom: 10px;
 }
 
 .stay-card p {
-    color: #d7e5de;
+    color: #d8e6df;
 }
 
 
@@ -596,49 +801,23 @@ section {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(4,1fr);
+    gap: 14px;
 }
 
-.gallery-item {
-    height: 220px;
+.gallery-grid img {
+    width: 100%;
+    height: 240px;
 
-    border-radius: 12px;
+    object-fit: cover;
 
-    background-size: cover;
-    background-position: center;
+    border-radius: 14px;
+
+    transition: .3s;
 }
 
-.gallery-item:nth-child(1) {
-    background-image: url("gallery1.jpg");
-}
-
-.gallery-item:nth-child(2) {
-    background-image: url("gallery2.jpg");
-}
-
-.gallery-item:nth-child(3) {
-    background-image: url("gallery3.jpg");
-}
-
-.gallery-item:nth-child(4) {
-    background-image: url("gallery4.jpg");
-}
-
-.gallery-item:nth-child(5) {
-    background-image: url("gallery5.jpg");
-}
-
-.gallery-item:nth-child(6) {
-    background-image: url("gallery6.jpg");
-}
-
-.gallery-item:nth-child(7) {
-    background-image: url("gallery7.jpg");
-}
-
-.gallery-item:nth-child(8) {
-    background-image: url("gallery8.jpg");
+.gallery-grid img:hover {
+    transform: scale(1.025);
 }
 
 
@@ -651,213 +830,103 @@ section {
 }
 
 .map-box {
-    width: 100%;
-    height: 420px;
+    padding: 45px;
 
-    border-radius: 18px;
-
-    overflow: hidden;
+    background: white;
 
     border: 1px solid var(--border);
+    border-radius: 18px;
 }
 
-.map-box iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
+.map-box h3 {
+    color: var(--green-dark);
+    margin-bottom: 12px;
+}
+
+.map-box p {
+    color: var(--gray);
+    margin-bottom: 22px;
 }
 
 
 /* =========================================================
-   MODERN FOOTER
+   FOOTER
 ========================================================= */
 
-.araal-footer {
-    background:
-        linear-gradient(
-            135deg,
-            #102018 0%,
-            #162a20 50%,
-            #0e1b15 100%
-        );
+footer {
+    background: #16251d;
+    color: white;
 
-    color: #dce7df;
-
-    padding: 65px 20px 28px;
-
-    position: relative;
-
-    overflow: hidden;
+    padding: 55px 25px 25px;
 }
 
-
-/* FOOTER DECORATION */
-
-.araal-footer::before {
-    content: "";
-
-    position: absolute;
-
-    width: 350px;
-    height: 350px;
-
-    background: rgba(167, 200, 138, 0.05);
-
-    border-radius: 50%;
-
-    top: -180px;
-    right: -100px;
-
-    pointer-events: none;
+.footer-inner {
+    max-width: 1200px;
+    margin: auto;
 }
 
-
-/* FOOTER CONTAINER */
-
-.araal-footer-container {
-    max-width: 1100px;
-
-    margin: 0 auto;
-
-    position: relative;
-
-    z-index: 1;
-}
-
-
-/* FOOTER BRAND */
-
-.araal-footer-brand {
-    max-width: 650px;
-}
-
-.araal-footer-logo {
-    font-size: 30px;
-
-    font-weight: 800;
-
-    letter-spacing: -0.5px;
-
-    color: #ffffff;
-}
-
-.araal-footer-logo span {
-    color: #a7c88a;
-}
-
-.araal-footer-brand p {
-    max-width: 600px;
-
-    margin: 12px 0 0;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-    color: #aebbb3;
-}
-
-
-/* FOOTER LINKS */
-
-.araal-footer-links {
+.footer-top {
     display: flex;
-
-    gap: 100px;
-
-    margin-top: 40px;
-}
-
-.araal-footer-column {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 11px;
-}
-
-.araal-footer-column h4 {
-    margin: 0 0 5px;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    color: #ffffff;
-}
-
-.araal-footer-column a {
-    color: #9eaaa3;
-
-    text-decoration: none;
-
-    font-size: 13px;
-
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.araal-footer-column a:hover {
-    color: #a7c88a;
-
-    transform: translateX(4px);
-}
-
-
-/* FOOTER DIVIDER */
-
-.araal-footer-line {
-    width: 100%;
-
-    height: 1px;
-
-    background: rgba(255, 255, 255, 0.10);
-
-    margin: 40px 0 22px;
-}
-
-
-/* FOOTER BOTTOM */
-
-.araal-footer-bottom {
-    display: flex;
-
     justify-content: space-between;
+    gap: 40px;
 
-    align-items: center;
+    padding-bottom: 35px;
 
-    gap: 20px;
+    border-bottom:
+        1px solid rgba(255,255,255,.12);
+}
 
+.footer-brand h3 {
+    font-size: 24px;
+}
+
+.footer-brand h3 span {
+    color: var(--gold);
+}
+
+.footer-brand p {
+    max-width: 500px;
+    margin-top: 10px;
+    color: #b9c8c0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 45px;
     flex-wrap: wrap;
 }
 
-.araal-footer-bottom p {
-    margin: 0;
-
-    font-size: 12px;
-
-    line-height: 1.7;
-
-    color: #89968f;
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.araal-footer-bottom strong {
-    color: #ffffff;
+.footer-column strong {
+    color: var(--gold);
+    margin-bottom: 4px;
 }
 
-.araal-footer-dot {
-    color: #a7c88a;
-
-    margin: 0 7px;
+.footer-column a {
+    color: #dce6e1;
+    font-size: 14px;
 }
 
-.araal-footer-creator {
-    color: #a7c88a !important;
+.footer-column a:hover {
+    color: white;
 }
 
-.araal-footer-location {
-    color: #9eaaa3 !important;
+.footer-bottom {
+    padding-top: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    color: #aebdb6;
+
+    font-size: 13px;
 }
 
 
@@ -866,329 +935,32 @@ section {
 ========================================================= */
 
 #topBtn {
+    display: none;
+
     position: fixed;
 
-    right: 20px;
-    bottom: 20px;
+    right: 25px;
+    bottom: 25px;
 
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
 
     border: none;
-
     border-radius: 50%;
 
     background: var(--gold);
-
     color: #172018;
 
-    font-size: 18px;
+    font-size: 20px;
 
     cursor: pointer;
-
-    display: none;
 
     z-index: 999;
 }
 
-#topBtn:hover {
-    transform: translateY(-3px);
-}
-
 
 /* =========================================================
-   RESPONSIVE - TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .nav-links {
-        position: absolute;
-
-        top: 75px;
-        left: 0;
-
-        width: 100%;
-
-        background: var(--green-dark);
-
-        display: none;
-
-        flex-direction: column;
-
-        padding: 25px;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .about-grid,
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cards,
-    .food-grid,
-    .business-grid,
-    .stay-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .araal-footer-links {
-        gap: 70px;
-    }
-}
-
-
-/* =========================================================
-   RESPONSIVE - MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    section {
-        padding: 70px 20px;
-    }
-
-    .hero-content {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .cards,
-    .food-grid,
-    .business-grid,
-    .stay-grid,
-    .stats,
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item {
-        height: 250px;
-    }
-
-    .event {
-        grid-template-columns: 1fr;
-
-        gap: 8px;
-    }
-
-    .araal-footer {
-        padding: 50px 20px 25px;
-    }
-
-    .araal-footer-logo {
-        font-size: 26px;
-    }
-
-    .araal-footer-brand p {
-        font-size: 13px;
-    }
-
-    .araal-footer-links {
-        gap: 55px;
-
-        margin-top: 35px;
-    }
-
-    .araal-footer-bottom {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-}
-/* =========================================================
-   FESTIVALS & EVENTS CARDS
-========================================================= */
-
-.event-list {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 35px;
-}
-
-.event-card {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    background: #ffffff;
-    border: 1px solid #dce5df;
-    border-radius: 18px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.event-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
-}
-
-.event-image {
-    width: 100%;
-    height: 100%;
-    min-height: 240px;
-    overflow: hidden;
-}
-
-.event-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.event-content {
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.event-tag {
-    display: inline-block;
-    width: fit-content;
-    color: #b98225;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.event-content h3 {
-    color: #083b2b;
-    font-size: 23px;
-    margin: 0 0 12px;
-}
-
-.event-content p {
-    margin: 0;
-    line-height: 1.7;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    .event-card {
-        grid-template-columns: 1fr;
-    }
-
-    .event-image {
-        height: 230px;
-        min-height: 230px;
-    }
-
-    .event-content {
-        padding: 22px;
-    }
-
-    .event-content h3 {
-        font-size: 20px;
-    }
-}
-
-   /* =========================================================
-   BUSINESS DIRECTORY - CARD HEIGHT FIX
-========================================================= */
-
-.business-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: start;
-}
-
-.business {
-    background: #ffffff;
-    border: 1px solid #dce5df;
-    border-radius: 16px;
-    padding: 20px;
-    height: auto;
-    align-self: start;
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-    .business-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .business-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* =========================================================
-   RESPONSIVE - SMALL PHONES
-========================================================= */
-
-@media (max-width: 450px) {
-
-    .araal-footer-links {
-        gap: 40px;
-    }
-
-    .araal-footer-column a {
-        font-size: 12px;
-    }
-
-    .araal-footer-bottom p {
-        font-size: 11px;
-    }
-
-    .araal-footer-location {
-        margin-top: 5px;
-    }
-}
-/* =========================================================
-   THEME TOGGLE
-========================================================= */
-
-.theme-toggle-item {
-    margin-left: 15px;
-}
-
-.theme-toggle {
-    width: 36px;
-    height: 36px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 10px;
-
-    color: #ffffff;
-    font-size: 18px;
-
-    cursor: pointer;
-
-    transition: all 0.25s ease;
-}
-
-.theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.16);
-    transform: translateY(-1px);
-}
-
-
-/* =========================================================
-   NIGHT MODE
+   DARK MODE
 ========================================================= */
 
 body.dark-mode {
@@ -1196,46 +968,51 @@ body.dark-mode {
     color: #dbe7e1;
 }
 
-body.dark-mode section {
-    background-color: #07130e;
+body.dark-mode section:not(.hero):not(.stay) {
+    background: #07130e;
 }
 
 body.dark-mode .section-title {
     color: #f2f7f4;
 }
 
-body.dark-mode .section-description {
-    color: #aabbb2;
+body.dark-mode .section-description,
+body.dark-mode .about-text p {
+    color: #aebdb6;
 }
 
 body.dark-mode .section-label {
-    color: #dba942;
+    color: #d5a84b;
 }
 
-
-/* CARDS */
-
-body.dark-mode .business,
+body.dark-mode .card,
+body.dark-mode .food-item,
 body.dark-mode .event-card,
-body.dark-mode .kanlaon-story-text {
+body.dark-mode .business,
+body.dark-mode .kanlaon-story-text,
+body.dark-mode .map-box {
     background: #10231b;
+
     border-color: #294338;
 }
 
-body.dark-mode .business h3,
+body.dark-mode .card-content h3,
+body.dark-mode .food-item h3,
 body.dark-mode .event-content h3,
-body.dark-mode .kanlaon-story-text h3 {
+body.dark-mode .business h3,
+body.dark-mode .kanlaon-story-text h3,
+body.dark-mode .map-box h3 {
     color: #f2f7f4;
 }
 
-body.dark-mode .business p,
+body.dark-mode .card-content p,
+body.dark-mode .food-item p,
 body.dark-mode .event-content p,
-body.dark-mode .kanlaon-story-text p {
+body.dark-mode .business p,
+body.dark-mode .kanlaon-story-text p,
+body.dark-mode .map-box p {
     color: #b5c4bd;
 }
-
-
-/* BUSINESS DIRECTORY */
 
 body.dark-mode .directory-item {
     border-color: #294338;
@@ -1245,44 +1022,157 @@ body.dark-mode .directory-item strong {
     color: #8ed4af;
 }
 
-body.dark-mode .directory-item p {
+body.dark-mode .stat {
+    background: #10231b;
+}
+
+body.dark-mode .stat strong {
+    color: #8ed4af;
+}
+
+body.dark-mode .stat span {
     color: #b5c4bd;
 }
 
-
-/* KANLAON */
-
-body.dark-mode .kanlaon-story {
-    background: #07130e;
-}
-
-body.dark-mode .kanlaon-message {
-    background: #102c21;
-}
-
-
-/* THEME BUTTON IN DARK MODE */
-
 body.dark-mode .theme-toggle {
-    background: #ffffff;
+    background: white;
     color: #173d2f;
-    border-color: #ffffff;
+    border-color: white;
 }
 
-/* SMOOTH TRANSITION */
 
-body,
-section,
-.business,
-.event-card,
-.kanlaon-story-text,
-.directory-item {
-    transition:
-        background-color 0.35s ease,
-        color 0.35s ease,
-        border-color 0.35s ease;
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: var(--green-dark);
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .theme-toggle-item {
+        margin-left: 0;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .business-grid {
+        column-count: 2;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
 }
-   
+
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .about-grid,
+    .food-grid,
+    .stay-grid,
+    .kanlaon-story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .event-image {
+        height: 240px;
+    }
+
+    .kanlaon-hero {
+        height: 460px;
+    }
+
+    .kanlaon-caption {
+        left: 22px;
+        right: 22px;
+        bottom: 25px;
+    }
+
+    .kanlaon-caption h3 {
+        font-size: 28px;
+    }
+
+    .ashfall-photo {
+        height: 430px;
+    }
+
+    .ashfall-caption {
+        left: 22px;
+        right: 22px;
+        bottom: 25px;
+    }
+
+    .ashfall-caption h3 {
+        font-size: 26px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cards,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .business-grid {
+        column-count: 1;
+    }
+
+    .gallery-grid img {
+        height: 270px;
+    }
+
+    .kanlaon-message {
+        padding: 28px 22px;
+    }
+
+}
+
 </style>
 
 </head>
@@ -1291,9 +1181,9 @@ section,
 <body>
 
 
-<!-- =======================================================
+<!-- =========================================================
      NAVIGATION
-======================================================= -->
+========================================================= -->
 
 <header>
 
@@ -1303,11 +1193,10 @@ section,
 Discover <span>Ara-al</span>
 </a>
 
-<div
-    class="menu-btn"
-    onclick="toggleMenu()"
-    aria-label="Open navigation menu">
-    ☰
+<div class="menu-btn"
+onclick="toggleMenu()"
+aria-label="Open navigation menu">
+☰
 </div>
 
 <ul class="nav-links" id="navLinks">
@@ -1329,12 +1218,17 @@ Discover <span>Ara-al</span>
 <li><a href="#gallery">Gallery</a></li>
 
 <li class="theme-toggle-item">
-    <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
-        <span id="themeIcon">☾</span>
-    </button>
-</li>
 
-   
+<button
+class="theme-toggle"
+id="themeToggle"
+aria-label="Switch theme">
+
+<span id="themeIcon">☾</span>
+
+</button>
+
+</li>
 
 </ul>
 
@@ -1343,9 +1237,9 @@ Discover <span>Ara-al</span>
 </header>
 
 
-<!-- =======================================================
+<!-- =========================================================
      HERO
-======================================================= -->
+========================================================= -->
 
 <section class="hero" id="home">
 
@@ -1383,9 +1277,9 @@ Learn More
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      ABOUT
-======================================================= -->
+========================================================= -->
 
 <section id="about">
 
@@ -1406,47 +1300,36 @@ A community among the mountains
 </h2>
 
 <p>
-Barangay Ara-al is the largest barangay in La Carlota City,
-Negros Occidental, covering approximately
-<strong>1,920.59 hectares</strong>.
+Barangay Ara-al is one of the communities of La Carlota City,
+Negros Occidental, situated toward the foothills of Mount Kanlaon.
 </p>
 
 <p>
-Located toward the foothills and slopes near Mount Kanlaon,
-Ara-al is known for its cool mountain environment, natural
-waterfalls, agricultural communities and eco-tourism destinations.
+The area is known for its mountain environment, agricultural
+communities, waterfalls and nature destinations.
 </p>
 
 <p>
 One of its most recognized areas is Sitio Guintubdan, a popular
-mountain destination and a major jump-off area for visitors
-exploring the surrounding natural attractions.
+mountain destination and jump-off area for visitors exploring
+nearby natural attractions.
 </p>
 
 <div class="stats">
 
 <div class="stat">
-
-<strong>1,920.59</strong>
-
+<strong>1,900+</strong>
 <span>Hectares</span>
-
 </div>
 
 <div class="stat">
-
 <strong>600+</strong>
-
 <span>Feet Above Sea Level</span>
-
 </div>
 
 <div class="stat">
-
 <strong>Mount</strong>
-
 <span>Kanlaon Foothills</span>
-
 </div>
 
 </div>
@@ -1460,13 +1343,11 @@ exploring the surrounding natural attractions.
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      ATTRACTIONS
-======================================================= -->
+========================================================= -->
 
-<section
-    class="attractions"
-    id="attractions">
+<section class="attractions" id="attractions">
 
 <div class="container">
 
@@ -1479,29 +1360,23 @@ Natural attractions
 </h2>
 
 <p class="section-description">
-From mountain resorts to waterfalls and forest trails,
-Ara-al offers visitors a chance to experience the natural
-beauty of the Mount Kanlaon area.
+Discover waterfalls, mountain landscapes and natural destinations
+around Ara-al and Guintubdan.
 </p>
 
-<div class="cards">
 
+<div class="cards">
 
 <div class="card">
 
 <div class="card-image img-1"></div>
 
 <div class="card-content">
-
-<h3>
-Guintubdan Nature's Park
-</h3>
-
+<h3>Guintubdan</h3>
 <p>
-A mountain destination in Sitio Guintubdan known for its
-cool climate, natural streams and scenic surroundings.
+Experience the cool mountain atmosphere and natural scenery
+of Sitio Guintubdan.
 </p>
-
 </div>
 
 </div>
@@ -1512,16 +1387,11 @@ cool climate, natural streams and scenic surroundings.
 <div class="card-image img-2"></div>
 
 <div class="card-content">
-
-<h3>
-Busay Dalupya Falls
-</h3>
-
+<h3>Busay Dalupya</h3>
 <p>
-A natural waterfall destination surrounded by the
-lush mountain environment of Ara-al.
+Discover one of the waterfalls found within the mountain
+landscape of Ara-al.
 </p>
-
 </div>
 
 </div>
@@ -1532,16 +1402,11 @@ lush mountain environment of Ara-al.
 <div class="card-image img-3"></div>
 
 <div class="card-content">
-
-<h3>
-Ambon Falls
-</h3>
-
+<h3>Ambon Falls</h3>
 <p>
-A refreshing waterfall attraction located within the
-natural landscape of the area.
+Enjoy a refreshing nature destination surrounded by
+lush vegetation.
 </p>
-
 </div>
 
 </div>
@@ -1552,16 +1417,11 @@ natural landscape of the area.
 <div class="card-image img-4"></div>
 
 <div class="card-content">
-
-<h3>
-Labi-Labi Falls
-</h3>
-
+<h3>Labi-Labi Falls</h3>
 <p>
-A nature destination offering visitors another
-waterfall experience within Ara-al.
+Explore another scenic waterfall destination within
+the community.
 </p>
-
 </div>
 
 </div>
@@ -1572,15 +1432,11 @@ waterfall experience within Ara-al.
 <div class="card-image img-5"></div>
 
 <div class="card-content">
-
-<h3>
-Twin Falls
-</h3>
-
+<h3>Twin Falls</h3>
 <p>
-A scenic natural attraction featuring two cascading waterfalls surrounded by mountain greenery.
+A beautiful natural attraction surrounded by the
+green landscape of the mountains.
 </p>
-
 </div>
 
 </div>
@@ -1591,20 +1447,14 @@ A scenic natural attraction featuring two cascading waterfalls surrounded by mou
 <div class="card-image img-6"></div>
 
 <div class="card-content">
-
-<h3>
-Busay Abaga
-</h3>
-
+<h3>Busay Abaga</h3>
 <p>
-A local natural attraction featuring flowing water
-and a peaceful mountain setting.
+Discover the natural beauty and peaceful atmosphere
+of Ara-al's upland areas.
 </p>
-
 </div>
 
 </div>
-
 
 </div>
 
@@ -1613,125 +1463,11 @@ and a peaceful mountain setting.
 </section>
 
 
-<!-- =======================================================
-     OTHER DESTINATIONS
-======================================================= -->
-
-<section>
-
-<div class="container">
-
-<div class="section-label">
-More to Explore
-</div>
-
-<h2 class="section-title">
-More places around Ara-al
-</h2>
-
-<div class="experience-grid">
-
-
-<div class="experience-box">
-
-<h3>
-Mount Kanlaon Trails
-</h3>
-
-<p>
-Ara-al is situated near the foothills of Mount Kanlaon
-and serves as an access point to mountain and nature
-experiences in the surrounding area.
-</p>
-
-</div>
-
-
-<div class="experience-box">
-
-<h3>
-Mt. Kanla-on Natural Park
-</h3>
-
-<p>
-A protected natural environment associated with one of
-the most prominent mountain landscapes in Negros Island.
-</p>
-
-</div>
-
-
-<div class="experience-box">
-
-<h3>
-Ezzy Falls
-</h3>
-
-<p>
-Another waterfall destination that visitors can discover
-while exploring the natural attractions around Ara-al.
-</p>
-
-</div>
-
-
-<div class="experience-box">
-
-<h3>
-Twin Falls
-</h3>
-
-<p>
-A scenic natural attraction featuring two cascading
-waterfalls surrounded by mountain greenery.
-</p>
-
-</div>
-
-
-<div class="experience-box">
-
-<h3>
-Guintubdan Mountain Resort
-</h3>
-
-<p>
-A well-known mountain destination in Sitio Guintubdan
-offering visitors a cool environment and access to
-natural attractions.
-</p>
-
-</div>
-
-
-<div class="experience-box">
-
-<h3>
-Rafael Salas Park & Nature Center
-</h3>
-
-<p>
-A nature-oriented destination and recognizable landmark
-associated with the Mount Kanlaon area.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =======================================================
+<!-- =========================================================
      FOOD
-======================================================= -->
+========================================================= -->
 
-<section
-    class="food-section"
-    id="food">
+<section class="food-section" id="food">
 
 <div class="container">
 
@@ -1744,23 +1480,20 @@ Local food & flavors
 </h2>
 
 <p class="section-description">
-Discover local dishes, agricultural products and food
-experiences from Ara-al and the surrounding communities
-of La Carlota City.
+Discover local dishes, agricultural products and food experiences
+from Ara-al and the surrounding communities of La Carlota City.
 </p>
+
 
 <div class="food-grid">
 
-
 <div class="food-item">
 
-<h3>
-Local Cuisine
-</h3>
+<h3>Local Cuisine</h3>
 
 <p>
 Enjoy home-cooked dishes and traditional Filipino favorites
-    prepared by local families and food sellers.
+prepared by local families and food sellers.
 </p>
 
 </div>
@@ -1768,13 +1501,11 @@ Enjoy home-cooked dishes and traditional Filipino favorites
 
 <div class="food-item">
 
-<h3>
-Fresh Mountain Produce
-</h3>
+<h3>Fresh Mountain Produce</h3>
 
 <p>
-Discover fresh fruits, vegetables, and other agricultural
-    products grown in Ara-al and its upland communities.
+Discover fresh fruits, vegetables and agricultural products
+grown in Ara-al and its upland communities.
 </p>
 
 </div>
@@ -1782,17 +1513,14 @@ Discover fresh fruits, vegetables, and other agricultural
 
 <div class="food-item">
 
-<h3>
-Local Delicacies
-</h3>
+<h3>Local Delicacies</h3>
 
 <p>
-Taste locally made snacks, native delicacies, sweets,
-    and other specialties from Ara-al and La Carlota City.
+Taste locally made snacks, native delicacies, sweets and
+other specialties from Ara-al and La Carlota City.
 </p>
 
 </div>
-
 
 </div>
 
@@ -1801,381 +1529,586 @@ Taste locally made snacks, native delicacies, sweets,
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      EVENTS
-======================================================= -->
-<!-- =======================================================
-     FESTIVALS & EVENTS
-======================================================= -->
+========================================================= -->
 
 <section class="events" id="events">
 
 <div class="container">
 
-    <div class="section-label">
-        Culture & Community
-    </div>
+<div class="section-label">
+Culture & Community
+</div>
 
-    <h2 class="section-title">
-        Festivals & Events
-    </h2>
+<h2 class="section-title">
+Festivals & events
+</h2>
 
-    <p class="section-description">
-        Experience the culture, traditions, and community celebrations
-        of Ara-al and La Carlota City.
-    </p>
-
-
-    <div class="event-list">
+<p class="section-description">
+Discover community celebrations, cultural traditions and events
+in Ara-al and La Carlota City.
+</p>
 
 
-        <!-- BARANGAY CELEBRATIONS -->
-        <div class="event-card">
-
-            <div class="event-image">
-                <img src="barangay-celebration.jpg"
-                     alt="Local celebration in Barangay Ara-al">
-            </div>
-
-            <div class="event-content">
-
-                <span class="event-tag">
-                    COMMUNITY
-                </span>
-
-                <h3>
-                    Local Barangay Celebrations
-                </h3>
-
-                <p>
-                    The community of Barangay Ara-al and Sitio Guintubdan
-                    celebrates local traditions influenced by highland
-                    culture, agriculture, faith, and the community's close
-                    connection to the surrounding mountains and nature.
-                </p>
-
-            </div>
-
-        </div>
+<div class="event-list">
 
 
-        <!-- PASALAMAT FESTIVAL -->
-        <div class="event-card">
+<div class="event-card">
 
-            <div class="event-image">
-                <img src="pasalamat-festival.jpg"
-                     alt="Pasalamat Festival in La Carlota City">
-            </div>
+<div class="event-image">
 
-            <div class="event-content">
-
-                <span class="event-tag">
-                    ANNUAL FESTIVAL
-                </span>
-
-                <h3>
-                    Pasalamat Festival
-                </h3>
-
-                <p>
-                    One of La Carlota City's major celebrations, the
-                    Pasalamat Festival is a thanksgiving celebration
-                    featuring colorful street dancing, cultural
-                    performances, vibrant costumes, and festivities
-                    celebrating the city's agricultural heritage.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- CULTURAL EVENTS -->
-        <div class="event-card">
-
-            <div class="event-image">
-                <img src="cultural-event.jpg"
-                     alt="Cultural events in La Carlota City">
-            </div>
-
-            <div class="event-content">
-
-                <span class="event-tag">
-                    CULTURE
-                </span>
-
-                <h3>
-                    Local Cultural Events
-                </h3>
-
-                <p>
-                    Throughout the year, community gatherings and cultural
-                    activities bring residents together through music,
-                    food, traditions, religious celebrations, and other
-                    local events.
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
+<img
+src="gallery1.jpg"
+alt="Community celebration">
 
 </div>
 
-</section>
-<!-- =======================================================
-     BUSINESS DIRECTORY
-======================================================= -->
+<div class="event-content">
 
-<section id="business">
+<span class="event-tag">
+ANNUAL
+</span>
 
-<div class="container">
+<h3>
+Local Barangay Celebrations
+</h3>
 
-    <div class="section-label">
-        Local Directory
-    </div>
+<p>
+Communities in Ara-al and Guintubdan take part in local
+celebrations shaped by faith, agriculture, family and
+community traditions.
+</p>
 
-    <h2 class="section-title">
-        Local Businesses
-    </h2>
+</div>
 
-    <p class="section-description">
-        Support local businesses by discovering shops, restaurants,
-        local products, guides, transportation, and other services
-        in Ara-al and nearby La Carlota City.
-    </p>
+</div>
 
 
-    <div class="business-grid">
+<div class="event-card">
 
-        <!-- RESTAURANTS & FOOD -->
-        <div class="business">
+<div class="event-image">
 
-            <h3>Restaurants & Food</h3>
+<img
+src="pasalamat-festival.jpg"
+alt="Pasalamat Festival">
 
-            <div class="directory-list">
+</div>
 
-                <div class="directory-item">
-                    <strong>Lumay Cafe</strong>
-                    <p>
-                        Located at the corner of Yunque and Rizal Streets,
-                        this cozy café gallery offers affordable Asian and
-                        Filipino meals, coffee, and signature mango shakes.
-                    </p>
-                </div>
+<div class="event-content">
 
-                <div class="directory-item">
-                    <strong>Café Norma</strong>
-                    <p>
-                        Located across the public plaza, Café Norma is a
-                        relaxing local spot for native coffee, pastries,
-                        and casual dining.
-                    </p>
-                </div>
+<span class="event-tag">
+LOCAL
+</span>
 
-                <div class="directory-item">
-                    <strong>Quan Delicacies</strong>
-                    <p>
-                        A popular stop for pasalubong and native delicacies
-                        including puto, kutsinta, tikoy, and crispy ukoy.
-                    </p>
-                </div>
+<h3>
+Pasalamat Festival
+</h3>
 
-                <div class="directory-item">
-                    <strong>Ranidon Superb Batchoy</strong>
-                    <p>
-                        A longtime La Carlota food destination on Yunque
-                        Street, known for La Paz-style batchoy and
-                        crunchy empanadas.
-                    </p>
-                </div>
+<p>
+La Carlota City's Pasalamat Festival brings together colorful
+street dancing, cultural performances, costumes, music and
+community celebrations.
+</p>
 
-                <div class="directory-item">
-                    <strong>PALAMANGKAS Pala-Pala Seafood Restaurant</strong>
-                    <p>
-                        A local dining destination offering seafood dishes
-                        and Filipino favorites.
-                    </p>
-                </div>
+</div>
 
-                <div class="directory-item">
-                    <strong>Café Repub</strong>
-                    <p>
-                        A local café and casual dining spot in La Carlota City.
-                    </p>
-                </div>
-
-                <div class="directory-item">
-                    <strong>Rumbines Cafe</strong>
-                    <p>
-                        A local café offering food, drinks, and a casual
-                        dining experience.
-                    </p>
-                </div>
-
-                <div class="directory-item">
-                    <strong>Yong's Cafeteria</strong>
-                    <p>
-                        A local cafeteria offering meals and refreshments.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <!-- TOURISM & GUIDES -->
-        <div class="business">
+<div class="event-card">
 
-            <h3>Tourism & Guides</h3>
+<div class="event-image">
 
-            <p>
-                Find local Guintubdan guides for trekking, nature trips,
-                and exploring the area's attractions.
-            </p>
+<img
+src="gallery2.jpg"
+alt="Local cultural event">
 
-        </div>
+</div>
 
+<div class="event-content">
 
-        <!-- LOCAL PRODUCTS -->
-        <div class="business">
+<span class="event-tag">
+CULTURE
+</span>
 
-            <h3>Local Products</h3>
+<h3>
+Local Cultural Events
+</h3>
 
-            <div class="directory-list">
+<p>
+Community gatherings throughout the year bring residents
+together through food, music, traditions and shared celebrations.
+</p>
 
-                <div class="directory-item">
-                    <strong>Durian</strong>
-                    <p>
-                        Ara-al's upland areas produce locally grown durian,
-                        contributing to the community's agricultural products.
-                    </p>
-                </div>
+</div>
 
-                <div class="directory-item">
-                    <strong>Fresh Vegetables & Fruits</strong>
-                    <p>
-                        Local farmers grow highland vegetables, root crops,
-                        and seasonal fruits supplied to communities and
-                        markets around La Carlota City.
-                    </p>
-                </div>
-
-                <div class="directory-item">
-                    <strong>Muscovado Sugar</strong>
-                    <p>
-                        Traditional unrefined cane sugar reflecting
-                        Negros Occidental's long history of sugarcane farming.
-                    </p>
-                </div>
-
-                <div class="directory-item">
-                    <strong>Piaya & Biscocho</strong>
-                    <p>
-                        Popular Negros delicacies enjoyed as snacks
-                        and commonly brought home as pasalubong.
-                    </p>
-                </div>
-
-                <div class="directory-item">
-                    <strong>Kalamay-Hati</strong>
-                    <p>
-                        A traditional sticky rice delicacy made with
-                        glutinous rice, coconut milk, and sugar.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
+</div>
 
 
-        <!-- TRANSPORTATION -->
-        <div class="business">
-
-            <h3>Transportation</h3>
-
-            <p>
-                Get around Ara-al and nearby areas by local
-                tricycles and jeepneys.
-            </p>
-
-        </div>
-
-
-        <!-- SMALL BUSINESSES -->
-        <div class="business">
-
-            <h3>Small Businesses</h3>
-
-            <p>
-                Discover local shops, food, products, and services
-                offered by entrepreneurs in Barangay Ara-al.
-            </p>
-
-        </div>
-
-
-        <!-- OTHER SERVICES -->
-        <div class="business">
-
-            <h3>Other Services</h3>
-
-            <p>
-                Find local repair, event, rental, and other useful
-                community services in Ara-al.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 </section>
 
-<!-- =======================================================
-     FESTIVALS & EVENTS
-======================================================= -->
 
-<section class="events" id="events">
-
-    <!-- Your Festivals & Events content -->
-
-</section>
-
-
-<!-- =======================================================
+<!-- =========================================================
      KANLAON & ARA-AL
-======================================================= -->
+========================================================= -->
 
 <section class="kanlaon-story" id="kanlaon">
 
-    <!-- THE ENTIRE KANLAON CODE YOU JUST SENT GOES HERE -->
+<div class="container">
+
+<div class="section-label">
+Our Story
+</div>
+
+<h2 class="section-title">
+Living in the Shadow of Kanlaon
+</h2>
+
+<p class="section-description">
+Barangay Ara-al and the mountain community of Guintubdan
+have experienced eruptions, ashfall, evacuations and periods
+of volcanic unrest from Mount Kanlaon.
+</p>
+
+
+<!-- MAIN DRONE PHOTO -->
+
+<div class="kanlaon-hero">
+
+<img
+src="guintubdan-ashfall-drone.jpg"
+alt="Drone view of Guintubdan after ashfall from Kanlaon Volcano">
+
+<div class="kanlaon-caption">
+
+<span>
+GUINTUBDAN • ARA-AL
+</span>
+
+<h3>
+A Community Beneath the Volcano
+</h3>
+
+<p>
+During periods of heightened activity from Kanlaon,
+volcanic ash has affected homes, roads, vegetation,
+farms and parts of the mountain landscape surrounding
+Guintubdan.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- TIMELINE -->
+
+<div class="kanlaon-story-grid">
+
+
+<div class="kanlaon-story-text">
+
+<span class="story-year">
+JUNE 2024
+</span>
+
+<h3>
+Kanlaon Erupts
+</h3>
+
+<p>
+On June 3, 2024, Kanlaon Volcano produced an explosive
+eruption that sent a large volcanic plume above the summit.
+Communities surrounding the volcano experienced the effects
+of the eruption and ashfall.
+</p>
+
+</div>
+
+
+<div class="kanlaon-story-text">
+
+<span class="story-year">
+DECEMBER 2024
+</span>
+
+<h3>
+Ashfall Reaches Guintubdan
+</h3>
+
+<p>
+Another explosive eruption and continuing volcanic activity
+brought ashfall to communities near Kanlaon, including areas
+around Guintubdan and La Carlota City.
+</p>
+
+</div>
+
+
+<div class="kanlaon-story-text">
+
+<span class="story-year">
+APRIL 2025
+</span>
+
+<h3>
+Another Explosive Eruption
+</h3>
+
+<p>
+Kanlaon erupted again on April 8, 2025. The explosive event
+generated a large volcanic plume, with ashfall reported in
+Barangay Ara-al and other nearby communities.
+</p>
+
+</div>
+
+
+<div class="kanlaon-story-text">
+
+<span class="story-year">
+2025–2026
+</span>
+
+<h3>
+Living With an Active Volcano
+</h3>
+
+<p>
+Continued volcanic unrest, ash emissions and explosive
+activity have remained part of life for communities
+surrounding Kanlaon.
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- SECOND PHOTO -->
+
+<div class="ashfall-photo">
+
+<img
+src="guintubdan-houses-ash.jpg"
+alt="Homes affected by volcanic ash in Guintubdan">
+
+<div class="ashfall-caption">
+
+<span>
+LIFE NEAR KANLAON
+</span>
+
+<h3>
+When the Landscape Turned Gray
+</h3>
+
+<p>
+Ash-covered homes, vegetation and roads show how closely
+the people of Guintubdan live with one of the Philippines'
+active volcanoes.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="kanlaon-message">
+
+<span class="story-year">
+COMMUNITY & RESILIENCE
+</span>
+
+<h3>
+Ara-al Continues Forward
+</h3>
+
+<p>
+Beyond the images of ashfall and eruptions is a community
+that continues to live, work, farm and move forward.
+The story of Ara-al and Guintubdan is also a story of
+community, cooperation and respect for the natural
+environment surrounding Mount Kanlaon.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      BUSINESS DIRECTORY
-======================================================= -->
+========================================================= -->
 
 <section id="business">
 
-    <!-- Your Business Directory content -->
+<div class="container">
+
+<div class="section-label">
+Local Directory
+</div>
+
+<h2 class="section-title">
+Local Businesses
+</h2>
+
+<p class="section-description">
+Support local businesses by discovering shops, restaurants,
+local products, guides, transportation and other services
+in Ara-al and nearby La Carlota City.
+</p>
+
+
+<div class="business-grid">
+
+
+<div class="business">
+
+<h3>Restaurants & Food</h3>
+
+<div class="directory-list">
+
+
+<div class="directory-item">
+
+<strong>Lumay Cafe</strong>
+
+<p>
+Located at the corner of Yunque and Rizal Streets,
+this cozy café gallery offers Asian and Filipino meals,
+coffee and signature mango shakes.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Café Norma</strong>
+
+<p>
+Located across the public plaza, Café Norma is a relaxing
+local spot for coffee, pastries and casual dining.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Quan Delicacies</strong>
+
+<p>
+A popular stop for pasalubong and native delicacies
+including puto, kutsinta, tikoy and crispy ukoy.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Ranidon Superb Batchoy</strong>
+
+<p>
+A longtime La Carlota food destination on Yunque Street,
+known for batchoy and crunchy empanadas.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>PALAMANGKAS Pala-Pala Seafood Restaurant</strong>
+
+<p>
+A local dining destination offering seafood dishes
+and Filipino favorites.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Café Repub</strong>
+
+<p>
+A local café and casual dining spot in La Carlota City.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Rumbines Cafe</strong>
+
+<p>
+A local café offering food, drinks and a casual dining experience.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Yong's Cafeteria</strong>
+
+<p>
+A local cafeteria offering meals and refreshments.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="business">
+
+<h3>Tourism & Guides</h3>
+
+<p>
+Find local Guintubdan guides for trekking, nature trips
+and exploring the area's attractions.
+</p>
+
+</div>
+
+
+<div class="business">
+
+<h3>Local Products</h3>
+
+<div class="directory-list">
+
+
+<div class="directory-item">
+
+<strong>Durian</strong>
+
+<p>
+Ara-al's upland areas produce locally grown durian
+and other agricultural products.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Fresh Vegetables & Fruits</strong>
+
+<p>
+Local farmers grow highland vegetables, root crops
+and seasonal fruits.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Muscovado Sugar</strong>
+
+<p>
+Traditional unrefined cane sugar reflecting
+Negros Occidental's sugarcane heritage.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Piaya & Biscocho</strong>
+
+<p>
+Popular Negros delicacies enjoyed as snacks
+and commonly brought home as pasalubong.
+</p>
+
+</div>
+
+
+<div class="directory-item">
+
+<strong>Kalamay-Hati</strong>
+
+<p>
+A traditional sticky rice delicacy made with
+glutinous rice, coconut milk and sugar.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div class="business">
+
+<h3>Transportation</h3>
+
+<p>
+Get around Ara-al and nearby areas by local
+tricycles and jeepneys.
+</p>
+
+</div>
+
+
+<div class="business">
+
+<h3>Small Businesses</h3>
+
+<p>
+Discover local shops, products and services offered
+by entrepreneurs in Barangay Ara-al.
+</p>
+
+</div>
+
+
+<div class="business">
+
+<h3>Other Services</h3>
+
+<p>
+Find local repair, event, rental and other useful
+community services in Ara-al.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
 
 </section>
 
-<!-- =======================================================
-     PLACES TO STAY
-======================================================= -->
 
-<section
-    class="stay"
-    id="stay">
+<!-- =========================================================
+     PLACES TO STAY
+========================================================= -->
+
+<section class="stay" id="stay">
 
 <div class="container">
 
@@ -2188,9 +2121,10 @@ Places to stay
 </h2>
 
 <p class="section-description">
- Stay close to nature and experience the peaceful mountain
-    atmosphere of Guintubdan and Barangay Ara-al.
+Stay close to nature and experience the peaceful mountain
+atmosphere of Guintubdan and Barangay Ara-al.
 </p>
+
 
 <div class="stay-grid">
 
@@ -2203,7 +2137,7 @@ Guintubdan Mountain Resort
 
 <p>
 A mountain retreat in Sitio Guintubdan surrounded by
-    lush greenery, cool air, and natural attractions.
+lush greenery, cool air and natural attractions.
 </p>
 
 </div>
@@ -2216,8 +2150,8 @@ Local Homestays
 </h3>
 
 <p>
- Check with local residents and tourism contacts for
-    available homestay options in the Guintubdan area.
+Check with local residents and tourism contacts for
+available homestay options in the Guintubdan area.
 </p>
 
 </div>
@@ -2226,12 +2160,12 @@ Local Homestays
 <div class="stay-card">
 
 <h3>
-Other Accommodations
+Nearby Accommodations
 </h3>
 
 <p>
-Explore other resorts, inns, and accommodations in
-    La Carlota City and nearby areas.
+Explore other resorts, inns and accommodations in
+La Carlota City and nearby areas.
 </p>
 
 </div>
@@ -2244,9 +2178,9 @@ Explore other resorts, inns, and accommodations in
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      GALLERY
-======================================================= -->
+========================================================= -->
 
 <section id="gallery">
 
@@ -2262,26 +2196,27 @@ Photo gallery
 
 <p class="section-description">
 Discover Ara-al through moments captured across its mountains,
-    waterfalls, scenic landscapes, and vibrant local community.
+waterfalls, scenic landscapes and vibrant local community.
 </p>
+
 
 <div class="gallery-grid">
 
-<div class="gallery-item"></div>
+<img src="gallery1.jpg" alt="Ara-al gallery photo 1">
 
-<div class="gallery-item"></div>
+<img src="gallery2.jpg" alt="Ara-al gallery photo 2">
 
-<div class="gallery-item"></div>
+<img src="gallery3.jpg" alt="Ara-al gallery photo 3">
 
-<div class="gallery-item"></div>
+<img src="gallery4.jpg" alt="Ara-al gallery photo 4">
 
-<div class="gallery-item"></div>
+<img src="gallery5.jpg" alt="Ara-al gallery photo 5">
 
-<div class="gallery-item"></div>
+<img src="gallery6.jpg" alt="Ara-al gallery photo 6">
 
-<div class="gallery-item"></div>
+<img src="gallery7.jpg" alt="Ara-al gallery photo 7">
 
-<div class="gallery-item"></div>
+<img src="gallery8.jpg" alt="Ara-al gallery photo 8">
 
 </div>
 
@@ -2290,13 +2225,11 @@ Discover Ara-al through moments captured across its mountains,
 </section>
 
 
-<!-- =======================================================
+<!-- =========================================================
      MAP
-======================================================= -->
+========================================================= -->
 
-<section
-    class="map-section"
-    id="map">
+<section class="map-section" id="map">
 
 <div class="container">
 
@@ -2309,17 +2242,31 @@ Find Ara-al
 </h2>
 
 <p class="section-description">
-Ara-al is located in La Carlota City, Negros Occidental,
-within the foothills of Mount Kanlaon.
+Barangay Ara-al is located in La Carlota City,
+Negros Occidental, Philippines.
 </p>
+
 
 <div class="map-box">
 
-<iframe
-    src="https://www.google.com/maps?q=Barangay+Ara-al,+La+Carlota+City,+Negros+Occidental&output=embed"
-    loading="lazy"
-    title="Map of Barangay Ara-al">
-</iframe>
+<h3>
+Barangay Ara-al
+</h3>
+
+<p>
+Explore Ara-al, Sitio Guintubdan and nearby mountain
+destinations in La Carlota City.
+</p>
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Barangay+Ara-al+La+Carlota+City+Negros+Occidental"
+target="_blank"
+rel="noopener"
+class="btn btn-primary">
+
+Open in Google Maps
+
+</a>
 
 </div>
 
@@ -2328,126 +2275,81 @@ within the foothills of Mount Kanlaon.
 </section>
 
 
-<!-- =======================================================
-     MODERN FOOTER
-======================================================= -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-<footer class="araal-footer">
+<footer>
 
-<div class="araal-footer-container">
+<div class="footer-inner">
 
 
-<!-- BRAND -->
+<div class="footer-top">
 
-<div class="araal-footer-brand">
 
-<div class="araal-footer-logo">
+<div class="footer-brand">
 
+<h3>
 Discover <span>Ara-al</span>
-
-</div>
+</h3>
 
 <p>
-Discover the natural beauty, culture,
-and local experiences of Barangay Ara-al,
+Discover the natural attractions, local culture,
+food and mountain communities of Barangay Ara-al,
 La Carlota City, Negros Occidental.
 </p>
 
 </div>
 
 
-<!-- FOOTER LINKS -->
-
-<div class="araal-footer-links">
+<div class="footer-links">
 
 
-<div class="araal-footer-column">
+<div class="footer-column">
 
-<h4>
-Explore
-</h4>
+<strong>Explore</strong>
 
-<a href="#about">
-About Ara-al
-</a>
+<a href="#about">About Ara-al</a>
 
-<a href="#attractions">
-Attractions
-</a>
+<a href="#attractions">Attractions</a>
 
-<a href="#food">
-Food
-</a>
+<a href="#food">Food</a>
 
-<a href="#events">
-Events
-</a>
+<a href="#events">Events</a>
 
 </div>
 
 
-<div class="araal-footer-column">
+<div class="footer-column">
 
-<h4>
-Discover
-</h4>
+<strong>Discover</strong>
 
-<a href="#business">
-Businesses
-</a>
+<a href="#kanlaon">Kanlaon</a>
 
-<a href="#stay">
-Places to Stay
-</a>
+<a href="#business">Businesses</a>
 
-<a href="#gallery">
-Gallery
-</a>
+<a href="#stay">Places to Stay</a>
 
-<a href="#map">
-Map
-</a>
+<a href="#gallery">Gallery</a>
+
+<a href="#map">Map</a>
 
 </div>
 
 
 </div>
 
-
-<!-- DIVIDER -->
-
-<div class="araal-footer-line"></div>
+</div>
 
 
-<!-- COPYRIGHT -->
-
-<div class="araal-footer-bottom">
+<div class="footer-bottom">
 
 <p>
-
-© 2026
-
-<strong>
-Discover Ara-al
-</strong>
-
-<span class="araal-footer-dot">
-•
-</span>
-
-Website created by
-
-<strong class="araal-footer-creator">
-Edwin Penacuba Jr.
-</strong>
-
+© 2026 Discover Ara-al | Website created by Edwin Penacuba Jr.
 </p>
 
-
-<p class="araal-footer-location">
-
+<p>
 📍 La Carlota City, Negros Occidental
-
 </p>
 
 </div>
@@ -2458,29 +2360,25 @@ Edwin Penacuba Jr.
 </footer>
 
 
-<!-- =======================================================
-     BACK TO TOP BUTTON
-======================================================= -->
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
 
 <button
-    id="topBtn"
-    onclick="scrollToTop()"
-    aria-label="Back to top">
-
+id="topBtn"
+onclick="scrollToTop()"
+aria-label="Back to top">
 ↑
-
 </button>
 
 
-<!-- =======================================================
+<!-- =========================================================
      JAVASCRIPT
-======================================================= -->
+========================================================= -->
 
 <script>
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+/* MOBILE MENU */
 
 function toggleMenu() {
 
@@ -2492,32 +2390,27 @@ function toggleMenu() {
 }
 
 
-/* =========================================================
-   CLOSE MOBILE MENU AFTER CLICKING A LINK
-========================================================= */
+/* CLOSE MOBILE MENU */
 
 document
-    .querySelectorAll(".nav-links a")
-    .forEach(function(link) {
+.querySelectorAll(".nav-links a")
+.forEach(function(link) {
 
-        link.addEventListener("click", function() {
+    link.addEventListener("click", function() {
 
-            document
-                .getElementById("navLinks")
-                .classList.remove("active");
-
-        });
+        document
+        .getElementById("navLinks")
+        .classList.remove("active");
 
     });
 
+});
 
-/* =========================================================
-   BACK TO TOP BUTTON
-========================================================= */
+
+/* BACK TO TOP */
 
 const topBtn =
     document.getElementById("topBtn");
-
 
 window.addEventListener("scroll", function() {
 
@@ -2534,41 +2427,48 @@ window.addEventListener("scroll", function() {
 });
 
 
-/* =========================================================
-   SCROLL TO TOP
-========================================================= */
-
 function scrollToTop() {
 
     window.scrollTo({
-
         top: 0,
-
         behavior: "smooth"
-
     });
 
 }
 
-</script>
 
-   <script>
+/* =========================================================
+   DAY / NIGHT MODE
+========================================================= */
 
-const themeToggle = document.getElementById("themeToggle");
-const themeIcon = document.getElementById("themeIcon");
+const themeToggle =
+    document.getElementById("themeToggle");
 
-const savedTheme = localStorage.getItem("discoverAraalTheme");
+const themeIcon =
+    document.getElementById("themeIcon");
+
+
+const savedTheme =
+    localStorage.getItem("discoverAraalTheme");
+
 
 if (savedTheme === "dark") {
+
     document.body.classList.add("dark-mode");
+
     themeIcon.textContent = "☀";
+
 }
 
-themeToggle.addEventListener("click", function () {
+
+themeToggle.addEventListener("click", function() {
 
     document.body.classList.toggle("dark-mode");
 
-    if (document.body.classList.contains("dark-mode")) {
+
+    if (
+        document.body.classList.contains("dark-mode")
+    ) {
 
         themeIcon.textContent = "☀";
 
@@ -2591,6 +2491,7 @@ themeToggle.addEventListener("click", function () {
 });
 
 </script>
+
 
 </body>
 
