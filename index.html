@@ -687,43 +687,117 @@ section {
     max-width: 850px;
 }
 
-
 /* =========================================================
    BUSINESS DIRECTORY
 ========================================================= */
 
 .business-grid {
-    column-count: 3;
-    column-gap: 16px;
-
-    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 20px;
 }
 
 .business {
-    display: inline-block;
-
     width: 100%;
-
-    margin: 0 0 16px;
-
-    padding: 20px;
-
-    background: white;
-
-    border: 1px solid var(--border);
+    margin: 0;
+    background: #ffffff;
+    border: 1px solid #dce5df;
     border-radius: 14px;
-
-    break-inside: avoid;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .business h3 {
     color: var(--green-dark);
-    margin-bottom: 12px;
+    margin: 0 0 8px;
+    line-height: 1.35;
 }
 
 .business p {
     color: var(--gray);
+    margin: 0;
+    line-height: 1.6;
 }
+
+
+/* =========================================================
+   BUSINESS CATEGORY TITLES
+========================================================= */
+
+.business-category-title {
+    margin-top: 45px;
+    margin-bottom: 5px;
+    color: var(--green-dark);
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   RESTAURANT + LOCAL PRODUCT CARDS
+========================================================= */
+
+.restaurant-card,
+.product-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.restaurant-thumb,
+.product-thumb {
+    width: 100px;
+    height: 100px;
+    flex: 0 0 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #dce5df;
+}
+
+.restaurant-info,
+.product-card > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.restaurant-info h3,
+.product-card h3 {
+    margin: 0 0 6px;
+}
+
+.restaurant-info p,
+.product-card p {
+    margin: 0;
+}
+
+
+/* =========================================================
+   RATINGS
+========================================================= */
+
+.business-rating {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 4px 0 8px;
+    font-size: 12px;
+    color: #718078;
+}
+
+.business-rating .stars {
+    color: #d5a84b;
+    font-size: 15px;
+}
+
+.business-rating strong {
+    color: var(--green-dark);
+}
+
+
+/* =========================================================
+   DIRECTORY LIST
+========================================================= */
 
 .directory-list {
     margin-top: 15px;
@@ -731,9 +805,7 @@ section {
 
 .directory-item {
     padding: 14px 0;
-
-    border-bottom:
-        1px solid rgba(11,81,56,.15);
+    border-bottom: 1px solid rgba(11,81,56,.15);
 }
 
 .directory-item:first-child {
@@ -747,11 +819,8 @@ section {
 
 .directory-item strong {
     display: block;
-
     color: #0b5138;
-
     font-size: 16px;
-
     margin-bottom: 5px;
 }
 
@@ -759,6 +828,56 @@ section {
     margin: 0;
 }
 
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.dark-mode .business-category-title,
+.dark-mode .business-rating strong {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .business-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .business {
+        padding: 16px;
+    }
+
+    .restaurant-card,
+    .product-card {
+        gap: 14px;
+    }
+
+    .restaurant-thumb,
+    .product-thumb {
+        width: 80px;
+        height: 80px;
+        flex: 0 0 80px;
+    }
+
+    .business-category-title {
+        margin-top: 35px;
+        font-size: 20px;
+    }
+}
 
 /* =========================================================
    PLACES TO STAY
