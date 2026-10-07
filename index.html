@@ -995,18 +995,6 @@ footer {
     color: #aebdb6;
 }
 
-.footer-bottom::before {
-    content: "";
-
-    position: absolute;
-    top: -1px;
-    left: 0;
-
-    width: 70px;
-    height: 2px;
-
-    background: var(--gold);
-}
 
 .footer-copyright {
     display: flex;
@@ -1113,12 +1101,11 @@ footer {
     display: none;
 
     position: fixed;
+    right: 12px;
+    bottom: 12px;
 
-    right: 25px;
-    bottom: 25px;
-
-    width: 48px;
-    height: 48px;
+    width: 34px;
+    height: 34px;
 
     border: none;
     border-radius: 50%;
@@ -1126,12 +1113,19 @@ footer {
     background: var(--gold);
     color: #172018;
 
-    font-size: 20px;
+    font-size: 15px;
+    line-height: 1;
 
     cursor: pointer;
 
     z-index: 999;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
 }
+
 
 
 /* =========================================================
@@ -2297,8 +2291,8 @@ Places to stay
 </h2>
 
 <p class="section-description">
-Stay close to nature and experience the peaceful mountain
-atmosphere of Guintubdan and Barangay Ara-al.
+Stay close to nature and experience the peaceful mountain atmosphere of Guintubdan and 
+Barangay Ara-al.
 </p>
 
 
@@ -2612,7 +2606,7 @@ window.addEventListener("scroll", function() {
 
     if (window.scrollY > 400) {
 
-        topBtn.style.display = "block";
+        topBtn.style.display = "flex";
 
     } else {
 
