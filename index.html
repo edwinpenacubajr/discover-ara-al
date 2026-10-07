@@ -101,6 +101,16 @@ header {
     color: var(--gold);
 }
 
+.logo-guintubdan {
+    margin-left: 8px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.72rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+}
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -829,23 +839,72 @@ section {
     background: #eef4ef;
 }
 
-.map-box {
-    padding: 45px;
+/* =========================================================
+   MAP
+========================================================= */
 
-    background: white;
+.map-section {
+    background: #eef4ef;
+}
+
+.map-container {
+    width: 100%;
+    height: 450px;
+
+    border-radius: 18px;
+    overflow: hidden;
 
     border: 1px solid var(--border);
-    border-radius: 18px;
+
+    background: #ffffff;
 }
 
-.map-box h3 {
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    display: block;
+}
+
+.map-info {
+    margin-top: 20px;
+
+    padding: 25px 28px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.map-info h3 {
     color: var(--green-dark);
-    margin-bottom: 12px;
+    margin-bottom: 5px;
 }
 
-.map-box p {
+.map-info p {
     color: var(--gray);
-    margin-bottom: 22px;
+    margin: 0;
+}
+
+.map-info .btn {
+    white-space: nowrap;
+}
+
+.map-container {
+    height: 350px;
+}
+
+.map-info {
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 
@@ -916,17 +975,133 @@ footer {
     color: white;
 }
 
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
 .footer-bottom {
-    padding-top: 25px;
+    position: relative;
+
+    margin-top: 25px;
+    padding: 28px 0 5px;
 
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 30px;
+
+    border-top: 1px solid rgba(213,168,75,.25);
 
     color: #aebdb6;
+}
+
+.footer-bottom::before {
+    content: "";
+
+    position: absolute;
+    top: -1px;
+    left: 0;
+
+    width: 70px;
+    height: 2px;
+
+    background: var(--gold);
+}
+
+.footer-copyright {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-mark {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(213,168,75,.10);
+
+    border: 1px solid rgba(213,168,75,.35);
+    border-radius: 10px;
+
+    color: var(--gold);
 
     font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.footer-copyright p {
+    margin: 0;
+
+    color: #dce6e1;
+    font-size: 14px;
+}
+
+.footer-copyright strong {
+    color: white;
+}
+
+.footer-copyright strong span {
+    color: var(--gold);
+}
+
+.footer-copyright small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #82958b;
+    font-size: 11px;
+    letter-spacing: .3px;
+}
+
+.footer-credit {
+    text-align: right;
+}
+
+.footer-credit span {
+    display: block;
+
+    color: #82958b;
+    font-size: 11px;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-credit strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #d5a84b;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-credit {
+        text-align: left;
+        padding-left: 56px;
+    }
+
 }
 
 
@@ -1190,7 +1365,8 @@ body.dark-mode .theme-toggle {
 <nav class="navbar">
 
 <a href="#home" class="logo">
-Discover <span>Ara-al</span>
+    Discover <span>Ara-al</span>
+    <em class="logo-guintubdan">/ Guintubdan</em>
 </a>
 
 <div class="menu-btn"
@@ -1559,7 +1735,7 @@ in Ara-al and La Carlota City.
 <div class="event-image">
 
 <img
-src="gallery1.jpg"
+src="barangay-celebration.jpg"
 alt="Community celebration">
 
 </div>
@@ -1621,7 +1797,7 @@ community celebrations.
 <div class="event-image">
 
 <img
-src="gallery2.jpg"
+src="cultural-event.jpg"
 alt="Local cultural event">
 
 </div>
@@ -2233,42 +2409,50 @@ waterfalls, scenic landscapes and vibrant local community.
 
 <div class="container">
 
-<div class="section-label">
-Location
-</div>
+    <div class="section-label">
+        Location
+    </div>
 
-<h2 class="section-title">
-Find Ara-al
-</h2>
+    <h2 class="section-title">
+        Find Ara-al
+    </h2>
 
-<p class="section-description">
-Barangay Ara-al is located in La Carlota City,
-Negros Occidental, Philippines.
-</p>
+    <p class="section-description">
+        Barangay Ara-al is located in La Carlota City,
+        Negros Occidental, Philippines.
+    </p>
 
+    <div class="map-container">
 
-<div class="map-box">
+        <iframe
+            src="https://www.google.com/maps?q=Barangay%20Ara-al%2C%20La%20Carlota%20City%2C%20Negros%20Occidental&output=embed"
+            loading="lazy"
+            allowfullscreen=""
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map of Barangay Ara-al, La Carlota City">
+        </iframe>
 
-<h3>
-Barangay Ara-al
-</h3>
+    </div>
 
-<p>
-Explore Ara-al, Sitio Guintubdan and nearby mountain
-destinations in La Carlota City.
-</p>
+    <div class="map-info">
 
-<a
-href="https://www.google.com/maps/search/?api=1&query=Barangay+Ara-al+La+Carlota+City+Negros+Occidental"
-target="_blank"
-rel="noopener"
-class="btn btn-primary">
+        <div>
+            <h3>Barangay Ara-al</h3>
+            <p>
+                Explore Ara-al, Sitio Guintubdan and nearby
+                mountain destinations in La Carlota City.
+            </p>
+        </div>
 
-Open in Google Maps
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=Barangay+Ara-al+La+Carlota+City+Negros+Occidental"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary">
+            Open in Google Maps
+        </a>
 
-</a>
-
-</div>
+    </div>
 
 </div>
 
@@ -2344,16 +2528,24 @@ La Carlota City, Negros Occidental.
 
 <div class="footer-bottom">
 
-<p>
-© 2026 Discover Ara-al | Website created by Edwin Penacuba Jr.
-</p>
+    <div class="footer-copyright">
+        <span class="footer-mark">DA</span>
 
-<p>
-📍 La Carlota City, Negros Occidental
-</p>
+        <div>
+            <p>
+                © 2026 <strong>Discover <span>Ara-al</span></strong>
+            </p>
 
-</div>
+            <small>
+                Barangay Ara-al • La Carlota City • Negros Occidental
+            </small>
+        </div>
+    </div>
 
+    <div class="footer-credit">
+        <span>Website created by</span>
+        <strong>Edwin Penacuba Jr.</strong>
+    </div>
 
 </div>
 
@@ -2370,6 +2562,10 @@ onclick="scrollToTop()"
 aria-label="Back to top">
 ↑
 </button>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
 
 
 <!-- =========================================================
@@ -2489,6 +2685,80 @@ themeToggle.addEventListener("click", function() {
     }
 
 });
+
+/* =========================================================
+   DAY / NIGHT MODE
+========================================================= */
+
+/* your existing day/night code is here */
+
+
+/* =========================================================
+   CUSTOM MOUSE VISUAL
+========================================================= */
+
+const cursorDot = document.getElementById("cursorDot");
+const cursorGlow = document.getElementById("cursorGlow");
+
+let mouseX = 0;
+let mouseY = 0;
+
+let glowX = 0;
+let glowY = 0;
+
+document.addEventListener("mousemove", function(e) {
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorDot.style.left = mouseX + "px";
+    cursorDot.style.top = mouseY + "px";
+
+    cursorDot.style.opacity = "1";
+    cursorGlow.style.opacity = "1";
+
+});
+
+function animateCursor() {
+
+    glowX += (mouseX - glowX) * 0.15;
+    glowY += (mouseY - glowY) * 0.15;
+
+    cursorGlow.style.left = glowX + "px";
+    cursorGlow.style.top = glowY + "px";
+
+    requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+const hoverElements = document.querySelectorAll(
+    "a, button, .card, .event-card, .business, .gallery-grid img, .kanlaon-hero, .ashfall-photo"
+);
+
+hoverElements.forEach(function(element) {
+
+    element.addEventListener("mouseenter", function() {
+        cursorGlow.classList.add("hovering");
+    });
+
+    element.addEventListener("mouseleave", function() {
+        cursorGlow.classList.remove("hovering");
+    });
+
+});
+
+document.addEventListener("mouseleave", function() {
+    cursorDot.style.opacity = "0";
+    cursorGlow.style.opacity = "0";
+});
+
+
+</script>
+
+</body>
+
+</html>
 
 </script>
 
