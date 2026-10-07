@@ -528,6 +528,14 @@ section {
     overflow: hidden;
 }
 
+/* VIDEO */
+.kanlaon-hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 .kanlaon-hero img {
     width: 100%;
     height: 100%;
@@ -2145,9 +2153,17 @@ of volcanic unrest from Mount Kanlaon.
 
 <div class="kanlaon-hero">
 
-<img
-src="guintubdan-ashfall-drone.jpg"
-alt="Drone view of Guintubdan after ashfall from Kanlaon Volcano">
+<video
+    class="kanlaon-hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="guintubdan-ashfall-drone.jpg">
+
+    <source src="kanlaon-hero.mp4" type="video/mp4">
+
+</video>
 
 <div class="kanlaon-caption">
 
