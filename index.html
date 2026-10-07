@@ -124,7 +124,40 @@ header {
     cursor: pointer;
 }
 
+/* =========================================================
+   DIRECTORY LIST
+========================================================= */
 
+.directory-list {
+    margin-top: 15px;
+}
+
+.directory-item {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(11, 81, 56, 0.15);
+}
+
+.directory-item:first-child {
+    padding-top: 0;
+}
+
+.directory-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.directory-item strong {
+    display: block;
+    color: #0b5138;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.directory-item p {
+    margin: 0;
+    line-height: 1.6;
+}
 /* =========================================================
    HERO
 ========================================================= */
@@ -142,7 +175,7 @@ header {
             rgba(8, 37, 26, .62),
             rgba(8, 37, 26, .75)
         ),
-        url("images/hero.jpg") center/cover no-repeat;
+        url("guintubdan.jpg") center/cover no-repeat;
 }
 
 .hero-content {
@@ -267,7 +300,7 @@ section {
             rgba(18,60,44,.1),
             rgba(18,60,44,.1)
         ),
-        url("images/about.jpg") center/cover;
+        url("about.jpg") center/cover;
 }
 
 .about-text p {
@@ -358,27 +391,27 @@ section {
 ========================================================= */
 
 .img-1 {
-    background-image: url("images/guintubdan.jpg");
+    background-image: url("guintubdan.jpg");
 }
 
 .img-2 {
-    background-image: url("images/busay-dalupya.jpg");
+    background-image: url("busay-dalupya.jpg");
 }
 
 .img-3 {
-    background-image: url("images/ambon-falls.jpg");
+    background-image: url("ambon-falls.jpg");
 }
 
 .img-4 {
-    background-image: url("images/labi-labi.jpg");
+    background-image: url("labi-labi.jpg");
 }
 
 .img-5 {
-    background-image: url("images/twin-falls.jpg");
+    background-image: url("twin-falls.jpg");
 }
 
 .img-6 {
-    background-image: url("images/busay-abaga.jpg");
+    background-image: url("busay-abaga.jpg");
 }
 
 
@@ -577,35 +610,35 @@ section {
 }
 
 .gallery-item:nth-child(1) {
-    background-image: url("images/gallery1.jpg");
+    background-image: url("gallery1.jpg");
 }
 
 .gallery-item:nth-child(2) {
-    background-image: url("images/gallery2.jpg");
+    background-image: url("gallery2.jpg");
 }
 
 .gallery-item:nth-child(3) {
-    background-image: url("images/gallery3.jpg");
+    background-image: url("gallery3.jpg");
 }
 
 .gallery-item:nth-child(4) {
-    background-image: url("images/gallery4.jpg");
+    background-image: url("gallery4.jpg");
 }
 
 .gallery-item:nth-child(5) {
-    background-image: url("images/gallery5.jpg");
+    background-image: url("gallery5.jpg");
 }
 
 .gallery-item:nth-child(6) {
-    background-image: url("images/gallery6.jpg");
+    background-image: url("gallery6.jpg");
 }
 
 .gallery-item:nth-child(7) {
-    background-image: url("images/gallery7.jpg");
+    background-image: url("gallery7.jpg");
 }
 
 .gallery-item:nth-child(8) {
-    background-image: url("images/gallery8.jpg");
+    background-image: url("gallery8.jpg");
 }
 
 
@@ -974,8 +1007,130 @@ section {
         align-items: flex-start;
     }
 }
+/* =========================================================
+   FESTIVALS & EVENTS CARDS
+========================================================= */
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 35px;
+}
+
+.event-card {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    background: #ffffff;
+    border: 1px solid #dce5df;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+.event-image {
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.event-content {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-tag {
+    display: inline-block;
+    width: fit-content;
+    color: #b98225;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.event-content h3 {
+    color: #083b2b;
+    font-size: 23px;
+    margin: 0 0 12px;
+}
+
+.event-content p {
+    margin: 0;
+    line-height: 1.7;
+}
 
 
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .event-image {
+        height: 230px;
+        min-height: 230px;
+    }
+
+    .event-content {
+        padding: 22px;
+    }
+
+    .event-content h3 {
+        font-size: 20px;
+    }
+}
+
+   /* =========================================================
+   BUSINESS DIRECTORY - CARD HEIGHT FIX
+========================================================= */
+
+.business-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.business {
+    background: #ffffff;
+    border: 1px solid #dce5df;
+    border-radius: 16px;
+    padding: 20px;
+    height: auto;
+    align-self: start;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .business-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .business-grid {
+        grid-template-columns: 1fr;
+    }
+}
 /* =========================================================
    RESPONSIVE - SMALL PHONES
 ========================================================= */
@@ -998,7 +1153,136 @@ section {
         margin-top: 5px;
     }
 }
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
 
+.theme-toggle-item {
+    margin-left: 15px;
+}
+
+.theme-toggle {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+
+    color: #ffffff;
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   NIGHT MODE
+========================================================= */
+
+body.dark-mode {
+    background: #07130e;
+    color: #dbe7e1;
+}
+
+body.dark-mode section {
+    background-color: #07130e;
+}
+
+body.dark-mode .section-title {
+    color: #f2f7f4;
+}
+
+body.dark-mode .section-description {
+    color: #aabbb2;
+}
+
+body.dark-mode .section-label {
+    color: #dba942;
+}
+
+
+/* CARDS */
+
+body.dark-mode .business,
+body.dark-mode .event-card,
+body.dark-mode .kanlaon-story-text {
+    background: #10231b;
+    border-color: #294338;
+}
+
+body.dark-mode .business h3,
+body.dark-mode .event-content h3,
+body.dark-mode .kanlaon-story-text h3 {
+    color: #f2f7f4;
+}
+
+body.dark-mode .business p,
+body.dark-mode .event-content p,
+body.dark-mode .kanlaon-story-text p {
+    color: #b5c4bd;
+}
+
+
+/* BUSINESS DIRECTORY */
+
+body.dark-mode .directory-item {
+    border-color: #294338;
+}
+
+body.dark-mode .directory-item strong {
+    color: #8ed4af;
+}
+
+body.dark-mode .directory-item p {
+    color: #b5c4bd;
+}
+
+
+/* KANLAON */
+
+body.dark-mode .kanlaon-story {
+    background: #07130e;
+}
+
+body.dark-mode .kanlaon-message {
+    background: #102c21;
+}
+
+
+/* THEME BUTTON IN DARK MODE */
+
+body.dark-mode .theme-toggle {
+    background: #ffffff;
+    color: #173d2f;
+    border-color: #ffffff;
+}
+
+/* SMOOTH TRANSITION */
+
+body,
+section,
+.business,
+.event-card,
+.kanlaon-story-text,
+.directory-item {
+    transition:
+        background-color 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease;
+}
+   
 </style>
 
 </head>
@@ -1038,11 +1322,19 @@ Discover <span>Ara-al</span>
 
 <li><a href="#events">Events</a></li>
 
+<li><a href="#kanlaon">Kanlaon</a></li>
+
 <li><a href="#business">Businesses</a></li>
 
 <li><a href="#gallery">Gallery</a></li>
 
-<li><a href="#map">Map</a></li>
+<li class="theme-toggle-item">
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+        <span id="themeIcon">☾</span>
+    </button>
+</li>
+
+   
 
 </ul>
 
@@ -1512,103 +1804,357 @@ Taste locally made snacks, native delicacies, sweets,
 <!-- =======================================================
      EVENTS
 ======================================================= -->
+<!-- =======================================================
+     FESTIVALS & EVENTS
+======================================================= -->
 
-<section
-    class="events"
-    id="events">
+<section class="events" id="events">
 
 <div class="container">
 
-<div class="section-label">
-Culture & Community
+    <div class="section-label">
+        Culture & Community
+    </div>
+
+    <h2 class="section-title">
+        Festivals & Events
+    </h2>
+
+    <p class="section-description">
+        Experience the culture, traditions, and community celebrations
+        of Ara-al and La Carlota City.
+    </p>
+
+
+    <div class="event-list">
+
+
+        <!-- BARANGAY CELEBRATIONS -->
+        <div class="event-card">
+
+            <div class="event-image">
+                <img src="barangay-celebration.jpg"
+                     alt="Local celebration in Barangay Ara-al">
+            </div>
+
+            <div class="event-content">
+
+                <span class="event-tag">
+                    COMMUNITY
+                </span>
+
+                <h3>
+                    Local Barangay Celebrations
+                </h3>
+
+                <p>
+                    The community of Barangay Ara-al and Sitio Guintubdan
+                    celebrates local traditions influenced by highland
+                    culture, agriculture, faith, and the community's close
+                    connection to the surrounding mountains and nature.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PASALAMAT FESTIVAL -->
+        <div class="event-card">
+
+            <div class="event-image">
+                <img src="pasalamat-festival.jpg"
+                     alt="Pasalamat Festival in La Carlota City">
+            </div>
+
+            <div class="event-content">
+
+                <span class="event-tag">
+                    ANNUAL FESTIVAL
+                </span>
+
+                <h3>
+                    Pasalamat Festival
+                </h3>
+
+                <p>
+                    One of La Carlota City's major celebrations, the
+                    Pasalamat Festival is a thanksgiving celebration
+                    featuring colorful street dancing, cultural
+                    performances, vibrant costumes, and festivities
+                    celebrating the city's agricultural heritage.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CULTURAL EVENTS -->
+        <div class="event-card">
+
+            <div class="event-image">
+                <img src="cultural-event.jpg"
+                     alt="Cultural events in La Carlota City">
+            </div>
+
+            <div class="event-content">
+
+                <span class="event-tag">
+                    CULTURE
+                </span>
+
+                <h3>
+                    Local Cultural Events
+                </h3>
+
+                <p>
+                    Throughout the year, community gatherings and cultural
+                    activities bring residents together through music,
+                    food, traditions, religious celebrations, and other
+                    local events.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 </div>
 
-<h2 class="section-title">
-Festivals & events
-</h2>
+</section>
+<!-- =======================================================
+     BUSINESS DIRECTORY
+======================================================= -->
 
-<p class="section-description">
-Community celebrations are an important part of local
-culture. Add confirmed dates and event information here
-as they become available.
-</p>
+<section id="business">
 
-<div class="event-list">
+<div class="container">
+
+    <div class="section-label">
+        Local Directory
+    </div>
+
+    <h2 class="section-title">
+        Local Businesses
+    </h2>
+
+    <p class="section-description">
+        Support local businesses by discovering shops, restaurants,
+        local products, guides, transportation, and other services
+        in Ara-al and nearby La Carlota City.
+    </p>
 
 
-<div class="event">
+    <div class="business-grid">
 
-<div class="event-date">
-ANNUAL
+        <!-- RESTAURANTS & FOOD -->
+        <div class="business">
+
+            <h3>Restaurants & Food</h3>
+
+            <div class="directory-list">
+
+                <div class="directory-item">
+                    <strong>Lumay Cafe</strong>
+                    <p>
+                        Located at the corner of Yunque and Rizal Streets,
+                        this cozy café gallery offers affordable Asian and
+                        Filipino meals, coffee, and signature mango shakes.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Café Norma</strong>
+                    <p>
+                        Located across the public plaza, Café Norma is a
+                        relaxing local spot for native coffee, pastries,
+                        and casual dining.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Quan Delicacies</strong>
+                    <p>
+                        A popular stop for pasalubong and native delicacies
+                        including puto, kutsinta, tikoy, and crispy ukoy.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Ranidon Superb Batchoy</strong>
+                    <p>
+                        A longtime La Carlota food destination on Yunque
+                        Street, known for La Paz-style batchoy and
+                        crunchy empanadas.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>PALAMANGKAS Pala-Pala Seafood Restaurant</strong>
+                    <p>
+                        A local dining destination offering seafood dishes
+                        and Filipino favorites.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Café Repub</strong>
+                    <p>
+                        A local café and casual dining spot in La Carlota City.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Rumbines Cafe</strong>
+                    <p>
+                        A local café offering food, drinks, and a casual
+                        dining experience.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Yong's Cafeteria</strong>
+                    <p>
+                        A local cafeteria offering meals and refreshments.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOURISM & GUIDES -->
+        <div class="business">
+
+            <h3>Tourism & Guides</h3>
+
+            <p>
+                Find local Guintubdan guides for trekking, nature trips,
+                and exploring the area's attractions.
+            </p>
+
+        </div>
+
+
+        <!-- LOCAL PRODUCTS -->
+        <div class="business">
+
+            <h3>Local Products</h3>
+
+            <div class="directory-list">
+
+                <div class="directory-item">
+                    <strong>Durian</strong>
+                    <p>
+                        Ara-al's upland areas produce locally grown durian,
+                        contributing to the community's agricultural products.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Fresh Vegetables & Fruits</strong>
+                    <p>
+                        Local farmers grow highland vegetables, root crops,
+                        and seasonal fruits supplied to communities and
+                        markets around La Carlota City.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Muscovado Sugar</strong>
+                    <p>
+                        Traditional unrefined cane sugar reflecting
+                        Negros Occidental's long history of sugarcane farming.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Piaya & Biscocho</strong>
+                    <p>
+                        Popular Negros delicacies enjoyed as snacks
+                        and commonly brought home as pasalubong.
+                    </p>
+                </div>
+
+                <div class="directory-item">
+                    <strong>Kalamay-Hati</strong>
+                    <p>
+                        A traditional sticky rice delicacy made with
+                        glutinous rice, coconut milk, and sugar.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRANSPORTATION -->
+        <div class="business">
+
+            <h3>Transportation</h3>
+
+            <p>
+                Get around Ara-al and nearby areas by local
+                tricycles and jeepneys.
+            </p>
+
+        </div>
+
+
+        <!-- SMALL BUSINESSES -->
+        <div class="business">
+
+            <h3>Small Businesses</h3>
+
+            <p>
+                Discover local shops, food, products, and services
+                offered by entrepreneurs in Barangay Ara-al.
+            </p>
+
+        </div>
+
+
+        <!-- OTHER SERVICES -->
+        <div class="business">
+
+            <h3>Other Services</h3>
+
+            <p>
+                Find local repair, event, rental, and other useful
+                community services in Ara-al.
+            </p>
+
+        </div>
+
+    </div>
+
 </div>
 
-<div>
+</section>
 
-<h3>
-Local Barangay Celebrations
-</h3>
+<!-- =======================================================
+     FESTIVALS & EVENTS
+======================================================= -->
 
-<p>
-The community of Sitio Guintubdan, located within Barangay Ara-al, La Carlota City, Negros Occidental, participates in vibrant local celebrations that blend unique highland culture, harvest thanksgiving, and deep-seated Catholic traditions.
-Because Guintubdan sits at the scenic foothills of Mount Kanlaon, its festivities reflect a close connection to the land and nature. 
-</p>
+<section class="events" id="events">
 
-</div>
+    <!-- Your Festivals & Events content -->
 
-</div>
+</section>
 
 
-<div class="event">
+<!-- =======================================================
+     KANLAON & ARA-AL
+======================================================= -->
 
-<div class="event-date">
-LOCAL
-</div>
+<section class="kanlaon-story" id="kanlaon">
 
-<div>
-
-<h3>
-La Carlota City Events
-</h3>
-
-<p>
-Pasalamat Festival: Held annually around late April to early 
-May (culminating on the Sunday nearest to May 1 / Labor Day), this week-long harvest thanksgiving features:
-Vibrant Street Dances and Arena Competitions: Showcasing local tribes in flora- and fauna-inspired costumes
-with signature "Pasalamat Samba Beats".
-</p>
-
-</div>
-
-</div>
-
-
-<div class="event">
-
-<div class="event-date">
-FESTIVAL
-</div>
-
-<div>
-
-<h3>
-Local Cultural Events
-</h3>
-
-<p>
-The primary festival in La Carlota City, Negros Occidental, is the Pasalamat Festival,
-an annual week-long thanksgiving celebration held every end of April leading up to Labor Day (May 1).
-Origin: Started in 1980 by then-Mayor Luis Jalandoni as a way to give thanks for a bountiful harvest,
-honor the sugar industry workers, and celebrate community resilience after a series of local calamities.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+    <!-- THE ENTIRE KANLAON CODE YOU JUST SENT GOES HERE -->
 
 </section>
 
@@ -1619,127 +2165,9 @@ honor the sugar industry workers, and celebrate community resilience after a ser
 
 <section id="business">
 
-<div class="container">
-
-<div class="section-label">
-Local Directory
-</div>
-
-<h2 class="section-title">
-Local businesses
-</h2>
-
-<p class="section-description">
-Support local businesses by discovering shops, restaurants,
-homestays, guides and other services in the community.
-</p>
-
-<div class="business-grid">
-
-
-<div class="business">
-
-<h3>
-Restaurants & Food
-</h3>
-
-<p>
-• Lumay Cafe - Found at the corner of Yunque and Rizal Streets, this is an artistic, cozy café gallery. It is 
-widely considered an "OG favorite" by locals for its very affordable Asian/Filipino rice meals, great coffee, and signature mango shakes.
-• Café Norma - Centrally located right across the public plaza, it serves as one of the best established chill spots in the city.
-It is popular for its local native coffee, pastries, and casual vibes.
-• Quan Delicacies - this is the absolute best stop for pasalubong (souvenirs). 
-Try their native snacks like puto, kutsinta, tikoy, and crispy ukoy (shrimp fritters).
-• Ranidon Superb Batchoy - A La Carlota legend operating since 1987 on Yunque Street. Grab a piping hot bowl of their special La Paz-style Batchoy, 
-and pair it with a crunchy empanada dipped in chili oil.
-• PALAMANGKAS Pala-Pala Seafood Restaurant
-• Café Repub
-• Rumbines Cafe
-• Yong’s Cafeteria
-</p>
-
-</div>
-
-
-<div class="business">
-
-<h3>
-Tourism & Guides
-</h3>
-
-<p>
-Find local Guintubdan guides for trekking, nature trips,
-    and exploring the area's attractions.
-</p>
-
-</div>
-
-
-<div class="business">
-
-<h3>
-Local Products
-</h3>
-
-<p>
-Fresh Highland Produce: 
-• Durian: Ara-al has built a strong reputation for durian production in Negros Occidental. Local farms like the Durianan Farm in Brgy. Ara-al
-• Fresh Vegetables & Fruits: Farmers from Ara-al frequently supply highland vegetables, root crops, and fruits to the city’s trade fairs, such as the La Carlota KADIWA Market Hub at the City Plaza, where produce is sold middleman-free.
-Sugarcane-Derived & Heritage Sweets:
-• Muscovado Sugar, Piaya and Biscocho, Kalamay-Hati
-</p>
-
-</div>
-
-
-<div class="business">
-
-<h3>
-Transportation
-</h3>
-
-<p>
- Get around Ara-al and nearby areas by local tricycles
-    and jeepneys.
-</p>
-
-</div>
-
-
-<div class="business">
-
-<h3>
-Small Businesses
-</h3>
-
-<p>
-Discover local shops, food, products, and services offered
-    by entrepreneurs in Barangay Ara-al.
-</p>
-
-</div>
-
-
-<div class="business">
-
-<h3>
-Other Services
-</h3>
-
-<p>
-Find local repair, event, rental, and other useful
-    community services in Ara-al.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
+    <!-- Your Business Directory content -->
 
 </section>
-
 
 <!-- =======================================================
      PLACES TO STAY
@@ -2124,6 +2552,45 @@ function scrollToTop() {
 
 </script>
 
+   <script>
+
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
+
+const savedTheme = localStorage.getItem("discoverAraalTheme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeIcon.textContent = "☀";
+}
+
+themeToggle.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+        themeIcon.textContent = "☀";
+
+        localStorage.setItem(
+            "discoverAraalTheme",
+            "dark"
+        );
+
+    } else {
+
+        themeIcon.textContent = "☾";
+
+        localStorage.setItem(
+            "discoverAraalTheme",
+            "light"
+        );
+
+    }
+
+});
+
+</script>
 
 </body>
 
