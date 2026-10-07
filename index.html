@@ -1022,19 +1022,9 @@ section {
     gap: 14px;
 }
 
-.gallery-grid img {
-    width: 100%;
-    height: 240px;
-
-    object-fit: cover;
-
-    border-radius: 14px;
-
-    transition: .3s;
-}
-
 .gallery-grid img:hover {
-    transform: scale(1.025);
+    transform: scale(1.12);
+    filter: brightness(1.05);
 }
 
 
@@ -1464,6 +1454,37 @@ body.dark-mode .theme-toggle {
     .gallery-grid {
         grid-template-columns: repeat(2,1fr);
     }
+
+    /* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    border-radius: 14px;
+    cursor: pointer;
+
+    transition:
+        transform .45s ease,
+        filter .45s ease,
+        box-shadow .45s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.06);
+    filter: brightness(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    z-index: 5;
+}
 
 }
 
@@ -2277,13 +2298,17 @@ surrounding Kanlaon.
 
 <!-- SECOND PHOTO -->
 
-<div class="ashfall-photo">
+<video
+    class="ashfall-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="guintubdan-houses-ash.jpg">
 
-<img
-src="guintubdan-houses-ash.jpg"
-alt="Homes affected by volcanic ash in Guintubdan">
+    <source src="kanlaon-eruption.mp4" type="video/mp4">
 
-<div class="ashfall-caption">
+</video>
 
 <span>
 LIFE NEAR KANLAON
