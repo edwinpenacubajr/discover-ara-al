@@ -352,7 +352,16 @@ section {
 }
 
 .about-flip-front {
-    background: url("about.jpeg") center/cover;
+    background-image:
+        linear-gradient(
+            rgba(18, 60, 44, 0.10),
+            rgba(18, 60, 44, 0.10)
+        ),
+        url("about.jpeg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .about-flip-back {
@@ -360,6 +369,15 @@ section {
     background: #174f3c;
     color: white;
     padding: 40px;
+    display: flex;
+flex-direction: column;
+}
+.about-flip-back small {
+    margin-top: auto;
+    color: #d5a84b;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }
 
 .about-text p {
@@ -1055,6 +1073,16 @@ section {
 .flip-card-back {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    display: flex;
+flex-direction: column;
+
+}
+.flip-card-back small {
+    margin-top: auto;
+    color: #d5a84b;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
 }
 
 .flip-card-back {
@@ -1065,6 +1093,7 @@ section {
     color: white;
     padding: 30px;
     border-radius: 16px;
+    
 }
 
 .stay-image {
