@@ -353,6 +353,14 @@ section {
     -webkit-backface-visibility: hidden;
 }
 
+.about-flip-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
 .about-flip-front {
     background-image:
         linear-gradient(
@@ -437,6 +445,73 @@ flex-direction: column;
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 15px 35px rgba(0,0,0,.09);
+}
+/* EXPLORE FLIP CARD */
+.attraction-flip {
+    position: relative;
+    perspective: 1200px;
+    cursor: pointer;
+    min-height: 360px;
+}
+
+.attraction-flip:hover {
+    transform: none;
+}
+
+.attraction-flip-inner {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s ease;
+    transform-style: preserve-3d;
+}
+
+.attraction-flip.flipped .attraction-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.attraction-flip-front,
+.attraction-flip-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.attraction-flip-back {
+    transform: rotateY(180deg);
+    background: #174f3c;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.attraction-flip-back h3 {
+    color: white;
+    margin: 5px 0 15px;
+}
+
+.attraction-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.attraction-gallery img {
+    width: 100%;
+    height: 95px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.attraction-flip-back small {
+    margin-top: auto;
+    color: #d5a84b;
+    font-weight: 700;
 }
 
 .card-image {
@@ -1981,7 +2056,7 @@ Learn More
 <div class="about-image about-flip" onclick="this.classList.toggle('flipped')">
     <div class="about-flip-inner">
     <div class="about-flip-front">
-    <img src="about.jpeg" alt="Map of Barangay Ara-al">
+    <img src="about.jpg" alt="Map of Barangay Ara-al">
 </div>
     
 
@@ -2088,7 +2163,9 @@ around Ara-al and Guintubdan.
 
 <div class="cards">
 
-<div class="card">
+<div class="card attraction-flip" onclick="this.classList.toggle('flipped')">
+    <div class="attraction-flip-inner">
+    <div class="attraction-flip-front">
 
 <div class="card-image img-1"></div>
 
@@ -2099,7 +2176,25 @@ Experience the cool mountain atmosphere and natural scenery
 of Sitio Guintubdan.
 </p>
 </div>
+</div>
+<div class="attraction-flip-back">
 
+    <span class="flip-label">GUINTUBDAN GALLERY</span>
+
+    <h3>Explore Guintubdan</h3>
+
+    <div class="attraction-gallery">
+        <img src="gallery1.jpg" alt="Guintubdan view">
+        <img src="gallery2.jpg" alt="Guintubdan scenery">
+        <img src="gallery3.jpg" alt="Guintubdan attraction">
+        <img src="gallery4.jpg" alt="Guintubdan nature">
+    </div>
+
+    <small>Click again to return</small>
+
+</div>
+
+</div>
 </div>
 
 
