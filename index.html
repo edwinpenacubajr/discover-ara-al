@@ -998,6 +998,36 @@ section {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0,0,0,.18);
 }
+.flip-card {
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    transition: transform 0.7s ease;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+    background: #174f3c;
+    color: white;
+    padding: 30px;
+    border-radius: 16px;
+}
 
 .stay-image {
     width: 100%;
@@ -2863,8 +2893,9 @@ Barangay Ara-al.
 <div class="stay-grid">
 
     <!-- GUINTUBDAN MOUNTAIN RESORT -->
-    <div class="stay-card">
-
+<div class="stay-card flip-card" onclick="this.classList.toggle('flipped')">
+    <div class="flip-card-inner">
+<div class="flip-card-front">
         <img
             src="guintubdan-resort.jpg"
             alt="Guintubdan Mountain Resort"
@@ -2888,7 +2919,14 @@ Barangay Ara-al.
             </div>
 
         </div>
+</div>
 
+<div class="flip-card-back">
+    <h3>Guintubdan Mountain Resort</h3>
+    <p>Click to view more information.</p>
+</div>
+
+</div>
     </div>
 
 
