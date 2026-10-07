@@ -1419,6 +1419,105 @@ body.dark-mode .theme-toggle {
 
 }
 
+/* BUSINESS DIRECTORY CATEGORY */
+
+.business-category-title {
+    margin-top: 45px;
+    margin-bottom: 5px;
+    color: #123c2c;
+    font-size: 22px;
+}
+
+.business-category-title:first-of-type {
+    margin-top: 30px;
+}
+
+
+/* RESTAURANT CARDS */
+
+.restaurant-card,
+.product-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.restaurant-thumb,
+.product-thumb {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #dce5df;
+}
+
+.restaurant-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.restaurant-info h3,
+.product-card h3 {
+    margin: 0 0 6px;
+}
+
+.restaurant-info p,
+.product-card p {
+    margin: 0;
+}
+
+
+/* RATINGS */
+
+.business-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 4px 0 8px;
+    font-size: 12px;
+    color: #718078;
+}
+
+.business-rating .stars {
+    color: #d5a84b;
+    font-size: 15px;
+}
+
+.business-rating strong {
+    color: #123c2c;
+}
+
+
+/* DARK MODE */
+
+.dark-mode .business-category-title,
+.dark-mode .business-rating strong {
+    color: #ffffff;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .restaurant-thumb,
+    .product-thumb {
+        width: 75px;
+        height: 75px;
+    }
+
+    .restaurant-card,
+    .product-card {
+        gap: 13px;
+    }
+
+    .business-category-title {
+        font-size: 20px;
+        margin-top: 35px;
+    }
+}
+
 </style>
 
 </head>
@@ -2120,229 +2219,246 @@ in Ara-al and nearby La Carlota City.
 
 <div class="business">
 
-<h3>Restaurants & Food</h3>
+<!-- =========================
+     RESTAURANTS & FOOD
+========================= -->
 
-<div class="directory-list">
+<h3 class="business-category-title">Restaurants & Food</h3>
 
+<div class="business-grid">
 
-<div class="directory-item">
+    <div class="business restaurant-card">
+        <img src="lumay-cafe.jpg" alt="Lumay Cafe" class="restaurant-thumb">
+        <div class="restaurant-info">
+            <h3>Lumay Cafe</h3>
+            <div class="business-rating">
+                <span class="stars">★</span>
+                <strong>4.6</strong>
+                <span>161 reviews</span>
+            </div>
+            <p>
+                Located at the corner of Yunque and Rizal Streets,
+                this cozy café gallery offers Asian and Filipino meals,
+                coffee and signature mango shakes.
+            </p>
+        </div>
+    </div>
 
-<strong>Lumay Cafe</strong>
+    <div class="business restaurant-card">
+        <img src="cafe-norma.jpg" alt="Cafe Norma" class="restaurant-thumb">
+        <div class="restaurant-info">
+            <h3>Café Norma</h3>
+            <p>
+                Located across the public plaza, Café Norma is a relaxing
+                local spot for coffee, pastries and casual dining.
+            </p>
+        </div>
+    </div>
 
-<p>
-Located at the corner of Yunque and Rizal Streets,
-this cozy café gallery offers Asian and Filipino meals,
-coffee and signature mango shakes.
-</p>
+    <div class="business restaurant-card">
+        <img src="quan-delicacies.jpg" alt="Quan Delicacies" class="restaurant-thumb">
+        <div class="restaurant-info">
+            <h3>Quan Delicacies</h3>
+            <p>
+                A popular stop for pasalubong and native delicacies including
+                puto, kutsinta, tikoy and crispy ukoy.
+            </p>
+        </div>
+    </div>
 
-</div>
+    <div class="business restaurant-card">
+        <img src="ranidon-batchoy.jpg" alt="Ranidon Superb Batchoy" class="restaurant-thumb">
+        <div class="restaurant-info">
+            <h3>Ranidon Superb Batchoy</h3>
+            <p>
+                A longtime La Carlota food destination on Yunque Street,
+                known for batchoy and crunchy empanadas.
+            </p>
+        </div>
+    </div>
 
+    <div class="business restaurant-card">
+        <img src="palamangkas.jpg" alt="PALAMANGKAS Pala-Pala Seafood Restaurant" class="restaurant-thumb">
+        <div class="restaurant-info">
+            <h3>PALAMANGKAS Pala-Pala Seafood Restaurant</h3>
+            <p>
+                A local dining destination offering seafood dishes
+                and Filipino favorites.
+            </p>
+        </div>
+    </div>
 
-<div class="directory-item">
+    <div class="business restaurant-card">
+        <img src="cafe-repub.jpg" alt="Cafe Repub" class="restaurant-thumb">
+        <div class="restaurant-info">
+            <h3>Café Repub</h3>
+            <p>
+                A local café and casual dining spot in La Carlota City.
+            </p>
+        </div>
+    </div>
 
-<strong>Café Norma</strong>
+    <div class="business restaurant-card">
+        <img src="rumbines-cafe.jpg" alt="Rumbines Cafe" class="restaurant-thumb">
+        <div class="restaurant-info">
+            <h3>Rumbines Cafe</h3>
+            <p>
+                A local café offering food, drinks and a casual dining experience.
+            </p>
+        </div>
+    </div>
 
-<p>
-Located across the public plaza, Café Norma is a relaxing
-local spot for coffee, pastries and casual dining.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>Quan Delicacies</strong>
-
-<p>
-A popular stop for pasalubong and native delicacies
-including puto, kutsinta, tikoy and crispy ukoy.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>Ranidon Superb Batchoy</strong>
-
-<p>
-A longtime La Carlota food destination on Yunque Street,
-known for batchoy and crunchy empanadas.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>PALAMANGKAS Pala-Pala Seafood Restaurant</strong>
-
-<p>
-A local dining destination offering seafood dishes
-and Filipino favorites.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>Café Repub</strong>
-
-<p>
-A local café and casual dining spot in La Carlota City.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>Rumbines Cafe</strong>
-
-<p>
-A local café offering food, drinks and a casual dining experience.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>Yong's Cafeteria</strong>
-
-<p>
-A local cafeteria offering meals and refreshments.
-</p>
-
-</div>
-
-
-</div>
+    <div class="business restaurant-card">
+        <img src="yongs-cafeteria.jpg" alt="Yong's Cafeteria" class="restaurant-thumb">
+        <div class="restaurant-info">
+            <h3>Yong's Cafeteria</h3>
+            <p>
+                A local cafeteria offering meals and refreshments.
+            </p>
+        </div>
+    </div>
 
 </div>
 
 
-<div class="business">
+<!-- =========================
+     LOCAL PRODUCTS
+========================= -->
 
-<h3>Tourism & Guides</h3>
+<h3 class="business-category-title">Local Products</h3>
 
-<p>
-Find local Guintubdan guides for trekking, nature trips
-and exploring the area's attractions.
-</p>
+<div class="business-grid">
 
-</div>
+    <div class="business product-card">
+        <img src="durian.jpg" alt="Durian" class="product-thumb">
+        <div>
+            <h3>Durian</h3>
+            <p>
+                Ara-al's upland areas produce locally grown durian
+                and other agricultural products.
+            </p>
+        </div>
+    </div>
 
+    <div class="business product-card">
+        <img src="vegetables-fruits.jpg" alt="Fresh vegetables and fruits" class="product-thumb">
+        <div>
+            <h3>Fresh Vegetables & Fruits</h3>
+            <p>
+                Local farmers grow highland vegetables, root crops
+                and seasonal fruits.
+            </p>
+        </div>
+    </div>
 
-<div class="business">
+    <div class="business product-card">
+        <img src="muscovado.jpg" alt="Muscovado Sugar" class="product-thumb">
+        <div>
+            <h3>Muscovado Sugar</h3>
+            <p>
+                Traditional unrefined cane sugar reflecting
+                Negros Occidental's sugarcane heritage.
+            </p>
+        </div>
+    </div>
 
-<h3>Local Products</h3>
+    <div class="business product-card">
+        <img src="piaya-biscocho.jpg" alt="Piaya and Biscocho" class="product-thumb">
+        <div>
+            <h3>Piaya & Biscocho</h3>
+            <p>
+                Popular Negros delicacies enjoyed as snacks and
+                commonly brought home as pasalubong.
+            </p>
+        </div>
+    </div>
 
-<div class="directory-list">
-
-
-<div class="directory-item">
-
-<strong>Durian</strong>
-
-<p>
-Ara-al's upland areas produce locally grown durian
-and other agricultural products.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>Fresh Vegetables & Fruits</strong>
-
-<p>
-Local farmers grow highland vegetables, root crops
-and seasonal fruits.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>Muscovado Sugar</strong>
-
-<p>
-Traditional unrefined cane sugar reflecting
-Negros Occidental's sugarcane heritage.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>Piaya & Biscocho</strong>
-
-<p>
-Popular Negros delicacies enjoyed as snacks
-and commonly brought home as pasalubong.
-</p>
-
-</div>
-
-
-<div class="directory-item">
-
-<strong>Kalamay-Hati</strong>
-
-<p>
-A traditional sticky rice delicacy made with
-glutinous rice, coconut milk and sugar.
-</p>
+    <div class="business product-card">
+        <img src="kalamay-hati.jpg" alt="Kalamay-Hati" class="product-thumb">
+        <div>
+            <h3>Kalamay-Hati</h3>
+            <p>
+                A traditional sticky rice delicacy made with glutinous
+                rice, coconut milk and sugar.
+            </p>
+        </div>
+    </div>
 
 </div>
 
 
-</div>
+<!-- =========================
+     TOURISM & GUIDES
+========================= -->
+
+<h3 class="business-category-title">Tourism & Guides</h3>
+
+<div class="business-grid">
+
+    <div class="business">
+        <h3>Local Guintubdan Guides</h3>
+        <p>
+            Find local Guintubdan guides for trekking, nature trips
+            and exploring the area's attractions.
+        </p>
+    </div>
 
 </div>
 
 
-<div class="business">
+<!-- =========================
+     TRANSPORTATION
+========================= -->
 
-<h3>Transportation</h3>
+<h3 class="business-category-title">Transportation</h3>
 
-<p>
-Get around Ara-al and nearby areas by local
-tricycles and jeepneys.
-</p>
+<div class="business-grid">
 
-</div>
-
-
-<div class="business">
-
-<h3>Small Businesses</h3>
-
-<p>
-Discover local shops, products and services offered
-by entrepreneurs in Barangay Ara-al.
-</p>
+    <div class="business">
+        <h3>Local Transportation</h3>
+        <p>
+            Get around Ara-al and nearby areas by local tricycles
+            and jeepneys.
+        </p>
+    </div>
 
 </div>
 
 
-<div class="business">
+<!-- =========================
+     SMALL BUSINESSES
+========================= -->
 
-<h3>Other Services</h3>
+<h3 class="business-category-title">Small Businesses</h3>
 
-<p>
-Find local repair, event, rental and other useful
-community services in Ara-al.
-</p>
+<div class="business-grid">
+
+    <div class="business">
+        <h3>Local Shops & Entrepreneurs</h3>
+        <p>
+            Discover local shops, products and services offered
+            by entrepreneurs in Barangay Ara-al.
+        </p>
+    </div>
 
 </div>
 
+
+<!-- =========================
+     OTHER SERVICES
+========================= -->
+
+<h3 class="business-category-title">Other Services</h3>
+
+<div class="business-grid">
+
+    <div class="business">
+        <h3>Community Services</h3>
+        <p>
+            Find local repair, event, rental and other useful
+            community services in Ara-al.
+        </p>
+    </div>
 
 </div>
 
