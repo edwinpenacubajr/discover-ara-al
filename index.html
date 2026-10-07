@@ -324,6 +324,44 @@ section {
         url("about.jpg") center/cover;
 }
 
+.about-flip {
+    perspective: 1000px;
+    cursor: pointer;
+    background: none;
+}
+
+.about-flip-inner {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.7s ease;
+    transform-style: preserve-3d;
+}
+
+.about-flip.flipped .about-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.about-flip-front,
+.about-flip-back {
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.about-flip-front {
+    background: url("about.jpeg") center/cover;
+}
+
+.about-flip-back {
+    transform: rotateY(180deg);
+    background: #174f3c;
+    color: white;
+    padding: 40px;
+}
+
 .about-text p {
     color: var(--gray);
     margin-bottom: 18px;
@@ -1909,7 +1947,34 @@ Learn More
 
 <div class="about-grid">
 
-<div class="about-image"></div>
+<div class="about-image about-flip" onclick="this.classList.toggle('flipped')">
+    <div class="about-flip-inner">
+    <div class="about-flip-front"></div>
+
+<div class="about-flip-back">
+
+    <span class="flip-label">ABOUT ARA-AL</span>
+
+    <h3>Barangay Ara-al</h3>
+
+    <p>
+        Ara-al is one of the barangays of La Carlota City,
+        Negros Occidental, situated near the foothills of
+        Mount Kanlaon.
+    </p>
+
+    <p>
+        Covering more than 1,900 hectares, the community is
+        known for its agricultural lands, mountain scenery,
+        waterfalls, and Sitio Guintubdan.
+    </p>
+
+    <small>Click again to return to the map</small>
+
+</div>
+</div>
+
+</div>
 
 <div class="about-text">
 
@@ -2922,8 +2987,25 @@ Barangay Ara-al.
 </div>
 
 <div class="flip-card-back">
+
+    <span class="flip-label">MOUNTAIN GETAWAY</span>
+
     <h3>Guintubdan Mountain Resort</h3>
-    <p>Click to view more information.</p>
+
+    <p>
+        A mountain destination in Sitio Guintubdan surrounded
+        by lush vegetation and the natural scenery of the
+        Mount Kanlaon area.
+    </p>
+
+    <p>
+        Visitors can enjoy the cool mountain atmosphere and
+        use the area as a starting point for exploring nearby
+        natural attractions.
+    </p>
+
+    <small>Click again to return</small>
+
 </div>
 
 </div>
@@ -2931,7 +3013,9 @@ Barangay Ara-al.
 
 
     <!-- DEW AND EAT'S CAFE -->
-    <div class="stay-card">
+  <div class="stay-card flip-card" onclick="this.classList.toggle('flipped')">
+    <div class="flip-card-inner">
+    <div class="flip-card-front">
 
         <img
             src="local-homestay.jpg"
@@ -2953,12 +3037,37 @@ Barangay Ara-al.
             </p>
 
         </div>
+</div>
 
+<div class="flip-card-back">
+
+    <span class="flip-label">LOCAL STAY</span>
+
+    <h3>Dew and Eat's Cafe</h3>
+
+    <p>
+        A cozy local option in Guintubdan offering a place
+        where visitors can relax and stay overnight while
+        enjoying the cool mountain atmosphere.
+    </p>
+
+    <p>
+        Conveniently located within walking distance of the
+        Pavilion and Spring Resort area.
+    </p>
+
+    <small>Click again to return</small>
+
+</div>
+
+</div>
     </div>
 
 
     <!-- LOCAL AFFORDABLE STAYS -->
-    <div class="stay-card">
+    <div class="stay-card flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+    <div class="flip-card-front">
 
         <img
             src="nearby-accommodation.jpg"
@@ -2981,7 +3090,31 @@ Barangay Ara-al.
             </p>
 
         </div>
+</div>
 
+<div class="flip-card-back">
+
+    <span class="flip-label">BUDGET-FRIENDLY</span>
+
+    <h3>Local Affordable Stays</h3>
+
+    <p>
+        Simple and affordable accommodations are available
+        around Ara-al and Guintubdan for visitors looking
+        for a convenient place to stay.
+    </p>
+
+    <p>
+        A practical option for travelers who want to stay
+        close to the area's mountain attractions and local
+        community.
+    </p>
+
+    <small>Click again to return</small>
+
+</div>
+
+</div>
     </div>
 
 </div>
