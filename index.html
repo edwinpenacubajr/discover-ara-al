@@ -187,8 +187,13 @@ footer{background:#0c1a13;color:#fff;padding:60px 22px 26px}
 .ft{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.12)}
 .ft h3 span{color:var(--gold)}.ft p{max-width:480px;margin-top:10px;color:#b9c8c0}
 .fc{display:flex;flex-direction:column;gap:8px;min-width:130px}.fc strong{color:var(--gold)}.fc a{color:#dce6e1;font-size:.9rem;transition:.25s}.fc a:hover{color:#fff;transform:translateX(5px)}
-.fbt{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px;color:#9fb2a8;font-size:.85rem}
+.fbt{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:24px;color:#9fb2a8;font-size:.85rem}
+.fr{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .fbt b{color:var(--gold)}
+.fbk{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:40px;background:#1877f2;color:#fff;font-weight:700;font-size:.85rem;transition:transform .3s,box-shadow .3s}
+.fbk i{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:#fff;color:#1877f2;font:800 15px Georgia,serif}
+.fbk:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(24,119,242,.5)}.fbk:active{transform:scale(.96)}
+@media(max-width:650px){.fbt{flex-direction:column;align-items:flex-start}}
 #lb{position:fixed;inset:0;z-index:3000;background:rgba(5,16,11,.94);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.4s}
 #lb.on{opacity:1;visibility:visible}
 #lbi{width:min(90vw,1000px);height:min(76vh,680px);border-radius:18px;background-size:cover;background-position:center;transform:scale(.88);transition:.5s cubic-bezier(.2,.8,.2,1)}
@@ -278,7 +283,7 @@ section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{hei
 <footer><div class="w"><div class="ft"><div><h3>Discover <span>Ara-al</span></h3><p>Discover the natural attractions, local culture, food and mountain communities of Barangay Ara-al, La Carlota City, Negros Occidental.</p></div>
 <div class="fc"><strong>Explore</strong><a href="#about">About Ara-al</a><a href="#attractions">Attractions</a><a href="#food">Food</a><a href="#events">Events</a></div>
 <div class="fc"><strong>Discover</strong><a href="#kanlaon">Kanlaon</a><a href="#business">Businesses</a><a href="#stay">Places to Stay</a><a href="#gallery">Gallery</a><a href="#map">Map</a></div></div>
-<div class="fbt"><span>© 2026 <b>Discover Ara-al</b> • Barangay Ara-al • La Carlota City • Negros Occidental</span><span>Website created by <b>Edwin Penacuba Jr.</b></span></div></div></footer>
+<div class="fbt"><span>© 2026 <b>Discover Ara-al</b> • Barangay Ara-al • La Carlota City • Negros Occidental</span><div class="fr"><span>Website created by <b>Edwin Penacuba Jr.</b></span><a class="fbk" href="https://www.facebook.com/penacuba16" target="_blank" rel="noopener"><i>f</i> Contact me on Facebook</a></div></div></div></footer>
 
 <div id="lb"><button class="lbb" id="cl">✕</button><button class="lbb" id="pv">‹</button><div id="lbi"></div><button class="lbb" id="nx">›</button><div id="lbc"></div></div>
 <button id="top" aria-label="Back to top">↑</button>
