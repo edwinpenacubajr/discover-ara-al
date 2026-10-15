@@ -178,7 +178,7 @@ nav.sc .nb{height:62px}
 .ga{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;grid-auto-flow:dense;gap:14px}
 .ga div{border-radius:16px;background-size:cover;background-position:center;cursor:zoom-in;position:relative;overflow:hidden;transition:transform .45s,box-shadow .45s}
 .ga div:nth-child(2),.ga div:nth-child(6){grid-row:span 2}
-.ga video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ga video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}.ga video.vp{opacity:1}
 .pb{position:absolute;left:12px;top:12px;z-index:1;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;display:grid;place-items:center;font-size:12px;backdrop-filter:blur(6px);transition:.3s}
 .ga .vd:hover .pb{background:var(--gold);color:#111;transform:scale(1.15)}
 .ga div:hover{transform:scale(1.04);z-index:2;box-shadow:0 22px 44px rgba(0,0,0,.35)}
@@ -221,6 +221,27 @@ footer{background:#0c1a13;color:#fff;padding:60px 22px 26px}
 @media(max-width:650px){
 section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{height:420px}.vc{left:20px;right:20px;bottom:24px}.msg{padding:30px 22px}
 .ga{grid-auto-rows:160px}}
+/* MOBILE PERFORMANCE + TOUCH FIXES */
+@media(hover:none),(max-width:950px){
+  nav.sc{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg)}
+  .hint,.pl,.mt,.pb{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(0,0,0,.7)}
+  .orb,.pt{display:none}
+  .hb{inset:0;will-change:auto}
+  .card{will-change:auto;transform-style:flat}
+  .ti::before{animation:none}
+  .hero h1 span:last-child{animation:up 1s .4s both}
+}
+@media(hover:none){
+  .pl{display:none}
+  .card:hover .ph,#abf:hover .ph{animation:none}
+  .ga div:hover{transform:none;box-shadow:none}.ga div:hover::after{opacity:0}
+  .flip{perspective:none}
+  .fi,.flip.on .fi{transform-style:flat;transform:none}
+  .ff,.fb{transition:opacity .35s,visibility .35s}
+  .fb{transform:none;opacity:0;visibility:hidden}
+  .flip.on .fb{opacity:1;visibility:visible}
+  .flip.on .ff{opacity:0;visibility:hidden}
+}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -234,7 +255,7 @@ section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{hei
 <button class="mb" id="mb" aria-label="Menu">☰</button></div></nav>
 
 <header class="hero" id="home">
-<div class="hb" id="hb"><video muted loop playsinline preload="auto" poster="guintubdan.jpg"><source src="hero.mp4" type="video/mp4"></video></div><div class="orb o1"></div><div class="orb o2"></div><div id="pts"></div>
+<div class="hb" id="hb"><video muted loop playsinline preload="metadata" poster="guintubdan.jpg"><source src="hero.mp4" type="video/mp4"></video></div><div class="orb o1"></div><div class="orb o2"></div><div id="pts"></div>
 <div class="hc"><div class="hs">La Carlota City • Negros Occidental</div>
 <h1 id="h1"><span style="--i:0">Discover</span> <span style="--i:1">Ara-al</span></h1>
 <p class="lead">A mountain community nestled in the foothills of Mount Kanlaon, where waterfalls, cool mountain air, lush forests and local culture come together.</p>
@@ -316,12 +337,12 @@ const av=a=>`<video muted loop playsinline preload="metadata"><source src="${a[1
 $('#at').innerHTML=AT.map((a,i)=>i?`<div class="card" style="--d:${i*.08}s" data-i="${i}"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}</div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div>`:
 `<div class="flip" style="--d:0s"><div class="fi"><div class="ff card"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}<span class="hint">Tap for gallery ↻</span></div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div><div class="fb"><em>GUINTUBDAN GALLERY</em><h3>Explore Guintubdan</h3><div class="gal4">${[1,2,3,4].map(n=>`<div style="${bg('gallery'+n+'.jpg',140+n*12)}"></div>`).join('')}</div><small>Tap again to return</small></div></div></div>`).join('');
 $('#ev').innerHTML=EV.map(e=>`<div class="ev rv"><div class="eh" style="background-image:linear-gradient(135deg,hsl(${e[4]+120} 42% 30%),hsl(${e[4]+155} 48% 16%))"><video muted loop playsinline preload="metadata" poster="${e[3]}"><source src="${e[3].replace('.jpg','.mp4')}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button><span class="pl">▶ Hover to play</span></div><div class="ec"><span class="tag">${e[0]}</span><h3>${e[1]}</h3><p>${e[2]}</p></div></div>`).join('');
-const vid=(id,src,po,tag,h,p)=>$(id).innerHTML=`<div class="vid rv"><video autoplay muted loop playsinline poster="${po}"><source src="${src}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button><div class="vc"><span>${tag}</span><h3>${h}</h3><p>${p}</p></div></div>`;
+const vid=(id,src,po,tag,h,p)=>$(id).innerHTML=`<div class="vid rv"><video muted loop playsinline preload="none" poster="${po}"><source src="${src}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button><div class="vc"><span>${tag}</span><h3>${h}</h3><p>${p}</p></div></div>`;
 vid('#v1','kanlaon-hero.mp4','guintubdan-ashfall-drone.jpg','GUINTUBDAN • ARA-AL','A Community Beneath the Volcano','During periods of heightened activity from Kanlaon, volcanic ash has affected homes, roads, vegetation, farms and parts of the mountain landscape surrounding Guintubdan.');
 vid('#v2','kanlaon-eruption.mp4','guintubdan-houses-ash.jpg','LIFE NEAR KANLAON','When Kanlaon Erupted',"Ash-covered homes, vegetation and roads show how closely the people of Guintubdan live with one of the Philippines' active volcanoes.");
 $('#tl').innerHTML=TL.map((t,i)=>`<div class="ti"><div class="fx"><b class="no">0${i+1}</b><i class="sh"></i></div><span class="yr"><i class="ic2">${['🌋','💨','🌋','⛰️'][i]}</i>${t[0]}</span><h3>${t[1]}</h3><p>${t[2]}</p></div>`).join('');
 $('#sg').innerHTML=ST.map((s,i)=>`<div class="flip" style="--d:${i*.12}s"><div class="fi"><div class="ff"><div class="ph" style="${bg(s[3],150+i*25)}"><span class="hint">Tap to flip ↻</span></div><div class="sc2"><em>${s[0]}</em><h3>${s[1]}</h3><p>${s[2]}</p>${s[7]?'<div class="c"><strong>Reservations</strong><br>La Carlota City Tourism Office<a href="tel:0344600286" onclick="event.stopPropagation()">(034) 460-0286</a></div>':''}</div></div><div class="fb"><em>${s[4]}</em><h3>${s[1]}</h3><p>${s[5]}</p><p>${s[6]}</p><small>Tap again to return</small></div></div></div>`).join('');
-$('#ga').innerHTML=GA.map((g,i)=>`<div class="rv${g[3]?' vd':''}" style="${bg(g[1],g[2])};--d:${i*.06}s" data-g="${i}">${g[3]?`<video autoplay muted loop playsinline preload="auto"><source src="${g[3]}" type="video/mp4"></video><span class="pb">▶</span>`:''}</div>`).join('');
+$('#ga').innerHTML=GA.map((g,i)=>`<div class="rv${g[3]?' vd':''}" style="${bg(g[1],g[2])};--d:${i*.06}s" data-g="${i}">${g[3]?`<video muted loop playsinline preload="none"><source src="${g[3]}" type="video/mp4"></video><span class="pb">▶</span>`:''}</div>`).join('');
 /* FACEBOOK LINKS: paste each business's Facebook page between the quotes. Empty = no button shown. */
 const FB={"Lumay Cafe":"https://www.facebook.com/LumayCafe","Café Norma":"https://www.facebook.com/cafenormaofficial","Quan Delicacies":"https://www.facebook.com/profile.php?id=100064571414712","Ranidon La Paz Batchoy":"https://www.facebook.com/profile.php?id=100057434590609","PALAMANGKAS Pala-Pala Seafood Restaurant":"https://www.facebook.com/PalamangkasPalaPala","Café Repub":"https://www.facebook.com/cafederepub","Rumbines Cafe":"https://www.facebook.com/rumbinescafe","Yong's Cafeteria":"https://www.facebook.com/yongscafeteria",
 "Durian":"","Fresh Vegetables & Fruits":"","Muscovado Sugar":"","Piaya & Biscocho":"","Kalamay-Hati":"",
@@ -350,39 +371,46 @@ document.addEventListener('mouseout',e=>{const t=e.target.closest&&e.target.clos
 /* REVEAL + COUNT */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target);$$('[data-n]',e.target).forEach(n=>{const T=+n.dataset.n,t0=performance.now(),run=t=>{const p=Math.min((t-t0)/1600,1);n.textContent=Math.round(T*(1-Math.pow(1-p,3))).toLocaleString()+n.dataset.s;if(p<1)requestAnimationFrame(run)};requestAnimationFrame(run)})}),{threshold:.12});
 $$('.rv,.flip,.card').forEach(el=>{if(!el.classList.contains('rv'))el.classList.add('rv');io.observe(el)});
-/* EVENT VIDEOS: play when visible, tap button for sound */
-const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;e.isIntersecting?v.play().catch(()=>{}):v.pause()}),{threshold:.4});
-
+/* sound toggle button on event + Kanlaon videos */
 document.addEventListener('click',e=>{const m=e.target.closest('.mt');if(!m)return;const v=m.parentNode.querySelector('video');v.muted=!v.muted;m.textContent=v.muted?'🔇':'🔊'});
-/* ATTRACTIONS: steady until hovered, then the clip plays (auto-plays when in view on touch screens) */
-$$('#at .card').forEach(c=>{const v=$('video',c);if(!v)return;
-v.addEventListener('playing',()=>c.classList.add('vp'));
-const go=()=>v.play().catch(()=>{}),stop=()=>{v.pause();v.currentTime=0;c.classList.remove('vp')};
-c.addEventListener('mouseenter',go);c.addEventListener('mouseleave',stop);
-if(matchMedia('(hover:none)').matches)new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?go():stop()),{threshold:.7}).observe(c)});
-/* ABOUT CARD: steady until hovered, then the clip plays */
-const abf=$('#abf'),av2=$('video',abf);
-av2.addEventListener('playing',()=>abf.classList.add('vp'));
-const aGo=()=>av2.play().catch(()=>{}),aStop=()=>{av2.pause();av2.currentTime=0;abf.classList.remove('vp')};
-abf.addEventListener('mouseenter',aGo);abf.addEventListener('mouseleave',aStop);
-if(matchMedia('(hover:none)').matches)new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?aGo():aStop()),{threshold:.7}).observe(abf);
-/* EVENTS: steady poster until hovered, then the video plays (in view on touch screens) */
-$$('.ev').forEach(c=>{const v=$('video',c),go=()=>v.play().catch(()=>{}),stop=()=>{v.pause();v.currentTime=0};c.addEventListener('mouseenter',go);c.addEventListener('mouseleave',stop);if(matchMedia('(hover:none)').matches)new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?go():stop()),{threshold:.6}).observe(c)});
+/* VIDEOS: hover on desktop, auto-play-in-view on touch (cards, about, events) */
+const hov=matchMedia('(hover:hover) and (pointer:fine)').matches,live=new Set();
+const vPlay=h=>{const p=$('video',h).play();p&&p.catch(()=>{})};
+const vStop=h=>{const v=$('video',h);v.pause();v.currentTime=0;h.classList.remove('vp')};
+const mio=new IntersectionObserver(es=>es.forEach(e=>{
+  e.isIntersecting?(live.add(e.target),vPlay(e.target)):(live.delete(e.target),vStop(e.target))}),{threshold:.6});
+$$('#at .card,#abf,.ev').forEach(h=>{const v=$('video',h);if(!v)return;
+  v.addEventListener('playing',()=>h.classList.add('vp'));
+  if(hov){h.addEventListener('mouseenter',()=>vPlay(h));h.addEventListener('mouseleave',()=>vStop(h))}
+  else mio.observe(h)});
+/* if the phone blocked autoplay, any tap retries the clips currently in view */
+addEventListener('pointerdown',()=>live.forEach(h=>{if($('video',h).paused)vPlay(h)}),{passive:true});
+/* Kanlaon + gallery clips: load and play only when near the screen */
+const kio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
+  if(e.isIntersecting){v.preload='auto';const p=v.play();p&&p.catch(()=>{})}else v.pause()}),{threshold:.25,rootMargin:'100px'});
+$$('.vid video,.ga video').forEach(v=>{v.muted=true;v.loop=true;v.addEventListener('playing',()=>v.classList.add('vp'));kio.observe(v)});
 /* HERO VIDEO: fades in over the photo, plays only while the hero is on screen */
 const hv=$('#hb video');hv.addEventListener('playing',()=>$('#hb').classList.add('vp'));
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches)new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?hv.play().catch(()=>{}):hv.pause()),{threshold:.1}).observe($('#home'));
-/* KANLAON VIDEOS: always autoplay + loop (muted), with a retry on first tap if a phone blocks autoplay */
-$$('.vid video,.ga video').forEach(v=>{v.muted=true;v.loop=true;v.play().catch(()=>{});addEventListener('pointerdown',()=>{if(v.paused)v.play().catch(()=>{})},{once:true})});
 /* HERO FX */
 for(let i=0;i<22;i++){const p=document.createElement('i');p.className='pt';p.style.cssText=`left:${Math.random()*100}%;bottom:-10px;animation-duration:${8+Math.random()*10}s;animation-delay:${-Math.random()*14}s;transform:scale(${.5+Math.random()*1.3})`;$('#pts').appendChild(p)}
-/* TIMELINE: cards reveal one by one, glowing line fills as you scroll */
+/* TIMELINE: cards reveal one by one */
 const tio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');tio.unobserve(e.target)}}),{threshold:.2});
 $$('.ti').forEach((t,i)=>{t.style.setProperty('--d',(i%2)*.12+'s');tio.observe(t)});
-addEventListener('scroll',()=>{const tl=$('#tl'),r=tl.getBoundingClientRect();tl.style.setProperty('--fill',Math.max(0,Math.min(1,(innerHeight*.65-r.top)/r.height))*100+'%')},{passive:true});
-/* SCROLL */
-const nav=$('#nav'),hb=$('#hb'),links=$$('.nl a'),secs=$$('section[id],header[id]');
-addEventListener('scroll',()=>{const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;$('#pg').style.width=(y/h*100)+'%';nav.classList.toggle('sc',y>50);if(y<innerHeight*1.2)hb.style.transform=`translateY(${y*.25}px)`;$('#top').classList.toggle('on',y>600);
-let cur='';secs.forEach(s=>{if(y>=s.offsetTop-160)cur=s.id});links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur))},{passive:true});
+/* SCROLL: one throttled handler (progress bar, nav, parallax, back-to-top, timeline glow) */
+const nav=$('#nav'),hb=$('#hb'),links=$$('.nl a'),secs=$$('section[id],header[id]'),tl=$('#tl');
+let tk=0;
+addEventListener('scroll',()=>{if(tk)return;tk=requestAnimationFrame(()=>{tk=0;
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  $('#pg').style.width=(y/h*100)+'%';nav.classList.toggle('sc',y>50);
+  if(hov&&y<innerHeight*1.2)hb.style.transform=`translateY(${y*.25}px)`;
+  $('#top').classList.toggle('on',y>600);
+  const r=tl.getBoundingClientRect();
+  tl.style.setProperty('--fill',Math.max(0,Math.min(1,(innerHeight*.65-r.top)/r.height))*100+'%')})},{passive:true});
+/* active nav link */
+const nio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)
+  links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+secs.forEach(s=>nio.observe(s));
 $('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
 /* MENU + THEME */
 $('#mb').onclick=()=>{const o=$('#nl').classList.toggle('on');$('#mb').textContent=o?'✕':'☰'};
