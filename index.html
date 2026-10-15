@@ -527,6 +527,7 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 .hero{min-height:88vh;min-height:88svh}
 .at .gr>.card{height:auto;min-height:376px}
 @media(hover:hover){.hint,.pl,.mt,.pb{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
+#kanlaon .msg p+p{margin-top:14px}
 </style>
 </head>
 <body>
@@ -558,7 +559,7 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 <div class="st"><div><strong data-n="1900" data-s="+">1,900+</strong><span>Hectares</span></div><div><strong data-n="600" data-s="+">600+</strong><span>Feet Above Sea Level</span></div><div><strong>Mount</strong><span>Kanlaon Foothills</span></div></div></div></div></section>
 
 <section class="at" id="attractions" style="background:var(--soft)"><div class="w">
-<div class="lab rv">Explore</div><h2 class="rv">Natural attractions</h2><p class="sd rv">Discover waterfalls, mountain landscapes and natural destinations around Ara-al and Guintubdan. Tap a card for photos.</p>
+<div class="lab rv">Explore</div><h2 class="rv">Natural attractions</h2><p class="sd rv">Discover waterfalls, mountain landscapes and natural destinations around Ara-al and Guintubdan. Tap a card to view photos.</p>
 <div class="gr" id="at"></div></div></section>
 
 <section id="events"><div class="w"><div class="lab rv">Culture &amp; Community</div><h2 class="rv">Festivals &amp; events</h2>
@@ -567,7 +568,10 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 <section id="kanlaon" style="background:var(--soft)"><div class="w"><div class="lab rv">Our Story</div><h2 class="rv">Living in the Shadow of Kanlaon</h2>
 <p class="sd rv">Barangay Ara-al and the mountain community of Guintubdan have experienced eruptions, ashfall, evacuations and periods of volcanic unrest from Mount Kanlaon.</p>
 <div id="v1"></div><div class="tl rv" id="tl"></div><div id="v2"></div>
-<div class="msg rv"><span class="yr">COMMUNITY &amp; RESILIENCE</span><h3>Ara-al Continues Forward</h3><p>Beyond the images of ashfall and eruptions is a community that continues to live, work, farm and move forward. The story of Ara-al and Guintubdan is also a story of community, cooperation and respect for the natural environment surrounding Mount Kanlaon.</p></div></div></section>
+<div class="msg rv"><span class="yr">COMMUNITY &amp; RESILIENCE</span><h3>Ara-al Continues Forward</h3><p>Beyond the images of ashfall and eruptions is a community that continues to live, work, farm, and move forward. The story of Ara-al and Guintubdan is also a story of community, cooperation, and respect for the natural environment surrounding Mount Kanlaon.</p>
+<p>Despite the challenges of living near an active volcano, the people of Ara-al continue to demonstrate strength, unity, and resilience. Families work to maintain their livelihoods, preserve their traditions, and support one another during difficult times.</p>
+<p>For many residents, Mount Kanlaon is more than a natural landmark. It is part of their home, identity, and everyday life. Through changing seasons and uncertain circumstances, the community remains connected to the land and the natural beauty that surrounds it.</p>
+<p>As Ara-al continues forward, its story serves as a reminder that resilience is not only about overcoming challenges but also about preserving hope, strengthening community bonds, and building a better future for the next generation.</p></div></div></section>
 
 <section class="stay" id="stay"><div class="w"><div class="lab rv">Stay</div><h2 class="rv">Places to stay</h2>
 <p class="sd rv">Stay close to nature and experience the peaceful mountain atmosphere of Guintubdan and Barangay Ara-al.</p><div class="sg" id="sg"></div></div></section>
@@ -632,8 +636,7 @@ const ST=[["MOUNTAIN RESORT","Guintubdan Mountain Resort","Stay close to nature 
 /* RENDER */
 $('#mq').innerHTML=("WATERFALLS ✦ MOUNT KANLAON ✦ GUINTUBDAN ✦ LOCAL FLAVORS ✦ LA CARLOTA CITY ✦ ").repeat(8);
 const av=a=>`<video muted loop playsinline preload="metadata"><source src="${a[1].replace('.jpg','.mp4')}" type="video/mp4"></video><span class="pl">▶ Hover to play</span>${cr(a[1],a[1].replace('.jpg','.mp4'))}`;
-$('#at').innerHTML=AT.map((a,i)=>i?`<div class="card" style="--d:${i*.08}s" data-i="${i}"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}</div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div>`:
-`<div class="flip" style="--d:0s"><div class="fi"><div class="ff card"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}<span class="hint">Tap for gallery ↻</span></div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div><div class="fb"><em>GUINTUBDAN GALLERY</em><h3>Explore Guintubdan</h3><div class="gal4">${[1,2,3,4].map(n=>`<div style="${bg('gallery'+n+'.jpg',140+n*12)}"></div>`).join('')}</div><small>Tap again to return</small></div></div></div>`).join('');
+$('#at').innerHTML=AT.map((a,i)=>`<div class="card" style="--d:${i*.08}s" data-i="${i}"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}</div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div>`).join('');
 $('#ev').innerHTML=EV.map(e=>`<div class="ev rv"><div class="eh" style="background-image:linear-gradient(135deg,hsl(${e[4]+120} 42% 30%),hsl(${e[4]+155} 48% 16%))"><video muted loop playsinline preload="metadata" poster="${e[3]}"><source src="${e[3].replace('.jpg','.mp4')}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button><span class="pl">▶ Hover to play</span>${cr(e[3],e[3].replace('.jpg','.mp4'))}</div><div class="ec"><span class="tag">${e[0]}</span><h3>${e[1]}</h3><p>${e[2]}</p></div></div>`).join('');
 document.querySelectorAll('#ev .ev').forEach((card,i)=>{
   const pane=card.querySelector('.eh'), info=card.querySelector('.ec');
