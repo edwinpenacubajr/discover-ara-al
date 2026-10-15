@@ -490,6 +490,57 @@ section:not(.hero):not(.stay) .sd{color:var(--ed-muted)}
 @media(max-width:600px){#about,#attractions,#events,#kanlaon,#stay,#business,#food,#gallery,#map{padding:65px 20px}.hero .hc{padding:125px 24px 90px}.hero .hb{opacity:.18}.hero::after{display:none}#about::after,#attractions::after,#events::after,#kanlaon::after,#stay::after,#business::after,#food::after,#gallery::after,#map::after{width:140px;height:170px;right:-60px;opacity:.22}}
 @media(prefers-reduced-motion:reduce){#attractions .card,#events #ev>div{transition:none!important}}
 
+
+/* LIGHT/DARK HERO LEGIBILITY PATCH — after all previous theme overrides */
+.hero h1 span:first-child{color:var(--scene-ink)!important}
+.hero .hs,.hero p.lead{color:var(--scene-ink)}
+nav:not(.sc){color:var(--scene-ink)}
+nav:not(.sc) .logo,nav:not(.sc) .nl a,nav:not(.sc) .tt,nav:not(.sc) .mb{color:var(--scene-ink)}
+nav:not(.sc) .logo b{color:var(--gold)}
+nav:not(.sc) .nl a:hover{color:var(--scene-accent)}
+nav.sc{color:var(--text)}
+@media(max-width:950px){nav .nl,nav:not(.sc) .nl{color:#fff}nav .nl a,nav:not(.sc) .nl a{color:#fff}nav .nl a:hover{color:#f2c65c}}
+
+/* High-contrast, moving gold shine for the complete Discover Ara-al title */
+.hero h1 span:first-child,
+.hero h1 span:last-child{
+  display:inline-block;
+  background:linear-gradient(108deg,#173d2d 0%,#173d2d 34%,#d09a31 44%,#fff0a4 49%,#d09a31 54%,#173d2d 64%,#173d2d 100%);
+  background-size:320% 100%;
+  background-position:100% 50%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:#173d2d;
+  animation:up 1s ease both,discoverTitleShine 4s linear 1.2s infinite!important;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.22));
+}
+.hero h1 span:last-child{
+  background-image:linear-gradient(108deg,#b37a1e 0%,#d5a847 32%,#fff9d6 47%,#ffffff 50%,#fff1a0 53%,#d5a847 67%,#b37a1e 100%);
+  color:#b37a1e;
+  animation-delay:.35s,1.55s!important;
+}
+@keyframes discoverTitleShine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+:root[data-theme="dark"] .hero h1 span:first-child{
+  background-image:linear-gradient(108deg,#f3f4e8 0%,#f3f4e8 34%,#d5a847 44%,#fff7c9 50%,#d5a847 56%,#f3f4e8 66%,#f3f4e8 100%);
+  color:#f3f4e8;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero h1 span:first-child{
+  background-image:linear-gradient(108deg,#f3f4e8 0%,#f3f4e8 34%,#d5a847 44%,#fff7c9 50%,#d5a847 56%,#f3f4e8 66%,#f3f4e8 100%);
+  color:#f3f4e8;
+}}
+@media(prefers-reduced-motion:reduce){.hero h1 span:first-child,.hero h1 span:last-child{animation:none!important;background-position:0% 50%}}
+
+
+/* Navbar wordmark: gentle continuous motion and readable golden shimmer */
+nav .logo{animation:brandReveal .85s ease-out both,navBrandFloat 4.8s ease-in-out 1s infinite;will-change:transform}
+nav .logo b{background:linear-gradient(105deg,#b57b19 0%,#e8b947 25%,#fff0a8 43%,#b87c18 57%,#eac05b 78%,#b57b19 100%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:navGoldSweep 3.8s linear infinite;filter:drop-shadow(0 0 1px rgba(213,168,75,.25))}
+nav .logo i{animation:navSubFloat 4.8s ease-in-out 1.2s infinite}
+@keyframes navBrandFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes navSubFloat{0%,100%{opacity:.7;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+@keyframes navGoldSweep{0%{background-position:120% 50%}100%{background-position:-120% 50%}}
+@media(prefers-reduced-motion:reduce){nav .logo,nav .logo b,nav .logo i{animation:none!important;transform:none!important}}
+
 </style>
 </head>
 <body>
