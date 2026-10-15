@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -536,6 +536,28 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 #kanlaon .msg p{margin:0 0 14px}
 #kanlaon .msg p:last-child{margin-bottom:0}
 @media(max-width:650px){#kanlaon .msg{padding:24px!important}}
+.fd .fimg{display:block;height:190px;margin:-34px -28px 22px;background-image:var(--img),linear-gradient(135deg,#2f7a5b,#0d3326);background-size:cover;background-position:center;border-bottom:3px solid var(--gold)}
+@media(max-width:650px){.fd .fimg{height:170px}}
+.fd .fimg{position:relative;overflow:hidden;background-image:linear-gradient(135deg,#2f7a5b,#0d3326)}
+.fimg i{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.02);transition:opacity 1.2s ease,transform 0s linear 1.2s}
+.fimg i:nth-child(even){transform:scale(1.12) translateX(3%)}
+.fimg i.on{opacity:1;transform:scale(1.14);transition:opacity 1.2s ease,transform 7s ease-out}
+.fimg i:nth-child(even).on{transform:scale(1.12) translateX(-3%)}
+.fdots{position:absolute;left:0;right:0;bottom:10px;z-index:2;display:flex;justify-content:center;gap:7px}
+.fdots b{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:.3s}
+.fdots b.on{background:var(--gold);width:22px;border-radius:6px}
+.fd .fimg{height:300px}
+@media(max-width:950px){.fd .fimg{height:260px}}
+@media(max-width:650px){.fd .fimg{height:240px}}
+#abf{position:relative;height:100%;border-radius:24px;overflow:hidden}
+#abf video{opacity:1!important}
+@media(max-width:950px){.abm{height:420px!important}}
+#about .ab{align-items:stretch}
+#about .abm{height:auto!important;min-height:460px}
+#about #abf{position:absolute;inset:0;height:auto}
+#about #abf .ph{position:absolute;inset:0;height:100%!important}
+#about .abm{position:relative}
+@media(max-width:950px){#about .abm{height:420px!important;min-height:0}}
 </style>
 </head>
 <body>
@@ -557,9 +579,7 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 <div class="mq"><div id="mq"></div></div>
 
 <section id="about"><div class="w ab">
-<div class="flip rv" style="height:460px"><div class="fi">
-<div class="ff" id="abf"><div class="ph" style="height:100%;background-image:url(about.jpg),linear-gradient(135deg,#2f7a5b,#0d3326)"></div><video muted loop playsinline preload="metadata"><source src="about.mp4" type="video/mp4"></video><span class="pl">▶ Hover to play</span><span class="hint">Tap to flip ↻</span></div>
-<div class="fb"><em>ABOUT ARA-AL</em><h3>Barangay Ara-al</h3><p>Ara-al is one of the barangays of La Carlota City, Negros Occidental, situated near the foothills of Mount Kanlaon.</p><p>Covering more than 1,900 hectares, the community is known for its agricultural lands, mountain scenery, waterfalls, and Sitio Guintubdan.</p><small>Tap again to return to the map</small></div></div></div>
+<div class="rv abm" style="height:460px"><div id="abf"><div class="ph" style="height:100%;background-image:url(about.jpg),linear-gradient(135deg,#2f7a5b,#0d3326)"></div><video autoplay muted loop playsinline preload="auto" poster="about.jpg"><source src="about.mp4" type="video/mp4"></video></div></div>
 <div class="rv" style="--d:.15s"><div class="lab">About Ara-al</div><h2>A community among the mountains</h2>
 <p>Barangay Ara-al is one of the communities of La Carlota City, Negros Occidental, situated toward the foothills of Mount Kanlaon.</p>
 <p>The area is known for its mountain environment, agricultural communities, waterfalls and nature destinations.</p>
@@ -591,9 +611,9 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 <section id="food" style="background:var(--soft)"><div class="w"><div class="lab rv">Taste Ara-al</div><h2 class="rv">Local food &amp; flavors</h2>
 <p class="sd rv">Discover local dishes, agricultural products and food experiences from Ara-al and the surrounding communities of La Carlota City.</p>
 <div class="fd">
-<div class="rv"><em>🍲</em><h3>Local Cuisine</h3><p>Enjoy home-cooked dishes and traditional Filipino favorites prepared by local families and food sellers.</p></div>
-<div class="rv" style="--d:.12s"><em>🥕</em><h3>Fresh Mountain Produce</h3><p>Discover fresh fruits, vegetables and agricultural products grown in Ara-al and its upland communities.</p></div>
-<div class="rv" style="--d:.24s"><em>🍰</em><h3>Local Delicacies</h3><p>Taste locally made snacks, native delicacies, sweets and other specialties from Ara-al and La Carlota City.</p></div></div></div></section>
+<div class="rv"><span class="fimg" data-img="local-cuisine"></span><em>🍲</em><h3>Local Cuisine</h3><p>Enjoy home-cooked dishes and traditional Filipino favorites prepared by local families and food sellers.</p></div>
+<div class="rv" style="--d:.12s"><span class="fimg" data-img="fresh-produce"></span><em>🥕</em><h3>Fresh Mountain Produce</h3><p>Discover fresh fruits, vegetables and agricultural products grown in Ara-al and its upland communities.</p></div>
+<div class="rv" style="--d:.24s"><span class="fimg" data-img="local-delicacies"></span><em>🍰</em><h3>Local Delicacies</h3><p>Taste locally made snacks, native delicacies, sweets and other specialties from Ara-al and La Carlota City.</p></div></div></div></section>
 
 <section id="gallery"><div class="w"><div class="lab rv">See Ara-al</div><h2 class="rv">Photo gallery</h2>
 <p class="sd rv">Discover Ara-al through moments captured across its mountains, waterfalls, scenic landscapes and vibrant local community.</p><div class="ga" id="ga"></div></div></section>
@@ -696,7 +716,7 @@ const vPlay=h=>{const p=$('video',h).play();p&&p.catch(()=>{})};
 const vStop=h=>{const v=$('video',h);v.pause();v.currentTime=0;h.classList.remove('vp')};
 const mio=new IntersectionObserver(es=>es.forEach(e=>{
   e.isIntersecting?(live.add(e.target),vPlay(e.target)):(live.delete(e.target),vStop(e.target))}),{threshold:.6});
-$$('#at .card,#abf,.ev').forEach(h=>{const v=$('video',h);if(!v)return;
+$$('#at .card,.ev').forEach(h=>{const v=$('video',h);if(!v)return;
   v.addEventListener('playing',()=>h.classList.add('vp'));
   if(hov&&!h.classList.contains('ev')){h.addEventListener('mouseenter',()=>vPlay(h));h.addEventListener('mouseleave',()=>vStop(h))}
   else mio.observe(h)});
@@ -783,6 +803,26 @@ tt.onclick=()=>{const d=root.getAttribute('data-theme')!=='dark';setT(d);try{loc
   el.classList.add('description-reveal');
   observer.observe(el);
  });
+})();
+/* FOOD CARD SLIDESHOWS: 4 images each, crossfade + slow zoom/pan */
+(()=>{const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+$$('.fimg[data-img]').forEach((box,bi)=>{const base=box.dataset.img,n=4;
+ const slides=[...Array(n)].map((_,k)=>{const i=document.createElement('i');i.style.backgroundImage='url('+base+'-'+(k+1)+'.jpg)';box.appendChild(i);return i});
+ const dots=document.createElement('span');dots.className='fdots';
+ const ds=slides.map((_,k)=>{const b=document.createElement('b');b.onclick=()=>go(k,true);dots.appendChild(b);return b});box.appendChild(dots);
+ let cur=0,timer=null;
+ const show=k=>{slides[cur].classList.remove('on');ds[cur].classList.remove('on');cur=k;slides[cur].classList.add('on');ds[cur].classList.add('on')};
+ const stop=()=>{clearInterval(timer);timer=null};
+ const start=()=>{if(rm||timer)return;timer=setInterval(()=>show((cur+1)%n),4500+bi*400)};
+ function go(k){show(k);stop();start()}
+ show(0);
+ new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():stop()),{threshold:.2}).observe(box);
+})})();
+/* ABOUT VIDEO: loops automatically, pauses when off screen */
+(()=>{const v=$('#abf video');if(!v)return;v.muted=true;
+ const play=()=>{const p=v.play();p&&p.catch(()=>{})};
+ if(!matchMedia('(prefers-reduced-motion:reduce)').matches)new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?play():v.pause()),{threshold:.2}).observe(v);
+ addEventListener('pointerdown',()=>{if(v.paused&&!matchMedia('(prefers-reduced-motion:reduce)').matches)play()},{passive:true});
 })();
 </script>
 </body>
