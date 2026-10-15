@@ -1,13 +1,510 @@
-/* ARA-AL FIXES — place AFTER the main <style> (paste just before </style>,
-   or save as araal-fixes.css and add <link rel="stylesheet" href="araal-fixes.css">
-   right after </style>). */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Discover Ara-al | La Carlota City</title>
+<meta name="theme-color" content="#faf5e9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#061e18" media="(prefers-color-scheme: dark)">
+<!-- FAVICON: paste your original <link rel="icon" ...base64...> line here (omitted to keep this file short) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9B%B0%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Discover Ara-al, La Carlota City, Negros Occidental — a mountain community surrounded by waterfalls, nature trails, and the foothills of Mount Kanlaon.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;800&family=Fraunces:wght@600;800&display=swap">
+<style>
+:root{--fh:'Fraunces',Georgia,serif;--fb:'DM Sans',system-ui,Arial,sans-serif;--g9:#092b20;--g8:#0d3326;--g6:#1d6046;--gold:#d5a847;--bg:#ffffff;--card:#ffffff;--text:#16241d;--mut:#586158;--bd:#e6e1d4;--sh:rgba(40,36,20,.12);--soft:#f5f1e8;--nav:rgba(255,255,255,.9);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07130e;--card:#10231b;--text:#e9f2ed;--mut:#9fb2a8;--bd:#25402f;--sh:rgba(0,0,0,.45);--soft:#10231b;--nav:rgba(7,19,14,.78)}}
+:root[data-theme="dark"]{--bg:#07130e;--card:#10231b;--text:#e9f2ed;--mut:#9fb2a8;--bd:#25402f;--sh:rgba(0,0,0,.45);--soft:#10231b;--nav:rgba(7,19,14,.78)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;transition:background .4s,color .4s}
+h1,h2,h3{font-family:var(--fh);line-height:1.15}
+a{color:inherit;text-decoration:none}
+section{padding:100px 22px;scroll-margin-top:60px}
+.w{max-width:1150px;margin:auto}
+.lab{color:var(--g6);font-size:.78rem;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px}
+[data-theme="dark"] .lab{color:var(--gold)}
+h2{font-size:clamp(2rem,4.5vw,3.3rem);margin-bottom:16px}
+.sd{color:var(--mut);max-width:680px;margin-bottom:46px}
+.pg{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),#7fd1a5);z-index:2000}
+.cg{position:fixed;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(213,168,75,.16),transparent 70%);pointer-events:none;transform:translate(-50%,-50%);z-index:0;opacity:0;transition:opacity .4s}
+@media(hover:none){.cg{display:none}}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;color:#fff;transition:.4s}
+nav.sc{background:var(--nav);color:var(--text);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 8px 30px var(--sh)}
+.nb{max-width:1200px;height:74px;margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;transition:height .3s}
+nav.sc .nb{height:62px}
+.logo{font-family:var(--fh);font-size:1.4rem;font-weight:800}
+.logo b{color:var(--gold)}.logo i{font:italic 400 .7rem var(--fb);opacity:.7;margin-left:6px}
+.logo{display:inline-flex;align-items:baseline;gap:.22em;white-space:nowrap;animation:brandReveal .85s ease-out both;transform-origin:left center}
+.logo b{display:inline-block;transition:transform .35s ease,color .35s ease}
+.logo i{display:inline-block;animation:brandAccent 4.5s ease-in-out 1.2s infinite;transition:opacity .3s ease}
+.logo:hover b{transform:translateY(-2px)}
+.logo:hover i{opacity:1}
+@keyframes brandReveal{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes brandAccent{0%,100%{opacity:.65;transform:translateY(0) scale(1)}50%{opacity:1;transform:translateY(-5px) scale(1.09)}}
+.logo b{animation:brandGold 3.2s ease-in-out infinite}
+@keyframes brandGold{0%,100%{filter:brightness(1)}50%{filter:brightness(1.7);text-shadow:0 0 12px rgba(213,168,75,.7)}}
+@media(prefers-reduced-motion:reduce){.logo,.logo i{animation:none!important}.logo b{transition:none}}
+.nl{display:flex;align-items:center;gap:6px;list-style:none}
+.nl a{position:relative;display:block;padding:8px 12px;font-size:.88rem;font-weight:600;border-radius:8px;transition:.25s}
+.nl a::after{content:"";position:absolute;left:50%;bottom:2px;width:0;height:2px;background:var(--gold);transition:.3s;transform:translateX(-50%)}
+.nl a:hover::after,.nl a.on::after{width:60%}
+.nl a:hover{color:var(--gold)}
+.tt,.mb{width:38px;height:38px;border:1px solid currentColor;background:transparent;color:inherit;border-radius:10px;cursor:pointer;font-size:17px;opacity:.9;transition:.4s}
+.tt:hover{transform:rotate(25deg) scale(1.1)}
+.mb{display:none}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--g9)}
+.hb{position:absolute;inset:-8% 0;background:url(guintubdan.jpg) center/cover,linear-gradient(135deg,#1d6046,#092b20);will-change:transform}
+.hb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease}.hb.vp video{opacity:1}
+.hb::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(9,43,32,.55),rgba(9,43,32,.82))}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;animation:fl 12s ease-in-out infinite}
+.o1{width:380px;height:380px;background:#1d6046;top:8%;left:-80px}.o2{width:300px;height:300px;background:var(--gold);bottom:5%;right:-60px;animation-delay:-5s;opacity:.2}
+@keyframes fl{50%{transform:translate(40px,-50px) scale(1.1)}}
+.pt{position:absolute;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.55);animation:rise linear infinite}
+@keyframes rise{from{transform:translateY(0);opacity:0}15%{opacity:1}to{transform:translateY(-110vh);opacity:0}}
+.hc{position:relative;z-index:2;max-width:1150px;margin:auto;padding:130px 22px 90px;width:100%}
+.hs{color:#e7c76d;font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:.85rem;margin-bottom:16px;animation:up .9s .1s both}
+.hero h1{font-size:clamp(3.6rem,10vw,8rem);line-height:.95;margin-bottom:26px}
+.hero h1 span{display:inline-block;animation:up 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*.16s + .25s)}
+.hero h1 span:last-child{background:linear-gradient(105deg,#d5a847 0%,#f2d789 34%,#fff8d9 48%,#f2d789 60%,#d5a847 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:up 1s .4s both,headingShine 4s linear 1.4s infinite}
+@keyframes headingShine{0%{background-position:110% 50%}100%{background-position:-140% 50%}}
+@media(prefers-reduced-motion:reduce){.hero h1 span:last-child{animation:none;background-position:50% 50%}}
+@keyframes up{from{opacity:0;transform:translateY(46px) rotate(3deg)}to{opacity:1;transform:none}}
+.hero p.lead{max-width:600px;font-size:1.15rem;color:#e6efe9;margin-bottom:34px;animation:up .9s .7s both}
+.hbt{display:flex;gap:14px;flex-wrap:wrap;animation:up .9s .9s both}
+.btn{position:relative;overflow:hidden;display:inline-block;padding:14px 26px;border-radius:12px;font-weight:700;border:1px solid transparent;cursor:pointer;font-family:inherit;font-size:1rem;transition:transform .3s,box-shadow .3s,background .3s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.btn:active{transform:scale(.96)}
+.bp{background:var(--gold);color:#172018}
+.bo{border-color:#fff;color:#fff}.bo:hover{background:#fff;color:var(--g8)}
+.rp{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rp .6s linear;pointer-events:none}
+@keyframes rp{to{transform:scale(4);opacity:0}}
+.scr{position:absolute;bottom:26px;left:50%;width:24px;height:40px;border:2px solid rgba(255,255,255,.6);border-radius:14px;z-index:2}
+.scr::after{content:"";position:absolute;top:7px;left:50%;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:dr 1.6s infinite}
+@keyframes dr{to{transform:translateY(12px);opacity:0}}
+.mq{background:var(--g8);color:var(--gold);overflow:hidden;white-space:nowrap;padding:16px 0;font-weight:800;letter-spacing:3px;font-size:.8rem}
+.mq div{display:inline-block;animation:mq 28s linear infinite}
+.mq:hover div{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.flip{perspective:1200px;cursor:pointer;position:relative}
+.fi{position:relative;width:100%;height:100%;transition:transform .85s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.flip.on .fi{transform:rotateY(180deg)}
+.ff,.fb{position:absolute;inset:0;border-radius:20px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.fb{transform:rotateY(180deg);background:linear-gradient(145deg,#1d6046,#0e3022);color:#fff;padding:28px;display:flex;flex-direction:column;gap:10px;overflow:auto}
+.fb h3{color:#fff}.fb p{color:#d6e6dd;font-size:.92rem}.fb small{margin-top:auto;color:var(--gold);font-weight:700;font-size:.78rem}
+.fb em{font-style:normal;color:var(--gold);font-weight:800;font-size:.72rem;letter-spacing:2px}
+.ph{background-size:cover;background-position:center;transition:transform .8s}
+.hint{position:absolute;right:14px;bottom:14px;z-index:2;background:rgba(0,0,0,.55);color:#fff;font-size:.72rem;font-weight:700;padding:6px 12px;border-radius:30px;backdrop-filter:blur(6px)}
+.ab p{color:var(--mut);margin-bottom:16px}
+#abf video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}#abf.vp video{opacity:1}
+#abf:hover .ph{animation:kb 7s ease-in-out infinite alternate}#abf:hover .pl{opacity:0}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.st div{background:var(--soft);padding:20px 14px;border-radius:16px;transition:.3s;border:1px solid transparent}
+.st div:hover{transform:translateY(-6px);border-color:var(--gold)}
+.st strong{display:block;font-family:var(--fh);font-size:1.7rem;color:var(--g6)}
+[data-theme="dark"] .st strong{color:var(--gold)}
+.st span{color:var(--mut);font-size:.82rem}
+.gr{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;background:var(--card);border:1px solid var(--bd);border-radius:20px;overflow:hidden;cursor:pointer;transition:box-shadow .4s,transform .25s;transform-style:preserve-3d;will-change:transform}
+.card:hover{box-shadow:0 26px 50px var(--sh)}
+.ci{height:230px;overflow:hidden;position:relative}
+.ci .ph{height:100%}.card:hover .ph{animation:kb 7s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.22) translate(-3%,-2%)}}
+.ci video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}.card.vp video{opacity:1}
+.pl{position:absolute;left:12px;bottom:12px;z-index:2;background:rgba(0,0,0,.55);color:#fff;font-size:.72rem;font-weight:700;padding:6px 12px;border-radius:30px;backdrop-filter:blur(6px);transition:opacity .4s}.card:hover .pl{opacity:0}
+.cb{padding:22px}.cb h3{font-size:1.3rem;margin-bottom:6px;color:var(--g8)}
+[data-theme="dark"] .cb h3{color:#fff}
+.cb p{color:var(--mut);font-size:.92rem}
+.at .gr>*{height:376px}.ff.card{position:absolute;overflow:hidden}.card.in{transition:box-shadow .4s,transform .25s,opacity .8s}
+.gal4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}
+.gal4 div{height:92px;border-radius:10px;background-size:cover;background-position:center;transition:.3s}
+.gal4 div:hover{transform:scale(1.06)}
+.fd{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fd div{position:relative;background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:34px 28px;overflow:hidden;transition:.4s}
+.fd div::before{content:"";position:absolute;left:0;top:0;height:4px;width:0;background:linear-gradient(90deg,var(--gold),#7fd1a5);transition:width .6s}
+.fd div:hover{transform:translateY(-8px);box-shadow:0 22px 44px var(--sh)}.fd div:hover::before{width:100%}
+.fd em{font-style:normal;font-size:2.2rem;display:inline-block;transition:transform .5s}.fd div:hover em{transform:scale(1.3) rotate(-10deg)}
+.fd h3{margin:10px 0 8px;font-size:1.3rem}.fd p{color:var(--mut)}
+.ev{display:grid;grid-template-columns:340px 1fr;background:var(--card);border:1px solid var(--bd);border-radius:22px;overflow:hidden;margin-bottom:24px;transition:.4s}
+.ev:nth-child(even){grid-template-columns:1fr 340px}.ev:nth-child(even) .eh{order:2}
+.ev:hover{box-shadow:0 22px 44px var(--sh)}
+.ev .eh{position:relative;background-size:cover}.ev video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}.ev:hover .pl{opacity:0}
+.mt{position:absolute;right:12px;bottom:12px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.45);color:#fff;font-size:16px;cursor:pointer;backdrop-filter:blur(6px);transition:.3s}.mt:hover{background:var(--gold);transform:scale(1.12)}.vid .mt{top:16px;bottom:auto;z-index:3}
+.ev .eh{overflow:hidden;min-height:230px}.ev .ph{height:100%;min-height:230px}
+.ec{padding:34px;display:flex;flex-direction:column;justify-content:center}
+.tag{color:#b98225;font-size:.72rem;font-weight:800;letter-spacing:2px;margin-bottom:8px}
+.ec h3{font-size:1.5rem;margin-bottom:10px}.ec p{color:var(--mut)}
+.vid{position:relative;height:480px;border-radius:24px;overflow:hidden;margin:34px 0;background:linear-gradient(135deg,#1d6046,#092b20);color:#fff}
+.vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.vid:hover video{transform:scale(1.05)}
+.vid::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(5,30,22,.92),rgba(5,30,22,.05) 70%);pointer-events:none}
+.vc{position:absolute;z-index:2;left:40px;right:40px;bottom:40px;max-width:760px}
+.vc span,.yr{color:var(--gold);font-size:.75rem;font-weight:800;letter-spacing:2px}
+.vc h3{font-size:clamp(1.7rem,3.4vw,2.4rem);margin:8px 0 10px}.vc p{color:#e6efe9}
+.tl{position:relative;padding-left:38px;margin:40px 0}
+.tl::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:3px;border-radius:3px;background:linear-gradient(var(--gold),var(--g6));transform-origin:top;transform:scaleY(0);transition:transform 1.6s ease}
+.tl.in::before{transform:scaleY(1)}
+.ti{position:relative;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px 26px;margin-bottom:18px;transition:.35s}
+.ti::before{content:"";position:absolute;left:-37px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(213,168,75,.25);animation:pl 2.4s infinite}
+@keyframes pl{50%{box-shadow:0 0 0 11px rgba(213,168,75,0)}}
+.ti:hover{border-color:var(--gold);box-shadow:0 14px 34px var(--sh)}
+.ti h3{margin:6px 0 8px;font-size:1.3rem}.ti p{color:var(--mut)}
+.ti:not(.show){opacity:0}.ti.show{animation:tin .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d,0s)}
+@keyframes tin{from{opacity:0;transform:translateX(-36px) scale(.97)}}
+.ti>:not(.fx){position:relative;z-index:1}
+.fx{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
+.fx::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--gold),#7fd1a5);transform:scaleY(0);transform-origin:top;transition:transform .5s}
+.ti:hover .fx::after{transform:scaleY(1)}
+.no{position:absolute;right:20px;top:-4px;font:800 5.6rem var(--fh);color:var(--gold);opacity:.07;transition:opacity .5s,transform .6s}
+.ti:hover .no{opacity:.17;transform:scale(1.1) rotate(-3deg)}
+.sh{position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(110deg,transparent,rgba(213,168,75,.16),transparent);transform:skewX(-20deg)}
+.ti:hover .sh{animation:sw .9s ease}@keyframes sw{to{left:130%}}
+.ic2{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:10px;background:rgba(213,168,75,.15);margin-right:10px;vertical-align:middle;font-size:16px;transition:transform .5s}
+.ti:hover .ic2{transform:rotate(-12deg) scale(1.15)}
+.tl::after{content:"";position:absolute;left:8px;top:0;width:3px;height:var(--fill,0%);border-radius:3px;background:#ffe08a;box-shadow:0 0 14px 2px var(--gold);transition:height .2s linear}
+.msg{background:linear-gradient(135deg,#0d3326,#092b20);color:#fff;border-radius:24px;padding:44px}
+.msg h3{font-size:2rem;margin:8px 0 12px}.msg p{color:#d6e6dd;max-width:820px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.tabs button{padding:11px 22px;border-radius:40px;border:1px solid var(--bd);background:var(--card);color:var(--text);font-weight:700;font-family:inherit;cursor:pointer;transition:.3s}
+.tabs button:hover{transform:translateY(-3px)}
+.tabs button.on{background:var(--g6);color:#fff;border-color:var(--g6);box-shadow:0 10px 24px var(--sh)}
+.bz{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.b{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:18px;transition:.35s;animation:pop .6s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d)}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.96)}}
+.b:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 16px 36px var(--sh)}
+.bt{width:92px;height:92px;flex:0 0 92px;border-radius:14px;background-size:cover;background-position:center;transition:.4s}.b:hover .bt{transform:rotate(-4deg) scale(1.06)}
+.b h3{font-size:1.1rem;margin-bottom:4px}.b p{color:var(--mut);font-size:.9rem}.rt{color:var(--gold);font-size:.82rem;font-weight:700}
+.bf{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:5px 12px;border-radius:30px;border:1px solid #1877f2;color:#1877f2;font-size:.75rem;font-weight:700;transition:.3s}
+.bf svg{width:15px;height:15px;fill:currentColor}.bf:hover{background:#1877f2;color:#fff;transform:translateY(-2px);box-shadow:0 8px 18px rgba(24,119,242,.35)}
+[data-theme="dark"] .bf{color:#6aa8ff;border-color:#6aa8ff}[data-theme="dark"] .bf:hover{background:#1877f2;color:#fff}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.stay{background:var(--g8);color:#fff}.stay .lab{color:var(--gold)}.stay .sd{color:#d6e6dd}
+.stay .flip{height:500px}.stay .ff{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
+.stay .ph{height:200px}.stay .flip:hover .ph{transform:scale(1.07)}
+.sc2{padding:22px 24px}.sc2 h3{color:#fff;margin:6px 0 8px}.sc2 p{color:#d6e6dd;font-size:.92rem}
+.sc2 em{font-style:normal;color:var(--gold);font-size:.68rem;font-weight:800;letter-spacing:1.5px}
+.sc2 .c{margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem}.sc2 .c a{display:block;font-weight:800;font-size:1rem;color:#fff}
+.ga{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;grid-auto-flow:dense;gap:14px}
+.ga div{border-radius:16px;background-size:cover;background-position:center;cursor:zoom-in;position:relative;overflow:hidden;transition:transform .45s,box-shadow .45s}
+.ga div:nth-child(2),.ga div:nth-child(6){grid-row:span 2}
+.ga video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}.ga video.vp{opacity:1}
+.pb{position:absolute;left:12px;top:12px;z-index:1;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;display:grid;place-items:center;font-size:12px;backdrop-filter:blur(6px);transition:.3s}
+.ga .vd:hover .pb{background:var(--gold);color:#111;transform:scale(1.15)}
+.ga div:hover{transform:scale(1.04);z-index:2;box-shadow:0 22px 44px rgba(0,0,0,.35)}
+.ga div::after{content:"⤢";position:absolute;inset:0;display:grid;place-items:center;font-size:2rem;color:#fff;background:rgba(10,38,27,.45);opacity:0;transition:.3s}
+.ga div:hover::after{opacity:1}
+.mp{height:380px;border-radius:22px;overflow:hidden;border:1px solid var(--bd);background:var(--soft)}
+.mp iframe{width:100%;height:100%;border:0;display:block}
+.mi{margin-top:18px;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.mi p{color:var(--mut)}
+footer{background:#0c1a13;color:#fff;padding:60px 22px 26px}
+.ft{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.12)}
+.ft h3 span{color:var(--gold)}.ft p{max-width:480px;margin-top:10px;color:#b9c8c0}
+.fc{display:flex;flex-direction:column;gap:8px;min-width:130px}.fc strong{color:var(--gold)}.fc a{color:#dce6e1;font-size:.9rem;transition:.25s}.fc a:hover{color:#fff;transform:translateX(5px)}
+.fbt{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:24px;color:#9fb2a8;font-size:.85rem}
+.fr{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.dc{display:flex;gap:12px;align-items:flex-start;margin-top:26px;padding:14px 18px;border:1px solid rgba(213,168,75,.32);background:rgba(213,168,75,.07);border-radius:14px;color:#c9d6cf;font-size:.82rem;line-height:1.6}
+.dc i{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#172018;font:800 13px var(--fh)}.dc b{color:var(--gold)}
+.fbt b{color:var(--gold)}
+.fbk{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:30px;background:#1877f2;color:#fff;font-weight:600;font-size:.78rem;transition:transform .3s,box-shadow .3s}
+.fbk svg{width:18px;height:18px;fill:#fff;flex:none}
+.fbk:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(24,119,242,.5)}.fbk:active{transform:scale(.96)}
+@media(max-width:650px){.fbt{flex-direction:column;align-items:flex-start}}
+#lb{position:fixed;inset:0;z-index:3000;background:rgba(5,16,11,.94);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.4s}
+#lb.on{opacity:1;visibility:visible}
+#lbi{width:min(90vw,1000px);height:min(76vh,680px);border-radius:18px;background-size:cover;background-position:center;transform:scale(.88);transition:.5s cubic-bezier(.2,.8,.2,1)}
+#lb.on #lbi{transform:none}
+#lbc{position:absolute;bottom:5vh;left:0;right:0;text-align:center;color:#fff;font-weight:700}
+.lbb{position:absolute;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.08);color:#fff;font-size:22px;cursor:pointer;transition:.3s}
+.lbb:hover{background:var(--gold);color:#111;transform:scale(1.1)}
+#pv{left:3vw}#nx{right:3vw}#cl{top:4vh;right:3vw}
+#top{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:none;background:var(--gold);color:#172018;font-size:18px;font-weight:800;cursor:pointer;z-index:900;box-shadow:0 8px 20px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s}
+#top.on{opacity:1;visibility:visible;transform:none}#top:hover{transform:translateY(-5px)}
+@media(max-width:950px){
+.mb{display:block}
+.nl{position:absolute;top:100%;left:12px;right:12px;flex-direction:column;align-items:stretch;background:var(--g8);color:#fff;padding:12px;border-radius:18px;opacity:0;visibility:hidden;transform:translateY(-12px);transition:.35s;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.nl.on{opacity:1;visibility:visible;transform:none}
+.ab,.ev,.ev:nth-child(even){grid-template-columns:1fr}.ev:nth-child(even) .eh{order:0}
+.gr,.fd,.sg{grid-template-columns:1fr 1fr}.ga{grid-template-columns:1fr 1fr}.ga div:nth-child(4){grid-column:span 1}
+.ab .flip{height:420px}}
+@media(max-width:650px){
+section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{height:420px}.vc{left:20px;right:20px;bottom:24px}.msg{padding:30px 22px}
+.ga{grid-auto-rows:160px}}
+.cr{position:absolute;left:10px;top:10px;z-index:3;max-width:calc(100% - 20px);background:rgba(0,0,0,.62);color:#fff;font-size:.66rem;font-weight:600;line-height:1.5;padding:3px 9px;border-radius:20px;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ga .cr{top:auto;bottom:10px}.hero>.cr{top:auto;bottom:26px;left:22px;max-width:40%}
+.cl{margin-top:22px;color:#c9d6cf;font-size:.82rem}.cl summary{cursor:pointer;color:var(--gold);font-weight:700}
+.cl ul{margin-top:10px;columns:2;column-gap:28px;list-style:none}.cl li{margin-bottom:4px;break-inside:avoid}.cl b{color:#fff;font-weight:600}
+@media(max-width:650px){.cl ul{columns:1}}
+.pp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:68px;height:68px;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.5);color:#fff;font-size:24px;place-items:center;padding-left:4px;pointer-events:none}
+.ev .pl{display:none}
+.cg,.orb,.pt{display:none}
+.hero h1 span:last-child{color:var(--gold);animation:up 1s .4s both}
+.hero h1 span:first-child{color:#fff;animation:up 1s .25s both}
+@keyframes shw{0%{background-position:100% 0}55%,100%{background-position:0 0}}
+.ti::before{animation:none}
+@keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.1)}}
+.btn{letter-spacing:.2px}
+@media(max-width:650px){
+.hbt{flex-direction:column;align-items:stretch}.hbt .btn,.mi .btn{width:100%;text-align:center}
+.hc{padding:112px 20px 80px}.sd{margin-bottom:34px}.cb{padding:18px}.ec{padding:24px}.mi{padding:20px}.mi>div{width:100%}
+.tabs button{flex:1 1 auto;text-align:center}}
+@media(hover:none),(max-width:950px){
+  nav.sc{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg)}
+  .hint,.pl,.mt,.pb{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(0,0,0,.7)}
+  .orb,.pt{display:none}
+  .hb{inset:0;will-change:auto}
+  .card{will-change:auto;transform-style:flat}
+  .ti::before{animation:none}
+}
+@media(hover:none){
+  .pl{display:none}
+  .card:hover .ph,#abf:hover .ph{animation:none}
+  .ga div:hover{transform:none;box-shadow:none}.ga div:hover::after{opacity:0}
+  .flip{perspective:none}
+  .fi,.flip.on .fi{transform-style:flat;transform:none}
+  .ff,.fb{transition:opacity .35s,visibility .35s}
+  .fb{transform:none;opacity:0;visibility:hidden}
+  .flip.on .fb{opacity:1;visibility:visible}
+  .flip.on .ff{opacity:0;visibility:hidden}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+.hero h1 span:last-child {
+  color: #e8b94f;
+  background-image: linear-gradient(105deg, #c9952e 0%, #e8b94f 30%, #fffefa 46%, #ffffff 50%, #fff1b0 54%, #e8b94f 70%, #c9952e 100%);
+  background-size: 350% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: up 1s .4s both, araalVisibleShine 2.6s linear 1.4s infinite;
+}
+@keyframes araalVisibleShine {
+  0% { background-position: 100% 0; }
+  100% { background-position: 0% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero h1 span:last-child { animation: none; background-position: 50% 0; }
+}
+#heroTyping { animation:none; min-height:4.9em; }
+#heroTyping.typing::after { content:""; display:inline-block; height:1em; border-right:2px solid var(--gold); margin-left:3px; vertical-align:-.15em; animation:typingCursor .7s steps(1) infinite; }
+@keyframes typingCursor { 50% { opacity:0; } }
+@media (prefers-reduced-motion:reduce) { #heroTyping { min-height:0; } #heroTyping.typing::after { display:none; } }
+.site-typing::after{content:"";display:inline-block;height:.95em;border-right:2px solid var(--gold);margin-left:2px;vertical-align:-.12em;animation:typingCursor .7s steps(1) infinite}
+@media(prefers-reduced-motion:reduce){.site-typing::after{display:none}}
+.dc{position:relative;animation:disclaimerGlow 3s ease-in-out infinite;transition:background-color .3s ease}
+@keyframes disclaimerGlow{
+  0%,100%{box-shadow:0 0 0 rgba(213,168,75,0);border-color:rgba(213,168,75,.32)}
+  50%{box-shadow:0 0 18px rgba(213,168,75,.30);border-color:rgba(213,168,75,.9)}
+}
+.dc:hover{background:rgba(213,168,75,.12)}
+@media(prefers-reduced-motion:reduce){.dc{animation:none}}
+#bz .b, #bz .b:hover {
+  transform: none !important;
+  animation: none !important;
+  transition: border-color .3s ease, box-shadow .3s ease !important;
+}
+#bz .b:hover {
+  border-color: var(--gold);
+  box-shadow: 0 10px 26px var(--sh);
+}
+#bz .bt, #bz .b:hover .bt {
+  transform: none !important;
+  transition: none !important;
+}
+#bz .b { border-width: 2px; }
+#bz .b:hover, #bz .b:focus-within {
+  transform: none !important;
+  border-color: #a87813 !important;
+  background: #fff9e9 !important;
+  box-shadow: 0 0 0 2px rgba(168,120,19,.22), 0 12px 30px rgba(64,48,13,.20) !important;
+}
+:root[data-theme="dark"] #bz .b:hover,
+:root[data-theme="dark"] #bz .b:focus-within {
+  border-color: #e8bb54 !important;
+  background: #192e23 !important;
+  box-shadow: 0 0 0 2px rgba(232,187,84,.2), 0 0 24px rgba(213,168,75,.24) !important;
+}
+@media(prefers-color-scheme:dark) {
+  :root:not([data-theme="light"]) #bz .b:hover,
+  :root:not([data-theme="light"]) #bz .b:focus-within {
+    border-color: #e8bb54 !important;
+    background: #192e23 !important;
+    box-shadow: 0 0 0 2px rgba(232,187,84,.2), 0 0 24px rgba(213,168,75,.24) !important;
+  }
+}
+@media(max-width:950px){
+ .nl{position:fixed;top:calc(76px + env(safe-area-inset-top,0px));left:auto;right:14px;width:min(190px,calc(100vw - 28px));max-height:calc(100dvh - 94px);overflow-y:auto;display:flex;flex-direction:column;gap:1px;align-items:stretch;padding:5px;background:var(--g8);border:1px solid rgba(213,168,71,.32);border-radius:18px;box-shadow:0 18px 45px rgba(0,0,0,.3);opacity:0;visibility:hidden;transform:translateX(35px) scale(.96);transform-origin:top right;transition:opacity .3s ease,transform .3s cubic-bezier(.2,.8,.2,1),visibility .3s;z-index:1100}
+ .nl.on{opacity:1;visibility:visible;transform:translateX(0) scale(1)}
+ .nl li{width:100%}
+ .nl a{padding:8px 7px;border-radius:9px;font-size:.88rem}
+ .nl a:hover,.nl a.on{background:rgba(213,168,71,.14);color:#f4cf74}
+ .nl a::after{display:none}
+ .nl .tt{margin:3px 0 0 5px;width:30px;height:30px}
+ .mb{position:relative;z-index:1101;transition:background .25s,border-color .25s,transform .25s}
+ .mb:hover{background:rgba(213,168,71,.16);border-color:var(--gold);transform:scale(1.04)}
+}
+@media(prefers-reduced-motion:reduce){.nl{transition:none!important}}
+.description-reveal{opacity:0;transition:opacity .55s ease;}
+.description-reveal.description-visible{opacity:1;}
+@media(prefers-reduced-motion:reduce){.description-reveal{opacity:1!important;transition:none!important;}}
+/* EDITORIAL NATURE REDESIGN */
+:root{--ed-ink:#122e25;--ed-accent:#b27a17;--ed-line:#dfc99a;--ed-cream:#faf7ef;--ed-paper:#fffdf9;--ed-contrast:#20362d;--ed-muted:#52645c;--ed-wash:#f2ead9}
+:root[data-theme="dark"]{--ed-ink:#f3f5e9;--ed-accent:#f1c35b;--ed-line:#77633a;--ed-cream:#091d17;--ed-paper:#102a21;--ed-contrast:#eef4e9;--ed-muted:#b9c9bf;--ed-wash:#16352a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ed-ink:#f3f5e9;--ed-accent:#f1c35b;--ed-line:#77633a;--ed-cream:#091d17;--ed-paper:#102a21;--ed-contrast:#eef4e9;--ed-muted:#b9c9bf;--ed-wash:#16352a}}
+body{background:var(--ed-cream)}
+section:not(.hero){position:relative;isolation:isolate;overflow:hidden}
+section:not(.hero)>.w{position:relative;z-index:1}
+#about,#events,#business,#gallery{background:radial-gradient(ellipse at 97% 4%,rgba(213,168,75,.10),transparent 38%),var(--ed-cream)!important}
+#attractions,#kanlaon,#food,#map{background:linear-gradient(135deg,var(--ed-wash),var(--ed-cream) 68%)!important}
+#about::before,#events::before,#kanlaon::before,#food::before,#gallery::before,#business::before{content:"";position:absolute;width:320px;height:320px;border:1px solid var(--ed-line);border-radius:48% 52% 44% 56%;opacity:.28;pointer-events:none;right:-195px;top:36px;transform:rotate(22deg)}
+#events::after,#attractions::after,#map::after{content:"";position:absolute;bottom:-160px;left:-140px;width:350px;height:350px;border:1px solid var(--ed-line);border-radius:50%;opacity:.25;pointer-events:none}
+section:not(.hero):not(.stay) h2{color:var(--ed-ink);letter-spacing:-.035em}
+section:not(.hero):not(.stay) .lab{color:var(--ed-accent);letter-spacing:2.3px}
+section:not(.hero):not(.stay) .lab::before{content:"";display:inline-block;width:22px;height:2px;background:currentColor;vertical-align:middle;margin-right:10px}
+section:not(.hero):not(.stay) .sd{color:var(--ed-muted)}
+#about .ab>div:last-child{padding:clamp(20px,3vw,38px);border:1px solid var(--ed-line);background:var(--ed-paper);border-radius:24px;box-shadow:0 18px 48px rgba(37,45,26,.055)}
+#about .st div{background:var(--ed-wash);border:1px solid var(--ed-line)}
+#about .st strong{color:var(--ed-ink)}
+#about .flip .ff,#about .flip .fb{border-radius:24px}
+#attractions .card{background:var(--ed-paper);border:1px solid var(--ed-line);box-shadow:0 8px 24px rgba(42,34,20,.05)}
+#attractions .cb{border-top:3px solid var(--gold)}
+#attractions .cb h3{color:var(--ed-ink)}
+#attractions .cb p{color:var(--ed-muted)}
+#events .ev{position:relative;grid-template-columns:minmax(220px,40%) 1fr;min-height:250px;background:var(--ed-paper);border:1px solid var(--ed-line);box-shadow:0 10px 35px rgba(47,36,15,.07);border-radius:22px}
+#events .ev:nth-child(even){grid-template-columns:1fr minmax(220px,40%)}
+#events .ev .eh{min-height:250px}
+#events .ev .eh::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,32,23,.22),transparent 55%);pointer-events:none}
+#events .ec{position:relative;min-width:0;padding:clamp(26px,4vw,48px)}
+#events .ec::after{content:attr(data-ed-number);position:absolute;right:18px;top:4px;font:800 clamp(3.5rem,8vw,6rem) var(--fh);color:var(--gold);opacity:.19;pointer-events:none;line-height:1}
+#events .ec h3{color:var(--ed-ink);font-size:clamp(1.45rem,2.5vw,2rem);position:relative;z-index:1}
+#events .ec h3::after{content:"";display:block;width:48px;height:3px;background:var(--gold);margin:13px 0 0;border-radius:5px}
+#events .ec p{color:var(--ed-muted);position:relative;z-index:1}
+#events .tag{color:var(--ed-accent)}
+#events .ev:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(47,36,15,.13)}
+#events .ev .eh video{z-index:1}
+#events .ev .eh .mt,#events .ev .eh .cr{z-index:3}
+#kanlaon .vid{border:1px solid var(--ed-line);box-shadow:0 15px 38px rgba(0,0,0,.12)}
+#kanlaon .ti{background:var(--ed-paper);border-color:var(--ed-line);box-shadow:0 8px 20px rgba(47,36,15,.04)}
+#kanlaon .ti h3{color:var(--ed-ink)}
+#kanlaon .ti p{color:var(--ed-muted)}
+#kanlaon .yr{color:var(--ed-accent)}
+#kanlaon .vc .yr,#kanlaon .vc span{color:#f2cf72}
+#stay{background:linear-gradient(135deg,#0c3025,#103d2d 58%,#173c30)!important}
+#stay::before{content:"";position:absolute;width:460px;height:460px;top:-220px;right:-170px;border:1px solid rgba(222,181,90,.23);border-radius:50%;pointer-events:none}
+#stay .ff{border-color:rgba(213,168,75,.38);background:rgba(255,255,255,.07)}
+#business .b,#food .fd>div,#map .mi{background:var(--ed-paper);border-color:var(--ed-line)}
+#business .b h3,#food .fd h3,#map .mi h3{color:var(--ed-ink)}
+#business .b p,#food .fd p,#map .mi p{color:var(--ed-muted)}
+#business .tabs button{border-color:var(--ed-line);background:var(--ed-paper);color:var(--ed-ink)}
+#business .tabs button.on{background:#205b43;color:#fff}
+#food .fd>div{box-shadow:0 12px 25px rgba(47,36,15,.05)}
+#food .fd>div::before{width:100%;height:3px}
+#gallery .ga>div{border:2px solid var(--ed-line);box-shadow:0 8px 22px rgba(47,36,15,.09)}
+#map .mp{border:3px solid var(--ed-line);box-shadow:0 16px 35px rgba(47,36,15,.09)}
+#map .mi{box-shadow:0 9px 25px rgba(47,36,15,.05)}
+#attractions .card:hover,#business .b:hover,#food .fd>div:hover{transform:translateY(-4px);box-shadow:0 17px 35px rgba(33,40,26,.13)}
+:root[data-theme="dark"] #events .ev,:root[data-theme="dark"] #about .ab>div:last-child{box-shadow:0 15px 40px rgba(0,0,0,.22)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) #events .ev{box-shadow:0 15px 40px rgba(0,0,0,.22)}}
+@media(max-width:950px){#events .ev,#events .ev:nth-child(even){grid-template-columns:1fr}#events .ev:nth-child(even) .eh{order:0}#events .ev .eh{min-height:220px}#events .ec{padding:25px}}
+@media(max-width:650px){#about .ab>div:last-child{padding:22px}#events .ev .eh{min-height:190px}#events .ec::after{font-size:3.8rem}section:not(.hero)>.w{max-width:100%}}
+@media(prefers-reduced-motion:reduce){#events .ev,#attractions .card,#business .b,#food .fd>div{transition:none!important}}
+/* SCENIC EDITORIAL REDESIGN */
+:root{--scene-paper:#faf5e9;--scene-paper2:#f1e8d6;--scene-ink:#17291e;--scene-accent:#b57b24;--scene-line:rgba(156,111,45,.28);--scene-surface:rgba(255,253,247,.90);--scene-shadow:rgba(58,46,24,.12);--scene-leaf:rgba(44,93,59,.22)}
+:root[data-theme="dark"]{--scene-paper:#061e18;--scene-paper2:#09271f;--scene-ink:#f4f0e2;--scene-accent:#f2c65c;--scene-line:rgba(233,190,91,.30);--scene-surface:rgba(8,34,27,.91);--scene-shadow:rgba(0,0,0,.35);--scene-leaf:rgba(221,174,71,.22)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--scene-paper:#061e18;--scene-paper2:#09271f;--scene-ink:#f4f0e2;--scene-accent:#f2c65c;--scene-line:rgba(233,190,91,.30);--scene-surface:rgba(8,34,27,.91);--scene-shadow:rgba(0,0,0,.35);--scene-leaf:rgba(221,174,71,.22)}}
+#about,#attractions,#events,#kanlaon,#stay,#business,#food,#gallery,#map{position:relative;isolation:isolate;background:linear-gradient(150deg,var(--scene-paper),var(--scene-paper2))!important;color:var(--scene-ink);overflow:hidden}
+#about::before,#attractions::before,#events::before,#kanlaon::before,#stay::before,#business::before,#food::before,#gallery::before,#map::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 0% 8%,var(--scene-leaf),transparent 25%),radial-gradient(ellipse at 100% 94%,var(--scene-leaf),transparent 25%),repeating-linear-gradient(140deg,transparent 0 60px,var(--scene-line) 61px,transparent 62px 155px);opacity:.45}
+#about::after,#attractions::after,#events::after,#kanlaon::after,#stay::after,#business::after,#food::after,#gallery::after,#map::after{content:"";position:absolute;right:-60px;top:30px;width:270px;height:310px;pointer-events:none;z-index:-1;opacity:.42;background:radial-gradient(ellipse 12px 36px at 50% 20%,var(--scene-leaf) 90%,transparent 100%),radial-gradient(ellipse 12px 34px at 36% 35%,var(--scene-leaf) 90%,transparent 100%),radial-gradient(ellipse 12px 34px at 64% 45%,var(--scene-leaf) 90%,transparent 100%),radial-gradient(ellipse 12px 34px at 38% 60%,var(--scene-leaf) 90%,transparent 100%),linear-gradient(115deg,transparent 49.5%,var(--scene-line) 50%,transparent 50.5%);transform:rotate(-25deg)}
+#attractions,#kanlaon,#food,#map{background:linear-gradient(155deg,var(--scene-paper2),var(--scene-paper))!important}
+#events,#business,#gallery{background:linear-gradient(160deg,var(--scene-paper),var(--scene-paper2) 75%,var(--scene-paper))!important}
+#about .w,#attractions .w,#events .w,#kanlaon .w,#stay .w,#business .w,#food .w,#gallery .w,#map .w{position:relative;z-index:1}
+#about,#attractions,#events,#kanlaon,#stay,#business,#food,#gallery,#map{padding-top:82px;padding-bottom:88px}
+#about h2,#attractions h2,#events h2,#kanlaon h2,#stay h2,#business h2,#food h2,#gallery h2,#map h2{color:var(--scene-ink);letter-spacing:-.035em}
+#about .lab,#attractions .lab,#events .lab,#kanlaon .lab,#stay .lab,#business .lab,#food .lab,#gallery .lab,#map .lab{color:var(--scene-accent)}
+#about .sd,#attractions .sd,#events .sd,#kanlaon .sd,#stay .sd,#business .sd,#food .sd,#gallery .sd,#map .sd{color:var(--scene-ink);opacity:.8}
+.hero{background:var(--scene-paper)!important;color:var(--scene-ink)!important;min-height:88svh}
+.hero .hb{inset:0 0 0 45%;background-position:center;clip-path:ellipse(84% 76% at 89% 55%);opacity:.98}
+.hero .hb::after{background:linear-gradient(90deg,var(--scene-paper) 0%,transparent 35%,rgba(7,30,22,.06) 100%)}
+.hero .hc{margin-left:max(4vw,calc((100vw - 1150px)/2));margin-right:0;width:55%;padding-left:22px;z-index:3}
+.hero .hs{color:var(--scene-accent)}.hero h1{font-size:clamp(3.5rem,7vw,6.6rem);color:var(--scene-ink)}
+.hero h1 span:last-child{background-image:linear-gradient(105deg,#bb862c,#f5d578,#b77e24);-webkit-text-fill-color:transparent}
+.hero p.lead{color:var(--scene-ink);max-width:500px;font-size:1.08rem}
+.hero .bp{background:#145339;color:#fff}.hero .bo{color:var(--scene-ink);border-color:var(--scene-accent)}.hero .bo:hover{color:#fff;background:#145339}
+.hero::after{content:"";position:absolute;right:4%;bottom:6%;width:260px;height:120px;border:1px solid var(--scene-line);border-radius:70% 10% 70% 10%;transform:rotate(-18deg);pointer-events:none;z-index:2}
+:root[data-theme="dark"] .hero .bp{background:#e6b94d;color:#102319}
+:root[data-theme="dark"] .hero .bo:hover{background:#e6b94d;color:#102319}
+#abf,.ab .flip{border-radius:24px;box-shadow:0 18px 38px var(--scene-shadow)}
+.ab{gap:26px}.ab>div:nth-child(2){background:var(--scene-surface);border:1px solid var(--scene-line);border-radius:22px;padding:clamp(20px,3vw,40px);box-shadow:0 12px 32px var(--scene-shadow)}
+.ab .st div{background:var(--scene-paper2);border:1px solid var(--scene-line)}
+#attractions .card,#food .card,#business .card{background:var(--scene-surface);border:1px solid var(--scene-line);box-shadow:0 10px 25px var(--scene-shadow);border-radius:16px}
+#attractions .card:hover,#food .card:hover,#business .card:hover{box-shadow:0 20px 42px var(--scene-shadow)}
+#attractions .ci{height:215px}
+#events #ev{position:relative}
+#events .ev,#events .event-card,#events #ev>div{border-color:var(--scene-line)!important;background:var(--scene-surface)!important;box-shadow:0 10px 28px var(--scene-shadow);border-radius:17px;overflow:hidden}
+#events #ev>div:nth-child(2n){box-shadow:0 10px 28px var(--scene-shadow),inset 4px 0 var(--scene-accent)}
+#events #ev .ph{background-position:center;background-size:cover}
+#kanlaon .tl>div,#kanlaon .msg{background:var(--scene-surface)!important;border:1px solid var(--scene-line);box-shadow:0 8px 22px var(--scene-shadow);border-radius:16px}
+#kanlaon .msg{padding:30px}
+#stay{background:linear-gradient(145deg,var(--scene-paper2),var(--scene-paper))!important}
+#stay .card,#stay .stay-card{background:var(--scene-surface)!important;color:var(--scene-ink)!important;border:1px solid var(--scene-line);box-shadow:0 12px 30px var(--scene-shadow)}
+#stay .card h3,#stay .card p{color:var(--scene-ink)}
+#gallery .card,#gallery .gi,#map iframe{border:1px solid var(--scene-line);border-radius:16px;box-shadow:0 10px 28px var(--scene-shadow)}
+:root[data-theme="dark"] #about .ab p,:root[data-theme="dark"] #stay p,:root[data-theme="dark"] #events p{color:var(--scene-ink)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero .bp{background:#e6b94d;color:#102319}:root:not([data-theme="light"]) #about .ab p,:root:not([data-theme="light"]) #stay p,:root:not([data-theme="light"]) #events p{color:var(--scene-ink)}}
+@media(max-width:950px){.hero .hb{inset:0;clip-path:none;opacity:.35}.hero .hb::after{background:linear-gradient(90deg,var(--scene-paper) 0%,rgba(250,245,233,.55) 100%)}.hero .hc{width:100%;margin:auto;padding:140px 24px 95px}.hero h1{font-size:clamp(3.1rem,12vw,5.5rem)}.ab>div:nth-child(2){padding:24px}}
+@media(max-width:600px){#about,#attractions,#events,#kanlaon,#stay,#business,#food,#gallery,#map{padding:65px 20px}.hero .hc{padding:125px 24px 90px}.hero .hb{opacity:.18}.hero::after{display:none}#about::after,#attractions::after,#events::after,#kanlaon::after,#stay::after,#business::after,#food::after,#gallery::after,#map::after{width:140px;height:170px;right:-60px;opacity:.22}}
+@media(prefers-reduced-motion:reduce){#attractions .card,#events #ev>div{transition:none!important}}
+/* HERO LEGIBILITY PATCH */
+.hero h1 span:first-child{color:var(--scene-ink)!important}
+.hero .hs,.hero p.lead{color:var(--scene-ink)}
+nav:not(.sc){color:var(--scene-ink)}
+nav:not(.sc) .logo,nav:not(.sc) .nl a,nav:not(.sc) .tt,nav:not(.sc) .mb{color:var(--scene-ink)}
+nav:not(.sc) .logo b{color:var(--gold)}
+nav:not(.sc) .nl a:hover{color:var(--scene-accent)}
+nav.sc{color:var(--text)}
+@media(max-width:950px){nav .nl,nav:not(.sc) .nl{color:#fff}nav .nl a,nav:not(.sc) .nl a{color:#fff}nav .nl a:hover{color:#f2c65c}}
+.hero h1 span:first-child,
+.hero h1 span:last-child{
+  display:inline-block;
+  background:linear-gradient(108deg,#173d2d 0%,#173d2d 34%,#d09a31 44%,#fff0a4 49%,#d09a31 54%,#173d2d 64%,#173d2d 100%);
+  background-size:320% 100%;
+  background-position:100% 50%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:#173d2d;
+  animation:up 1s ease both,discoverTitleShine 4s linear 1.2s infinite!important;
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.22));
+}
+.hero h1 span:last-child{
+  background-image:linear-gradient(108deg,#b37a1e 0%,#d5a847 32%,#fff9d6 47%,#ffffff 50%,#fff1a0 53%,#d5a847 67%,#b37a1e 100%);
+  color:#b37a1e;
+  animation-delay:.35s,1.55s!important;
+}
+@keyframes discoverTitleShine{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+:root[data-theme="dark"] .hero h1 span:first-child{
+  background-image:linear-gradient(108deg,#f3f4e8 0%,#f3f4e8 34%,#d5a847 44%,#fff7c9 50%,#d5a847 56%,#f3f4e8 66%,#f3f4e8 100%);
+  color:#f3f4e8;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero h1 span:first-child{
+  background-image:linear-gradient(108deg,#f3f4e8 0%,#f3f4e8 34%,#d5a847 44%,#fff7c9 50%,#d5a847 56%,#f3f4e8 66%,#f3f4e8 100%);
+  color:#f3f4e8;
+}}
+@media(prefers-reduced-motion:reduce){.hero h1 span:first-child,.hero h1 span:last-child{animation:none!important;background-position:0% 50%}}
+nav .logo{animation:brandReveal .85s ease-out both,navBrandFloat 4.8s ease-in-out 1s infinite;will-change:transform}
+nav .logo b{background:linear-gradient(105deg,#b57b19 0%,#e8b947 25%,#fff0a8 43%,#b87c18 57%,#eac05b 78%,#b57b19 100%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:navGoldSweep 3.8s linear infinite;filter:drop-shadow(0 0 1px rgba(213,168,75,.25))}
+nav .logo i{animation:navSubFloat 4.8s ease-in-out 1.2s infinite}
+@keyframes navBrandFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes navSubFloat{0%,100%{opacity:.7;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+@keyframes navGoldSweep{0%{background-position:120% 50%}100%{background-position:-120% 50%}}
+@media(prefers-reduced-motion:reduce){nav .logo,nav .logo b,nav .logo i{animation:none!important;transform:none!important}}
 
-/* Readable accent colour for text on light backgrounds */
+/* ===== FIXES (light-theme visibility + compatibility) ===== */
 :root{--ink-accent:#8a5a10}
 :root[data-theme="dark"]{--ink-accent:#f2c65c}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink-accent:#f2c65c}}
-
-/* 1) PLACES TO STAY: white text was sitting on a light card (invisible in light theme) */
 #stay .ff{background:var(--scene-surface)!important;border:1px solid var(--scene-line)}
 #stay .sc2 h3,#stay .sc2 p,#stay .sc2 .c,#stay .sc2 .c a{color:var(--scene-ink)!important}
 #stay .sc2 em{color:var(--ink-accent)}
@@ -15,30 +512,267 @@
 #stay .sc2{max-height:calc(100% - 200px);overflow:auto}
 #stay .flip{height:540px}
 @media(max-width:650px){#stay .flip{height:600px}}
-
-/* 2) KANLAON "Ara-al Continues Forward": pale text on a pale card */
 #kanlaon .msg h3{color:var(--scene-ink)}
 #kanlaon .msg p{color:var(--ed-muted)}
 #kanlaon .msg .yr,#kanlaon .ti .yr{color:var(--ink-accent)}
-
-/* 3) Low-contrast gold labels / tags / ratings on cream */
 .lab,.tag,.rt,#stay .lab{color:var(--ink-accent)!important}
-
-/* 4) NAVBAR: dark text was landing on the hero photo; theme button vanished in mobile menu */
 nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 @media(max-width:950px){
   nav .nl .tt,nav:not(.sc) .nl .tt{color:#fff!important}
   .nl{max-height:calc(100vh - 94px);max-height:calc(100dvh - 94px)}
 }
 @media(min-width:951px){nav .nl a:hover,nav .nl a.on{color:var(--ink-accent)}}
-
-/* 5) Hero: scroll indicator was white on a light hero; add vh fallback for older browsers */
 .scr{border-color:var(--scene-ink)}
 .scr::after{background:var(--scene-ink)}
 .hero{min-height:88vh;min-height:88svh}
-
-/* 6) Attraction cards: fixed height could clip text on narrow screens */
 .at .gr>.card{height:auto;min-height:376px}
-
-/* 7) Safari: backdrop-filter needs the -webkit- prefix (desktop/hover devices only) */
 @media(hover:hover){.hint,.pl,.mt,.pb{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}}
+</style>
+</head>
+<body>
+<div class="pg" id="pg"></div><div class="cg" id="cg"></div>
+<nav id="nav"><div class="nb">
+<a href="#home" class="logo">Discover <b>Ara-al</b><i>/ Guintubdan</i></a>
+<ul class="nl" id="nl">
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#attractions">Explore</a></li><li><a href="#events">Events</a></li><li><a href="#kanlaon">Kanlaon</a></li><li><a href="#stay">Stay</a></li><li><a href="#business">Businesses</a></li><li><a href="#food">Food</a></li><li><a href="#gallery">Gallery</a></li>
+<li><button class="tt" id="tt" aria-label="Switch theme">☾</button></li></ul>
+<button class="mb" id="mb" aria-label="Menu">☰</button></div></nav>
+
+<header class="hero" id="home">
+<div class="hb" id="hb"><video muted loop playsinline preload="metadata" poster="guintubdan.jpg"><source src="hero.mp4" type="video/mp4"></video></div><div class="orb o1"></div><div class="orb o2"></div><div id="pts"></div>
+<div class="hc"><div class="hs">La Carlota City • Negros Occidental</div>
+<h1 id="h1"><span style="--i:0">Discover</span> <span style="--i:1">Ara-al</span></h1>
+<p class="lead" id="heroTyping">A mountain community nestled in the foothills of Mount Kanlaon, where waterfalls, cool mountain air, lush forests and local culture come together.</p>
+<div class="hbt"><a href="#attractions" class="btn bp">Explore Ara-al</a><a href="#about" class="btn bo">Learn More</a></div></div>
+<div class="scr"></div></header>
+<div class="mq"><div id="mq"></div></div>
+
+<section id="about"><div class="w ab">
+<div class="flip rv" style="height:460px"><div class="fi">
+<div class="ff" id="abf"><div class="ph" style="height:100%;background-image:url(about.jpg),linear-gradient(135deg,#2f7a5b,#0d3326)"></div><video muted loop playsinline preload="metadata"><source src="about.mp4" type="video/mp4"></video><span class="pl">▶ Hover to play</span><span class="hint">Tap to flip ↻</span></div>
+<div class="fb"><em>ABOUT ARA-AL</em><h3>Barangay Ara-al</h3><p>Ara-al is one of the barangays of La Carlota City, Negros Occidental, situated near the foothills of Mount Kanlaon.</p><p>Covering more than 1,900 hectares, the community is known for its agricultural lands, mountain scenery, waterfalls, and Sitio Guintubdan.</p><small>Tap again to return to the map</small></div></div></div>
+<div class="rv" style="--d:.15s"><div class="lab">About Ara-al</div><h2>A community among the mountains</h2>
+<p>Barangay Ara-al is one of the communities of La Carlota City, Negros Occidental, situated toward the foothills of Mount Kanlaon.</p>
+<p>The area is known for its mountain environment, agricultural communities, waterfalls and nature destinations.</p>
+<p>One of its most recognized areas is Sitio Guintubdan, a popular mountain destination and jump-off area for visitors exploring nearby natural attractions.</p>
+<div class="st"><div><strong data-n="1900" data-s="+">1,900+</strong><span>Hectares</span></div><div><strong data-n="600" data-s="+">600+</strong><span>Feet Above Sea Level</span></div><div><strong>Mount</strong><span>Kanlaon Foothills</span></div></div></div></div></section>
+
+<section class="at" id="attractions" style="background:var(--soft)"><div class="w">
+<div class="lab rv">Explore</div><h2 class="rv">Natural attractions</h2><p class="sd rv">Discover waterfalls, mountain landscapes and natural destinations around Ara-al and Guintubdan. Tap a card for photos.</p>
+<div class="gr" id="at"></div></div></section>
+
+<section id="events"><div class="w"><div class="lab rv">Culture &amp; Community</div><h2 class="rv">Festivals &amp; events</h2>
+<p class="sd rv">Discover community celebrations, cultural traditions and events in Ara-al and La Carlota City.</p><div id="ev"></div></div></section>
+
+<section id="kanlaon" style="background:var(--soft)"><div class="w"><div class="lab rv">Our Story</div><h2 class="rv">Living in the Shadow of Kanlaon</h2>
+<p class="sd rv">Barangay Ara-al and the mountain community of Guintubdan have experienced eruptions, ashfall, evacuations and periods of volcanic unrest from Mount Kanlaon.</p>
+<div id="v1"></div><div class="tl rv" id="tl"></div><div id="v2"></div>
+<div class="msg rv"><span class="yr">COMMUNITY &amp; RESILIENCE</span><h3>Ara-al Continues Forward</h3><p>Beyond the images of ashfall and eruptions is a community that continues to live, work, farm and move forward. The story of Ara-al and Guintubdan is also a story of community, cooperation and respect for the natural environment surrounding Mount Kanlaon.</p></div></div></section>
+
+<section class="stay" id="stay"><div class="w"><div class="lab rv">Stay</div><h2 class="rv">Places to stay</h2>
+<p class="sd rv">Stay close to nature and experience the peaceful mountain atmosphere of Guintubdan and Barangay Ara-al.</p><div class="sg" id="sg"></div></div></section>
+
+<section id="business"><div class="w"><div class="lab rv">Local Directory</div><h2 class="rv">Local Businesses</h2>
+<p class="sd rv">Support local businesses by discovering shops, restaurants, local products, guides, transportation and other services in Ara-al and nearby La Carlota City.</p>
+<div class="tabs rv" id="tabs"></div><div class="bz" id="bz"></div></div></section>
+
+<section id="food" style="background:var(--soft)"><div class="w"><div class="lab rv">Taste Ara-al</div><h2 class="rv">Local food &amp; flavors</h2>
+<p class="sd rv">Discover local dishes, agricultural products and food experiences from Ara-al and the surrounding communities of La Carlota City.</p>
+<div class="fd">
+<div class="rv"><em>🍲</em><h3>Local Cuisine</h3><p>Enjoy home-cooked dishes and traditional Filipino favorites prepared by local families and food sellers.</p></div>
+<div class="rv" style="--d:.12s"><em>🥕</em><h3>Fresh Mountain Produce</h3><p>Discover fresh fruits, vegetables and agricultural products grown in Ara-al and its upland communities.</p></div>
+<div class="rv" style="--d:.24s"><em>🍰</em><h3>Local Delicacies</h3><p>Taste locally made snacks, native delicacies, sweets and other specialties from Ara-al and La Carlota City.</p></div></div></div></section>
+
+<section id="gallery"><div class="w"><div class="lab rv">See Ara-al</div><h2 class="rv">Photo gallery</h2>
+<p class="sd rv">Discover Ara-al through moments captured across its mountains, waterfalls, scenic landscapes and vibrant local community.</p><div class="ga" id="ga"></div></div></section>
+
+<section id="map" style="background:var(--soft)"><div class="w"><div class="lab rv">Location</div><h2 class="rv">Find Ara-al</h2>
+<p class="sd rv">Barangay Ara-al is located in La Carlota City, Negros Occidental, Philippines.</p>
+<div class="mp rv"><iframe src="https://www.google.com/maps?q=Barangay%20Ara-al%2C%20La%20Carlota%20City%2C%20Negros%20Occidental&output=embed" loading="lazy" allowfullscreen title="Map of Barangay Ara-al"></iframe></div>
+<div class="mi rv"><div><h3>Barangay Ara-al</h3><p>Explore Ara-al, Sitio Guintubdan and nearby mountain destinations in La Carlota City.</p></div>
+<a class="btn bp" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Barangay+Ara-al+La+Carlota+City+Negros+Occidental">Open in Google Maps</a></div></div></section>
+
+<footer><div class="w"><div class="ft"><div><h3>Discover <span>Ara-al</span></h3><p>Discover the natural attractions, local culture, food and mountain communities of Barangay Ara-al, La Carlota City, Negros Occidental.</p></div>
+<div class="fc"><strong>Explore</strong><a href="#about">About Ara-al</a><a href="#attractions">Attractions</a><a href="#events">Events</a><a href="#food">Food</a></div>
+<div class="fc"><strong>Discover</strong><a href="#kanlaon">Kanlaon</a><a href="#stay">Places to Stay</a><a href="#business">Businesses</a><a href="#gallery">Gallery</a><a href="#map">Map</a></div></div>
+<details class="cl" id="crd" hidden><summary>Photo &amp; video credits</summary><ul id="crl"></ul></details>
+<p class="dc rv"><i>i</i><span><b>Disclaimer:</b> All information on this website may be incorrect or outdated. This website was created for a personal project only and is not an official source for Barangay Ara-al or La Carlota City.</span></p>
+<div class="fbt"><span>© 2026 <b>Discover Ara-al</b> • Barangay Ara-al • La Carlota City • Negros Occidental</span><div class="fr"><span>Website created by <b>Edwin Penacuba Jr.</b></span><a class="fbk" href="https://www.facebook.com/penacuba16" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Contact me on Facebook</a></div></div></div></footer>
+
+<div id="lb"><button class="lbb" id="cl">✕</button><button class="lbb" id="pv">‹</button><div id="lbi"></div><button class="lbb" id="nx">›</button><div id="lbc"></div></div>
+<button id="top" aria-label="Back to top">↑</button>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const bg=(f,h)=>`background-image:url(${f}),linear-gradient(135deg,hsl(${h} 42% 32%),hsl(${h+35} 48% 16%))`;
+const R=e=>{e.classList.add('rv');return e};
+/* CREDITS: type the credit between the quotes. Empty = nothing shown. */
+const CR={
+"hero.mp4":"","about.jpg":"","about.mp4":"",
+"guintubdan.jpg":"","guintubdan.mp4":"","busay-dalupya.jpg":"","busay-dalupya.mp4":"","ambon-falls.jpg":"","ambon-falls.mp4":"","labi-labi.jpg":"","labi-labi.mp4":"","twin-falls.jpg":"","twin-falls.mp4":"","busay-abaga.jpg":"","busay-abaga.mp4":"",
+"city-events.jpg":"","city-events.mp4":"","pasalamat-festival.jpg":"","pasalamat-festival.mp4":"","cultural-event.jpg":"","cultural-event.mp4":"",
+"kanlaon-hero.mp4":"","guintubdan-ashfall-drone.jpg":"","kanlaon-eruption.mp4":"","guintubdan-houses-ash.jpg":"",
+"lumay-cafe.jpg":"","cafe-norma.jpg":"","quan-delicacies.jpg":"","ranidon-batchoy.jpg":"","palamangkas.jpg":"","cafe-repub.jpg":"","rumbines-cafe.jpg":"","yongs-cafeteria.jpg":"",
+"durian.jpg":"","vegetables-fruits.jpg":"","muscovado.jpg":"","piaya-biscocho.jpg":"","kalamay-hati.jpg":"",
+"guintubdan-resort.jpg":"","local-homestay.jpg":"","nearby-accommodation.jpg":"",
+"gallery1.jpg":"","gallery2.jpg":"","gallery3.jpg":"","gallery4.jpg":"","gallery5.jpg":"","gallery6.jpg":"","gallery7.jpg":"","gallery8.jpg":"","gallery-video1.mp4":"","gallery-video2.mp4":""};
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const crt=(...f)=>{for(const k of f)if(k&&CR[k])return CR[k];return''};
+const cr=(...f)=>{const t=crt(...f);return t?`<span class="cr">📷 ${esc(t)}</span>`:''};
+/* DATA */
+const AT=[["Guintubdan","guintubdan.jpg","Experience the cool mountain atmosphere and natural scenery of Sitio Guintubdan.",150],["Busay Dalupya","busay-dalupya.jpg","Discover one of the waterfalls found within the mountain landscape of Ara-al.",165],["Ambon Falls","ambon-falls.jpg","Enjoy a refreshing nature destination surrounded by lush vegetation.",175],["Labi-Labi Falls","labi-labi.jpg","Explore another scenic waterfall destination within the community.",185],["Twin Falls","twin-falls.jpg","A beautiful natural attraction surrounded by the green landscape of the mountains.",160],["Busay Abaga","busay-abaga.jpg","Discover the natural beauty and peaceful atmosphere of Ara-al's upland areas.",140]];
+const im=n=>["Ara-al photo "+n,`gallery${n}.jpg`,130+n*14],vd=n=>["Ara-al video "+n,`gallery-video${n}.jpg`,150+n*20,`gallery-video${n}.mp4`];
+const GA=[im(1),vd(1),im(2),im(3),im(4),vd(2),im(5),im(6),im(7),im(8)];
+const EV=[["CITY","City Events","Events and celebrations held across La Carlota City bring residents and visitors together through community programs, performances, food and local traditions.","city-events.jpg",45],["LOCAL","Pasalamat Festival","La Carlota City's Pasalamat Festival brings together colorful street dancing, cultural performances, costumes, music and community celebrations.","pasalamat-festival.jpg",35],["CULTURE","Local Cultural Events","Community gatherings throughout the year bring residents together through food, music, traditions and shared celebrations.","cultural-event.jpg",20]];
+const TL=[["JUNE 2024","Kanlaon Erupts","On June 3, 2024, Kanlaon Volcano produced an explosive eruption that sent a large volcanic plume above the summit. Communities surrounding the volcano experienced the effects of the eruption and ashfall."],["DECEMBER 2024","Ashfall Reaches Guintubdan","Another explosive eruption and continuing volcanic activity brought ashfall to communities near Kanlaon, including areas around Guintubdan and La Carlota City."],["APRIL 2025","Another Explosive Eruption","Kanlaon erupted again on April 8, 2025. The explosive event generated a large volcanic plume, with ashfall reported in Barangay Ara-al and other nearby communities."],["2025–2026","Living With an Active Volcano","Continued volcanic unrest, ash emissions and explosive activity have remained part of life for communities surrounding Kanlaon."]];
+const BZ={"Restaurants & Food":[["Lumay Cafe","lumay-cafe.jpg","Located at the corner of Yunque and Rizal Streets, this cozy café gallery offers Asian and Filipino meals, coffee and signature mango shakes.","★ 4.6 · 161 reviews"],["Café Norma","cafe-norma.jpg","Located across the public plaza, a relaxing local spot for coffee, pastries and casual dining."],["Quan Delicacies","quan-delicacies.jpg","A popular stop for pasalubong and native delicacies including puto, kutsinta, tikoy and crispy ukoy."],["Ranidon La Paz Batchoy","ranidon-batchoy.jpg","A longtime La Carlota food destination on Yunque Street, known for batchoy and crunchy empanadas."],["PALAMANGKAS Pala-Pala Seafood Restaurant","palamangkas.jpg","A local dining destination offering seafood dishes and Filipino favorites."],["Café Repub","cafe-repub.jpg","A local café and casual dining spot in La Carlota City."],["Rumbines Cafe","rumbines-cafe.jpg","A local café offering food, drinks and a casual dining experience."],["Yong's Cafeteria","yongs-cafeteria.jpg","A local cafeteria offering meals and refreshments."]],
+"Local Products":[["Durian","durian.jpg","Ara-al's upland areas produce locally grown durian and other agricultural products."],["Fresh Vegetables & Fruits","vegetables-fruits.jpg","Local farmers grow highland vegetables, root crops and seasonal fruits."],["Muscovado Sugar","muscovado.jpg","Traditional unrefined cane sugar reflecting Negros Occidental's sugarcane heritage."],["Piaya & Biscocho","piaya-biscocho.jpg","Popular Negros delicacies enjoyed as snacks and commonly brought home as pasalubong."],["Kalamay-Hati","kalamay-hati.jpg","A traditional sticky rice delicacy made with glutinous rice, coconut milk and sugar."]],
+"Tourism & Services":[["Local Guintubdan Guides","","Find local Guintubdan guides for trekking, nature trips and exploring the area's attractions."],["Local Transportation","","Get around Ara-al and nearby areas by local tricycles and jeepneys."],["Local Shops & Entrepreneurs","","Discover local shops, products and services offered by entrepreneurs in Barangay Ara-al."],["Community Services","","Find local repair, event, rental and other useful community services in Ara-al."]]};
+const ST=[["MOUNTAIN RESORT","Guintubdan Mountain Resort","Stay close to nature at Guintubdan Mountain Resort. Guests are encouraged to book their rooms in advance.","guintubdan-resort.jpg","MOUNTAIN GETAWAY","A mountain destination in Sitio Guintubdan surrounded by lush vegetation and the natural scenery of the Mount Kanlaon area.","Visitors can enjoy the cool mountain atmosphere and use the area as a starting point for exploring nearby natural attractions.",1],["HOUSE / ROOM • OVERNIGHT STAY","Dew and Eat's Cafe","A peaceful and affordable house or room for an overnight stay in Guintubdan, within walking distance of the Pavilion and Spring Resort.","local-homestay.jpg","LOCAL STAY","A cozy local option in Guintubdan offering a place where visitors can relax and stay overnight while enjoying the cool mountain atmosphere.","Conveniently located within walking distance of the Pavilion and Spring Resort area."],["LOCAL ROOMS • BUDGET-FRIENDLY","Local Affordable Stays","Affordable rooms and overnight stays may be available from local residents around Guintubdan, close to the area's natural attractions.","nearby-accommodation.jpg","BUDGET-FRIENDLY","Simple and affordable accommodations are available around Ara-al and Guintubdan for visitors looking for a convenient place to stay.","A practical option for travelers who want to stay close to the area's mountain attractions and local community."]];
+/* RENDER */
+$('#mq').innerHTML=("WATERFALLS ✦ MOUNT KANLAON ✦ GUINTUBDAN ✦ LOCAL FLAVORS ✦ LA CARLOTA CITY ✦ ").repeat(8);
+const av=a=>`<video muted loop playsinline preload="metadata"><source src="${a[1].replace('.jpg','.mp4')}" type="video/mp4"></video><span class="pl">▶ Hover to play</span>${cr(a[1],a[1].replace('.jpg','.mp4'))}`;
+$('#at').innerHTML=AT.map((a,i)=>i?`<div class="card" style="--d:${i*.08}s" data-i="${i}"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}</div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div>`:
+`<div class="flip" style="--d:0s"><div class="fi"><div class="ff card"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}<span class="hint">Tap for gallery ↻</span></div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div><div class="fb"><em>GUINTUBDAN GALLERY</em><h3>Explore Guintubdan</h3><div class="gal4">${[1,2,3,4].map(n=>`<div style="${bg('gallery'+n+'.jpg',140+n*12)}"></div>`).join('')}</div><small>Tap again to return</small></div></div></div>`).join('');
+$('#ev').innerHTML=EV.map(e=>`<div class="ev rv"><div class="eh" style="background-image:linear-gradient(135deg,hsl(${e[4]+120} 42% 30%),hsl(${e[4]+155} 48% 16%))"><video muted loop playsinline preload="metadata" poster="${e[3]}"><source src="${e[3].replace('.jpg','.mp4')}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button><span class="pl">▶ Hover to play</span>${cr(e[3],e[3].replace('.jpg','.mp4'))}</div><div class="ec"><span class="tag">${e[0]}</span><h3>${e[1]}</h3><p>${e[2]}</p></div></div>`).join('');
+document.querySelectorAll('#ev .ev').forEach((card,i)=>{
+  const pane=card.querySelector('.eh'), info=card.querySelector('.ec');
+  if(info) info.setAttribute('data-ed-number',String(i+1).padStart(2,'0'));
+  if(pane && EV[i]) pane.style.backgroundImage=`linear-gradient(0deg,rgba(8,40,29,.20),rgba(8,40,29,.04)),url("${EV[i][3]}")`;
+  if(pane) pane.style.backgroundPosition='center';
+  if(pane) pane.style.backgroundSize='cover';
+});
+const vid=(id,src,po,tag,h,p)=>$(id).innerHTML=`<div class="vid rv"><video muted loop playsinline preload="none" poster="${po}"><source src="${src}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button>${cr(src,po)}<div class="vc"><span>${tag}</span><h3>${h}</h3><p>${p}</p></div></div>`;
+vid('#v1','kanlaon-hero.mp4','guintubdan-ashfall-drone.jpg','GUINTUBDAN • ARA-AL','A Community Beneath the Volcano','During periods of heightened activity from Kanlaon, volcanic ash has affected homes, roads, vegetation, farms and parts of the mountain landscape surrounding Guintubdan.');
+vid('#v2','kanlaon-eruption.mp4','guintubdan-houses-ash.jpg','LIFE NEAR KANLAON','When Kanlaon Erupted',"Ash-covered homes, vegetation and roads show how closely the people of Guintubdan live with one of the Philippines' active volcanoes.");
+$('#tl').innerHTML=TL.map((t,i)=>`<div class="ti"><div class="fx"><b class="no">0${i+1}</b><i class="sh"></i></div><span class="yr"><i class="ic2">${['🌋','💨','🌋','⛰️'][i]}</i>${t[0]}</span><h3>${t[1]}</h3><p>${t[2]}</p></div>`).join('');
+$('#sg').innerHTML=ST.map((s,i)=>`<div class="flip" style="--d:${i*.12}s"><div class="fi"><div class="ff"><div class="ph" style="${bg(s[3],150+i*25)}"><span class="hint">Tap to flip ↻</span></div>${cr(s[3])}<div class="sc2"><em>${s[0]}</em><h3>${s[1]}</h3><p>${s[2]}</p>${s[7]?'<div class="c"><strong>Reservations</strong><br>La Carlota City Tourism Office<a href="tel:0344600286" onclick="event.stopPropagation()">(034) 460-0286</a></div>':''}</div></div><div class="fb"><em>${s[4]}</em><h3>${s[1]}</h3><p>${s[5]}</p><p>${s[6]}</p><small>Tap again to return</small></div></div></div>`).join('');
+$('#ga').innerHTML=GA.map((g,i)=>`<div class="rv${g[3]?' vd':''}" style="${bg(g[1],g[2])};--d:${i*.06}s" data-g="${i}">${g[3]?`<video muted loop playsinline preload="none"><source src="${g[3]}" type="video/mp4"></video><span class="pb">▶</span>`:''}${cr(g[1],g[3])}</div>`).join('');
+/* FACEBOOK LINKS: empty = no button shown. */
+const FB={"Lumay Cafe":"https://www.facebook.com/LumayCafe","Café Norma":"https://www.facebook.com/cafenormaofficial","Quan Delicacies":"https://www.facebook.com/profile.php?id=100064571414712","Ranidon La Paz Batchoy":"https://www.facebook.com/profile.php?id=100057434590609","PALAMANGKAS Pala-Pala Seafood Restaurant":"https://www.facebook.com/PalamangkasPalaPala","Café Repub":"https://www.facebook.com/cafederepub","Rumbines Cafe":"https://www.facebook.com/rumbinescafe","Yong's Cafeteria":"https://www.facebook.com/yongscafeteria",
+"Durian":"","Fresh Vegetables & Fruits":"","Muscovado Sugar":"","Piaya & Biscocho":"","Kalamay-Hati":"",
+"Local Guintubdan Guides":"","Local Transportation":"","Local Shops & Entrepreneurs":"","Community Services":""};
+const FBI='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>';
+/* RATINGS: e.g. "★ 4.5 · 120 reviews". Empty = not shown. */
+const RT={"Café Norma":"","Quan Delicacies":"","Ranidon La Paz Batchoy":"","PALAMANGKAS Pala-Pala Seafood Restaurant":"","Café Repub":"","Rumbines Cafe":"","Yong's Cafeteria":""};
+const tabs=$('#tabs'),bz=$('#bz');
+function tab(k){$$('button',tabs).forEach(b=>b.classList.toggle('on',b.textContent===k));bz.innerHTML=BZ[k].map((b,i)=>`<div class="b" style="--d:${i*.07}s">${b[1]?`<div class="bt" style="${bg(b[1],150+i*20)}"></div>`:''}<div><h3>${b[0]}</h3>${RT[b[0]]||b[3]?`<div class="rt">${RT[b[0]]||b[3]}</div>`:''}<p>${b[2]}</p>${FB[b[0]]?`<a class="bf" href="${FB[b[0]]}" target="_blank" rel="noopener">${FBI} Facebook</a>`:''}</div></div>`).join('')}
+Object.keys(BZ).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.onclick=()=>tab(k);tabs.appendChild(b)});tab("Restaurants & Food");
+/* CREDITS: hero + about badges and footer list */
+{const h=crt('hero.mp4','guintubdan.jpg'),a=crt('about.jpg','about.mp4'),rows=Object.entries(CR).filter(r=>r[1]);
+if(h)$('#home').insertAdjacentHTML('beforeend',`<span class="cr">📷 ${esc(h)}</span>`);
+if(a)$('#abf').insertAdjacentHTML('beforeend',`<span class="cr">📷 ${esc(a)}</span>`);
+if(rows.length){$('#crl').innerHTML=rows.map(r=>`<li><b>${esc(r[0])}</b> — ${esc(r[1])}</li>`).join('');$('#crd').hidden=false}}
+/* FLIP + LIGHTBOX */
+document.addEventListener('click',e=>{const f=e.target.closest('.flip');if(f&&!e.target.closest('a'))f.classList.toggle('on');
+const c=e.target.closest('#at .card:not(.ff)');if(c)openLb(AT.map(a=>[a[0],a[1],a[3]]),+c.dataset.i);
+const g=e.target.closest('[data-g]');if(g)openLb(GA,+g.dataset.g);
+const b=e.target.closest('.btn');if(b){const r=b.getBoundingClientRect(),s=document.createElement('span'),d=Math.max(r.width,r.height);s.className='rp';s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;b.appendChild(s);setTimeout(()=>s.remove(),600)}});
+let L=[],li=0;const lb=$('#lb');
+function showLb(i){li=(i+L.length)%L.length;const q=$('#lbi');q.style.cssText=bg(L[li][1],L[li][2]);q.innerHTML=L[li][3]?`<video src="${L[li][3]}" controls autoplay playsinline loop style="width:100%;height:100%;object-fit:contain;border-radius:18px;background:#000"></video>`:'';const ct=crt(L[li][1],L[li][3]);$('#lbc').innerHTML=esc(L[li][0])+'  ·  '+(li+1)+'/'+L.length+(ct?'<br><small style="font-weight:600;opacity:.8">📷 '+esc(ct)+'</small>':'')}
+function openLb(l,i){L=l;showLb(i);lb.classList.add('on');document.body.style.overflow='hidden'}
+function closeLb(){lb.classList.remove('on');$('#lbi').innerHTML='';document.body.style.overflow=''}
+$('#cl').onclick=closeLb;$('#pv').onclick=()=>showLb(li-1);$('#nx').onclick=()=>showLb(li+1);lb.onclick=e=>{if(e.target===lb)closeLb()};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')showLb(li-1);if(e.key==='ArrowRight')showLb(li+1)});
+/* REVEAL + COUNT */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');io.unobserve(e.target);$$('[data-n]',e.target).forEach(n=>{const T=+n.dataset.n,t0=performance.now(),run=t=>{const p=Math.min((t-t0)/1600,1);n.textContent=Math.round(T*(1-Math.pow(1-p,3))).toLocaleString()+n.dataset.s;if(p<1)requestAnimationFrame(run)};requestAnimationFrame(run)})}),{threshold:.12});
+$$('.rv,.flip,.card').forEach(el=>{if(!el.classList.contains('rv'))el.classList.add('rv');io.observe(el)});
+/* sound toggle button on event + Kanlaon videos */
+document.addEventListener('click',e=>{const m=e.target.closest('.mt');if(!m)return;const v=m.parentNode.querySelector('video');v.muted=!v.muted;m.textContent=v.muted?'🔇':'🔊'});
+/* VIDEOS: hover on desktop, auto-play-in-view on touch */
+const hov=matchMedia('(hover:hover) and (pointer:fine)').matches,live=new Set();
+const vPlay=h=>{const p=$('video',h).play();p&&p.catch(()=>{})};
+const vStop=h=>{const v=$('video',h);v.pause();v.currentTime=0;h.classList.remove('vp')};
+const mio=new IntersectionObserver(es=>es.forEach(e=>{
+  e.isIntersecting?(live.add(e.target),vPlay(e.target)):(live.delete(e.target),vStop(e.target))}),{threshold:.6});
+$$('#at .card,#abf,.ev').forEach(h=>{const v=$('video',h);if(!v)return;
+  v.addEventListener('playing',()=>h.classList.add('vp'));
+  if(hov&&!h.classList.contains('ev')){h.addEventListener('mouseenter',()=>vPlay(h));h.addEventListener('mouseleave',()=>vStop(h))}
+  else mio.observe(h)});
+addEventListener('pointerdown',()=>live.forEach(h=>{if($('video',h).paused)vPlay(h)}),{passive:true});
+/* Kanlaon + gallery clips */
+const kin=new Set(),kPlay=v=>{v.preload='auto';const p=v.play();p&&p.catch(()=>{})};
+const kio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
+  if(e.isIntersecting){kin.add(v);v._u=false;kPlay(v)}else{kin.delete(v);v.pause()}}),{threshold:.15,rootMargin:'100px'});
+$$('.vid video,.ga video').forEach(v=>{v.muted=true;v.loop=true;v.playsInline=true;
+  v.addEventListener('playing',()=>v.classList.add('vp'));
+  v.addEventListener('canplay',()=>{if(kin.has(v)&&v.paused&&!v._u)kPlay(v)});
+  kio.observe(v)});
+addEventListener('pointerdown',()=>kin.forEach(v=>{if(v.paused&&!v._u)kPlay(v)}),{passive:true});
+$$('.vid').forEach(c=>{const v=$('video',c),b=document.createElement('span');b.className='pp';b.textContent='▶';c.appendChild(b);
+  const sync=()=>b.style.display=v.paused?'grid':'none';
+  v.addEventListener('play',sync);v.addEventListener('pause',sync);sync();
+  c.addEventListener('click',e=>{if(e.target.closest('.mt'))return;if(v.paused){v._u=false;kPlay(v)}else{v._u=true;v.pause()}})});
+/* HERO VIDEO */
+const hv=$('#hb video');hv.addEventListener('playing',()=>$('#hb').classList.add('vp'));
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?hv.play().catch(()=>{}):hv.pause()),{threshold:.1}).observe($('#home'));
+/* HERO DESCRIPTION TYPING */
+(()=>{
+ const el=document.getElementById('heroTyping');
+ if(!el || matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const full=el.textContent.trim();
+ el.setAttribute('aria-label',full);
+ el.textContent='';
+ el.classList.add('typing');
+ let index=0;
+ const start=()=>{
+   const timer=setInterval(()=>{
+     index=Math.min(full.length,index+1);
+     el.textContent=full.slice(0,index);
+     if(index===full.length){clearInterval(timer);el.classList.remove('typing');}
+   },32);
+ };
+ setTimeout(start,1450);
+})();
+/* HERO FX */
+for(let i=0;i<22;i++){const p=document.createElement('i');p.className='pt';p.style.cssText=`left:${Math.random()*100}%;bottom:-10px;animation-duration:${8+Math.random()*10}s;animation-delay:${-Math.random()*14}s;transform:scale(${.5+Math.random()*1.3})`;$('#pts').appendChild(p)}
+/* TIMELINE */
+const tio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');tio.unobserve(e.target)}}),{threshold:.2});
+$$('.ti').forEach((t,i)=>{t.style.setProperty('--d',(i%2)*.12+'s');tio.observe(t)});
+/* SCROLL */
+const nav=$('#nav'),hb=$('#hb'),links=$$('.nl a'),secs=$$('section[id],header[id]'),tl=$('#tl');
+let tk=0;
+addEventListener('scroll',()=>{if(tk)return;tk=requestAnimationFrame(()=>{tk=0;
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  $('#pg').style.width=(y/h*100)+'%';nav.classList.toggle('sc',y>50);
+  if(hov&&y<innerHeight*1.2)hb.style.transform=`translateY(${y*.25}px)`;
+  $('#top').classList.toggle('on',y>600);
+  const r=tl.getBoundingClientRect();
+  tl.style.setProperty('--fill',Math.max(0,Math.min(1,(innerHeight*.65-r.top)/r.height))*100+'%')})},{passive:true});
+/* active nav link */
+const nio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)
+  links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+secs.forEach(s=>nio.observe(s));
+$('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
+/* MENU + THEME */
+const menuBtn=$('#mb'),menuList=$('#nl');
+function closeMenu(){menuList.classList.remove('on');menuBtn.textContent='☰';menuBtn.setAttribute('aria-expanded','false')}
+menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-controls','nl');
+menuBtn.onclick=()=>{const o=menuList.classList.toggle('on');menuBtn.textContent=o?'✕':'☰';menuBtn.setAttribute('aria-expanded',String(o))};
+document.addEventListener('click',e=>{if(!menuList.contains(e.target)&&!menuBtn.contains(e.target))closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+links.forEach(a=>a.onclick=closeMenu);
+const root=document.documentElement,tt=$('#tt');let sv=null;try{sv=localStorage.getItem('araalTheme')}catch(e){}
+const setT=d=>{root.setAttribute('data-theme',d?'dark':'light');tt.textContent=d?'☀':'☾'};
+setT(sv?sv==='dark':matchMedia('(prefers-color-scheme:dark)').matches);
+tt.onclick=()=>{const d=root.getAttribute('data-theme')!=='dark';setT(d);try{localStorage.setItem('araalTheme',d?'dark':'light')}catch(e){}};
+/* Lightweight description reveal */
+(()=>{
+ const targets=[...new Set(document.querySelectorAll('section p, .cb p, .ec p, .vc p, .sc2 p, .b p, .ti p'))]
+  .filter(el=>el.id!=='heroTyping' && !el.closest('footer, .dc, nav') && !el.children.length && el.textContent.trim().length>18);
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window))return;
+ const observer=new IntersectionObserver(entries=>{
+  for(const entry of entries){
+   if(!entry.isIntersecting)continue;
+   entry.target.classList.add('description-visible');
+   observer.unobserve(entry.target);
+  }
+ },{threshold:0,rootMargin:'0px 0px 60px 0px'});
+ targets.forEach(el=>{
+  el.classList.add('description-reveal');
+  observer.observe(el);
+ });
+})();
+</script>
+</body>
+</html>
