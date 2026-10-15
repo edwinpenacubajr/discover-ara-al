@@ -7,15 +7,15 @@
 <meta name="theme-color" content="#123c2c">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f7a5b'/%3E%3Cstop offset='1' stop-color='%230a261b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ccircle cx='46' cy='19' r='6' fill='%23d5a84b'/%3E%3Cpath d='M6 50 24 24l10 14 7-9 17 21z' fill='%23e7f1eb'/%3E%3Cpath d='M24 24l-6 8 4-2 3 3 3-3z' fill='%23ffffff'/%3E%3Cpath d='M4 50h56v10H4z' fill='%231d6046'/%3E%3Cpath d='M14 50v-6l-4 6zm8 0v-8l-5 8z' fill='%2312402e'/%3E%3C/svg%3E">
 <meta name="description" content="Discover Ara-al, La Carlota City, Negros Occidental — a mountain community surrounded by waterfalls, nature trails, and the foothills of Mount Kanlaon.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;800&family=Fraunces:wght@600;800&display=swap">
 <style>
-:root{--g9:#0a261b;--g8:#123c2c;--g6:#1d6046;--gold:#d5a84b;--bg:#f4f2eb;--card:#fcfbf7;--text:#16241d;--mut:#586158;--bd:#dedbcf;--sh:rgba(40,36,20,.14);--soft:#eceae0;--nav:rgba(244,242,235,.82);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--fh:'Fraunces',Georgia,serif;--fb:'DM Sans',system-ui,Arial,sans-serif;--g9:#0a261b;--g8:#123c2c;--g6:#1d6046;--gold:#d5a84b;--bg:#f4f2eb;--card:#fcfbf7;--text:#16241d;--mut:#586158;--bd:#dedbcf;--sh:rgba(40,36,20,.14);--soft:#eceae0;--nav:rgba(244,242,235,.82);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07130e;--card:#10231b;--text:#e9f2ed;--mut:#9fb2a8;--bd:#25402f;--sh:rgba(0,0,0,.45);--soft:#10231b;--nav:rgba(7,19,14,.78)}}
 :root[data-theme="dark"]{--bg:#07130e;--card:#10231b;--text:#e9f2ed;--mut:#9fb2a8;--bd:#25402f;--sh:rgba(0,0,0,.45);--soft:#10231b;--nav:rgba(7,19,14,.78)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;transition:background .4s,color .4s}
-h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;transition:background .4s,color .4s}
+h1,h2,h3{font-family:var(--fh);line-height:1.15}
 a{color:inherit;text-decoration:none}
 section{padding:100px 22px;scroll-margin-top:60px}
 .w{max-width:1150px;margin:auto}
@@ -30,8 +30,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;color:#fff;transition:.4s}
 nav.sc{background:var(--nav);color:var(--text);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 8px 30px var(--sh)}
 .nb{max-width:1200px;height:74px;margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;transition:height .3s}
 nav.sc .nb{height:62px}
-.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:800}
-.logo b{color:var(--gold)}.logo i{font:italic 400 .7rem Inter,sans-serif;opacity:.7;margin-left:6px}
+.logo{font-family:var(--fh);font-size:1.4rem;font-weight:800}
+.logo b{color:var(--gold)}.logo i{font:italic 400 .7rem var(--fb);opacity:.7;margin-left:6px}
 .nl{display:flex;align-items:center;gap:6px;list-style:none}
 .nl a{position:relative;display:block;padding:8px 12px;font-size:.88rem;font-weight:600;border-radius:8px;transition:.25s}
 .nl a::after{content:"";position:absolute;left:50%;bottom:2px;width:0;height:2px;background:var(--gold);transition:.3s;transform:translateX(-50%)}
@@ -90,7 +90,7 @@ nav.sc .nb{height:62px}
 .st{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
 .st div{background:var(--soft);padding:20px 14px;border-radius:16px;transition:.3s;border:1px solid transparent}
 .st div:hover{transform:translateY(-6px);border-color:var(--gold)}
-.st strong{display:block;font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--g6)}
+.st strong{display:block;font-family:var(--fh);font-size:1.7rem;color:var(--g6)}
 [data-theme="dark"] .st strong{color:var(--gold)}
 .st span{color:var(--mut);font-size:.82rem}
 .gr{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -146,7 +146,7 @@ nav.sc .nb{height:62px}
 .fx{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
 .fx::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--gold),#7fd1a5);transform:scaleY(0);transform-origin:top;transition:transform .5s}
 .ti:hover .fx::after{transform:scaleY(1)}
-.no{position:absolute;right:20px;top:-4px;font:800 5.6rem 'Playfair Display',serif;color:var(--gold);opacity:.07;transition:opacity .5s,transform .6s}
+.no{position:absolute;right:20px;top:-4px;font:800 5.6rem var(--fh);color:var(--gold);opacity:.07;transition:opacity .5s,transform .6s}
 .ti:hover .no{opacity:.17;transform:scale(1.1) rotate(-3deg)}
 .sh{position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(110deg,transparent,rgba(213,168,75,.16),transparent);transform:skewX(-20deg)}
 .ti:hover .sh{animation:sw .9s ease}@keyframes sw{to{left:130%}}
@@ -195,7 +195,7 @@ footer{background:#0c1a13;color:#fff;padding:60px 22px 26px}
 .fbt{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:24px;color:#9fb2a8;font-size:.85rem}
 .fr{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .dc{display:flex;gap:12px;align-items:flex-start;margin-top:26px;padding:14px 18px;border:1px solid rgba(213,168,75,.32);background:rgba(213,168,75,.07);border-radius:14px;color:#c9d6cf;font-size:.82rem;line-height:1.6}
-.dc i{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#172018;font:800 13px Georgia,serif}.dc b{color:var(--gold)}
+.dc i{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#172018;font:800 13px var(--fh)}.dc b{color:var(--gold)}
 .fbt b{color:var(--gold)}
 .fbk{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:30px;background:#1877f2;color:#fff;font-weight:600;font-size:.78rem;transition:transform .3s,box-shadow .3s}
 .fbk svg{width:18px;height:18px;fill:#fff;flex:none}
@@ -221,6 +221,11 @@ footer{background:#0c1a13;color:#fff;padding:60px 22px 26px}
 @media(max-width:650px){
 section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{height:420px}.vc{left:20px;right:20px;bottom:24px}.msg{padding:30px 22px}
 .ga{grid-auto-rows:160px}}
+.cr{position:absolute;left:10px;top:10px;z-index:3;max-width:calc(100% - 20px);background:rgba(0,0,0,.62);color:#fff;font-size:.66rem;font-weight:600;line-height:1.5;padding:3px 9px;border-radius:20px;pointer-events:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ga .cr{top:auto;bottom:10px}.hero>.cr{top:auto;bottom:26px;left:22px;max-width:40%}
+.cl{margin-top:22px;color:#c9d6cf;font-size:.82rem}.cl summary{cursor:pointer;color:var(--gold);font-weight:700}
+.cl ul{margin-top:10px;columns:2;column-gap:28px;list-style:none}.cl li{margin-bottom:4px;break-inside:avoid}.cl b{color:#fff;font-weight:600}
+@media(max-width:650px){.cl ul{columns:1}}
 /* MOBILE PERFORMANCE + TOUCH FIXES */
 @media(hover:none),(max-width:950px){
   nav.sc{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg)}
@@ -311,6 +316,7 @@ section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{hei
 <footer><div class="w"><div class="ft"><div><h3>Discover <span>Ara-al</span></h3><p>Discover the natural attractions, local culture, food and mountain communities of Barangay Ara-al, La Carlota City, Negros Occidental.</p></div>
 <div class="fc"><strong>Explore</strong><a href="#about">About Ara-al</a><a href="#attractions">Attractions</a><a href="#food">Food</a><a href="#events">Events</a></div>
 <div class="fc"><strong>Discover</strong><a href="#kanlaon">Kanlaon</a><a href="#business">Businesses</a><a href="#stay">Places to Stay</a><a href="#gallery">Gallery</a><a href="#map">Map</a></div></div>
+<details class="cl" id="crd" hidden><summary>Photo &amp; video credits</summary><ul id="crl"></ul></details>
 <p class="dc rv"><i>i</i><span><b>Disclaimer:</b> All information on this website may be incorrect or outdated. This website was created for a personal project only and is not an official source for Barangay Ara-al or La Carlota City.</span></p>
 <div class="fbt"><span>© 2026 <b>Discover Ara-al</b> • Barangay Ara-al • La Carlota City • Negros Occidental</span><div class="fr"><span>Website created by <b>Edwin Penacuba Jr.</b></span><a class="fbk" href="https://www.facebook.com/penacuba16" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Contact me on Facebook</a></div></div></div></footer>
 
@@ -321,6 +327,20 @@ section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{hei
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const bg=(f,h)=>`background-image:url(${f}),linear-gradient(135deg,hsl(${h} 42% 32%),hsl(${h+35} 48% 16%))`;
 const R=e=>{e.classList.add('rv');return e};
+/* CREDITS: type the credit between the quotes, e.g. "Juan Dela Cruz" or "Photo by Maria / Facebook". Empty = nothing shown.
+   Each credit appears as a small 📷 badge on the image/video, in the photo viewer, and in the footer credits list. */
+const CR={
+"hero.mp4":"","about.jpg":"","about.mp4":"",
+"guintubdan.jpg":"","guintubdan.mp4":"","busay-dalupya.jpg":"","busay-dalupya.mp4":"","ambon-falls.jpg":"","ambon-falls.mp4":"","labi-labi.jpg":"","labi-labi.mp4":"","twin-falls.jpg":"","twin-falls.mp4":"","busay-abaga.jpg":"","busay-abaga.mp4":"",
+"barangay-celebration.jpg":"","barangay-celebration.mp4":"","pasalamat-festival.jpg":"","pasalamat-festival.mp4":"","cultural-event.jpg":"","cultural-event.mp4":"",
+"kanlaon-hero.mp4":"","guintubdan-ashfall-drone.jpg":"","kanlaon-eruption.mp4":"","guintubdan-houses-ash.jpg":"",
+"lumay-cafe.jpg":"","cafe-norma.jpg":"","quan-delicacies.jpg":"","ranidon-batchoy.jpg":"","palamangkas.jpg":"","cafe-repub.jpg":"","rumbines-cafe.jpg":"","yongs-cafeteria.jpg":"",
+"durian.jpg":"","vegetables-fruits.jpg":"","muscovado.jpg":"","piaya-biscocho.jpg":"","kalamay-hati.jpg":"",
+"guintubdan-resort.jpg":"","local-homestay.jpg":"","nearby-accommodation.jpg":"",
+"gallery1.jpg":"","gallery2.jpg":"","gallery3.jpg":"","gallery4.jpg":"","gallery5.jpg":"","gallery6.jpg":"","gallery7.jpg":"","gallery8.jpg":"","gallery-video1.mp4":"","gallery-video2.mp4":""};
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const crt=(...f)=>{for(const k of f)if(k&&CR[k])return CR[k];return''};
+const cr=(...f)=>{const t=crt(...f);return t?`<span class="cr">📷 ${esc(t)}</span>`:''};
 /* DATA */
 const AT=[["Guintubdan","guintubdan.jpg","Experience the cool mountain atmosphere and natural scenery of Sitio Guintubdan.",150],["Busay Dalupya","busay-dalupya.jpg","Discover one of the waterfalls found within the mountain landscape of Ara-al.",165],["Ambon Falls","ambon-falls.jpg","Enjoy a refreshing nature destination surrounded by lush vegetation.",175],["Labi-Labi Falls","labi-labi.jpg","Explore another scenic waterfall destination within the community.",185],["Twin Falls","twin-falls.jpg","A beautiful natural attraction surrounded by the green landscape of the mountains.",160],["Busay Abaga","busay-abaga.jpg","Discover the natural beauty and peaceful atmosphere of Ara-al's upland areas.",140]];
 const im=n=>["Ara-al photo "+n,`gallery${n}.jpg`,130+n*14],vd=n=>["Ara-al video "+n,`gallery-video${n}.jpg`,150+n*20,`gallery-video${n}.mp4`];
@@ -333,16 +353,16 @@ const BZ={"Restaurants & Food":[["Lumay Cafe","lumay-cafe.jpg","Located at the c
 const ST=[["MOUNTAIN RESORT","Guintubdan Mountain Resort","Stay close to nature at Guintubdan Mountain Resort. Guests are encouraged to book their rooms in advance.","guintubdan-resort.jpg","MOUNTAIN GETAWAY","A mountain destination in Sitio Guintubdan surrounded by lush vegetation and the natural scenery of the Mount Kanlaon area.","Visitors can enjoy the cool mountain atmosphere and use the area as a starting point for exploring nearby natural attractions.",1],["HOUSE / ROOM • OVERNIGHT STAY","Dew and Eat's Cafe","A peaceful and affordable house or room for an overnight stay in Guintubdan, within walking distance of the Pavilion and Spring Resort.","local-homestay.jpg","LOCAL STAY","A cozy local option in Guintubdan offering a place where visitors can relax and stay overnight while enjoying the cool mountain atmosphere.","Conveniently located within walking distance of the Pavilion and Spring Resort area."],["LOCAL ROOMS • BUDGET-FRIENDLY","Local Affordable Stays","Affordable rooms and overnight stays may be available from local residents around Guintubdan, close to the area's natural attractions.","nearby-accommodation.jpg","BUDGET-FRIENDLY","Simple and affordable accommodations are available around Ara-al and Guintubdan for visitors looking for a convenient place to stay.","A practical option for travelers who want to stay close to the area's mountain attractions and local community."]];
 /* RENDER */
 $('#mq').innerHTML=("WATERFALLS ✦ MOUNT KANLAON ✦ GUINTUBDAN ✦ LOCAL FLAVORS ✦ LA CARLOTA CITY ✦ ").repeat(8);
-const av=a=>`<video muted loop playsinline preload="metadata"><source src="${a[1].replace('.jpg','.mp4')}" type="video/mp4"></video><span class="pl">▶ Hover to play</span>`;
+const av=a=>`<video muted loop playsinline preload="metadata"><source src="${a[1].replace('.jpg','.mp4')}" type="video/mp4"></video><span class="pl">▶ Hover to play</span>${cr(a[1],a[1].replace('.jpg','.mp4'))}`;
 $('#at').innerHTML=AT.map((a,i)=>i?`<div class="card" style="--d:${i*.08}s" data-i="${i}"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}</div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div>`:
 `<div class="flip" style="--d:0s"><div class="fi"><div class="ff card"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}<span class="hint">Tap for gallery ↻</span></div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div><div class="fb"><em>GUINTUBDAN GALLERY</em><h3>Explore Guintubdan</h3><div class="gal4">${[1,2,3,4].map(n=>`<div style="${bg('gallery'+n+'.jpg',140+n*12)}"></div>`).join('')}</div><small>Tap again to return</small></div></div></div>`).join('');
-$('#ev').innerHTML=EV.map(e=>`<div class="ev rv"><div class="eh" style="background-image:linear-gradient(135deg,hsl(${e[4]+120} 42% 30%),hsl(${e[4]+155} 48% 16%))"><video muted loop playsinline preload="metadata" poster="${e[3]}"><source src="${e[3].replace('.jpg','.mp4')}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button><span class="pl">▶ Hover to play</span></div><div class="ec"><span class="tag">${e[0]}</span><h3>${e[1]}</h3><p>${e[2]}</p></div></div>`).join('');
-const vid=(id,src,po,tag,h,p)=>$(id).innerHTML=`<div class="vid rv"><video muted loop playsinline preload="none" poster="${po}"><source src="${src}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button><div class="vc"><span>${tag}</span><h3>${h}</h3><p>${p}</p></div></div>`;
+$('#ev').innerHTML=EV.map(e=>`<div class="ev rv"><div class="eh" style="background-image:linear-gradient(135deg,hsl(${e[4]+120} 42% 30%),hsl(${e[4]+155} 48% 16%))"><video muted loop playsinline preload="metadata" poster="${e[3]}"><source src="${e[3].replace('.jpg','.mp4')}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button><span class="pl">▶ Hover to play</span>${cr(e[3],e[3].replace('.jpg','.mp4'))}</div><div class="ec"><span class="tag">${e[0]}</span><h3>${e[1]}</h3><p>${e[2]}</p></div></div>`).join('');
+const vid=(id,src,po,tag,h,p)=>$(id).innerHTML=`<div class="vid rv"><video muted loop playsinline preload="none" poster="${po}"><source src="${src}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button>${cr(src,po)}<div class="vc"><span>${tag}</span><h3>${h}</h3><p>${p}</p></div></div>`;
 vid('#v1','kanlaon-hero.mp4','guintubdan-ashfall-drone.jpg','GUINTUBDAN • ARA-AL','A Community Beneath the Volcano','During periods of heightened activity from Kanlaon, volcanic ash has affected homes, roads, vegetation, farms and parts of the mountain landscape surrounding Guintubdan.');
 vid('#v2','kanlaon-eruption.mp4','guintubdan-houses-ash.jpg','LIFE NEAR KANLAON','When Kanlaon Erupted',"Ash-covered homes, vegetation and roads show how closely the people of Guintubdan live with one of the Philippines' active volcanoes.");
 $('#tl').innerHTML=TL.map((t,i)=>`<div class="ti"><div class="fx"><b class="no">0${i+1}</b><i class="sh"></i></div><span class="yr"><i class="ic2">${['🌋','💨','🌋','⛰️'][i]}</i>${t[0]}</span><h3>${t[1]}</h3><p>${t[2]}</p></div>`).join('');
-$('#sg').innerHTML=ST.map((s,i)=>`<div class="flip" style="--d:${i*.12}s"><div class="fi"><div class="ff"><div class="ph" style="${bg(s[3],150+i*25)}"><span class="hint">Tap to flip ↻</span></div><div class="sc2"><em>${s[0]}</em><h3>${s[1]}</h3><p>${s[2]}</p>${s[7]?'<div class="c"><strong>Reservations</strong><br>La Carlota City Tourism Office<a href="tel:0344600286" onclick="event.stopPropagation()">(034) 460-0286</a></div>':''}</div></div><div class="fb"><em>${s[4]}</em><h3>${s[1]}</h3><p>${s[5]}</p><p>${s[6]}</p><small>Tap again to return</small></div></div></div>`).join('');
-$('#ga').innerHTML=GA.map((g,i)=>`<div class="rv${g[3]?' vd':''}" style="${bg(g[1],g[2])};--d:${i*.06}s" data-g="${i}">${g[3]?`<video muted loop playsinline preload="none"><source src="${g[3]}" type="video/mp4"></video><span class="pb">▶</span>`:''}</div>`).join('');
+$('#sg').innerHTML=ST.map((s,i)=>`<div class="flip" style="--d:${i*.12}s"><div class="fi"><div class="ff"><div class="ph" style="${bg(s[3],150+i*25)}"><span class="hint">Tap to flip ↻</span></div>${cr(s[3])}<div class="sc2"><em>${s[0]}</em><h3>${s[1]}</h3><p>${s[2]}</p>${s[7]?'<div class="c"><strong>Reservations</strong><br>La Carlota City Tourism Office<a href="tel:0344600286" onclick="event.stopPropagation()">(034) 460-0286</a></div>':''}</div></div><div class="fb"><em>${s[4]}</em><h3>${s[1]}</h3><p>${s[5]}</p><p>${s[6]}</p><small>Tap again to return</small></div></div></div>`).join('');
+$('#ga').innerHTML=GA.map((g,i)=>`<div class="rv${g[3]?' vd':''}" style="${bg(g[1],g[2])};--d:${i*.06}s" data-g="${i}">${g[3]?`<video muted loop playsinline preload="none"><source src="${g[3]}" type="video/mp4"></video><span class="pb">▶</span>`:''}${cr(g[1],g[3])}</div>`).join('');
 /* FACEBOOK LINKS: paste each business's Facebook page between the quotes. Empty = no button shown. */
 const FB={"Lumay Cafe":"https://www.facebook.com/LumayCafe","Café Norma":"https://www.facebook.com/cafenormaofficial","Quan Delicacies":"https://www.facebook.com/profile.php?id=100064571414712","Ranidon La Paz Batchoy":"https://www.facebook.com/profile.php?id=100057434590609","PALAMANGKAS Pala-Pala Seafood Restaurant":"https://www.facebook.com/PalamangkasPalaPala","Café Repub":"https://www.facebook.com/cafederepub","Rumbines Cafe":"https://www.facebook.com/rumbinescafe","Yong's Cafeteria":"https://www.facebook.com/yongscafeteria",
 "Durian":"","Fresh Vegetables & Fruits":"","Muscovado Sugar":"","Piaya & Biscocho":"","Kalamay-Hati":"",
@@ -353,13 +373,18 @@ const RT={"Café Norma":"","Quan Delicacies":"","Ranidon La Paz Batchoy":"","PAL
 const tabs=$('#tabs'),bz=$('#bz');
 function tab(k){$$('button',tabs).forEach(b=>b.classList.toggle('on',b.textContent===k));bz.innerHTML=BZ[k].map((b,i)=>`<div class="b" style="--d:${i*.07}s">${b[1]?`<div class="bt" style="${bg(b[1],150+i*20)}"></div>`:''}<div><h3>${b[0]}</h3>${RT[b[0]]||b[3]?`<div class="rt">${RT[b[0]]||b[3]}</div>`:''}<p>${b[2]}</p>${FB[b[0]]?`<a class="bf" href="${FB[b[0]]}" target="_blank" rel="noopener">${FBI} Facebook</a>`:''}</div></div>`).join('')}
 Object.keys(BZ).forEach(k=>{const b=document.createElement('button');b.textContent=k;b.onclick=()=>tab(k);tabs.appendChild(b)});tab("Restaurants & Food");
+/* CREDITS: hero + about badges and footer list */
+{const h=crt('hero.mp4','guintubdan.jpg'),a=crt('about.jpg','about.mp4'),rows=Object.entries(CR).filter(r=>r[1]);
+if(h)$('#home').insertAdjacentHTML('beforeend',`<span class="cr">📷 ${esc(h)}</span>`);
+if(a)$('#abf').insertAdjacentHTML('beforeend',`<span class="cr">📷 ${esc(a)}</span>`);
+if(rows.length){$('#crl').innerHTML=rows.map(r=>`<li><b>${esc(r[0])}</b> — ${esc(r[1])}</li>`).join('');$('#crd').hidden=false}}
 /* FLIP + LIGHTBOX */
 document.addEventListener('click',e=>{const f=e.target.closest('.flip');if(f&&!e.target.closest('a'))f.classList.toggle('on');
 const c=e.target.closest('#at .card:not(.ff)');if(c)openLb(AT.map(a=>[a[0],a[1],a[3]]),+c.dataset.i);
 const g=e.target.closest('[data-g]');if(g)openLb(GA,+g.dataset.g);
 const b=e.target.closest('.btn');if(b){const r=b.getBoundingClientRect(),s=document.createElement('span'),d=Math.max(r.width,r.height);s.className='rp';s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;b.appendChild(s);setTimeout(()=>s.remove(),600)}});
 let L=[],li=0;const lb=$('#lb');
-function showLb(i){li=(i+L.length)%L.length;const q=$('#lbi');q.style.cssText=bg(L[li][1],L[li][2]);q.innerHTML=L[li][3]?`<video src="${L[li][3]}" controls autoplay playsinline loop style="width:100%;height:100%;object-fit:contain;border-radius:18px;background:#000"></video>`:'';$('#lbc').textContent=L[li][0]+'  ·  '+(li+1)+'/'+L.length}
+function showLb(i){li=(i+L.length)%L.length;const q=$('#lbi');q.style.cssText=bg(L[li][1],L[li][2]);q.innerHTML=L[li][3]?`<video src="${L[li][3]}" controls autoplay playsinline loop style="width:100%;height:100%;object-fit:contain;border-radius:18px;background:#000"></video>`:'';const ct=crt(L[li][1],L[li][3]);$('#lbc').innerHTML=esc(L[li][0])+'  ·  '+(li+1)+'/'+L.length+(ct?'<br><small style="font-weight:600;opacity:.8">📷 '+esc(ct)+'</small>':'')}
 function openLb(l,i){L=l;showLb(i);lb.classList.add('on');document.body.style.overflow='hidden'}
 function closeLb(){lb.classList.remove('on');$('#lbi').innerHTML='';document.body.style.overflow=''}
 $('#cl').onclick=closeLb;$('#pv').onclick=()=>showLb(li-1);$('#nx').onclick=()=>showLb(li+1);lb.onclick=e=>{if(e.target===lb)closeLb()};
