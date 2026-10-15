@@ -536,6 +536,16 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 #kanlaon .msg p{margin:0 0 14px}
 #kanlaon .msg p:last-child{margin-bottom:0}
 @media(max-width:650px){#kanlaon .msg{padding:24px!important}}
+.fd .fimg{display:block;height:190px;margin:-34px -28px 22px;background-image:var(--img),linear-gradient(135deg,#2f7a5b,#0d3326);background-size:cover;background-position:center;border-bottom:3px solid var(--gold)}
+@media(max-width:650px){.fd .fimg{height:170px}}
+.fd .fimg{position:relative;overflow:hidden;background-image:linear-gradient(135deg,#2f7a5b,#0d3326)}
+.fimg i{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.02);transition:opacity 1.2s ease,transform 0s linear 1.2s}
+.fimg i:nth-child(even){transform:scale(1.12) translateX(3%)}
+.fimg i.on{opacity:1;transform:scale(1.14);transition:opacity 1.2s ease,transform 7s ease-out}
+.fimg i:nth-child(even).on{transform:scale(1.12) translateX(-3%)}
+.fdots{position:absolute;left:0;right:0;bottom:10px;z-index:2;display:flex;justify-content:center;gap:7px}
+.fdots b{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);cursor:pointer;transition:.3s}
+.fdots b.on{background:var(--gold);width:22px;border-radius:6px}
 </style>
 </head>
 <body>
@@ -591,9 +601,9 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 <section id="food" style="background:var(--soft)"><div class="w"><div class="lab rv">Taste Ara-al</div><h2 class="rv">Local food &amp; flavors</h2>
 <p class="sd rv">Discover local dishes, agricultural products and food experiences from Ara-al and the surrounding communities of La Carlota City.</p>
 <div class="fd">
-<div class="rv"><em>🍲</em><h3>Local Cuisine</h3><p>Enjoy home-cooked dishes and traditional Filipino favorites prepared by local families and food sellers.</p></div>
-<div class="rv" style="--d:.12s"><em>🥕</em><h3>Fresh Mountain Produce</h3><p>Discover fresh fruits, vegetables and agricultural products grown in Ara-al and its upland communities.</p></div>
-<div class="rv" style="--d:.24s"><em>🍰</em><h3>Local Delicacies</h3><p>Taste locally made snacks, native delicacies, sweets and other specialties from Ara-al and La Carlota City.</p></div></div></div></section>
+<div class="rv"><span class="fimg" data-img="local-cuisine"></span><em>🍲</em><h3>Local Cuisine</h3><p>Enjoy home-cooked dishes and traditional Filipino favorites prepared by local families and food sellers.</p></div>
+<div class="rv" style="--d:.12s"><span class="fimg" data-img="fresh-produce"></span><em>🥕</em><h3>Fresh Mountain Produce</h3><p>Discover fresh fruits, vegetables and agricultural products grown in Ara-al and its upland communities.</p></div>
+<div class="rv" style="--d:.24s"><span class="fimg" data-img="local-delicacies"></span><em>🍰</em><h3>Local Delicacies</h3><p>Taste locally made snacks, native delicacies, sweets and other specialties from Ara-al and La Carlota City.</p></div></div></div></section>
 
 <section id="gallery"><div class="w"><div class="lab rv">See Ara-al</div><h2 class="rv">Photo gallery</h2>
 <p class="sd rv">Discover Ara-al through moments captured across its mountains, waterfalls, scenic landscapes and vibrant local community.</p><div class="ga" id="ga"></div></div></section>
@@ -784,6 +794,20 @@ tt.onclick=()=>{const d=root.getAttribute('data-theme')!=='dark';setT(d);try{loc
   observer.observe(el);
  });
 })();
+/* FOOD CARD SLIDESHOWS: 4 images each, crossfade + slow zoom/pan */
+(()=>{const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+$$('.fimg[data-img]').forEach((box,bi)=>{const base=box.dataset.img,n=4;
+ const slides=[...Array(n)].map((_,k)=>{const i=document.createElement('i');i.style.backgroundImage='url('+base+'-'+(k+1)+'.jpg)';box.appendChild(i);return i});
+ const dots=document.createElement('span');dots.className='fdots';
+ const ds=slides.map((_,k)=>{const b=document.createElement('b');b.onclick=()=>go(k,true);dots.appendChild(b);return b});box.appendChild(dots);
+ let cur=0,timer=null;
+ const show=k=>{slides[cur].classList.remove('on');ds[cur].classList.remove('on');cur=k;slides[cur].classList.add('on');ds[cur].classList.add('on')};
+ const stop=()=>{clearInterval(timer);timer=null};
+ const start=()=>{if(rm||timer)return;timer=setInterval(()=>show((cur+1)%n),4500+bi*400)};
+ function go(k){show(k);stop();start()}
+ show(0);
+ new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():stop()),{threshold:.2}).observe(box);
+})})();
 </script>
 </body>
 </html>
