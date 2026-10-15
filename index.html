@@ -228,9 +228,23 @@ section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{hei
 @media(max-width:650px){.cl ul{columns:1}}
 .pp{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:68px;height:68px;border-radius:50%;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.5);color:#fff;font-size:24px;place-items:center;padding-left:4px;pointer-events:none}
 .ev .pl{display:none}
+/* SHINE: light sweep across images */
+.ci::before,#abf::before,.ev .eh::before,.ga div::before,.bt::before,.stay .ff::before,.gal4 div::before,.vid::before{content:"";position:absolute;top:0;left:0;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(-170%) skewX(-20deg);pointer-events:none;z-index:2}
+.stay .ff::before{height:200px}
+.bt,.gal4 div{position:relative;overflow:hidden}
+@keyframes gl1{from{transform:translateX(-170%) skewX(-20deg)}to{transform:translateX(330%) skewX(-20deg)}}
+@keyframes gl2{from{transform:translateX(-170%) skewX(-20deg)}to{transform:translateX(330%) skewX(-20deg)}}
+@keyframes gl3{0%,82%{transform:translateX(-170%) skewX(-20deg)}100%{transform:translateX(330%) skewX(-20deg)}}
+@media(hover:hover) and (pointer:fine){
+.ci::before,#abf::before,.ev .eh::before,.ga div::before,.bt::before,.stay .ff::before,.gal4 div::before,.vid::before{animation:gl3 9s ease-in-out infinite;animation-delay:var(--sd,0s)}
+.ci:hover::before,#abf:hover::before,.ev .eh:hover::before,.ga div:hover::before,.bt:hover::before,.stay .ff:hover::before,.gal4 div:hover::before,.vid:hover::before{animation:gl2 .9s ease}}
+@media(hover:none){
+.gs.ci::before,.gs#abf::before,.gs.eh::before,.ga div.gs::before,.gs.bt::before,.stay .ff.gs::before,.gal4 div.gs::before,.gs.vid::before{animation:gl1 1.5s ease .3s 1 both}}
 /* REFINED: calmer motion + mobile spacing */
 .cg,.orb,.pt{display:none}
-.hero h1 span:last-child{background:linear-gradient(90deg,var(--gold),#f0d58f);-webkit-background-clip:text;background-clip:text;color:transparent;animation:up 1s .4s both}
+.hero h1 span:last-child{background:linear-gradient(90deg,var(--gold),#f3dc9a,var(--gold));background-size:200%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:up 1s .4s both,sh 4s linear infinite}
+.hero h1 span:first-child{background:linear-gradient(110deg,#fff 0%,#fff 42%,#ffe9b3 50%,#fff 58%,#fff 100%);background-size:250% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:up 1s cubic-bezier(.2,.8,.2,1) .25s both,shw 5s ease-in-out 1.6s infinite}
+@keyframes shw{0%{background-position:100% 0}55%,100%{background-position:0 0}}
 .ti::before{animation:none}
 @keyframes kb{from{transform:scale(1.03)}to{transform:scale(1.1)}}
 .btn{letter-spacing:.2px}
@@ -246,7 +260,6 @@ section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{hei
   .hb{inset:0;will-change:auto}
   .card{will-change:auto;transform-style:flat}
   .ti::before{animation:none}
-  .hero h1 span:last-child{animation:up 1s .4s both}
 }
 @media(hover:none){
   .pl{display:none}
@@ -436,6 +449,11 @@ $$('.vid').forEach(c=>{const v=$('video',c),b=document.createElement('span');b.c
   const sync=()=>b.style.display=v.paused?'grid':'none';
   v.addEventListener('play',sync);v.addEventListener('pause',sync);sync();
   c.addEventListener('click',e=>{if(e.target.closest('.mt'))return;if(v.paused){v._u=false;kPlay(v)}else{v._u=true;v.pause()}})});
+/* SHINE on images: one sweep when scrolled into view (touch), repeating glint + hover sweep on desktop */
+const SHN='.ci,#abf,.ev .eh,.ga div,.bt,.stay .ff,.gal4 div,.vid';
+const gio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('gs');gio.unobserve(e.target)}}),{threshold:.3});
+let sn=0;const shine=()=>$$(SHN).forEach(el=>{if(el._sh)return;el._sh=1;el.style.setProperty('--sd',(sn++*1.1%9).toFixed(1)+'s');gio.observe(el)});
+const _tab=tab;tab=function(k){_tab(k);shine()};shine();
 /* HERO VIDEO: fades in over the photo, plays only while the hero is on screen */
 const hv=$('#hb video');hv.addEventListener('playing',()=>$('#hb').classList.add('vp'));
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches)new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?hv.play().catch(()=>{}):hv.pause()),{threshold:.1}).observe($('#home'));
