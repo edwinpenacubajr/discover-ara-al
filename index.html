@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -549,6 +549,15 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 .fd .fimg{height:300px}
 @media(max-width:950px){.fd .fimg{height:260px}}
 @media(max-width:650px){.fd .fimg{height:240px}}
+#abf{position:relative;height:100%;border-radius:24px;overflow:hidden}
+#abf video{opacity:1!important}
+@media(max-width:950px){.abm{height:420px!important}}
+#about .ab{align-items:stretch}
+#about .abm{height:auto!important;min-height:460px}
+#about #abf{position:absolute;inset:0;height:auto}
+#about #abf .ph{position:absolute;inset:0;height:100%!important}
+#about .abm{position:relative}
+@media(max-width:950px){#about .abm{height:420px!important;min-height:0}}
 </style>
 </head>
 <body>
@@ -570,9 +579,7 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 <div class="mq"><div id="mq"></div></div>
 
 <section id="about"><div class="w ab">
-<div class="flip rv" style="height:460px"><div class="fi">
-<div class="ff" id="abf"><div class="ph" style="height:100%;background-image:url(about.jpg),linear-gradient(135deg,#2f7a5b,#0d3326)"></div><video muted loop playsinline preload="metadata"><source src="about.mp4" type="video/mp4"></video><span class="pl">▶ Hover to play</span><span class="hint">Tap to flip ↻</span></div>
-<div class="fb"><em>ABOUT ARA-AL</em><h3>Barangay Ara-al</h3><p>Ara-al is one of the barangays of La Carlota City, Negros Occidental, situated near the foothills of Mount Kanlaon.</p><p>Covering more than 1,900 hectares, the community is known for its agricultural lands, mountain scenery, waterfalls, and Sitio Guintubdan.</p><small>Tap again to return to the map</small></div></div></div>
+<div class="rv abm" style="height:460px"><div id="abf"><div class="ph" style="height:100%;background-image:url(about.jpg),linear-gradient(135deg,#2f7a5b,#0d3326)"></div><video autoplay muted loop playsinline preload="auto" poster="about.jpg"><source src="about.mp4" type="video/mp4"></video></div></div>
 <div class="rv" style="--d:.15s"><div class="lab">About Ara-al</div><h2>A community among the mountains</h2>
 <p>Barangay Ara-al is one of the communities of La Carlota City, Negros Occidental, situated toward the foothills of Mount Kanlaon.</p>
 <p>The area is known for its mountain environment, agricultural communities, waterfalls and nature destinations.</p>
@@ -709,7 +716,7 @@ const vPlay=h=>{const p=$('video',h).play();p&&p.catch(()=>{})};
 const vStop=h=>{const v=$('video',h);v.pause();v.currentTime=0;h.classList.remove('vp')};
 const mio=new IntersectionObserver(es=>es.forEach(e=>{
   e.isIntersecting?(live.add(e.target),vPlay(e.target)):(live.delete(e.target),vStop(e.target))}),{threshold:.6});
-$$('#at .card,#abf,.ev').forEach(h=>{const v=$('video',h);if(!v)return;
+$$('#at .card,.ev').forEach(h=>{const v=$('video',h);if(!v)return;
   v.addEventListener('playing',()=>h.classList.add('vp'));
   if(hov&&!h.classList.contains('ev')){h.addEventListener('mouseenter',()=>vPlay(h));h.addEventListener('mouseleave',()=>vStop(h))}
   else mio.observe(h)});
@@ -811,6 +818,12 @@ $$('.fimg[data-img]').forEach((box,bi)=>{const base=box.dataset.img,n=4;
  show(0);
  new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?start():stop()),{threshold:.2}).observe(box);
 })})();
+/* ABOUT VIDEO: loops automatically, pauses when off screen */
+(()=>{const v=$('#abf video');if(!v)return;v.muted=true;
+ const play=()=>{const p=v.play();p&&p.catch(()=>{})};
+ if(!matchMedia('(prefers-reduced-motion:reduce)').matches)new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?play():v.pause()),{threshold:.2}).observe(v);
+ addEventListener('pointerdown',()=>{if(v.paused&&!matchMedia('(prefers-reduced-motion:reduce)').matches)play()},{passive:true});
+})();
 </script>
 </body>
 </html>
