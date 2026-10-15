@@ -367,6 +367,129 @@ section{padding:72px 18px}.gr,.fd,.sg,.bz,.st{grid-template-columns:1fr}.vid{hei
 .description-reveal{opacity:0;transition:opacity .55s ease;}
 .description-reveal.description-visible{opacity:1;}
 @media(prefers-reduced-motion:reduce){.description-reveal{opacity:1!important;transition:none!important;}}
+
+/* DISCOVER ARA-AL · EDITORIAL NATURE REDESIGN · 2026
+   Decorative layers are CSS-only and never intercept interaction. */
+:root{--ed-ink:#122e25;--ed-accent:#b27a17;--ed-line:#dfc99a;--ed-cream:#faf7ef;--ed-paper:#fffdf9;--ed-contrast:#20362d;--ed-muted:#52645c;--ed-wash:#f2ead9}
+:root[data-theme="dark"]{--ed-ink:#f3f5e9;--ed-accent:#f1c35b;--ed-line:#77633a;--ed-cream:#091d17;--ed-paper:#102a21;--ed-contrast:#eef4e9;--ed-muted:#b9c9bf;--ed-wash:#16352a}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--ed-ink:#f3f5e9;--ed-accent:#f1c35b;--ed-line:#77633a;--ed-cream:#091d17;--ed-paper:#102a21;--ed-contrast:#eef4e9;--ed-muted:#b9c9bf;--ed-wash:#16352a}}
+body{background:var(--ed-cream)}
+section:not(.hero){position:relative;isolation:isolate;overflow:hidden}
+section:not(.hero)>.w{position:relative;z-index:1}
+/* Delicate landscape wash; muted and readable in both themes */
+#about,#events,#business,#gallery{background:radial-gradient(ellipse at 97% 4%,rgba(213,168,75,.10),transparent 38%),var(--ed-cream)!important}
+#attractions,#kanlaon,#food,#map{background:linear-gradient(135deg,var(--ed-wash),var(--ed-cream) 68%)!important}
+#about::before,#events::before,#kanlaon::before,#food::before,#gallery::before,#business::before{content:"";position:absolute;width:320px;height:320px;border:1px solid var(--ed-line);border-radius:48% 52% 44% 56%;opacity:.28;pointer-events:none;right:-195px;top:36px;transform:rotate(22deg)}
+#events::after,#attractions::after,#map::after{content:"";position:absolute;bottom:-160px;left:-140px;width:350px;height:350px;border:1px solid var(--ed-line);border-radius:50%;opacity:.25;pointer-events:none}
+section:not(.hero):not(.stay) h2{color:var(--ed-ink);letter-spacing:-.035em}
+section:not(.hero):not(.stay) .lab{color:var(--ed-accent);letter-spacing:2.3px}
+section:not(.hero):not(.stay) .lab::before{content:"";display:inline-block;width:22px;height:2px;background:currentColor;vertical-align:middle;margin-right:10px}
+section:not(.hero):not(.stay) .sd{color:var(--ed-muted)}
+#about .ab>div:last-child{padding:clamp(20px,3vw,38px);border:1px solid var(--ed-line);background:var(--ed-paper);border-radius:24px;box-shadow:0 18px 48px rgba(37,45,26,.055)}
+#about .st div{background:var(--ed-wash);border:1px solid var(--ed-line)}
+#about .st strong{color:var(--ed-ink)}
+#about .flip .ff,#about .flip .fb{border-radius:24px}
+#attractions .card{background:var(--ed-paper);border:1px solid var(--ed-line);box-shadow:0 8px 24px rgba(42,34,20,.05)}
+#attractions .cb{border-top:3px solid var(--gold)}
+#attractions .cb h3{color:var(--ed-ink)}
+#attractions .cb p{color:var(--ed-muted)}
+/* Editorial event rows, including image fallback if local assets are absent */
+#events .ev{position:relative;grid-template-columns:minmax(220px,40%) 1fr;min-height:250px;background:var(--ed-paper);border:1px solid var(--ed-line);box-shadow:0 10px 35px rgba(47,36,15,.07);border-radius:22px}
+#events .ev:nth-child(even){grid-template-columns:1fr minmax(220px,40%)}
+#events .ev .eh{min-height:250px}
+#events .ev .eh::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,32,23,.22),transparent 55%);pointer-events:none}
+#events .ec{position:relative;min-width:0;padding:clamp(26px,4vw,48px)}
+#events .ec::after{content:attr(data-ed-number);position:absolute;right:18px;top:4px;font:800 clamp(3.5rem,8vw,6rem) var(--fh);color:var(--gold);opacity:.19;pointer-events:none;line-height:1}
+#events .ec h3{color:var(--ed-ink);font-size:clamp(1.45rem,2.5vw,2rem);position:relative;z-index:1}
+#events .ec h3::after{content:"";display:block;width:48px;height:3px;background:var(--gold);margin:13px 0 0;border-radius:5px}
+#events .ec p{color:var(--ed-muted);position:relative;z-index:1}
+#events .tag{color:var(--ed-accent)}
+#events .ev:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(47,36,15,.13)}
+#events .ev .eh video{z-index:1}
+#events .ev .eh .mt,#events .ev .eh .cr{z-index:3}
+#kanlaon .vid{border:1px solid var(--ed-line);box-shadow:0 15px 38px rgba(0,0,0,.12)}
+#kanlaon .ti{background:var(--ed-paper);border-color:var(--ed-line);box-shadow:0 8px 20px rgba(47,36,15,.04)}
+#kanlaon .ti h3{color:var(--ed-ink)}
+#kanlaon .ti p{color:var(--ed-muted)}
+#kanlaon .yr{color:var(--ed-accent)}
+#kanlaon .vc .yr,#kanlaon .vc span{color:#f2cf72}
+#stay{background:linear-gradient(135deg,#0c3025,#103d2d 58%,#173c30)!important}
+#stay::before{content:"";position:absolute;width:460px;height:460px;top:-220px;right:-170px;border:1px solid rgba(222,181,90,.23);border-radius:50%;pointer-events:none}
+#stay .ff{border-color:rgba(213,168,75,.38);background:rgba(255,255,255,.07)}
+#business .b,#food .fd>div,#map .mi{background:var(--ed-paper);border-color:var(--ed-line)}
+#business .b h3,#food .fd h3,#map .mi h3{color:var(--ed-ink)}
+#business .b p,#food .fd p,#map .mi p{color:var(--ed-muted)}
+#business .tabs button{border-color:var(--ed-line);background:var(--ed-paper);color:var(--ed-ink)}
+#business .tabs button.on{background:#205b43;color:#fff}
+#food .fd>div{box-shadow:0 12px 25px rgba(47,36,15,.05)}
+#food .fd>div::before{width:100%;height:3px}
+#gallery .ga>div{border:2px solid var(--ed-line);box-shadow:0 8px 22px rgba(47,36,15,.09)}
+#map .mp{border:3px solid var(--ed-line);box-shadow:0 16px 35px rgba(47,36,15,.09)}
+#map .mi{box-shadow:0 9px 25px rgba(47,36,15,.05)}
+/* Unified card lift: no JS mouse tracking, no perpetual animation */
+#attractions .card:hover,#business .b:hover,#food .fd>div:hover{transform:translateY(-4px);box-shadow:0 17px 35px rgba(33,40,26,.13)}
+:root[data-theme="dark"] #events .ev,:root[data-theme="dark"] #about .ab>div:last-child{box-shadow:0 15px 40px rgba(0,0,0,.22)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) #events .ev{box-shadow:0 15px 40px rgba(0,0,0,.22)}}
+@media(max-width:950px){#events .ev,#events .ev:nth-child(even){grid-template-columns:1fr}#events .ev:nth-child(even) .eh{order:0}#events .ev .eh{min-height:220px}#events .ec{padding:25px}}
+@media(max-width:650px){#about .ab>div:last-child{padding:22px}#events .ev .eh{min-height:190px}#events .ec::after{font-size:3.8rem}section:not(.hero)>.w{max-width:100%}}
+@media(prefers-reduced-motion:reduce){#events .ev,#attractions .card,#business .b,#food .fd>div{transition:none!important}}
+
+
+/* === Reference-inspired scenic editorial redesign, additive and theme-aware === */
+:root{--scene-paper:#faf5e9;--scene-paper2:#f1e8d6;--scene-ink:#17291e;--scene-accent:#b57b24;--scene-line:rgba(156,111,45,.28);--scene-surface:rgba(255,253,247,.90);--scene-shadow:rgba(58,46,24,.12);--scene-leaf:rgba(44,93,59,.22)}
+:root[data-theme="dark"]{--scene-paper:#061e18;--scene-paper2:#09271f;--scene-ink:#f4f0e2;--scene-accent:#f2c65c;--scene-line:rgba(233,190,91,.30);--scene-surface:rgba(8,34,27,.91);--scene-shadow:rgba(0,0,0,.35);--scene-leaf:rgba(221,174,71,.22)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--scene-paper:#061e18;--scene-paper2:#09271f;--scene-ink:#f4f0e2;--scene-accent:#f2c65c;--scene-line:rgba(233,190,91,.30);--scene-surface:rgba(8,34,27,.91);--scene-shadow:rgba(0,0,0,.35);--scene-leaf:rgba(221,174,71,.22)}}
+/* Scenic sections: layered landscape texture + corner foliage without extra requests */
+#about,#attractions,#events,#kanlaon,#stay,#business,#food,#gallery,#map{position:relative;isolation:isolate;background:linear-gradient(150deg,var(--scene-paper),var(--scene-paper2))!important;color:var(--scene-ink);overflow:hidden}
+#about::before,#attractions::before,#events::before,#kanlaon::before,#stay::before,#business::before,#food::before,#gallery::before,#map::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(ellipse at 0% 8%,var(--scene-leaf),transparent 25%),radial-gradient(ellipse at 100% 94%,var(--scene-leaf),transparent 25%),repeating-linear-gradient(140deg,transparent 0 60px,var(--scene-line) 61px,transparent 62px 155px);opacity:.45}
+#about::after,#attractions::after,#events::after,#kanlaon::after,#stay::after,#business::after,#food::after,#gallery::after,#map::after{content:"";position:absolute;right:-60px;top:30px;width:270px;height:310px;pointer-events:none;z-index:-1;opacity:.42;background:radial-gradient(ellipse 12px 36px at 50% 20%,var(--scene-leaf) 90%,transparent 100%),radial-gradient(ellipse 12px 34px at 36% 35%,var(--scene-leaf) 90%,transparent 100%),radial-gradient(ellipse 12px 34px at 64% 45%,var(--scene-leaf) 90%,transparent 100%),radial-gradient(ellipse 12px 34px at 38% 60%,var(--scene-leaf) 90%,transparent 100%),linear-gradient(115deg,transparent 49.5%,var(--scene-line) 50%,transparent 50.5%);transform:rotate(-25deg)}
+#attractions,#kanlaon,#food,#map{background:linear-gradient(155deg,var(--scene-paper2),var(--scene-paper))!important}
+#events,#business,#gallery{background:linear-gradient(160deg,var(--scene-paper),var(--scene-paper2) 75%,var(--scene-paper))!important}
+#about .w,#attractions .w,#events .w,#kanlaon .w,#stay .w,#business .w,#food .w,#gallery .w,#map .w{position:relative;z-index:1}
+#about,#attractions,#events,#kanlaon,#stay,#business,#food,#gallery,#map{padding-top:82px;padding-bottom:88px}
+#about h2,#attractions h2,#events h2,#kanlaon h2,#stay h2,#business h2,#food h2,#gallery h2,#map h2{color:var(--scene-ink);letter-spacing:-.035em}
+#about .lab,#attractions .lab,#events .lab,#kanlaon .lab,#stay .lab,#business .lab,#food .lab,#gallery .lab,#map .lab{color:var(--scene-accent)}
+#about .sd,#attractions .sd,#events .sd,#kanlaon .sd,#stay .sd,#business .sd,#food .sd,#gallery .sd,#map .sd{color:var(--scene-ink);opacity:.8}
+/* Botanical editorial header, with real existing scenic photo/video retained */
+.hero{background:var(--scene-paper)!important;color:var(--scene-ink)!important;min-height:88svh}
+.hero .hb{inset:0 0 0 45%;background-position:center;clip-path:ellipse(84% 76% at 89% 55%);opacity:.98}
+.hero .hb::after{background:linear-gradient(90deg,var(--scene-paper) 0%,transparent 35%,rgba(7,30,22,.06) 100%)}
+.hero .hc{margin-left:max(4vw,calc((100vw - 1150px)/2));margin-right:0;width:55%;padding-left:22px;z-index:3}
+.hero .hs{color:var(--scene-accent)}.hero h1{font-size:clamp(3.5rem,7vw,6.6rem);color:var(--scene-ink)}
+.hero h1 span:last-child{background-image:linear-gradient(105deg,#bb862c,#f5d578,#b77e24);-webkit-text-fill-color:transparent}
+.hero p.lead{color:var(--scene-ink);max-width:500px;font-size:1.08rem}
+.hero .bp{background:#145339;color:#fff}.hero .bo{color:var(--scene-ink);border-color:var(--scene-accent)}.hero .bo:hover{color:#fff;background:#145339}
+.hero::after{content:"";position:absolute;right:4%;bottom:6%;width:260px;height:120px;border:1px solid var(--scene-line);border-radius:70% 10% 70% 10%;transform:rotate(-18deg);pointer-events:none;z-index:2}
+:root[data-theme="dark"] .hero .bp{background:#e6b94d;color:#102319}
+:root[data-theme="dark"] .hero .bo:hover{background:#e6b94d;color:#102319}
+/* Rich framed image + content panel for About */
+#abf,.ab .flip{border-radius:24px;box-shadow:0 18px 38px var(--scene-shadow)}
+.ab{gap:26px}.ab>div:nth-child(2){background:var(--scene-surface);border:1px solid var(--scene-line);border-radius:22px;padding:clamp(20px,3vw,40px);box-shadow:0 12px 32px var(--scene-shadow)}
+.ab .st div{background:var(--scene-paper2);border:1px solid var(--scene-line)}
+/* Stronger photographic attraction cards, keep existing flip and click effects */
+#attractions .card,#food .card,#business .card{background:var(--scene-surface);border:1px solid var(--scene-line);box-shadow:0 10px 25px var(--scene-shadow);border-radius:16px}
+#attractions .card:hover,#food .card:hover,#business .card:hover{box-shadow:0 20px 42px var(--scene-shadow)}
+#attractions .ci{height:215px}
+/* Editorial event cards with asymmetric picture area and golden detailing */
+#events #ev{position:relative}
+#events .ev,#events .event-card,#events #ev>div{border-color:var(--scene-line)!important;background:var(--scene-surface)!important;box-shadow:0 10px 28px var(--scene-shadow);border-radius:17px;overflow:hidden}
+#events #ev>div:nth-child(2n){box-shadow:0 10px 28px var(--scene-shadow),inset 4px 0 var(--scene-accent)}
+#events #ev .ph{background-position:center;background-size:cover}
+/* Volcanic story: mountain-ridge motif and elevated timeline */
+#kanlaon .tl>div,#kanlaon .msg{background:var(--scene-surface)!important;border:1px solid var(--scene-line);box-shadow:0 8px 22px var(--scene-shadow);border-radius:16px}
+#kanlaon .msg{padding:30px}
+/* Stay section: editorial surfaces, rather than solid green blocks */
+#stay{background:linear-gradient(145deg,var(--scene-paper2),var(--scene-paper))!important}
+#stay .card,#stay .stay-card{background:var(--scene-surface)!important;color:var(--scene-ink)!important;border:1px solid var(--scene-line);box-shadow:0 12px 30px var(--scene-shadow)}
+#stay .card h3,#stay .card p{color:var(--scene-ink)}
+#gallery .card,#gallery .gi,#map iframe{border:1px solid var(--scene-line);border-radius:16px;box-shadow:0 10px 28px var(--scene-shadow)}
+/* dark mode contrast in all content blocks */
+:root[data-theme="dark"] #about .ab p,:root[data-theme="dark"] #stay p,:root[data-theme="dark"] #events p{color:var(--scene-ink)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero .bp{background:#e6b94d;color:#102319}:root:not([data-theme="light"]) #about .ab p,:root:not([data-theme="light"]) #stay p,:root:not([data-theme="light"]) #events p{color:var(--scene-ink)}}
+@media(max-width:950px){.hero .hb{inset:0;clip-path:none;opacity:.35}.hero .hb::after{background:linear-gradient(90deg,var(--scene-paper) 0%,rgba(250,245,233,.55) 100%)}.hero .hc{width:100%;margin:auto;padding:140px 24px 95px}.hero h1{font-size:clamp(3.1rem,12vw,5.5rem)}.ab>div:nth-child(2){padding:24px}}
+@media(max-width:600px){#about,#attractions,#events,#kanlaon,#stay,#business,#food,#gallery,#map{padding:65px 20px}.hero .hc{padding:125px 24px 90px}.hero .hb{opacity:.18}.hero::after{display:none}#about::after,#attractions::after,#events::after,#kanlaon::after,#stay::after,#business::after,#food::after,#gallery::after,#map::after{width:140px;height:170px;right:-60px;opacity:.22}}
+@media(prefers-reduced-motion:reduce){#attractions .card,#events #ev>div{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -476,6 +599,14 @@ const av=a=>`<video muted loop playsinline preload="metadata"><source src="${a[1
 $('#at').innerHTML=AT.map((a,i)=>i?`<div class="card" style="--d:${i*.08}s" data-i="${i}"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}</div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div>`:
 `<div class="flip" style="--d:0s"><div class="fi"><div class="ff card"><div class="ci"><div class="ph" style="${bg(a[1],a[3])}"></div>${av(a)}<span class="hint">Tap for gallery ↻</span></div><div class="cb"><h3>${a[0]}</h3><p>${a[2]}</p></div></div><div class="fb"><em>GUINTUBDAN GALLERY</em><h3>Explore Guintubdan</h3><div class="gal4">${[1,2,3,4].map(n=>`<div style="${bg('gallery'+n+'.jpg',140+n*12)}"></div>`).join('')}</div><small>Tap again to return</small></div></div></div>`).join('');
 $('#ev').innerHTML=EV.map(e=>`<div class="ev rv"><div class="eh" style="background-image:linear-gradient(135deg,hsl(${e[4]+120} 42% 30%),hsl(${e[4]+155} 48% 16%))"><video muted loop playsinline preload="metadata" poster="${e[3]}"><source src="${e[3].replace('.jpg','.mp4')}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button><span class="pl">▶ Hover to play</span>${cr(e[3],e[3].replace('.jpg','.mp4'))}</div><div class="ec"><span class="tag">${e[0]}</span><h3>${e[1]}</h3><p>${e[2]}</p></div></div>`).join('');
+/* Editorial event details; image fallback is visible even when a video is unavailable. */
+document.querySelectorAll('#ev .ev').forEach((card,i)=>{
+  const pane=card.querySelector('.eh'), info=card.querySelector('.ec');
+  if(info) info.setAttribute('data-ed-number',String(i+1).padStart(2,'0'));
+  if(pane && EV[i]) pane.style.backgroundImage=`linear-gradient(0deg,rgba(8,40,29,.20),rgba(8,40,29,.04)),url("${EV[i][3]}")`;
+  if(pane) pane.style.backgroundPosition='center';
+  if(pane) pane.style.backgroundSize='cover';
+});
 const vid=(id,src,po,tag,h,p)=>$(id).innerHTML=`<div class="vid rv"><video muted loop playsinline preload="none" poster="${po}"><source src="${src}" type="video/mp4"></video><button class="mt" aria-label="Toggle sound">🔇</button>${cr(src,po)}<div class="vc"><span>${tag}</span><h3>${h}</h3><p>${p}</p></div></div>`;
 vid('#v1','kanlaon-hero.mp4','guintubdan-ashfall-drone.jpg','GUINTUBDAN • ARA-AL','A Community Beneath the Volcano','During periods of heightened activity from Kanlaon, volcanic ash has affected homes, roads, vegetation, farms and parts of the mountain landscape surrounding Guintubdan.');
 vid('#v2','kanlaon-eruption.mp4','guintubdan-houses-ash.jpg','LIFE NEAR KANLAON','When Kanlaon Erupted',"Ash-covered homes, vegetation and roads show how closely the people of Guintubdan live with one of the Philippines' active volcanoes.");
