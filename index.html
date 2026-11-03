@@ -1059,13 +1059,23 @@ addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(u
 @media(prefers-reduced-motion:reduce){.creator-nudge,.creator-nudge-spark{animation:none}}
 
 /* Always-moving indicator above the creator name */
-.creator-link{position:relative;display:inline-flex;align-items:center;justify-content:center;padding-top:23px;vertical-align:middle;overflow:visible}
+.creator-link{position:relative;display:inline-flex;align-items:baseline;justify-content:center;padding:2px 3px;vertical-align:baseline;overflow:visible;line-height:inherit}
 .creator-name{display:inline-block}
-.creator-nudge{position:absolute;top:0;left:50%;font-size:17px;line-height:1;transform-origin:center;animation:creatorAboveNudge 1.65s ease-in-out infinite;pointer-events:none;z-index:2}
+.creator-nudge{position:absolute;top:-31px;left:50%;font-size:17px;line-height:1;transform-origin:center;animation:creatorAboveNudge 1.65s ease-in-out infinite;pointer-events:none;z-index:2}
 .creator-nudge-spark{position:absolute;top:-3px;right:-7px;animation:creatorSpark 1.65s ease-in-out infinite}
 .creator-link:hover .creator-nudge,.creator-link:focus-visible .creator-nudge{animation-duration:1.65s}
-@keyframes creatorAboveNudge{0%,100%{transform:translate(-50%,-3px) rotate(-7deg)}50%{transform:translate(-50%,4px) rotate(7deg)}}
+@keyframes creatorAboveNudge{0%,100%{transform:translate(-50%,-4px) rotate(-7deg)}50%{transform:translate(-50%,2px) rotate(7deg)}}
 @media(prefers-reduced-motion:reduce){.creator-nudge,.creator-nudge-spark{animation:none;transform:translateX(-50%)}}
+
+/* Mobile footer: reserve a separate vertical lane for the animated hand.
+   Prevent it from overlapping the copyright/Barangay line above. */
+@media (max-width: 650px) {
+  .fbt { row-gap: 14px; }
+  .fbt > .fr { padding-top: 34px; row-gap: 18px; width: 100%; }
+  .fbt .creator-link { vertical-align: baseline; }
+  .fbt .creator-nudge { top: -27px; }
+  .fbt .creator-hint { display: none; }
+}
 .creator-dialog{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:clamp(10px,3vw,28px);background:rgba(3,15,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .creator-dialog.is-open{display:flex;animation:creatorFade .24s ease both}
 .creator-dialog-panel{width:min(1100px,100%);height:min(800px,90dvh);min-height:320px;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(244,198,107,.36);border-radius:18px;background:#0b1d17;box-shadow:0 24px 100px rgba(0,0,0,.55)}
