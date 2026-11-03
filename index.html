@@ -581,8 +581,76 @@ nav:not(.sc){background:var(--nav);-webkit-backdrop-filter:blur(10px);backdrop-f
 .da-form textarea{min-height:90px;resize:vertical}
 .da-progress{position:fixed;left:0;top:0;height:3px;width:0;background:var(--gold,#d5a84b);z-index:99999;pointer-events:none}
 #top{background-image:conic-gradient(var(--gold,#d5a84b) var(--da-scroll,0%),transparent 0)}
-.da-lang{font:inherit;border:1px solid var(--bd);background:var(--card);color:var(--text);border-radius:10px;padding:7px;max-width:115px}
+
+/* Discover Ara-al: compact glass language switcher, consistent across both themes. */
+.da-lang-native{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important;overflow:hidden!important;clip-path:inset(50%)!important}
+.da-language-item{position:relative;list-style:none;flex-shrink:0}
+.da-language{position:relative;font-family:var(--fb);font-size:12px;line-height:1}
+.da-language-trigger{height:36px;min-width:72px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid rgba(213,168,71,.44);border-radius:12px;background:rgba(255,255,255,.10);color:inherit;box-shadow:inset 0 1px rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font:700 11px var(--fb);letter-spacing:.06em;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s,transform .2s}
+.da-language-trigger svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.da-language-trigger .da-language-chevron{width:12px;height:12px;transition:transform .2s}
+.da-language-trigger:hover,.da-language-open .da-language-trigger{border-color:var(--gold);background:rgba(213,168,71,.14);box-shadow:0 0 0 3px rgba(213,168,71,.08)}
+.da-language-open .da-language-chevron{transform:rotate(180deg)}
+.da-language-trigger:focus-visible,.da-language-menu button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.da-language-menu{position:absolute;top:calc(100% + 10px);right:0;z-index:1500;min-width:170px;padding:6px;border:1px solid rgba(213,168,71,.32);border-radius:14px;background:var(--card);color:var(--text);box-shadow:0 16px 45px var(--sh),0 4px 14px rgba(0,0,0,.10);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);opacity:0;visibility:hidden;transform:translateY(-6px) scale(.98);transform-origin:top right;transition:opacity .17s,transform .17s,visibility .17s}
+.da-language-open .da-language-menu{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.da-language-menu button{width:100%;min-height:39px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 11px;border:0;border-radius:9px;background:transparent;color:inherit;font:600 12px var(--fb);text-align:left;cursor:pointer;transition:background .18s,color .18s}
+.da-language-menu button:hover{background:var(--soft)}
+.da-language-menu button.is-selected{background:rgba(213,168,71,.16);color:var(--text)}
+.da-language-code{font:700 10px var(--fb);letter-spacing:.05em;opacity:.62}
+nav.sc .da-language-trigger{background:var(--card);color:var(--text)}
+@media(min-width:951px){.nl{gap:2px}.nl a{padding-inline:8px;font-size:.82rem}}
+@media(max-width:950px){.da-language-item{width:100%}.da-language-trigger{width:100%;justify-content:flex-start;padding-inline:14px;color:#fff!important;background:rgba(255,255,255,.07)!important}.da-language-trigger .da-language-chevron{margin-left:auto}.da-language-menu{position:static;display:none;opacity:1;visibility:visible;transform:none;box-shadow:none;min-width:0;width:100%;margin-top:6px;background:#102e24;color:#fff}.da-language-open .da-language-menu{display:block}.da-language-menu button.is-selected{color:#ffe09a}.nl .da-language-item{margin:3px 0}}
+@media(prefers-reduced-motion:reduce){.da-language-trigger,.da-language-menu,.da-language-menu button{transition:none!important}}
+
+
+/* Polished glass category selector — native select remains the filtering source of truth. */
+.da-category-wrap{position:relative;display:inline-flex;min-width:174px;flex:0 0 auto;z-index:25}
+.da-category-native{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important;clip-path:inset(50%)!important}
+.da-category-trigger{width:100%;min-height:42px;display:flex;align-items:center;gap:9px;padding:0 12px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--text);font:600 12px var(--fb);cursor:pointer;box-shadow:0 5px 18px rgba(0,0,0,.06),inset 0 1px rgba(255,255,255,.10);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:border-color .2s,box-shadow .2s,background .2s}
+.da-category-trigger:hover,.da-category-wrap.is-open .da-category-trigger{border-color:var(--gold);box-shadow:0 0 0 3px rgba(213,168,71,.10),0 8px 24px rgba(0,0,0,.08)}
+.da-category-trigger svg{width:15px;height:15px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.da-category-trigger .da-category-chevron{margin-left:auto;width:13px;height:13px;transition:transform .2s}
+.da-category-wrap.is-open .da-category-chevron{transform:rotate(180deg)}
+.da-category-menu{position:absolute;left:0;top:calc(100% + 7px);z-index:2000;width:max(100%,190px);padding:6px;border:1px solid rgba(213,168,71,.35);border-radius:13px;background:var(--card);color:var(--text);box-shadow:0 18px 45px rgba(0,0,0,.20);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);opacity:0;visibility:hidden;transform:translateY(-6px) scale(.98);transform-origin:top left;transition:opacity .17s,transform .17s,visibility .17s}
+.da-category-wrap.is-open .da-category-menu{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+.da-category-menu button{width:100%;display:flex;align-items:center;gap:10px;min-height:39px;padding:0 10px;border:0;border-radius:8px;background:transparent;color:inherit;font:600 12px var(--fb);text-align:left;cursor:pointer;transition:background .17s}
+.da-category-menu button:hover{background:var(--soft)}
+.da-category-menu button[aria-selected="true"]{background:rgba(213,168,71,.15);color:var(--text)}
+.da-category-menu button .da-category-check{margin-left:auto;color:var(--gold);font-weight:800}
+.da-category-trigger:focus-visible,.da-category-menu button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media(max-width:650px){.da-category-wrap{width:100%;min-width:0}.da-category-menu{width:100%}}
+@media(prefers-reduced-motion:reduce){.da-category-trigger,.da-category-menu,.da-category-menu button{transition:none!important}}
+
 @media(max-width:650px){.da-form{grid-template-columns:1fr}.da-tools>*{width:100%;max-width:none}.da-panel{padding:17px}}
+
+
+/* Accommodation cards: aligned details, clear actions, responsive layout. */
+#stay .sg{align-items:stretch}
+#stay .stay-flip{height:565px;min-width:0}
+#stay .stay-flip .ff{display:flex;flex-direction:column}
+#stay .stay-photo{height:auto;aspect-ratio:16/9;flex:0 0 auto;background-size:cover;background-position:center;transition:background-size .4s,filter .4s}
+#stay .stay-flip:hover .stay-photo{filter:brightness(1.045)}
+#stay .stay-content{flex:1;min-height:0;max-height:none;overflow:auto;display:flex;flex-direction:column;justify-content:space-between;gap:14px;padding:17px 19px 16px}
+#stay .stay-main h3{margin:5px 0 7px;line-height:1.2;font-size:1.18rem}
+#stay .stay-main p{font-size:.91rem;line-height:1.6;margin:0}
+#stay .stay-bottom{margin-top:auto;border-top:1px solid var(--scene-line);padding-top:10px}
+#stay .stay-info-line{display:flex;align-items:flex-start;gap:9px;margin:0 0 8px;color:var(--scene-ink);font-size:.79rem;line-height:1.4}
+#stay .stay-info-line>span:first-child{color:var(--ink-accent);font-size:1.04rem;line-height:1.1;flex:0 0 15px;text-align:center}
+#stay .stay-info-line a{font-weight:750;color:var(--scene-ink);text-decoration:underline;text-underline-offset:2px}
+#stay .stay-footer{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-top:9px;padding-top:10px;border-top:1px solid var(--scene-line)}
+#stay .stay-footer>span,#stay .stay-back-bottom>span{color:var(--ed-muted);font-size:.72rem;line-height:1.4;max-width:55%}
+#stay .stay-flip-button{border:1px solid var(--ink-accent);background:transparent;color:var(--ink-accent);border-radius:999px;padding:9px 12px;font-size:.76rem;font-weight:800;line-height:1.2;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+#stay .stay-flip-button:hover,#stay .stay-flip-button:focus-visible{background:var(--ink-accent);color:var(--scene-surface);outline-offset:3px}
+#stay .stay-back{padding:23px;gap:10px}
+#stay .stay-back p{line-height:1.6}
+#stay .stay-back-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+#stay .stay-back-bottom>span{color:#d6e6dd}
+#stay .stay-back .stay-flip-button{color:#f2c65c;border-color:#f2c65c}
+#stay .stay-back .stay-flip-button:hover{background:#f2c65c;color:#143e2e}
+#stay .stay-flip:focus-visible{outline:3px solid var(--ink-accent);outline-offset:4px}
+@media(max-width:950px){#stay .sg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){#stay .sg{grid-template-columns:minmax(0,1fr);gap:20px}#stay .stay-flip{height:570px}#stay .stay-content{padding:18px}#stay .stay-flip-button{min-height:40px}}
 
 </style>
 </head>
@@ -730,7 +798,17 @@ const vid=(id,src,po,tag,h,p)=>$(id).innerHTML=`<div class="vid rv"><video muted
 vid('#v1','kanlaon-hero.mp4','guintubdan-ashfall-drone.jpg','GUINTUBDAN • ARA-AL','A Community Beneath the Volcano','During periods of heightened activity from Kanlaon, volcanic ash has affected homes, roads, vegetation, farms and parts of the mountain landscape surrounding Guintubdan.');
 vid('#v2','kanlaon-eruption.mp4','guintubdan-houses-ash.jpg','LIFE NEAR KANLAON','When Kanlaon Erupted',"Ash-covered homes, vegetation and roads show how closely the people of Guintubdan live with one of the Philippines' active volcanoes.");
 $('#tl').innerHTML=TL.map((t,i)=>`<div class="ti"><div class="fx"><b class="no">0${i+1}</b><i class="sh"></i></div><span class="yr"><i class="ic2">${['🌋','💨','🌋','⛰️'][i]}</i>${t[0]}</span><h3>${t[1]}</h3><p>${t[2]}</p></div>`).join('');
-$('#sg').innerHTML=ST.map((s,i)=>`<div class="flip" style="--d:${i*.12}s"><div class="fi"><div class="ff"><div class="ph" style="${bg(s[3],150+i*25)}"><span class="hint">Tap to flip ↻</span></div>${cr(s[3])}<div class="sc2"><em>${s[0]}</em><h3>${s[1]}</h3><p>${s[2]}</p>${s[7]?'<div class="c"><strong>Reservations</strong><br>La Carlota City Tourism Office<a href="tel:0344600286" onclick="event.stopPropagation()">(034) 460-0286</a></div>':''}</div></div><div class="fb"><em>${s[4]}</em><h3>${s[1]}</h3><p>${s[5]}</p><p>${s[6]}</p><small>Tap again to return</small></div></div></div>`).join('');
+const stayDetails=[
+ {location:'Guintubdan, La Carlota City',type:'Mountain resort',contact:'La Carlota City Tourism Office',phone:'(034) 460-0286',tel:'0344600286',note:'Contact to confirm room availability'},
+ {location:'Guintubdan, La Carlota City',type:'House / overnight stay',note:'Contact and availability not verified'},
+ {location:'Ara-al / Guintubdan area',type:'Local accommodation suggestions',note:'Listings and availability not verified'}
+];
+$('#sg').innerHTML=ST.map((s,i)=>{
+ const d=stayDetails[i];
+ const contact=d.phone?`<div class="stay-info-line"><span aria-hidden="true">☎</span><span>${d.contact}<br><a href="tel:${d.tel}" onclick="event.stopPropagation()">${d.phone}</a></span></div>`:'';
+ return `<div class="flip stay-flip" style="--d:${i*.12}s" tabindex="0" role="group" aria-label="${s[1]} accommodation details"><div class="fi"><div class="ff"><div class="ph stay-photo" style="${bg(s[3],150+i*25)}"></div>${cr(s[3])}<div class="sc2 stay-content"><div class="stay-main"><em>${s[0]}</em><h3>${s[1]}</h3><p>${s[2]}</p></div><div class="stay-bottom"><div class="stay-info-line"><span aria-hidden="true">⌖</span><span>${d.location}</span></div><div class="stay-info-line"><span aria-hidden="true">⌂</span><span>${d.type}</span></div>${contact}<div class="stay-footer"><span>${d.note}</span><button type="button" class="stay-flip-button" aria-label="More details about ${s[1]}">More details ↻</button></div></div></div></div><div class="fb stay-back"><em>${s[4]}</em><h3>${s[1]}</h3><p>${s[5]}</p><p>${s[6]}</p><div class="stay-back-bottom"><span>${d.note}</span><button type="button" class="stay-flip-button stay-return" aria-label="Back to ${s[1]} accommodation summary">← Back to details</button></div></div></div></div>`;
+}).join('');
+
 $('#ga').innerHTML=GA.map((g,i)=>`<div class="rv${g[3]?' vd':''}" style="${bg(g[1],g[2])};--d:${i*.06}s" data-g="${i}">${g[3]?`<video muted loop playsinline preload="none"><source src="${g[3]}" type="video/mp4"></video><span class="pb">▶</span>`:''}${cr(g[1],g[3])}</div>`).join('');
 /* FACEBOOK LINKS: empty = no button shown. */
 const FB={"Lumay Cafe":"https://www.facebook.com/LumayCafe","Café Norma":"https://www.facebook.com/cafenormaofficial","Quan Delicacies":"https://www.facebook.com/profile.php?id=100064571414712","Ranidon La Paz Batchoy":"https://www.facebook.com/profile.php?id=100057434590609","PALAMANGKAS Pala-Pala Seafood Restaurant":"https://www.facebook.com/PalamangkasPalaPala","Café Repub":"https://www.facebook.com/cafederepub","Rumbines Cafe":"https://www.facebook.com/rumbinescafe","Yong's Cafeteria":"https://www.facebook.com/yongscafeteria",
@@ -748,6 +826,7 @@ if(h)$('#home').insertAdjacentHTML('beforeend',`<span class="cr">📷 ${esc(h)}<
 if(a)$('#abf').insertAdjacentHTML('beforeend',`<span class="cr">📷 ${esc(a)}</span>`);
 if(rows.length){$('#crl').innerHTML=rows.map(r=>`<li><b>${esc(r[0])}</b> — ${esc(r[1])}</li>`).join('');$('#crd').hidden=false}}
 /* FLIP + LIGHTBOX */
+document.addEventListener('keydown',e=>{const f=e.target.closest('#stay .stay-flip');if(f&&(e.key==='Enter'||e.key===' ')&&!e.target.closest('a,button')){e.preventDefault();f.classList.toggle('on')}});
 document.addEventListener('click',e=>{const f=e.target.closest('.flip');if(f&&!e.target.closest('a'))f.classList.toggle('on');
 const c=e.target.closest('#at .card:not(.ff)');if(c)openLb(AT.map(a=>[a[0],a[1],a[3]]),+c.dataset.i);
 const g=e.target.closest('[data-g]');if(g)openLb(GA,+g.dataset.g);
@@ -768,11 +847,23 @@ const hov=matchMedia('(hover:hover) and (pointer:fine)').matches,live=new Set();
 const vPlay=h=>{const p=$('video',h).play();p&&p.catch(()=>{})};
 const vStop=h=>{const v=$('video',h);v.pause();v.currentTime=0;h.classList.remove('vp')};
 const mio=new IntersectionObserver(es=>es.forEach(e=>{
-  e.isIntersecting?(live.add(e.target),vPlay(e.target)):(live.delete(e.target),vStop(e.target))}),{threshold:.6});
+  e.isIntersecting?(live.add(e.target),vPlay(e.target)):(live.delete(e.target),vStop(e.target))}),{threshold:.15});
 $$('#at .card,.ev').forEach(h=>{const v=$('video',h);if(!v)return;
   v.addEventListener('playing',()=>h.classList.add('vp'));
   if(hov&&!h.classList.contains('ev')){h.addEventListener('mouseenter',()=>vPlay(h));h.addEventListener('mouseleave',()=>vStop(h))}
   else mio.observe(h)});
+/* Festival videos: allow manual play/pause when autoplay is restricted. */
+$$('#ev .ev').forEach(card=>{
+  const pane=$('.eh',card),v=$('video',card);
+  if(!pane||!v)return;
+  v.loop=true;v.muted=true;v.playsInline=true;
+  pane.style.cursor='pointer';
+  pane.setAttribute('title','Click to play or pause video');
+  pane.addEventListener('click',e=>{
+    if(e.target.closest('.mt'))return;
+    if(v.paused){v.play().catch(()=>{});}else{v.pause();}
+  });
+});
 addEventListener('pointerdown',()=>live.forEach(h=>{if($('video',h).paused)vPlay(h)}),{passive:true});
 /* Kanlaon + gallery clips */
 const kin=new Set(),kPlay=v=>{v.preload='auto';const p=v.play();p&&p.catch(()=>{})};
@@ -884,8 +975,22 @@ $$('.fimg[data-img]').forEach((box,bi)=>{const base=box.dataset.img,n=4;
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const safe=(v)=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 // Existing visitorbadge.io counter is retained in the footer. Its count is provided externally.
-const lang=document.createElement('select');lang.className='da-lang';lang.setAttribute('aria-label','Language');lang.innerHTML='<option value="en">English</option><option value="hil">Hiligaynon</option>';
-const nav=$('#nav .nb');if(nav){const menu=$('#mb');nav.insertBefore(lang,menu||null)}
+// Compact, custom language menu; retain the select as a state adapter for existing translations.
+const lang=document.createElement('select');lang.className='da-lang da-lang-native';lang.setAttribute('aria-label','Language');lang.innerHTML='<option value="en">English</option><option value="hil">Hiligaynon</option>';
+const nav=$('#nav .nl');
+let langToggle=null,langMenu=null,langCurrent=null;
+if(nav){
+ const item=document.createElement('li');item.className='da-language-item';
+ item.innerHTML='<div class="da-language" data-da-language><button type="button" class="da-language-trigger" aria-label="Choose website language" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-2.6 2.4-4 5.5-4 9s1.4 6.6 4 9c2.6-2.4 4-5.5 4-9s-1.4-6.6-4-9"/></svg><span class="da-language-current">EN</span><svg class="da-language-chevron" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></button><div class="da-language-menu" role="group" aria-label="Website language"><button type="button" data-language="en"><span>English</span><span class="da-language-code">EN</span></button><button type="button" data-language="hil"><span>Hiligaynon</span><span class="da-language-code">HIL</span></button></div></div>';
+ const theme=$('#tt')?.closest('li');nav.insertBefore(item,theme||null);
+ item.appendChild(lang);langToggle=item.querySelector('.da-language-trigger');langMenu=item.querySelector('.da-language-menu');langCurrent=item.querySelector('.da-language-current');
+ const close=()=>{item.classList.remove('da-language-open');langToggle.setAttribute('aria-expanded','false')};
+ langToggle.addEventListener('click',()=>{const opening=!item.classList.contains('da-language-open');item.classList.toggle('da-language-open',opening);langToggle.setAttribute('aria-expanded',String(opening))});
+ langMenu.querySelectorAll('[data-language]').forEach(button=>button.addEventListener('click',()=>{lang.value=button.dataset.language;lang.dispatchEvent(new Event('change',{bubbles:true}));close();langToggle.focus()}));
+ document.addEventListener('pointerdown',e=>{if(!item.contains(e.target))close()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&item.classList.contains('da-language-open')){close();langToggle.focus()}});
+}
+
 const translations={
 'Home':'Balay','About':'Parte sa Ara-al','Explore':'Lagaw','Events':'Mga Aktibidad','Kanlaon':'Kanlaon','Stay':'Tiniran','Businesses':'Mga Negosyo','Food':'Pagkaon','Gallery':'Mga Litrato','Map':'Mapa',
 'Natural attractions':'Mga natural nga talan-awon','Festivals & events':'Mga pista kag aktibidad','Places to stay':'Mga lugar nga tiniran','Local Businesses':'Lokal nga mga negosyo','Local food & flavors':'Lokal nga pagkaon','Photo gallery':'Galeriya sang mga litrato','Find Ara-al':'Pangitaa ang Ara-al',
@@ -893,13 +998,27 @@ const translations={
 };
 const nodes=$$('nav .nl a, section h2, .hero .btn, #community [data-da-en]');
 nodes.forEach(n=>{if(!n.dataset.daEn)n.dataset.daEn=n.textContent.trim();if(!n.dataset.daHil)n.dataset.daHil=translations[n.dataset.daEn]||n.dataset.daEn});
-function setLanguage(v){document.documentElement.lang=v==='hil'?'hil':'en';nodes.forEach(n=>{if(n.children.length===0)n.textContent=v==='hil'?n.dataset.daHil:n.dataset.daEn;});lang.value=v;try{localStorage.setItem('araalLanguage',v)}catch(e){}}
+function setLanguage(v){document.documentElement.lang=v==='hil'?'hil':'en';nodes.forEach(n=>{if(n.children.length===0)n.textContent=v==='hil'?n.dataset.daHil:n.dataset.daEn;});lang.value=v;if(langCurrent)langCurrent.textContent=v==='hil'?'HIL':'EN';if(langMenu)langMenu.querySelectorAll('[data-language]').forEach(b=>{b.classList.toggle('is-selected',b.dataset.language===v);b.setAttribute('aria-pressed',String(b.dataset.language===v))});try{localStorage.setItem('araalLanguage',v)}catch(e){}}
 let stored='en';try{stored=localStorage.getItem('araalLanguage')||'en'}catch(e){}setLanguage(stored==='hil'?'hil':'en');lang.addEventListener('change',()=>setLanguage(lang.value));
 // Filter existing, dynamically generated attraction and directory cards without modifying their rendering logic.
 const at=$('#at'),business=$('#bz'),tabs=$('#tabs');
 if(at){const controls=document.createElement('div');controls.className='da-tools';controls.innerHTML='<input id="da-search" class="da-input" type="search" placeholder="Search attractions and local businesses…" aria-label="Search attractions and local businesses"><select id="da-category" class="da-select" aria-label="Filter content"><option value="all">All categories</option><option value="attractions">Attractions</option><option value="business">Businesses</option></select><span id="da-search-count" class="da-muted" role="status"></span>';
 at.before(controls);
 const input=$('#da-search'),category=$('#da-category'),count=$('#da-search-count');
+// Accessible custom category menu. The original select still drives all filters.
+const catWrap=document.createElement('div');catWrap.className='da-category-wrap';
+category.parentNode.insertBefore(catWrap,category);catWrap.appendChild(category);category.classList.add('da-category-native');
+const catTrigger=document.createElement('button');catTrigger.type='button';catTrigger.className='da-category-trigger';catTrigger.setAttribute('aria-label','Filter category');catTrigger.setAttribute('aria-haspopup','listbox');catTrigger.setAttribute('aria-expanded','false');
+catTrigger.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span class="da-category-label"></span><svg class="da-category-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+const catMenu=document.createElement('div');catMenu.className='da-category-menu';catMenu.setAttribute('role','listbox');catMenu.setAttribute('aria-label','Categories');
+Array.from(category.options).forEach(opt=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','option');b.dataset.value=opt.value;b.innerHTML='<span></span><span class="da-category-check" aria-hidden="true"></span>';b.firstElementChild.textContent=opt.textContent;b.addEventListener('click',()=>{category.value=opt.value;category.dispatchEvent(new Event('change',{bubbles:true}));closeCategory();catTrigger.focus()});catMenu.appendChild(b)});
+catWrap.append(catTrigger,catMenu);
+function syncCategory(){catTrigger.querySelector('.da-category-label').textContent=category.selectedOptions[0]?.textContent||'All categories';catMenu.querySelectorAll('[data-value]').forEach(b=>{const chosen=b.dataset.value===category.value;b.setAttribute('aria-selected',String(chosen));b.querySelector('.da-category-check').textContent=chosen?'✓':''})}
+function closeCategory(){catWrap.classList.remove('is-open');catTrigger.setAttribute('aria-expanded','false')}
+catTrigger.addEventListener('click',()=>{const open=!catWrap.classList.contains('is-open');catWrap.classList.toggle('is-open',open);catTrigger.setAttribute('aria-expanded',String(open));if(open)catMenu.querySelector('[aria-selected="true"]')?.focus()});
+catMenu.addEventListener('keydown',e=>{const buttons=Array.from(catMenu.querySelectorAll('button'));const i=buttons.indexOf(document.activeElement);if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();buttons[(i+(e.key==='ArrowDown'?1:-1)+buttons.length)%buttons.length]?.focus()}else if(e.key==='Home'){e.preventDefault();buttons[0]?.focus()}else if(e.key==='End'){e.preventDefault();buttons[buttons.length-1]?.focus()}});
+document.addEventListener('click',e=>{if(!catWrap.contains(e.target))closeCategory()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&catWrap.classList.contains('is-open')){closeCategory();catTrigger.focus()}});
+category.addEventListener('change',syncCategory);syncCategory();
 function filter(){const q=input.value.toLocaleLowerCase().trim(),cat=category.value;let shown=0;
 $$('#at .card').forEach(el=>{const visible=cat!=='business'&&el.textContent.toLocaleLowerCase().includes(q);el.hidden=!visible;el.style.display=visible?'':'none';if(visible)shown++});
 $$('#bz .b').forEach(el=>{const visible=cat!=='attractions'&&el.textContent.toLocaleLowerCase().includes(q);el.hidden=!visible;el.style.display=visible?'':'none';if(visible)shown++});
