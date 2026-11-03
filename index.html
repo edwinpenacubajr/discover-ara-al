@@ -750,7 +750,7 @@ nav.sc .da-language-trigger{background:var(--card);color:var(--text)}
 <details class="cl" id="crd" hidden><summary>Photo &amp; video credits</summary><ul id="crl"></ul></details>
 <p class="dc rv"><i>i</i><span><b>Disclaimer:</b> All information on this website may be incorrect or outdated. This website was created for a personal project only and is not an official source for Barangay Ara-al or La Carlota City.</span></p>
 <div class="visitor-counter" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0 0;color:#9fb2a8;font-size:.85rem" aria-label="Website visit counter"><span>Website visits</span><img src="https://api.visitorbadge.io/api/visitors?path=edwinpenacubajr.github.io%2Fdiscover-ara-al%2F&label=Visits&countColor=%232d6a4f&style=flat" alt="Discover Ara-al visit count" loading="lazy" referrerpolicy="no-referrer" style="height:20px;max-width:100%"></div>
-<div class="fbt"><span>© 2026 <b>Discover Ara-al</b> • Barangay Ara-al • La Carlota City • Negros Occidental</span><div class="fr"><span>Website created by <b>Edwin Penacuba Jr.</b></span><a class="fbk" href="https://www.facebook.com/penacuba16" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Contact me on Facebook</a></div></div></div></footer>
+<div class="fbt"><span>© 2026 <b>Discover Ara-al</b> • Barangay Ara-al • La Carlota City • Negros Occidental</span><div class="fr"><span>Website created by <button type="button" id="creatorPortfolioOpen" class="creator-link" aria-haspopup="dialog" aria-controls="creatorPortfolioDialog">Edwin Penacuba Jr. <span aria-hidden="true">↗</span></button></span><a class="fbk" href="https://www.facebook.com/penacuba16" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Contact me on Facebook</a></div></div></div></footer>
 
 <div id="lb"><button class="lbb" id="cl">✕</button><button class="lbb" id="pv">‹</button><div id="lbi"></div><button class="lbb" id="nx">›</button><div id="lbc"></div></div>
 <button id="top" aria-label="Back to top">↑</button>
@@ -1043,5 +1043,43 @@ addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(u
 })();
 </script>
 
+<style id="creator-portfolio-style">
+.creator-link{appearance:none;background:transparent;border:0;padding:2px 3px;color:#f3c66b;font:inherit;font-weight:750;cursor:pointer;border-radius:5px;transition:color .2s,text-shadow .2s}
+.creator-link:hover,.creator-link:focus-visible{color:#ffe5a1;text-decoration:underline;text-underline-offset:4px;text-shadow:0 0 14px rgba(245,188,80,.4)}
+.creator-link:focus-visible{outline:2px solid #f3c66b;outline-offset:3px}
+.creator-dialog{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:clamp(10px,3vw,28px);background:rgba(3,15,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.creator-dialog.is-open{display:flex;animation:creatorFade .24s ease both}
+.creator-dialog-panel{width:min(1100px,100%);height:min(800px,90dvh);min-height:320px;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(244,198,107,.36);border-radius:18px;background:#0b1d17;box-shadow:0 24px 100px rgba(0,0,0,.55)}
+.creator-dialog-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 15px;color:#f8eed9;border-bottom:1px solid rgba(255,255,255,.12);font-size:.85rem}
+.creator-dialog-actions{display:flex;align-items:center;gap:8px}
+.creator-dialog-actions a,.creator-dialog-actions button{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#f8eed9;border-radius:9px;padding:7px 11px;font:inherit;cursor:pointer;text-decoration:none}
+.creator-dialog-actions a:hover,.creator-dialog-actions button:hover{border-color:#f3c66b;color:#f3c66b}
+.creator-dialog iframe{display:block;flex:1;width:100%;min-height:0;border:0;background:#10271f}
+@keyframes creatorFade{from{opacity:0}to{opacity:1}}
+@media(max-width:550px){.creator-dialog{padding:8px}.creator-dialog-panel{height:94dvh;border-radius:12px}.creator-dialog-top{padding:9px}.creator-dialog-actions a{font-size:.72rem;padding:7px}}
+@media(prefers-reduced-motion:reduce){.creator-dialog.is-open{animation:none}}
+</style>
+<div id="creatorPortfolioDialog" class="creator-dialog" role="dialog" aria-modal="true" aria-label="Edwin Penacuba Jr. digital portfolio" aria-hidden="true">
+  <div class="creator-dialog-panel">
+    <div class="creator-dialog-top"><strong>✦ Edwin's Digital Portfolio</strong><div class="creator-dialog-actions"><a href="https://edwinpenacubajr.github.io/my-digital-portfolio/" target="_blank" rel="noopener noreferrer">Open in new tab ↗</a><button id="creatorPortfolioClose" type="button" aria-label="Close portfolio popup">✕</button></div></div>
+    <iframe id="creatorPortfolioFrame" title="Edwin Penacuba Jr. digital portfolio" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  </div>
+</div>
+<script id="creator-portfolio-script">
+(()=>{
+  const open=document.getElementById('creatorPortfolioOpen');
+  const dialog=document.getElementById('creatorPortfolioDialog');
+  const close=document.getElementById('creatorPortfolioClose');
+  const frame=document.getElementById('creatorPortfolioFrame');
+  if(!open||!dialog||!close||!frame)return;
+  const url='https://edwinpenacubajr.github.io/my-digital-portfolio/';
+  let lastFocus=null;
+  const hide=()=>{dialog.classList.remove('is-open');dialog.setAttribute('aria-hidden','true');document.body.style.overflow=dialog.dataset.previousOverflow||'';frame.removeAttribute('src');(lastFocus||open).focus();};
+  open.addEventListener('click',()=>{lastFocus=document.activeElement;dialog.dataset.previousOverflow=document.body.style.overflow;document.body.style.overflow='hidden';dialog.classList.add('is-open');dialog.setAttribute('aria-hidden','false');frame.src=url;close.focus();});
+  close.addEventListener('click',hide);
+  dialog.addEventListener('click',e=>{if(e.target===dialog)hide();});
+  document.addEventListener('keydown',e=>{if(!dialog.classList.contains('is-open'))return;if(e.key==='Escape')hide();if(e.key==='Tab'){const focusables=Array.from(dialog.querySelectorAll('a,button')).filter(el=>!el.disabled);const first=focusables[0],last=focusables[focusables.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
+})();
+</script>
 </body>
 </html>
