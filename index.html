@@ -711,6 +711,46 @@ nav.sc .da-language-trigger{background:var(--card);color:var(--text)}
 .floating-visits .fv-count{font-size:.87rem}
 @media(max-width:650px){.floating-visits{right:14px;max-width:calc(100vw - 28px);gap:5px;padding:0 8px}.floating-visits .fv-label{font-size:.51rem;letter-spacing:0}.floating-visits .fv-count{font-size:.77rem}.floating-visits .fv-divider{height:12px}.visitor-counter{gap:6px;padding:8px 9px}.visitor-counter .visit-label{font-size:.56rem;letter-spacing:.3px}#demo-visit-count{font-size:.93rem}}
 @media(max-width:350px){.floating-visits .fv-label{font-size:.46rem}.floating-visits .fv-count{font-size:.7rem}}
+/* Mobile: align floating counter horizontally beside the back-to-top button. */
+@media (max-width:650px) {
+  .floating-visits {
+    right:76px;
+    bottom:calc(18px + env(safe-area-inset-bottom,0px));
+    max-width:calc(100vw - 94px);
+  }
+}
+
+/* Align the green online dot with the PAGE VISITS text baseline/visual center. */
+.floating-visits .fv-dot{
+  display:block;
+  align-self:center;
+  margin:0;
+  transform:translateY(-1px);
+  flex:0 0 7px;
+}
+.floating-visits .fv-label{display:inline-flex;align-items:center;line-height:1.2}
+
+/* Modern floating back-to-top button — retains original position and scroll logic */
+#top{
+  display:grid;place-items:center;
+  width:46px;height:46px;padding:0;
+  background:conic-gradient(from 0deg,#f8e3a2 var(--da-scroll,0%),rgba(255,255,255,.22) 0);
+  border:1px solid rgba(255,236,175,.48);
+  border-radius:50%;
+  color:#14251c;
+  box-shadow:0 6px 22px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.09);
+  -webkit-tap-highlight-color:transparent;
+}
+#top::before{
+  content:"";position:absolute;inset:3px;border-radius:50%;
+  background:linear-gradient(145deg,#f6d978 0%,#d5a847 52%,#bc882b 100%);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.6),inset 0 -2px 4px rgba(87,54,10,.18);
+}
+#top svg{position:relative;z-index:1;width:20px;height:20px;stroke:currentColor;stroke-width:2.1;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s ease}
+#top:hover svg{transform:translateY(-3px)}
+#top:focus-visible{outline:3px solid #7eddb1;outline-offset:3px}
+#top:active{scale:.95}
+@media(prefers-reduced-motion:reduce){#top svg{transition:none}}
 </style>
 </head>
 <body>
@@ -813,7 +853,7 @@ nav.sc .da-language-trigger{background:var(--card);color:var(--text)}
 
 <div id="lb"><button class="lbb" id="cl">✕</button><button class="lbb" id="pv">‹</button><div id="lbi"></div><button class="lbb" id="nx">›</button><div id="lbc"></div></div>
 <div class="floating-visits" aria-label="Simulated page visits and randomly generated live visitor demo, not real traffic"><span class="fv-dot" aria-hidden="true"></span><span class="fv-label">PAGE VISITS</span><span class="fv-count" id="floating-demo-count">128,547</span><span class="fv-divider" aria-hidden="true"></span><span class="fv-label">LIVE</span><span class="fv-count live-random-count" id="floating-live-count">5</span></div>
-<button id="top" aria-label="Back to top">↑</button>
+<button id="top" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg></button>
 
 <script>
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
@@ -1174,7 +1214,16 @@ addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(u
 (() => {
   const counter = document.getElementById('demo-visit-count');
   if (!counter) return;
-  const target = 128547;
+  // Per-browser simulated counter: increases on each page load/refresh.
+  // Not shared between devices and not a measure of real visits.
+  const storageKey = 'araalSimulatedPageVisitsV1';
+  let previous = 128547;
+  try {
+    const saved = Number(localStorage.getItem(storageKey));
+    if (Number.isSafeInteger(saved) && saved >= previous) previous = saved;
+  } catch (e) {}
+  const target = previous + Math.floor(Math.random() * 9) + 1;
+  try { localStorage.setItem(storageKey, String(target)); } catch (e) {}
   const formatter = new Intl.NumberFormat('en-US');
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     counter.textContent = formatter.format(target);
