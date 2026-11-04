@@ -690,6 +690,27 @@ nav.sc .da-language-trigger{background:var(--card);color:var(--text)}
 .floating-visits .fv-count{color:#ffe7a2;font-weight:800;font-size:1.02rem;text-shadow:0 1px 3px rgba(0,0,0,.95),0 0 8px rgba(0,0,0,.55)}
 .floating-visits .fv-dot{box-shadow:0 0 0 2px rgba(0,0,0,.35),0 0 8px #8ff0bd}
 @media(max-width:420px){.floating-visits .fv-label{font-size:.61rem;letter-spacing:.3px}.floating-visits .fv-count{font-size:.94rem}}
+
+/* Floating counter: mobile-safe positioning and footer collision avoidance */
+.floating-visits{transition:opacity .28s ease,visibility .28s ease,transform .28s ease,background .25s ease}
+.floating-visits.footer-hidden{opacity:0!important;visibility:hidden;pointer-events:none;transform:translateY(10px)}
+@media(max-width:650px){
+  .floating-visits{right:18px;bottom:calc(76px + env(safe-area-inset-bottom,0px));height:38px;max-width:calc(100vw - 36px);padding:0 10px;gap:7px;opacity:.76}
+  .floating-visits .fv-label{font-size:.59rem;letter-spacing:.3px}
+  .floating-visits .fv-count{font-size:.88rem}
+}
+
+/* Two statistics in the EXISTING capsule, no extra boxes */
+.visitor-counter{gap:8px;flex-wrap:wrap;justify-content:center}
+.visitor-counter .visit-label{letter-spacing:.65px}
+.live-random-count{font-variant-numeric:tabular-nums;color:#9df1bb!important;font-weight:800;text-shadow:0 0 8px rgba(117,226,167,.28)}
+.visitor-counter .live-random-count{font-size:.98rem;min-width:1.4ch;text-align:center}
+.floating-visits{gap:7px;padding-left:11px;padding-right:11px}
+.floating-visits .fv-divider{width:1px;height:16px;background:rgba(255,255,255,.35);flex:none}
+.floating-visits .fv-label{font-size:.58rem;letter-spacing:.35px}
+.floating-visits .fv-count{font-size:.87rem}
+@media(max-width:650px){.floating-visits{right:14px;max-width:calc(100vw - 28px);gap:5px;padding:0 8px}.floating-visits .fv-label{font-size:.51rem;letter-spacing:0}.floating-visits .fv-count{font-size:.77rem}.floating-visits .fv-divider{height:12px}.visitor-counter{gap:6px;padding:8px 9px}.visitor-counter .visit-label{font-size:.56rem;letter-spacing:.3px}#demo-visit-count{font-size:.93rem}}
+@media(max-width:350px){.floating-visits .fv-label{font-size:.46rem}.floating-visits .fv-count{font-size:.7rem}}
 </style>
 </head>
 <body>
@@ -787,11 +808,11 @@ nav.sc .da-language-trigger{background:var(--card);color:var(--text)}
 <div class="fc"><strong>Discover</strong><a href="#kanlaon">Kanlaon</a><a href="#stay">Places to Stay</a><a href="#business">Businesses</a><a href="#gallery">Gallery</a><a href="#map">Map</a></div></div>
 <details class="cl" id="crd" hidden><summary>Photo &amp; video credits</summary><ul id="crl"></ul></details>
 <p class="dc rv"><i>i</i><span><b>Disclaimer:</b> All information on this website may be incorrect or outdated. This website was created for a personal project only and is not an official source for Barangay Ara-al or La Carlota City.</span></p>
-<div class="visitor-counter" aria-label="Simulated website visit counter"><span class="visit-pulse" aria-hidden="true"></span><span class="visit-label">DEMO VISITS</span><span class="visit-separator" aria-hidden="true"></span><span id="demo-visit-count" aria-label="Simulated visits">128,547</span><span class="visit-sparkle" aria-hidden="true">✦</span></div>
+<div class="visitor-counter" aria-label="Simulated page visits and randomly generated live visitor demo, not real traffic"><span class="visit-pulse" aria-hidden="true"></span><span class="visit-label">PAGE VISITS</span><span class="visit-separator" aria-hidden="true"></span><span id="demo-visit-count" aria-label="Simulated page visits">128,547</span><span class="visit-separator" aria-hidden="true"></span><span class="visit-label">LIVE</span><span class="live-random-count" id="footer-live-count" aria-label="Simulated current visitors">5</span><span class="visit-sparkle" aria-hidden="true">✦</span></div>
 <div class="fbt"><span>© 2026 <b>Discover Ara-al</b> • Barangay Ara-al • La Carlota City • Negros Occidental</span><div class="fr"><span>Website created by <button type="button" id="creatorPortfolioOpen" class="creator-link" aria-haspopup="dialog" aria-controls="creatorPortfolioDialog"><span class="creator-nudge" aria-hidden="true">👇<span class="creator-nudge-spark">✦</span></span><span class="creator-name">Edwin Penacuba Jr.</span><span class="creator-hint" aria-hidden="true">Tap to view</span></button></span><a class="fbk" href="https://www.facebook.com/penacuba16" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Contact me on Facebook</a></div></div></div></footer>
 
 <div id="lb"><button class="lbb" id="cl">✕</button><button class="lbb" id="pv">‹</button><div id="lbi"></div><button class="lbb" id="nx">›</button><div id="lbc"></div></div>
-<div class="floating-visits" aria-label="Simulated visitor count, not real traffic"><span class="fv-dot" aria-hidden="true"></span><span class="fv-label">LIVE VISITORS</span><span class="fv-count" id="floating-demo-count">128,547</span></div>
+<div class="floating-visits" aria-label="Simulated page visits and randomly generated live visitor demo, not real traffic"><span class="fv-dot" aria-hidden="true"></span><span class="fv-label">PAGE VISITS</span><span class="fv-count" id="floating-demo-count">128,547</span><span class="fv-divider" aria-hidden="true"></span><span class="fv-label">LIVE</span><span class="fv-count live-random-count" id="floating-live-count">5</span></div>
 <button id="top" aria-label="Back to top">↑</button>
 
 <script>
@@ -1175,6 +1196,29 @@ addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(u
 </script>
 <script id="floating-demo-sync">
 (()=>{const source=document.getElementById('demo-visit-count'),target=document.getElementById('floating-demo-count');if(!source||!target)return;const sync=()=>{target.textContent=source.textContent};sync();new MutationObserver(sync).observe(source,{childList:true,characterData:true,subtree:true});})();
+</script>
+<script id="random-live-visitor-demo">
+(() => {
+  // Simulated activity for visual demonstration; not connected to analytics.
+  const value = Math.floor(Math.random() * 12) + 1;
+  ['footer-live-count', 'floating-live-count'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = String(value);
+  });
+})();
+</script>
+<script id="floating-footer-visibility">
+(() => {
+  const counter = document.querySelector('.floating-visits');
+  const footer = document.querySelector('footer');
+  if (!counter || !footer) return;
+  // Hide the floating duplicate as soon as the footer enters the viewport.
+  // The original footer counter remains visible and fully usable.
+  const observer = new IntersectionObserver(entries => {
+    counter.classList.toggle('footer-hidden', entries[0].isIntersecting);
+  }, {threshold: 0});
+  observer.observe(footer);
+})();
 </script>
 </body>
 </html>
