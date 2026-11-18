@@ -753,8 +753,21 @@ nav.sc .da-language-trigger{background:var(--card);color:var(--text)}
 #top:active{scale:.95}
 @media(prefers-reduced-motion:reduce){#top svg{transition:none}}
 </style>
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://edwinpenacubajr.github.io/discover-ara-al/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Discover Ara-al">
+<meta property="og:title" content="Discover Ara-al | La Carlota City">
+<meta property="og:description" content="Waterfalls, mountain air and local culture in the foothills of Mount Kanlaon, La Carlota City, Negros Occidental.">
+<meta property="og:url" content="https://edwinpenacubajr.github.io/discover-ara-al/">
+<meta property="og:image" content="https://edwinpenacubajr.github.io/discover-ara-al/guintubdan.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TouristDestination","name":"Ara-al, La Carlota City","description":"A mountain community in the foothills of Mount Kanlaon with waterfalls, nature trails and local culture.","url":"https://edwinpenacubajr.github.io/discover-ara-al/","address":{"@type":"PostalAddress","addressLocality":"La Carlota City","addressRegion":"Negros Occidental","addressCountry":"PH"}}</script>
 </head>
 <body>
+<a class="skip" href="#about">Skip to content</a>
+<noscript><style>.nojs{display:block}</style><p class="nojs">Please turn on JavaScript to see the attractions, events and local directory of Ara-al.</p></noscript>
+
 <div class="pg" id="pg"></div><div class="cg" id="cg"></div>
 <nav id="nav"><div class="nb">
 <a href="#home" class="logo">Discover <b>Ara-al</b><i>/ Guintubdan</i></a>
@@ -1270,5 +1283,248 @@ addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(u
   observer.observe(footer);
 })();
 </script>
+<!-- ===== ARA-AL MOTION LAYER: additive, reduced-motion safe ===== -->
+<style id="araal-motion">
+@media(prefers-reduced-motion:no-preference){
+/* progress bar glow */
+.pg{box-shadow:0 0 14px rgba(213,168,75,.75)}
+.pg::after{content:"";position:absolute;right:-2px;top:-4px;width:14px;height:11px;border-radius:50%;background:#ffe9a8;filter:blur(4px)}
+
+/* HERO: ridgeline of the Kanlaon foothills, mist, fireflies */
+.ridge{position:absolute;left:0;right:0;bottom:-1px;height:clamp(110px,20vw,250px);z-index:1;pointer-events:none;overflow:hidden}
+.ridge svg{position:absolute;left:-4%;bottom:0;width:108%;height:100%;display:block}
+.r1 path{fill:#1d6046;opacity:.5}.r2 path{fill:#145039}.r3 path{fill:#0d3326}
+.r1{animation:ridgeUp 1.7s .45s cubic-bezier(.2,.8,.2,1) backwards}
+.r2{animation:ridgeUp 1.5s .65s cubic-bezier(.2,.8,.2,1) backwards}
+.r3{animation:ridgeUp 1.3s .85s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes ridgeUp{from{transform:translateY(60%);opacity:0}}
+.mist{position:absolute;left:-50%;width:200%;height:42%;bottom:6%;z-index:1;pointer-events:none;
+ background:radial-gradient(ellipse at 28% 62%,rgba(255,255,255,.15),transparent 58%),radial-gradient(ellipse at 74% 50%,rgba(255,255,255,.10),transparent 55%);
+ animation:mist 46s ease-in-out infinite alternate}
+.mist.m2{bottom:14%;height:34%;opacity:.7;animation-duration:64s;animation-direction:alternate-reverse}
+@keyframes mist{to{transform:translateX(22%)}}
+#ff{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;animation:ffIn 2.4s 1s ease both}
+@keyframes ffIn{from{opacity:0}}
+.hero .hs{animation:up .9s .1s both,hsGlow 5s 2s ease-in-out infinite}
+@keyframes hsGlow{50%{text-shadow:0 0 18px rgba(231,199,109,.55)}}
+.scr::after{animation:dr 1.6s infinite}
+.scr{animation:scrFloat 2.6s ease-in-out infinite}
+@keyframes scrFloat{50%{translate:0 6px}}
+
+/* HEADINGS: wipe in, label rule draws */
+section:not(.hero):not(.stay) .lab.rv::before{transition:width .9s cubic-bezier(.2,.8,.2,1) .25s}
+section:not(.hero):not(.stay) .lab.rv:not(.in)::before{width:0}
+
+/* ENTRANCES that release after playing, so hover states keep working */
+@keyframes rise{from{opacity:0;transform:translateY(28px)}}
+@keyframes tileIn{from{opacity:0;transform:scale(.86) translateY(44px);clip-path:inset(16% round 16px)}}
+@keyframes cardIn{from{opacity:0;transform:translateY(60px) scale(.94)}}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}}
+@keyframes wipeR{from{clip-path:inset(0 0 0 100%)}}
+@keyframes bar{from{transform:scaleX(0)}}
+.ga>div.rv.in{animation:tileIn 1s cubic-bezier(.2,.8,.2,1) var(--d,0s) backwards}
+#at .card.in{animation:cardIn 1s cubic-bezier(.2,.8,.2,1) var(--d,0s) backwards}
+.rv.in .st>div{animation:rise .8s cubic-bezier(.2,.8,.2,1) .3s backwards}
+.st>div:nth-child(2){animation-delay:.42s!important}.st>div:nth-child(3){animation-delay:.54s!important}
+.ev.in .eh{animation:wipe 1.2s cubic-bezier(.65,0,.35,1) .15s backwards}
+.ev:nth-child(even).in .eh{animation-name:wipeR}
+#events .ev .ec h3::after{transform-origin:left}
+.ev.in .ec h3::after{animation:bar .9s cubic-bezier(.2,.8,.2,1) .6s backwards}
+.vid.in .vc>*{animation:rise .9s cubic-bezier(.2,.8,.2,1) .25s backwards}
+.vid.in .vc h3{animation-delay:.38s}.vid.in .vc p{animation-delay:.5s}
+.fd em{animation:bob 3.6s ease-in-out infinite}
+.fd>div:nth-child(2) em{animation-delay:-1.2s}.fd>div:nth-child(3) em{animation-delay:-2.4s}
+@keyframes bob{50%{translate:0 -7px}}
+
+/* CURSOR SPOTLIGHT on cards */
+#at .card::after,.fd>div::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;transition:opacity .35s;
+ background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(255,233,160,.24),transparent 62%)}
+#at .card:hover::after,.fd>div:hover::after{opacity:1}
+#at .card.in.tl8,.fd>div.rv.in.tl8{transition-delay:0s}
+
+/* MAGNETIC BUTTONS */
+.hbt .btn,.mi .btn{translate:var(--tx,0px) var(--ty,0px);transition:transform .3s,box-shadow .3s,background .3s,translate .3s cubic-bezier(.2,.8,.2,1)}
+
+/* TIMELINE: dots ignite as the glow reaches them */
+.ti::before{transition:background .45s,box-shadow .45s,transform .45s}
+.ti.lit::before{background:#fff0b8;transform:scale(1.28);box-shadow:0 0 0 6px rgba(213,168,75,.35),0 0 22px 6px rgba(255,208,100,.75)}
+.ti.lit{border-color:rgba(213,168,75,.65)}
+
+/* THEME SWITCH: circular reveal */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}::view-transition-new(root){z-index:2}
+}
+</style>
+<script id="araal-motion-js">
+(()=>{'use strict';
+if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+
+/* ---------- HERO: ridgeline + mist + fireflies ---------- */
+const hero=$('#home'),hc=$('.hc',hero),h1=$('#h1');
+if(hero&&hc){
+ const ridge=document.createElement('div');ridge.className='ridge';ridge.setAttribute('aria-hidden','true');
+ const P=['M0 230C120 200 200 170 300 200S480 150 560 190 720 230 800 210L960 120 1000 96H1060L1100 124 1230 210S1360 190 1440 215V320H0Z',
+  'M0 260C150 225 260 245 380 235S600 190 720 235 940 270 1080 235 1300 215 1440 250V320H0Z',
+  'M0 292C200 270 380 300 560 285S900 268 1100 290 1340 280 1440 292V320H0Z'];
+ ridge.innerHTML=P.map((d,i)=>`<svg class="rg r${i+1}" viewBox="0 0 1440 320" preserveAspectRatio="none"><path d="${d}"/></svg>`).join('');
+ const m1=Object.assign(document.createElement('div'),{className:'mist'}),m2=Object.assign(document.createElement('div'),{className:'mist m2'});
+ const cv=document.createElement('canvas');cv.id='ff';cv.setAttribute('aria-hidden','true');
+ hero.insertBefore(cv,hc);hero.insertBefore(m1,hc);hero.insertBefore(m2,hc);hero.insertBefore(ridge,$('.scr',hero));
+ const rg=$$('.rg',ridge),ctx=cv.getContext('2d');
+ const spr=document.createElement('canvas');spr.width=spr.height=32;
+ {const g=spr.getContext('2d'),r=g.createRadialGradient(16,16,0,16,16,16);r.addColorStop(0,'rgba(255,240,180,1)');r.addColorStop(.25,'rgba(255,215,110,.55)');r.addColorStop(1,'rgba(255,200,80,0)');g.fillStyle=r;g.fillRect(0,0,32,32)}
+ let W=0,H=0,dpr=1,F=[];
+ const size=()=>{dpr=Math.min(devicePixelRatio||1,1.5);W=hero.clientWidth;H=hero.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+  const n=fine?34:16;F=[...Array(n)].map(()=>({x:Math.random()*W,y:H*(.25+Math.random()*.75),s:7+Math.random()*13,vx:(Math.random()-.5)*.18,vy:-.05-Math.random()*.16,p:Math.random()*6.28,f:.0008+Math.random()*.0016}))};
+ size();addEventListener('resize',size);
+ let tx=0,ty=0,mx=0,my=0,vis=true,run=false;
+ if(fine)hero.addEventListener('pointermove',e=>{const r=hero.getBoundingClientRect();tx=(e.clientX-r.left)/r.width*2-1;ty=(e.clientY-r.top)/r.height*2-1},{passive:true});
+ const frame=t=>{
+  if(!vis||document.hidden){run=false;return}
+  const y=scrollY;mx+=(tx-mx)*.06;my+=(ty-my)*.06;
+  rg[0].style.translate=`${mx*-10}px ${y*-.03}px`;rg[1].style.translate=`${mx*-22}px ${y*-.07}px`;rg[2].style.translate=`${mx*-38}px ${y*-.12}px`;
+  hc.style.translate=`0 ${y*.16}px`;hc.style.opacity=clamp(1-y/(innerHeight*.75),0,1);
+  if(h1)h1.style.translate=`${mx*-14}px ${my*-8}px`;
+  ctx.clearRect(0,0,W,H);
+  for(const f of F){f.x+=f.vx+Math.sin(t*f.f+f.p)*.35;f.y+=f.vy;if(f.y<-20){f.y=H+20;f.x=Math.random()*W}if(f.x<-20)f.x=W+20;if(f.x>W+20)f.x=-20;
+   ctx.globalAlpha=.2+.8*(.5+.5*Math.sin(t*f.f*2.4+f.p));const s=f.s*(1+.25*Math.sin(t*f.f*3+f.p));ctx.drawImage(spr,f.x-s,f.y-s,s*2,s*2)}
+  requestAnimationFrame(frame)};
+ const go=()=>{if(!run){run=true;requestAnimationFrame(frame)}};
+ new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis)go()},{threshold:0}).observe(hero);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&vis)go()});go();
+}
+
+/* ---------- MARQUEE speeds up while you scroll ---------- */
+{const mq=$('#mq'),a=mq&&mq.getAnimations&&mq.getAnimations()[0];
+ if(a){let last=scrollY,rate=1,target=1,raf=0,t=0;
+  const step=()=>{rate+=(target-rate)*.08;a.playbackRate=rate;raf=Math.abs(target-rate)>.02?requestAnimationFrame(step):0;if(!raf)a.playbackRate=target};
+  const kick=()=>{if(!raf)raf=requestAnimationFrame(step)};
+  addEventListener('scroll',()=>{const d=Math.abs(scrollY-last);last=scrollY;if(d<2)return;target=1+Math.min(d,80)*.09;clearTimeout(t);t=setTimeout(()=>{target=1;kick()},150);kick()},{passive:true})}}
+
+/* ---------- Tilt + spotlight on cards, magnetic buttons ---------- */
+if(fine){
+ $$('#at .card,.fd>div').forEach(el=>{
+  el.addEventListener('pointermove',e=>{if(!el.classList.contains('in'))return;el.classList.add('tl8');
+   const r=el.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
+   el.style.setProperty('--mx',px*100+'%');el.style.setProperty('--my',py*100+'%');
+   el.style.transform=`perspective(900px) rotateX(${(.5-py)*7}deg) rotateY(${(px-.5)*9}deg) translateY(-6px)`});
+  el.addEventListener('pointerleave',()=>{el.style.transform=''})});
+ $$('.hbt .btn,.mi .btn').forEach(b=>{
+  b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.setProperty('--tx',(e.clientX-r.left-r.width/2)*.22+'px');b.style.setProperty('--ty',(e.clientY-r.top-r.height/2)*.35+'px')});
+  b.addEventListener('pointerleave',()=>{b.style.setProperty('--tx','0px');b.style.setProperty('--ty','0px')})})}
+
+/* ---------- Scroll-linked: media parallax + timeline ignite ---------- */
+{const par=$$('#abf .ph,#abf video,.vid video'),seen=new Set(),tis=$$('.ti');
+ par.forEach(el=>{el.style.scale='1.14';el._box=el.parentElement});
+ const io=new IntersectionObserver(es=>es.forEach(e=>{const els=par.filter(p=>p._box===e.target);els.forEach(p=>e.isIntersecting?seen.add(p):seen.delete(p))}),{rootMargin:'80px'});
+ new Set(par.map(p=>p._box)).forEach(b=>io.observe(b));
+ let tk=0;
+ const upd=()=>{tk=0;const vh=innerHeight;
+  seen.forEach(p=>{const r=p._box.getBoundingClientRect(),k=clamp(((r.top+r.height/2)-vh/2)/(vh/2+r.height/2),-1,1);p.style.translate=`0 ${k*-5}%`});
+  tis.forEach(t=>t.classList.toggle('lit',t.getBoundingClientRect().top+36<vh*.65))};
+ addEventListener('scroll',()=>{if(!tk)tk=requestAnimationFrame(upd)},{passive:true});addEventListener('resize',upd);upd()}
+
+/* ---------- Theme toggle: circular reveal ---------- */
+{const tt=$('#tt');
+ if(tt&&document.startViewTransition)tt.addEventListener('click',e=>{
+  if(!tt.onclick)return;e.stopImmediatePropagation();
+  const r=tt.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+  const vt=document.startViewTransition(()=>{tt.onclick.call(tt,e)});
+  vt.ready.then(()=>document.documentElement.animate({clipPath:[`circle(0px at ${x}px ${y}px)`,`circle(${R}px at ${x}px ${y}px)`]},{duration:800,easing:'cubic-bezier(.65,0,.35,1)',pseudoElement:'::view-transition-new(root)'})).catch(()=>{})},true)}
+})();
+</script>
+
+<!-- ===== ARA-AL LAYER 2: every screen size + extra features ===== -->
+<style id="araal-layer2">
+/* ---- Every screen size: nothing clipped, nothing cut off ---- */
+@media(min-width:1600px){html{font-size:112.5%}.w{max-width:1320px}.nb{max-width:1440px}}
+@media(min-width:2200px){html{font-size:131%}.w{max-width:1600px}.nb{max-width:1720px}}
+.nb{padding-left:max(22px,env(safe-area-inset-left));padding-right:max(22px,env(safe-area-inset-right))}
+h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
+.b>div,.cb,.ec,.vc,.sc2{min-width:0}
+.b h3,.cb h3,.ec h3,.sc2 h3,.fd h3,.ti h3{overflow-wrap:anywhere}
+.vid{height:auto;min-height:clamp(420px,52vw,480px);display:flex;align-items:flex-end}
+.vid .vc{position:relative;left:auto;right:auto;bottom:auto;width:100%;max-width:760px;margin:clamp(20px,4vw,40px)}
+#at .card{height:auto}
+#lbi{height:min(76dvh,680px)}
+@media(max-width:950px){.logo i{display:none}}
+@media(min-width:951px) and (max-width:1180px){.logo i{display:none}.nl a{padding-inline:6px;font-size:.78rem}}
+@media(hover:none){.tt,.mb{width:44px;height:44px}.tabs button{min-height:44px}}
+@media(max-height:480px) and (orientation:landscape){.hero{min-height:auto}.hero .hc{padding-top:96px;padding-bottom:70px}.hero h1{font-size:clamp(2.6rem,8vw,4.5rem)}.scr{display:none}.ridge{height:90px}}
+.skip{position:fixed;left:12px;top:-70px;z-index:100001;background:var(--gold);color:#172018;padding:10px 16px;border-radius:10px;font-weight:700;transition:top .2s}
+.skip:focus{top:12px}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.nojs{display:none;max-width:640px;margin:120px auto;padding:0 22px;text-align:center}
+@media(max-width:650px){.floating-visits{display:none!important}}
+:root[data-theme="light"] #ff{opacity:.6;mix-blend-mode:multiply}
+@media print{.rv,.ti,.description-reveal{opacity:1!important;transform:none!important;animation:none!important;clip-path:none!important}.pg,nav,#top,.floating-visits,.dots,.ridge,.mist,#ff,.wx{display:none!important}}
+
+/* ---- Extra features ---- */
+.dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:950;display:none;flex-direction:column;gap:4px}
+@media(min-width:1280px) and (hover:hover){.dots{display:flex}}
+.dots a{position:relative;display:block;width:22px;height:22px}
+.dots a::before{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;margin:-4.5px;border-radius:50%;background:rgba(213,168,75,.38);border:1px solid rgba(213,168,75,.8);transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s}
+.dots a.on::before{background:var(--gold);transform:scale(1.7);box-shadow:0 0 12px rgba(213,168,75,.8)}
+.dots a::after{content:attr(data-t);position:absolute;right:30px;top:50%;translate:8px -50%;padding:4px 10px;border-radius:8px;background:#0d3326;color:#fff;font-size:.74rem;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .25s,translate .25s}
+.dots a:hover::after,.dots a:focus-visible::after{opacity:1;translate:0 -50%}
+.wx{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:8px 16px;border-radius:30px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;font-size:.85rem;font-weight:600;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.wx[hidden]{display:none}.wx b{font-size:1.15rem;font-weight:400}
+#top::after{content:"";position:absolute;inset:-5px;border-radius:50%;pointer-events:none;background:conic-gradient(var(--gold) calc(var(--p,0)*1%),transparent 0);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px))}
+@media(prefers-reduced-motion:no-preference){
+@keyframes h2wipe{from{clip-path:inset(-10% 100% -20% -5%)}to{clip-path:inset(-10% -5% -20% -5%)}}
+section h2.rv.in{animation:h2wipe 1.1s cubic-bezier(.65,0,.35,1) .1s backwards}
+.wx{animation:rise .9s 1.6s cubic-bezier(.2,.8,.2,1) backwards}
+}
+</style>
+<script id="araal-layer2-js">
+(()=>{'use strict';
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+
+/* Failsafe: anything in view is always revealed, even if an observer misses it */
+{let tk=0;const fs=()=>{tk=0;const vh=innerHeight;
+  $$('.rv:not(.in)').forEach(e=>{const r=e.getBoundingClientRect();if(r.top<vh*.9&&r.bottom>0)e.classList.add('in')});
+  $$('.ti:not(.show)').forEach(e=>{if(e.getBoundingClientRect().top<vh*.9)e.classList.add('show')});
+  $$('.description-reveal:not(.description-visible)').forEach(e=>{if(e.getBoundingClientRect().top<vh*.95)e.classList.add('description-visible')})};
+ addEventListener('scroll',()=>{if(!tk)tk=requestAnimationFrame(fs)},{passive:true});addEventListener('load',()=>setTimeout(fs,400));setTimeout(fs,2500)}
+
+/* Stay cards: size to their real content so no text is ever cut off */
+{const fit=()=>{const fl=$$('.stay-flip');if(!fl.length)return;let H=500;
+  fl.forEach(f=>{f.style.setProperty('height','1px','important');const ff=$('.ff',f),fb=$('.fb',f),ph=$('.stay-photo',f),c=$('.stay-content',f);
+   H=Math.max(H,(ph?ph.offsetHeight:0)+(c?c.scrollHeight:0)+4,fb?fb.scrollHeight+2:0)});
+  fl.forEach(f=>f.style.setProperty('height',Math.ceil(H)+'px','important'))};
+ let t=0;const run=()=>{clearTimeout(t);t=setTimeout(fit,120)};
+ fit();addEventListener('resize',run);addEventListener('load',run);if(document.fonts)document.fonts.ready.then(run);setTimeout(fit,1500)}
+
+/* Back-to-top progress ring */
+{const top=$('#top');if(top){let tk=0;const u=()=>{tk=0;const m=document.documentElement.scrollHeight-innerHeight;top.style.setProperty('--p',m>0?clamp(scrollY/m*100,0,100):0)};
+ addEventListener('scroll',()=>{if(!tk)tk=requestAnimationFrame(u)},{passive:true});u()}}
+
+/* Section dots (desktop) */
+{const L=[['home','Home'],['about','About'],['attractions','Explore'],['events','Events'],['kanlaon','Kanlaon'],['stay','Stay'],['business','Businesses'],['food','Food'],['gallery','Gallery'],['community','Community'],['map','Map']].filter(x=>$('#'+x[0]));
+ const nav=document.createElement('div');nav.className='dots';nav.setAttribute('role','navigation');nav.setAttribute('aria-label','Page sections');
+ nav.innerHTML=L.map(x=>`<a href="#${x[0]}" data-t="${x[1]}" aria-label="${x[1]}"></a>`).join('');document.body.appendChild(nav);
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)$$('a',nav).forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+ L.forEach(x=>io.observe($('#'+x[0])))}
+
+/* Live weather chip (Open-Meteo, no key; hidden if it can't load) */
+{const hbt=$('.hbt');if(hbt&&window.fetch){const ac=new AbortController(),to=setTimeout(()=>ac.abort(),6000);
+ fetch('https://api.open-meteo.com/v1/forecast?latitude=10.42&longitude=122.92&current=temperature_2m,weather_code&timezone=auto',{signal:ac.signal}).then(r=>r.ok?r.json():Promise.reject()).then(d=>{
+  clearTimeout(to);const c=d.current;if(!c||typeof c.temperature_2m!=='number')return;const k=c.weather_code,
+  ic=k===0?'☀️':k<=2?'🌤️':k===3?'☁️':k<=48?'🌫️':k<=57?'🌦️':k<=67?'🌧️':k<=82?'🌦️':'⛈️';
+  const w=document.createElement('div');w.className='wx';w.title='Live weather from Open-Meteo. The mountain is cooler than the town.';
+  w.innerHTML=`<b aria-hidden="true">${ic}</b><span>${Math.round(c.temperature_2m)}°C in La Carlota City now</span>`;hbt.after(w)}).catch(()=>{})}}
+
+/* Lightbox: swipe on phones */
+{const lb=$('#lb');if(lb){let x0=null,y0=0;
+ lb.addEventListener('touchstart',e=>{if(e.touches.length===1){x0=e.touches[0].clientX;y0=e.touches[0].clientY}},{passive:true});
+ lb.addEventListener('touchend',e=>{if(x0===null)return;const t=e.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0;x0=null;
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)(dx<0?$('#nx'):$('#pv')).click()},{passive:true})}}
+})();
+</script>
+
 </body>
 </html>
