@@ -1479,6 +1479,66 @@ section h2.rv.in{animation:h2wipe 1.1s cubic-bezier(.65,0,.35,1) .1s backwards}
 .wx{animation:rise .9s 1.6s cubic-bezier(.2,.8,.2,1) backwards}
 }
 </style>
+<style id="araal-responsive-2026">
+/* ==========================================================================
+   Responsive layer: small laptops -> 1080p -> 1440p -> 4K / ultrawide.
+   Design rule: at 1366x768 (16px root) every value equals the original, so the
+   look there is unchanged. Everything scales smoothly from there.
+   Phone/tablet layouts (<= 950px) are untouched, apart from the safety rules.
+   ========================================================================== */
+
+/* 1. One fluid root size (replaces the stepped 1600px / 2200px jumps).
+      It grows with the window width but is also capped by the window height, so
+      ultrawide or short windows never get oversized text. 100% keeps the visitor's
+      own browser font-size preference. */
+html{font-size:clamp(100%,min(calc(100% + (100vw - 1440px) * .0058),calc(100% + (100vh - 800px) * .008)),200%)}
+
+/* 2. Page width is rem-based, so the content, navbar and hero all scale together
+      and stay lined up (1150px at 16px root, like before). */
+:root{--wmax:71.875rem}
+.w{max-width:var(--wmax)}
+.nb{max-width:calc(var(--wmax) + 44px)}
+.hc{max-width:var(--wmax)}
+
+/* 3. Safety: media and embeds can never push the page wider than the screen. */
+img,video,iframe{max-width:100%}
+.mp iframe{min-height:0}
+
+@media(min-width:951px){
+  /* Hero: text lines up with the page content on every screen width,
+     and keeps the buttons on screen on short laptop displays. */
+  .hero .hc{margin-left:max(4vw,calc((100% - var(--wmax))/2))}
+  .hero h1{font-size:clamp(3.2rem,min(7vw,14vh),6.6rem)}
+  section{scroll-margin-top:3.75rem}
+  #about,#attractions,#events,#kanlaon,#stay,#business,#food,#gallery,#map{padding-top:5.125rem;padding-bottom:5.5rem}
+
+  /* Card grids reflow by available width (never more than 3 across, or 4 for the gallery). */
+  .gr,.fd,.sg{grid-template-columns:repeat(auto-fill,minmax(max(17.5rem,calc((100% - 46px)/3)),1fr))}
+  .bz{grid-template-columns:repeat(auto-fill,minmax(max(22rem,calc((100% - 20px)/2)),1fr))}
+  .ga{grid-template-columns:repeat(auto-fill,minmax(max(11rem,calc((100% - 43px)/4)),1fr));grid-auto-rows:11.875rem}
+
+  /* Fixed pixel heights -> rem, so images, cards and the map grow with the text. */
+  #attractions .ci{height:13.4375rem}
+  .at .gr>.card{min-height:23.5rem}
+  #stay .flip,#stay .stay-flip{height:35.3125rem}
+  .fd .fimg{height:18.75rem}
+  #about .abm{min-height:28.75rem}
+  .bt{width:5.75rem;height:5.75rem;flex:0 0 5.75rem}
+  .mp{height:23.75rem}
+  #events .ev,#events .ev .eh{min-height:15.625rem}
+  .vid{min-height:clamp(26.25rem,52vw,30rem)}
+}
+
+/* Short laptop screens (about 480-700px tall): trim hero spacing so the buttons stay visible. */
+@media(min-width:951px) and (min-height:481px){
+  .hero .hc{padding-top:clamp(5.5rem,17vh,8.125rem);padding-bottom:clamp(3.5rem,11.7vh,5.625rem)}
+}
+
+/* Large monitors: a little more breathing room around the hero art. */
+@media(min-width:1900px){
+  .hero::after{width:16.25rem;height:7.5rem}
+}
+</style>
 <script id="araal-layer2-js">
 (()=>{'use strict';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
